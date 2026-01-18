@@ -51,17 +51,22 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        /* Brand Gold #f5b800 */
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+        /* Success Green */
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          light: "hsl(var(--success-light))",
+          dark: "hsl(var(--success-dark))",
         },
-        /* Brand Navy #1e3a5f */
+        /* Trust Blue */
+        trust: {
+          DEFAULT: "hsl(var(--trust))",
+          light: "hsl(var(--trust-light))",
+          dark: "hsl(var(--trust-dark))",
+        },
+        /* Navy */
         navy: {
-          DEFAULT: "hsl(210 52% 25%)",
-          light: "hsl(210 45% 35%)",
-          dark: "hsl(210 52% 15%)",
+          DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -89,19 +94,29 @@ export default {
           to: { height: "0" },
         },
         "fade-up": {
-          from: { opacity: "0", transform: "translateY(30px)" },
+          from: { opacity: "0", transform: "translateY(40px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.9)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(42 75% 55% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(42 75% 55% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(142 71% 45% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(142 71% 45% / 0.6)" },
+        },
+        "count-up": {
+          from: { opacity: "0", transform: "scale(0.5) translateY(20px)" },
+          to: { opacity: "1", transform: "scale(1) translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-up": "fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "scale-in": "scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "count-up": "count-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

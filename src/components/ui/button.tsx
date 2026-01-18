@@ -5,27 +5,29 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-primary hover:shadow-lg",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-blue hover:shadow-lg",
+        ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gold text-background font-semibold hover:bg-gold-light shadow-gold hover:shadow-lg transition-all duration-300",
-        neon: "bg-neon text-background font-semibold hover:bg-neon-light glow-neon hover:shadow-lg transition-all duration-300",
+        hero: "bg-gradient-to-r from-primary to-success-light text-primary-foreground font-bold shadow-primary hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+        cta: "bg-gradient-to-r from-secondary to-trust-light text-secondary-foreground font-bold shadow-blue hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+        white: "bg-background text-foreground border-2 border-border hover:border-primary hover:text-primary",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "h-11 px-5 py-2",
         sm: "h-9 rounded-md px-4",
-        lg: "h-12 rounded-md px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg",
+        lg: "h-12 rounded-lg px-8 text-base",
+        xl: "h-14 rounded-xl px-10 text-lg",
+        xxl: "h-16 rounded-xl px-12 text-xl",
         icon: "h-10 w-10",
       },
     },
