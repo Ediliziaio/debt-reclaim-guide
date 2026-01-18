@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useInView } from "@/hooks/useInView";
+import italyMapImage from "@/assets/italy-silhouette.png";
 
 interface RegionData {
   name: string;
@@ -107,36 +108,14 @@ const ReteMapSection = () => {
           <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Map Container */}
             <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg select-none">
-              {/* Italy Background Map SVG */}
-              <svg
-                viewBox="0 0 500 750"
-                className="w-full h-auto"
-              >
-                {/* Italy silhouette as background - simplified shape */}
-                <defs>
-                  <linearGradient id="italyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(217 91% 60%)" stopOpacity="0.1" />
-                    <stop offset="100%" stopColor="hsl(142 71% 45%)" stopOpacity="0.05" />
-                  </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-                
-                {/* Full Italy Path - stylized background */}
-                <path
-                  d="M 145 95 L 160 85 L 175 95 L 180 95 L 220 90 L 250 95 L 250 60 L 290 55 L 310 70 L 330 95 L 365 90 L 380 105 L 375 125 L 350 135 L 330 145 L 295 150 L 295 165 L 330 175 L 355 235 L 345 270 L 365 295 L 375 325 L 400 360 L 440 380 L 475 420 L 465 455 L 420 470 L 385 455 L 405 480 L 395 545 L 380 590 L 350 620 L 355 630 L 375 665 L 350 695 L 290 700 L 240 680 L 235 650 L 260 620 L 310 610 L 330 600 L 340 550 L 345 515 L 355 495 L 340 460 L 340 445 L 310 420 L 300 385 L 280 375 L 250 355 L 230 320 L 240 295 L 210 275 L 190 240 L 180 215 L 155 210 L 125 195 L 130 165 L 115 140 L 120 115 L 120 100 Z M 80 350 L 115 340 L 140 370 L 145 430 L 130 490 L 100 510 L 70 480 L 65 410 L 70 370 Z"
-                  fill="url(#italyGradient)"
-                  stroke="hsl(217 91% 60%)"
-                  strokeWidth="2"
-                  strokeOpacity="0.3"
-                  className="transition-all duration-500"
+              {/* Italy Background Image */}
+              <div className="relative w-full aspect-[2/3]">
+                <img 
+                  src={italyMapImage} 
+                  alt="Mappa dell'Italia" 
+                  className="w-full h-full object-contain opacity-40"
                 />
-              </svg>
+              </div>
 
               {/* Interactive Markers */}
               <div className="absolute inset-0">
