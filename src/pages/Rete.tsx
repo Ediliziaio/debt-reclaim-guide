@@ -15,6 +15,7 @@ import ReteUrgencySection from "@/components/ReteUrgencySection";
 import ReteProcessSection from "@/components/ReteProcessSection";
 import ReteFAQSection from "@/components/ReteFAQSection";
 import ReteAvailabilitySection from "@/components/ReteAvailabilitySection";
+import ReteMapSection from "@/components/ReteMapSection";
 import ReteContactFormSection from "@/components/ReteContactFormSection";
 import Footer from "@/components/Footer";
 
@@ -45,6 +46,7 @@ const Rete = () => {
         <ReteUrgencySection />
         <ReteProcessSection />
         <ReteFAQSection />
+        <ReteMapSection />
         <ReteAvailabilitySection />
         <ReteContactFormSection />
       </main>
