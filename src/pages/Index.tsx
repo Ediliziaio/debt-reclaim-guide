@@ -6,9 +6,13 @@ import RFEmpathySection from "@/components/RFEmpathySection";
 import RFFalsePromisesSection from "@/components/RFFalsePromisesSection";
 import RFGoodNewsSection from "@/components/RFGoodNewsSection";
 import RFWhoWeAreSection from "@/components/RFWhoWeAreSection";
+import RFTeamSection from "@/components/RFTeamSection";
 import RFStatisticsSection from "@/components/RFStatisticsSection";
 import RFCaseStudiesSection from "@/components/RFCaseStudiesSection";
 import RFMethodSection from "@/components/RFMethodSection";
+import RFTargetAudienceSection from "@/components/RFTargetAudienceSection";
+import RFGuaranteesSection from "@/components/RFGuaranteesSection";
+import RFFAQSection from "@/components/RFFAQSection";
 import RFFinalCTA from "@/components/RFFinalCTA";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
@@ -35,9 +39,13 @@ const Index = () => {
           <RFFalsePromisesSection />
           <RFGoodNewsSection />
           <RFWhoWeAreSection />
+          <RFTeamSection />
           <RFStatisticsSection />
           <RFCaseStudiesSection />
           <RFMethodSection />
+          <RFTargetAudienceSection />
+          <RFGuaranteesSection />
+          <RFFAQSection />
           <RFFinalCTA onOpenContact={openContact} />
         </main>
         
