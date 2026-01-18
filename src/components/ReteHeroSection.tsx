@@ -1,0 +1,96 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Briefcase, TrendingUp } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
+import heroImage from "@/assets/rete-hero-team.jpg";
+
+interface ReteHeroSectionProps {
+  onOpenContact: () => void;
+}
+
+const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
+  const { ref, isInView } = useInView({ threshold: 0.1 });
+
+  return (
+    <section ref={ref as React.RefObject<HTMLElement>} className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img src={heroImage} alt="Team di professionisti" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/70" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl">
+          {/* Badge */}
+          <div className={`inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-8 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+            <Users className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Per Avvocati e Commercialisti</span>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>
+            SMETTI Di Lavorare Da Solo Su Casi Complessi Di{" "}
+            <span className="text-gradient-hero">Debito</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className={`text-xl md:text-2xl text-white/90 mb-4 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+            Entra Nella <strong className="text-primary">PRIMA Rete Nazionale</strong> Specializzata In Esdebitazione E Crisi D'Impresa
+          </p>
+
+          <p className={`text-lg text-white/70 mb-8 ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
+            (E Moltiplica Fatturato E Competenze)
+          </p>
+
+          {/* Hook Text */}
+          <div className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 mb-10 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+            <p className="text-white/90 text-lg leading-relaxed">
+              Se gestisci (o vorresti gestire) pratiche di esdebitazione e crisi d'impresa ma ti mancano 
+              <strong className="text-primary"> know-how, coordinamento o un flusso costante di clienti</strong>... 
+              hai 3 minuti per leggere questa proposta?
+            </p>
+          </div>
+
+          {/* CTAs */}
+          <div className={`flex flex-col sm:flex-row gap-4 mb-12 ${isInView ? 'animate-fade-up animation-delay-500' : 'opacity-0'}`}>
+            <Button variant="hero" size="lg" onClick={onOpenContact} className="text-lg px-8 py-6">
+              Richiedi Informazioni
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10"
+              onClick={() => document.getElementById('vantaggi')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Scopri i Vantaggi
+            </Button>
+          </div>
+
+          {/* Stats Row */}
+          <div className={`grid grid-cols-3 gap-6 ${isInView ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
+            {[
+              { icon: Briefcase, value: "24", label: "Studi nella Rete" },
+              { icon: TrendingUp, value: "€95k", label: "Fatturato Medio/Anno" },
+              { icon: Users, value: "96%", label: "Tasso di Rinnovo" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
+                <div className="text-sm text-white/60">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-soft">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+          <div className="w-1.5 h-3 bg-primary rounded-full animate-fade-in" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ReteHeroSection;
