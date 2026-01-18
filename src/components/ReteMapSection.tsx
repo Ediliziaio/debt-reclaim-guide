@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useInView } from "@/hooks/useInView";
-import ItalyMapSVG from "@/assets/italy-map.svg";
+import italyMapImage from "@/assets/italy-regions-map.png";
 
 interface RegionData {
   name: string;
@@ -11,28 +11,28 @@ interface RegionData {
   y: number;
 }
 
-// Coordinate ricalibrate per SVG vettoriale
+// Coordinate ricalibrate con precisione per la mappa con regioni
 const regions: RegionData[] = [
-  { name: "Valle d'Aosta", studi: 0, posti: 2, status: "disponibile", x: 108, y: 115 },
-  { name: "Piemonte", studi: 1, posti: 3, status: "disponibile", x: 120, y: 165 },
-  { name: "Lombardia", studi: 3, posti: 3, status: "pochi", x: 210, y: 140 },
-  { name: "Trentino-Alto Adige", studi: 0, posti: 3, status: "disponibile", x: 275, y: 80 },
-  { name: "Veneto", studi: 2, posti: 2, status: "pochi", x: 315, y: 140 },
-  { name: "Friuli-Venezia Giulia", studi: 0, posti: 3, status: "disponibile", x: 375, y: 125 },
-  { name: "Liguria", studi: 1, posti: 2, status: "pochi", x: 135, y: 235 },
-  { name: "Emilia-Romagna", studi: 3, posti: 1, status: "quasi-completo", x: 260, y: 205 },
-  { name: "Toscana", studi: 2, posti: 2, status: "pochi", x: 220, y: 295 },
-  { name: "Umbria", studi: 1, posti: 2, status: "pochi", x: 285, y: 325 },
-  { name: "Marche", studi: 1, posti: 2, status: "pochi", x: 330, y: 295 },
-  { name: "Lazio", studi: 2, posti: 2, status: "pochi", x: 260, y: 390 },
-  { name: "Abruzzo", studi: 0, posti: 3, status: "disponibile", x: 340, y: 365 },
-  { name: "Molise", studi: 0, posti: 2, status: "disponibile", x: 365, y: 420 },
-  { name: "Campania", studi: 1, posti: 4, status: "disponibile", x: 330, y: 470 },
-  { name: "Puglia", studi: 2, posti: 2, status: "pochi", x: 420, y: 445 },
-  { name: "Basilicata", studi: 0, posti: 3, status: "disponibile", x: 375, y: 510 },
-  { name: "Calabria", studi: 0, posti: 6, status: "disponibile", x: 360, y: 620 },
-  { name: "Sicilia", studi: 1, posti: 5, status: "disponibile", x: 290, y: 715 },
-  { name: "Sardegna", studi: 0, posti: 5, status: "disponibile", x: 95, y: 460 },
+  { name: "Valle d'Aosta", studi: 0, posti: 2, status: "disponibile", x: 108, y: 118 },
+  { name: "Piemonte", studi: 1, posti: 3, status: "disponibile", x: 128, y: 168 },
+  { name: "Lombardia", studi: 3, posti: 3, status: "pochi", x: 195, y: 148 },
+  { name: "Trentino-Alto Adige", studi: 0, posti: 3, status: "disponibile", x: 268, y: 88 },
+  { name: "Veneto", studi: 2, posti: 2, status: "pochi", x: 305, y: 155 },
+  { name: "Friuli-Venezia Giulia", studi: 0, posti: 3, status: "disponibile", x: 365, y: 132 },
+  { name: "Liguria", studi: 1, posti: 2, status: "pochi", x: 148, y: 228 },
+  { name: "Emilia-Romagna", studi: 3, posti: 1, status: "quasi-completo", x: 258, y: 212 },
+  { name: "Toscana", studi: 2, posti: 2, status: "pochi", x: 218, y: 285 },
+  { name: "Umbria", studi: 1, posti: 2, status: "pochi", x: 278, y: 322 },
+  { name: "Marche", studi: 1, posti: 2, status: "pochi", x: 325, y: 295 },
+  { name: "Lazio", studi: 2, posti: 2, status: "pochi", x: 268, y: 378 },
+  { name: "Abruzzo", studi: 0, posti: 3, status: "disponibile", x: 332, y: 355 },
+  { name: "Molise", studi: 0, posti: 2, status: "disponibile", x: 358, y: 392 },
+  { name: "Campania", studi: 1, posti: 4, status: "disponibile", x: 328, y: 445 },
+  { name: "Puglia", studi: 2, posti: 2, status: "pochi", x: 405, y: 435 },
+  { name: "Basilicata", studi: 0, posti: 3, status: "disponibile", x: 372, y: 485 },
+  { name: "Calabria", studi: 0, posti: 6, status: "disponibile", x: 360, y: 565 },
+  { name: "Sicilia", studi: 1, posti: 5, status: "disponibile", x: 288, y: 685 },
+  { name: "Sardegna", studi: 0, posti: 5, status: "disponibile", x: 98, y: 445 },
 ];
 
 const statusConfig = {
@@ -95,35 +95,43 @@ const ReteMapSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6 transition-all duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+            <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
               Copertura Nazionale
             </span>
-            <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 transition-all duration-500 delay-75 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+            <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               La Rete in Italia
             </h2>
-            <p className={`text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto px-4 transition-all duration-500 delay-100 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+            <p className={`text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto px-4 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               {isTouchDevice ? "Tocca i punti" : "Passa il mouse sui punti"} per vedere i posti disponibili nella tua regione
             </p>
           </div>
 
-          <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-500 delay-150 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Map Container */}
             <div 
               className="relative w-full max-w-sm md:max-w-md lg:max-w-lg select-none"
               onMouseEnter={() => setIsMapHovered(true)}
               onMouseLeave={() => setIsMapHovered(false)}
             >
-              {/* Italy SVG Map - Vector for crisp rendering */}
+              {/* Italy Background Image with hover effects and crisp rendering */}
               <div className="relative w-full aspect-[2/3]">
                 <img 
-                  src={ItalyMapSVG} 
+                  src={italyMapImage} 
                   alt="Mappa dell'Italia con regioni" 
                   className={`w-full h-full object-contain transition-all duration-500 ease-out
                     ${isMapHovered 
                       ? 'brightness-110 drop-shadow-[0_0_30px_rgba(34,197,94,0.35)]' 
                       : 'brightness-100 drop-shadow-[0_0_15px_rgba(34,197,94,0.15)]'
                     }
+                    ${isInView ? 'map-pulse-animation' : ''}
                   `}
+                  style={{
+                    imageRendering: 'auto',
+                    WebkitFontSmoothing: 'antialiased',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)',
+                  }}
+                  loading="eager"
                 />
               </div>
 
@@ -131,6 +139,7 @@ const ReteMapSection = () => {
               <div className="absolute inset-0">
                 {regions.map((region, index) => {
                   const config = statusConfig[region.status];
+                  // Marker più grandi
                   const baseSize = isTouchDevice ? 28 : 20;
                   const markerSize = region.posti >= 4 ? baseSize + 8 : region.posti >= 2 ? baseSize + 4 : baseSize;
                   
@@ -140,9 +149,9 @@ const ReteMapSection = () => {
                       className={`absolute cursor-pointer
                         ${config.color} ${config.glow} ${config.glowHover}
                         rounded-full border-2 border-white/60
-                        hover:scale-125 hover:z-20
+                        hover:scale-[1.6] hover:z-20
                         ${config.pulse ? 'animate-pulse-glow' : ''}
-                        ${activeRegion?.name === region.name ? 'scale-125 z-20' : ''}
+                        ${activeRegion?.name === region.name ? 'scale-[1.6] z-20' : ''}
                       `}
                       style={{
                         left: `${(region.x / 500) * 100}%`,
@@ -151,8 +160,10 @@ const ReteMapSection = () => {
                         height: `${markerSize}px`,
                         transform: 'translate(-50%, -50%)',
                         opacity: isInView ? 1 : 0,
-                        transition: 'opacity 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease',
-                        transitionDelay: `${index * 40}ms`,
+                        animation: isInView 
+                          ? `marker-appear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 100}ms forwards`
+                          : 'none',
+                        transition: 'box-shadow 0.3s ease, transform 0.3s ease',
                       }}
                       onMouseEnter={(e) => {
                         if (!isTouchDevice) {
@@ -273,6 +284,32 @@ const ReteMapSection = () => {
         }
         .animate-pulse-glow {
           animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes marker-appear {
+          0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+          }
+          60% {
+            transform: translate(-50%, -50%) scale(1.4);
+          }
+          100% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        
+        @keyframes map-pulse {
+          0%, 100% {
+            filter: brightness(1) drop-shadow(0 0 15px rgba(34, 197, 94, 0.15));
+          }
+          50% {
+            filter: brightness(1.03) drop-shadow(0 0 20px rgba(34, 197, 94, 0.25));
+          }
+        }
+        .map-pulse-animation {
+          animation: map-pulse 4s ease-in-out infinite;
         }
       `}</style>
     </section>
