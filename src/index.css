@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors from Tutela Debito Logo */
+    /* Navy Blue #1e3a5f → HSL(210, 52%, 25%) */
+    /* Vivid Gold #f5b800 → HSL(45, 100%, 48%) */
+    
+    /* Dark Navy Background */
+    --background: 210 52% 8%;
+    --foreground: 0 0% 98%;
+
+    /* Card surfaces - slightly lighter navy */
+    --card: 210 50% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary - Brand Navy #1e3a5f */
+    --primary: 210 52% 25%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary */
+    --secondary: 210 45% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted */
+    --muted: 210 30% 22%;
+    --muted-foreground: 210 15% 55%;
+
+    /* Accent - Brand Gold #f5b800 */
+    --accent: 45 100% 48%;
+    --accent-foreground: 210 52% 8%;
+
+    /* Gold variations - Brand Gold */
+    --gold: 45 100% 48%;
+    --gold-light: 45 100% 60%;
+    --gold-dark: 45 90% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 45 100% 48%;
+
+    --radius: 0.5rem;
+
+    /* Typography */
+    --font-heading: 'Inter Tight', sans-serif;
+    --font-body: 'Inter Tight', sans-serif;
+
+    /* Shadows - Brand Gold */
+    --shadow-gold: 0 0 40px hsl(45 100% 48% / 0.3);
+    --shadow-elegant: 0 25px 50px -12px hsl(210 52% 0% / 0.8);
+
+    /* Gradients - Brand Colors */
+    --gradient-hero: linear-gradient(135deg, hsl(210 52% 8%) 0%, hsl(210 50% 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 48%) 0%, hsl(45 100% 58%) 100%);
+
+    --sidebar-background: 210 52% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 45 100% 48%;
+    --sidebar-primary-foreground: 210 52% 8%;
+    --sidebar-accent: 210 50% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 45 100% 48%;
+  }
+
+  .dark {
+    --background: 210 52% 8%;
+    --foreground: 0 0% 98%;
+    --card: 210 50% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 50% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 210 52% 25%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 45% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 30% 22%;
+    --muted-foreground: 210 15% 55%;
+    --accent: 45 100% 48%;
+    --accent-foreground: 210 52% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 45 100% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(45 100% 48%) 0%, hsl(45 100% 60%) 100%);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(45 100% 48% / 0.4), 0 0 40px hsl(45 100% 48% / 0.2);
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(45 100% 48% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(45 100% 48% / 0.6);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes count-up {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-count-up {
+    animation: count-up 0.8s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
