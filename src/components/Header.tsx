@@ -20,6 +20,15 @@ const Header = ({ onOpenContact }: HeaderProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Chiudi menu mobile su scroll
+  useEffect(() => {
+    const handleScrollClose = () => {
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("scroll", handleScrollClose);
+    return () => window.removeEventListener("scroll", handleScrollClose);
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -27,6 +36,10 @@ const Header = ({ onOpenContact }: HeaderProps) => {
     }
     setIsMobileMenuOpen(false);
   };
+
+  // Colori dinamici basati su scroll state
+  const textColor = isScrolled ? "text-foreground" : "text-white";
+  const mutedColor = isScrolled ? "text-muted-foreground" : "text-white/80";
 
   return (
     <header
@@ -37,51 +50,51 @@ const Header = ({ onOpenContact }: HeaderProps) => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
               src={logoTutelaDebito} 
               alt="Tutela Debito - Studio Legale" 
-              className="h-10 md:h-12 w-auto"
+              className="h-8 md:h-12 w-auto"
             />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             <button 
               onClick={() => scrollToSection("metodo")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm ${mutedColor} hover:text-primary transition-colors`}
             >
               Metodo
             </button>
             <button 
               onClick={() => scrollToSection("crisi-impresa")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm ${mutedColor} hover:text-primary transition-colors`}
             >
               Crisi d'Impresa
             </button>
             <button 
               onClick={() => scrollToSection("chi-siamo")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm ${mutedColor} hover:text-primary transition-colors`}
             >
               Chi Siamo
             </button>
             <button 
               onClick={() => scrollToSection("team")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm ${mutedColor} hover:text-primary transition-colors`}
             >
               Team
             </button>
             <button 
               onClick={() => scrollToSection("casi-risolti")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm ${mutedColor} hover:text-primary transition-colors`}
             >
               Casi Risolti
             </button>
             <button 
               onClick={() => scrollToSection("testimonianze")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm ${mutedColor} hover:text-primary transition-colors`}
             >
               Testimonianze
             </button>
@@ -92,60 +105,60 @@ const Header = ({ onOpenContact }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className={`md:hidden p-2 ${textColor}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-6 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <nav className={`md:hidden py-4 border-t animate-fade-in ${isScrolled ? "border-border" : "border-white/20 bg-navy/95 backdrop-blur-md -mx-4 px-4"}`}>
+            <div className="flex flex-col gap-3">
               <button 
                 onClick={() => scrollToSection("metodo")}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-left py-2 ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"} transition-colors`}
               >
                 Metodo
               </button>
               <button 
                 onClick={() => scrollToSection("crisi-impresa")}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-left py-2 ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"} transition-colors`}
               >
                 Crisi d'Impresa
               </button>
               <button 
                 onClick={() => scrollToSection("chi-siamo")}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-left py-2 ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"} transition-colors`}
               >
                 Chi Siamo
               </button>
               <button 
                 onClick={() => scrollToSection("team")}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-left py-2 ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"} transition-colors`}
               >
                 Team
               </button>
               <button 
                 onClick={() => scrollToSection("casi-risolti")}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-left py-2 ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"} transition-colors`}
               >
                 Casi Risolti
               </button>
               <button 
                 onClick={() => scrollToSection("testimonianze")}
-                className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-left py-2 ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"} transition-colors`}
               >
                 Testimonianze
               </button>
               <Button
                 variant="hero"
-                className="mt-4"
+                className="mt-2"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOpenContact();
