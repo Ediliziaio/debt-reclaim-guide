@@ -13,6 +13,7 @@ import RFMethodSection from "@/components/RFMethodSection";
 import RFTargetAudienceSection from "@/components/RFTargetAudienceSection";
 import RFGuaranteesSection from "@/components/RFGuaranteesSection";
 import RFFAQSection from "@/components/RFFAQSection";
+import RFUrgencySection from "@/components/RFUrgencySection";
 import RFFinalCTA from "@/components/RFFinalCTA";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
@@ -46,6 +47,7 @@ const Index = () => {
           <RFTargetAudienceSection />
           <RFGuaranteesSection />
           <RFFAQSection />
+          <RFUrgencySection />
           <RFFinalCTA onOpenContact={openContact} />
         </main>
         
