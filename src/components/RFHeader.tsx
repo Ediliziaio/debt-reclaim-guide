@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface RFHeaderProps {
   onOpenContact: () => void;
@@ -36,6 +37,13 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
                 {id.replace("-", " ")}
               </button>
             ))}
+            <Link 
+              to="/rete" 
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary hover:bg-secondary/20 transition-colors text-sm font-medium"
+            >
+              <Users className="w-4 h-4" />
+              Per Professionisti
+            </Link>
             <Button variant="hero" size="sm" onClick={onOpenContact}>
               Consulenza Gratuita
             </Button>
@@ -54,6 +62,14 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
                   {id.replace("-", " ")}
                 </button>
               ))}
+              <Link 
+                to="/rete" 
+                className="flex items-center gap-2 text-secondary font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Users className="w-4 h-4" />
+                Per Professionisti
+              </Link>
               <Button variant="hero" className="mt-4" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
                 Consulenza Gratuita
               </Button>
