@@ -113,7 +113,7 @@ const ReteBenefitsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className={`text-center mb-16 transition-all duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Ottieni Entrando Nella Rete <span className="text-primary">RF Debt Restructuring</span>
             </h2>
@@ -127,8 +127,8 @@ const ReteBenefitsSection = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                className={`bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-300 ${isInView ? 'opacity-100' : 'opacity-0'}`}
+                style={{ transitionDelay: `${index * 50}ms` }}
               >
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -156,7 +156,7 @@ const ReteBenefitsSection = () => {
                 </button>
                 
                 {expandedIndex === index && (
-                  <div className="px-6 pb-6 animate-fade-in">
+                  <div className="px-6 pb-6">
                     <div className="pt-4 border-t border-border">
                       <div className="sm:hidden mb-4">
                         <span className="text-lg font-bold text-primary">Valore: {benefit.value}</span>
@@ -177,7 +177,7 @@ const ReteBenefitsSection = () => {
           </div>
 
           {/* Total Value */}
-          <div className={`bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-center ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
+          <div className={`bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-center transition-all duration-500 delay-300 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             <p className="text-lg text-white/80 mb-2">VALORE TOTALE DEL PACCHETTO:</p>
             <p className="text-4xl md:text-5xl font-bold text-white mb-4">€40.000-€60.000/anno</p>
             <p className="text-white/80">Cosa ti chiediamo in cambio? Continua a leggere...</p>

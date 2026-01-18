@@ -32,7 +32,7 @@ const ReteProblemSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Opening Letter */}
-          <div className={`mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className={`mb-16 transition-all duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             <p className="text-lg text-muted-foreground mb-6">
               Caro Collega Avvocato, Caro Collega Dottore Commercialista,
             </p>
@@ -45,9 +45,13 @@ const ReteProblemSection = () => {
           </div>
 
           {/* Problem Checklist */}
-          <div className={`space-y-4 mb-12 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <div className={`space-y-4 mb-12 transition-all duration-500 delay-100 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             {problems.map((problem, index) => (
-              <div key={index} className="flex items-start gap-4 bg-destructive/5 border border-destructive/20 rounded-lg p-4">
+              <div 
+                key={index} 
+                className="flex items-start gap-4 bg-destructive/5 border border-destructive/20 rounded-lg p-4 transition-all duration-300 hover:border-destructive/40"
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
                 <XCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" />
                 <p className="text-foreground">{problem}</p>
               </div>
@@ -55,14 +59,14 @@ const ReteProblemSection = () => {
           </div>
 
           {/* Second Hook */}
-          <div className={`bg-card border border-border rounded-xl p-8 mb-12 ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
+          <div className={`bg-card border border-border rounded-xl p-8 mb-12 transition-all duration-500 delay-150 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             <p className="text-lg text-foreground mb-4">
               E quante volte hai accettato il caso... ma poi hai <strong>brancolato nel buio</strong>, perdendo tempo prezioso, studiando da zero, improvvisando procedure, e chiedendoti se stavi facendo la cosa giusta?
             </p>
           </div>
 
           {/* The Brutal Truth */}
-          <div className={`mb-12 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+          <div className={`mb-12 transition-all duration-500 delay-200 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             <div className="flex items-center gap-3 mb-6">
               <AlertTriangle className="w-8 h-8 text-amber-500" />
               <h3 className="text-2xl font-bold text-foreground">La verità è brutale:</h3>
@@ -85,7 +89,7 @@ const ReteProblemSection = () => {
           </div>
 
           {/* The Problem Statement */}
-          <div className={`bg-navy rounded-2xl p-8 text-white ${isInView ? 'animate-fade-up animation-delay-500' : 'opacity-0'}`}>
+          <div className={`bg-navy rounded-2xl p-8 text-white transition-all duration-500 delay-250 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
             <h3 className="text-xl font-bold mb-4">E il problema?</h3>
             <p className="text-lg text-white/80 mb-6">
               Se lavori da solo nel tuo studio, probabilmente <strong className="text-amber-400">NON hai tutto questo</strong>.
