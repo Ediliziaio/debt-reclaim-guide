@@ -11,28 +11,28 @@ interface RegionData {
   y: number;
 }
 
-// Coordinate ricalibrate per la nuova mappa con regioni
+// Coordinate ricalibrate con precisione per la mappa con regioni
 const regions: RegionData[] = [
-  { name: "Valle d'Aosta", studi: 0, posti: 2, status: "disponibile", x: 115, y: 140 },
-  { name: "Piemonte", studi: 1, posti: 3, status: "disponibile", x: 135, y: 185 },
-  { name: "Lombardia", studi: 3, posti: 3, status: "pochi", x: 205, y: 165 },
-  { name: "Trentino-Alto Adige", studi: 0, posti: 3, status: "disponibile", x: 280, y: 115 },
-  { name: "Veneto", studi: 2, posti: 2, status: "pochi", x: 315, y: 175 },
-  { name: "Friuli-Venezia Giulia", studi: 0, posti: 3, status: "disponibile", x: 380, y: 155 },
-  { name: "Liguria", studi: 1, posti: 2, status: "pochi", x: 155, y: 245 },
-  { name: "Emilia-Romagna", studi: 3, posti: 1, status: "quasi-completo", x: 265, y: 235 },
-  { name: "Toscana", studi: 2, posti: 2, status: "pochi", x: 225, y: 305 },
-  { name: "Umbria", studi: 1, posti: 2, status: "pochi", x: 290, y: 340 },
-  { name: "Marche", studi: 1, posti: 2, status: "pochi", x: 340, y: 310 },
-  { name: "Lazio", studi: 2, posti: 2, status: "pochi", x: 280, y: 400 },
-  { name: "Abruzzo", studi: 0, posti: 3, status: "disponibile", x: 345, y: 375 },
-  { name: "Molise", studi: 0, posti: 2, status: "disponibile", x: 375, y: 415 },
-  { name: "Campania", studi: 1, posti: 4, status: "disponibile", x: 340, y: 470 },
-  { name: "Puglia", studi: 2, posti: 2, status: "pochi", x: 420, y: 460 },
-  { name: "Basilicata", studi: 0, posti: 3, status: "disponibile", x: 385, y: 510 },
-  { name: "Calabria", studi: 0, posti: 6, status: "disponibile", x: 375, y: 600 },
-  { name: "Sicilia", studi: 1, posti: 5, status: "disponibile", x: 305, y: 720 },
-  { name: "Sardegna", studi: 0, posti: 5, status: "disponibile", x: 105, y: 480 },
+  { name: "Valle d'Aosta", studi: 0, posti: 2, status: "disponibile", x: 108, y: 118 },
+  { name: "Piemonte", studi: 1, posti: 3, status: "disponibile", x: 128, y: 168 },
+  { name: "Lombardia", studi: 3, posti: 3, status: "pochi", x: 195, y: 148 },
+  { name: "Trentino-Alto Adige", studi: 0, posti: 3, status: "disponibile", x: 268, y: 88 },
+  { name: "Veneto", studi: 2, posti: 2, status: "pochi", x: 305, y: 155 },
+  { name: "Friuli-Venezia Giulia", studi: 0, posti: 3, status: "disponibile", x: 365, y: 132 },
+  { name: "Liguria", studi: 1, posti: 2, status: "pochi", x: 148, y: 228 },
+  { name: "Emilia-Romagna", studi: 3, posti: 1, status: "quasi-completo", x: 258, y: 212 },
+  { name: "Toscana", studi: 2, posti: 2, status: "pochi", x: 218, y: 285 },
+  { name: "Umbria", studi: 1, posti: 2, status: "pochi", x: 278, y: 322 },
+  { name: "Marche", studi: 1, posti: 2, status: "pochi", x: 325, y: 295 },
+  { name: "Lazio", studi: 2, posti: 2, status: "pochi", x: 268, y: 378 },
+  { name: "Abruzzo", studi: 0, posti: 3, status: "disponibile", x: 332, y: 355 },
+  { name: "Molise", studi: 0, posti: 2, status: "disponibile", x: 358, y: 392 },
+  { name: "Campania", studi: 1, posti: 4, status: "disponibile", x: 328, y: 445 },
+  { name: "Puglia", studi: 2, posti: 2, status: "pochi", x: 405, y: 435 },
+  { name: "Basilicata", studi: 0, posti: 3, status: "disponibile", x: 372, y: 485 },
+  { name: "Calabria", studi: 0, posti: 6, status: "disponibile", x: 360, y: 565 },
+  { name: "Sicilia", studi: 1, posti: 5, status: "disponibile", x: 288, y: 685 },
+  { name: "Sardegna", studi: 0, posti: 5, status: "disponibile", x: 98, y: 445 },
 ];
 
 const statusConfig = {
@@ -113,7 +113,7 @@ const ReteMapSection = () => {
               onMouseEnter={() => setIsMapHovered(true)}
               onMouseLeave={() => setIsMapHovered(false)}
             >
-              {/* Italy Background Image with hover effects */}
+              {/* Italy Background Image with hover effects and crisp rendering */}
               <div className="relative w-full aspect-[2/3]">
                 <img 
                   src={italyMapImage} 
@@ -125,6 +125,13 @@ const ReteMapSection = () => {
                     }
                     ${isInView ? 'map-pulse-animation' : ''}
                   `}
+                  style={{
+                    imageRendering: 'auto',
+                    WebkitFontSmoothing: 'antialiased',
+                    backfaceVisibility: 'hidden',
+                    transform: 'translateZ(0)',
+                  }}
+                  loading="eager"
                 />
               </div>
 
