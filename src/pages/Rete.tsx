@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import ReteHeader from "@/components/ReteHeader";
 import ReteHeroSection from "@/components/ReteHeroSection";
@@ -7,7 +6,7 @@ import ReteSolutionSection from "@/components/ReteSolutionSection";
 import ReteFoundersSection from "@/components/ReteFoundersSection";
 import ReteMarketStatsSection from "@/components/ReteMarketStatsSection";
 import ReteBenefitsSection from "@/components/ReteBenefitsSection";
-import RetePricingSection from "@/components/RetePricingSection";
+import ReteEarningsSection from "@/components/ReteEarningsSection";
 import ReteROISection from "@/components/ReteROISection";
 import ReteTestimonialsSection from "@/components/ReteTestimonialsSection";
 import ReteComparisonSection from "@/components/ReteComparisonSection";
@@ -39,7 +38,7 @@ const Rete = () => {
         <ReteFoundersSection />
         <ReteMarketStatsSection />
         <ReteBenefitsSection />
-        <RetePricingSection />
+        <ReteEarningsSection />
         <ReteROISection />
         <ReteTestimonialsSection />
         <ReteComparisonSection onOpenContact={scrollToContact} />
