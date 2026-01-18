@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "@/hooks/useInView";
 
 interface RegionData {
@@ -59,33 +59,54 @@ const statusConfig = {
 
 const ReteMapSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
-  const [hoveredRegion, setHoveredRegion] = useState<RegionData | null>(null);
+  const [activeRegion, setActiveRegion] = useState<RegionData | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  const handleMouseEnter = (region: RegionData, x: number, y: number) => {
-    setHoveredRegion(region);
-    setTooltipPosition({ x, y });
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleInteraction = (region: RegionData, x: number, y: number) => {
+    if (isTouchDevice) {
+      // Toggle on touch
+      if (activeRegion?.name === region.name) {
+        setActiveRegion(null);
+      } else {
+        setActiveRegion(region);
+        setTooltipPosition({ x, y: y - 80 });
+      }
+    } else {
+      setActiveRegion(region);
+      setTooltipPosition({ x, y: y - 80 });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isTouchDevice) {
+      setActiveRegion(null);
+    }
   };
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="text-center mb-8 md:mb-12">
+            <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
               Copertura Nazionale
             </span>
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               La Rete in Italia
             </h2>
-            <p className={`text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              Passa il mouse sui punti per vedere i posti disponibili nella tua regione
+            <p className={`text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto px-4 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {isTouchDevice ? "Tocca i punti" : "Passa il mouse sui punti"} per vedere i posti disponibili nella tua regione
             </p>
           </div>
 
-          <div className={`flex flex-col lg:flex-row items-center gap-12 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Map Container */}
-            <div className="relative w-full max-w-md lg:max-w-lg">
+            <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg select-none">
               {/* Italy Background Map SVG */}
               <svg
                 viewBox="0 0 500 750"
@@ -121,7 +142,9 @@ const ReteMapSection = () => {
               <div className="absolute inset-0">
                 {regions.map((region, index) => {
                   const config = statusConfig[region.status];
-                  const markerSize = region.posti >= 4 ? 18 : region.posti >= 2 ? 14 : 12;
+                  // Larger markers on mobile for touch
+                  const baseSize = isTouchDevice ? 20 : 14;
+                  const markerSize = region.posti >= 4 ? baseSize + 4 : region.posti >= 2 ? baseSize : baseSize - 2;
                   
                   return (
                     <div
@@ -131,6 +154,7 @@ const ReteMapSection = () => {
                         rounded-full border-2 border-white/50
                         hover:scale-150 hover:z-20
                         ${config.pulse ? 'animate-pulse-glow' : ''}
+                        ${activeRegion?.name === region.name ? 'scale-150 z-20' : ''}
                       `}
                       style={{
                         left: `${(region.x / 500) * 100}%`,
@@ -142,15 +166,22 @@ const ReteMapSection = () => {
                         transitionDelay: `${index * 80}ms`,
                       }}
                       onMouseEnter={(e) => {
-                        const rect = e.currentTarget.parentElement?.getBoundingClientRect();
-                        if (rect) {
-                          handleMouseEnter(region, 
-                            e.clientX - rect.left, 
-                            e.clientY - rect.top - 80
-                          );
+                        if (!isTouchDevice) {
+                          const rect = e.currentTarget.parentElement?.getBoundingClientRect();
+                          if (rect) {
+                            handleInteraction(region, e.clientX - rect.left, e.clientY - rect.top);
+                          }
                         }
                       }}
-                      onMouseLeave={() => setHoveredRegion(null)}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={(e) => {
+                        if (isTouchDevice) {
+                          const rect = e.currentTarget.parentElement?.getBoundingClientRect();
+                          if (rect) {
+                            handleInteraction(region, e.clientX - rect.left, e.clientY - rect.top);
+                          }
+                        }
+                      }}
                     >
                       {/* Inner pulse ring for available spots */}
                       {config.pulse && (
@@ -162,34 +193,34 @@ const ReteMapSection = () => {
               </div>
 
               {/* Tooltip */}
-              {hoveredRegion && (
+              {activeRegion && (
                 <div
-                  className="absolute pointer-events-none z-30 bg-card/95 backdrop-blur-sm border border-border rounded-xl shadow-2xl p-4 min-w-[220px] transform -translate-x-1/2 transition-all duration-200"
+                  className="absolute pointer-events-none z-30 bg-card/95 backdrop-blur-sm border border-border rounded-xl shadow-2xl p-3 md:p-4 min-w-[180px] md:min-w-[220px] transform -translate-x-1/2 transition-all duration-200"
                   style={{ 
-                    left: tooltipPosition.x, 
-                    top: tooltipPosition.y,
+                    left: Math.min(Math.max(tooltipPosition.x, 100), 400), 
+                    top: Math.max(tooltipPosition.y, 20),
                   }}
                 >
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className={`w-3 h-3 rounded-full ${statusConfig[hoveredRegion.status].color}`} />
-                    <h4 className="font-bold text-foreground">{hoveredRegion.name}</h4>
+                  <div className="flex items-center gap-2 mb-2 md:mb-3">
+                    <span className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full ${statusConfig[activeRegion.status].color}`} />
+                    <h4 className="font-bold text-foreground text-sm md:text-base">{activeRegion.name}</h4>
                   </div>
-                  <div className="space-y-2 text-sm">
+                  <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm">
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Studi attivi:</span>
-                      <span className="font-semibold text-foreground">{hoveredRegion.studi}</span>
+                      <span className="font-semibold text-foreground">{activeRegion.studi}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Posti disponibili:</span>
-                      <span className="font-bold text-primary text-lg">{hoveredRegion.posti}</span>
+                      <span className="font-bold text-primary text-base md:text-lg">{activeRegion.posti}</span>
                     </div>
-                    <div className="pt-2 border-t border-border">
-                      <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                        hoveredRegion.status === 'disponibile' ? 'bg-primary/20 text-primary' :
-                        hoveredRegion.status === 'pochi' ? 'bg-amber-500/20 text-amber-600' :
+                    <div className="pt-1.5 md:pt-2 border-t border-border">
+                      <span className={`inline-block px-2 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-medium ${
+                        activeRegion.status === 'disponibile' ? 'bg-primary/20 text-primary' :
+                        activeRegion.status === 'pochi' ? 'bg-amber-500/20 text-amber-600' :
                         'bg-destructive/20 text-destructive'
                       }`}>
-                        {statusConfig[hoveredRegion.status].label}
+                        {statusConfig[activeRegion.status].label}
                       </span>
                     </div>
                   </div>
@@ -198,41 +229,41 @@ const ReteMapSection = () => {
             </div>
 
             {/* Legend and Stats */}
-            <div className="flex-1 space-y-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
-                  <p className="text-4xl font-bold text-primary mb-2">24</p>
-                  <p className="text-muted-foreground">Studi Attivi</p>
+            <div className="flex-1 space-y-4 md:space-y-8 w-full lg:w-auto">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
+                  <p className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">24</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Studi Attivi</p>
                 </div>
-                <div className="p-6 rounded-2xl bg-card border border-border hover:border-secondary/30 transition-colors">
-                  <p className="text-4xl font-bold text-secondary mb-2">14</p>
-                  <p className="text-muted-foreground">Regioni Coperte</p>
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-secondary/30 transition-colors">
+                  <p className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">14</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Regioni Coperte</p>
                 </div>
-                <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
-                  <p className="text-4xl font-bold text-primary mb-2">50+</p>
-                  <p className="text-muted-foreground">Posti Disponibili</p>
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
+                  <p className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">50+</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Posti Disponibili</p>
                 </div>
-                <div className="p-6 rounded-2xl bg-card border border-border hover:border-secondary/30 transition-colors">
-                  <p className="text-4xl font-bold text-secondary mb-2">96%</p>
-                  <p className="text-muted-foreground">Tasso di Rinnovo</p>
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-secondary/30 transition-colors">
+                  <p className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">96%</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Tasso di Rinnovo</p>
                 </div>
               </div>
 
               {/* Legend */}
-              <div className="p-6 rounded-2xl bg-card border border-border">
-                <h4 className="font-bold text-foreground mb-4">Legenda</h4>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <span className="w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(142_71%_45%/0.5)] animate-pulse" />
-                    <span className="text-foreground">Disponibile - Molti posti liberi</span>
+              <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border">
+                <h4 className="font-bold text-foreground mb-3 md:mb-4 text-sm md:text-base">Legenda</h4>
+                <div className="space-y-3 md:space-y-4">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(142_71%_45%/0.5)] animate-pulse flex-shrink-0" />
+                    <span className="text-foreground text-xs md:text-sm">Disponibile - Molti posti liberi</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="w-4 h-4 rounded-full bg-amber-500 shadow-[0_0_8px_3px_hsl(38_92%_50%/0.4)]" />
-                    <span className="text-foreground">Pochi posti - Affrettati!</span>
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-amber-500 shadow-[0_0_8px_3px_hsl(38_92%_50%/0.4)] flex-shrink-0" />
+                    <span className="text-foreground text-xs md:text-sm">Pochi posti - Affrettati!</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="w-4 h-4 rounded-full bg-destructive shadow-[0_0_8px_3px_hsl(0_84%_60%/0.4)]" />
-                    <span className="text-foreground">Quasi completo - Ultimi posti</span>
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-destructive shadow-[0_0_8px_3px_hsl(0_84%_60%/0.4)] flex-shrink-0" />
+                    <span className="text-foreground text-xs md:text-sm">Quasi completo - Ultimi posti</span>
                   </div>
                 </div>
               </div>

@@ -17,23 +17,36 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on scroll
+  useEffect(() => {
+    const handleScrollClose = () => {
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("scroll", handleScrollClose);
+    return () => window.removeEventListener("scroll", handleScrollClose);
+  }, [isMobileMenuOpen]);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
+  // Dynamic colors based on scroll state
+  const textColor = isScrolled ? "text-foreground" : "text-foreground";
+  const mutedColor = isScrolled ? "text-muted-foreground" : "text-muted-foreground";
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border" : "bg-transparent"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border" : "bg-background/80 backdrop-blur-sm"}`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-primary">RF</span>
-            <span className="text-lg font-semibold text-foreground hidden sm:block">Debt Restructuring</span>
+            <span className="text-xl md:text-2xl font-bold text-primary">RF</span>
+            <span className="text-base md:text-lg font-semibold text-foreground hidden sm:block">Debt Restructuring</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id) => (
-              <button key={id} onClick={() => scrollToSection(id)} className="text-sm text-muted-foreground hover:text-primary transition-colors capitalize">
+              <button key={id} onClick={() => scrollToSection(id)} className={`text-sm ${mutedColor} hover:text-primary transition-colors capitalize`}>
                 {id.replace("-", " ")}
               </button>
             ))}
@@ -49,28 +62,32 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
             </Button>
           </nav>
 
-          <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className={`md:hidden p-2 ${textColor}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-6 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <nav className="md:hidden py-4 border-t border-border animate-fade-in bg-background">
+            <div className="flex flex-col gap-3">
               {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id) => (
-                <button key={id} onClick={() => scrollToSection(id)} className="text-left text-muted-foreground hover:text-primary transition-colors capitalize">
+                <button 
+                  key={id} 
+                  onClick={() => scrollToSection(id)} 
+                  className="text-left py-2 text-muted-foreground hover:text-primary transition-colors capitalize"
+                >
                   {id.replace("-", " ")}
                 </button>
               ))}
               <Link 
                 to="/rete" 
-                className="flex items-center gap-2 text-secondary font-medium"
+                className="flex items-center gap-2 py-2 text-secondary font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Users className="w-4 h-4" />
                 Per Professionisti
               </Link>
-              <Button variant="hero" className="mt-4" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
+              <Button variant="hero" className="mt-2" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
                 Consulenza Gratuita
               </Button>
             </div>
