@@ -75,7 +75,7 @@ const RFTeamSection = () => {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               {/* Image Container */}
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative aspect-square overflow-hidden">
                 <img
                   src={founder.image}
                   alt={founder.name}
