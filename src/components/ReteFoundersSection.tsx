@@ -56,8 +56,8 @@ const ReteFoundersSection = () => {
           <div className={`grid md:grid-cols-2 gap-8 mb-16 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
             {founders.map((founder, index) => (
               <div key={index} className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={founder.image} alt={founder.name} className="w-full h-full object-cover" />
+                <div className="aspect-square overflow-hidden">
+                  <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
