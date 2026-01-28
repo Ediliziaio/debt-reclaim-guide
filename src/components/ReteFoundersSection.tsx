@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/useInView";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
-import { Award, Scale, Calculator, TrendingUp } from "lucide-react";
+import { Award, Scale, Calculator, TrendingUp, Linkedin, Mail } from "lucide-react";
 import avvocatoRossi from "@/assets/avvocato-rossi.jpg";
 import commercialistaFava from "@/assets/commercialista-fava.jpg";
 
@@ -20,6 +20,8 @@ const ReteFoundersSection = () => {
       icon: Scale,
       experience: "Avvocato Cassazionista, fondatore dello Studio Legale Armando Rossi & Partners e ideatore del brand 'Tutela Debito'. Già Presidente dell'Ordine degli Avvocati di Napoli, oggi Delegato per i rapporti con Imprese e Consumo.",
       highlight: "Autore della Collana 'Business & Law' (Edizioni Il Papavero), vanta pubblicazioni su quotidiani nazionali tra cui 'Il Riformista' in materia di crisi d'impresa.",
+      linkedin: "https://www.linkedin.com/in/avvocato-armando-rossi/",
+      email: "a.rossi@tuteladebito.it"
     },
     {
       name: "Dott. Comm. Roberto Fava",
@@ -28,6 +30,8 @@ const ReteFoundersSection = () => {
       icon: Calculator,
       experience: "Curatore fallimentare presso i Tribunali di Napoli, Nola e Torre Annunziata con oltre venti anni di esperienza. CTU presso il Tribunale delle Imprese di Napoli ed esperto in gestione aziendale.",
       highlight: "Nominato dalla Prefettura di Napoli quale esperto in gestione aziendale ai sensi del codice antimafia per misure di prevenzione collaborativa.",
+      linkedin: "https://www.linkedin.com/in/roberto-fava-commercialista/",
+      email: "r.fava@tuteladebito.it"
     },
   ];
 
@@ -52,12 +56,32 @@ const ReteFoundersSection = () => {
             </p>
           </div>
 
-          {/* Founders Grid */}
           <div className={`grid md:grid-cols-2 gap-8 mb-16 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
             {founders.map((founder, index) => (
-              <div key={index} className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-colors">
-                <div className="aspect-square overflow-hidden">
+              <div key={index} className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-colors group">
+                <div className="aspect-square overflow-hidden relative">
                   <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
+                  {/* Social Links on Hover */}
+                  <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {founder.linkedin && (
+                      <a 
+                        href={founder.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all text-white"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                      </a>
+                    )}
+                    {founder.email && (
+                      <a 
+                        href={`mailto:${founder.email}`}
+                        className="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all text-white"
+                      >
+                        <Mail className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
