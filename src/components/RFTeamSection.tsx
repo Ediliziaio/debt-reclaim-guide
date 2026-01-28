@@ -11,6 +11,8 @@ interface Founder {
   bio: string;
   specialties: string[];
   icon: React.ReactNode;
+  linkedin?: string;
+  email?: string;
 }
 
 const founders: Founder[] = [
@@ -21,7 +23,9 @@ const founders: Founder[] = [
     image: avvocatoRossi,
     bio: "Fondatore dello Studio Legale Armando Rossi & Partners, ideatore del brand 'Tutela Debito'. Già Presidente dell'Ordine degli Avvocati di Napoli e membro del Direttivo OCF, oggi Delegato per i rapporti con Imprese e Consumo. Autore e Direttore della Collana 'Business & Law', vanta numerose pubblicazioni in materia di contenzioso fiscale e bancario.",
     specialties: ["Codice della Crisi", "Esdebitazione", "Diritto Tributario", "Composizione Negoziata"],
-    icon: <Scale className="w-6 h-6" />
+    icon: <Scale className="w-6 h-6" />,
+    linkedin: "https://www.linkedin.com/in/avvocato-armando-rossi/",
+    email: "a.rossi@tuteladebito.it"
   },
   {
     name: "Dott. Comm. Roberto Fava",
@@ -30,7 +34,9 @@ const founders: Founder[] = [
     image: commercialistaFava,
     bio: "Oltre venti anni di esperienza come curatore fallimentare presso i Tribunali di Napoli, Nola e Torre Annunziata. Consulente Tecnico d'Ufficio presso il Tribunale delle Imprese di Napoli. Esperto nominato dalla Prefettura per misure di prevenzione collaborativa ai sensi del codice antimafia.",
     specialties: ["Concordato Preventivo", "Composizione Negoziata", "Business Plan", "Anatocismo e Usura"],
-    icon: <Calculator className="w-6 h-6" />
+    icon: <Calculator className="w-6 h-6" />,
+    linkedin: "https://www.linkedin.com/in/roberto-fava-commercialista/",
+    email: "r.fava@tuteladebito.it"
   }
 ];
 
@@ -90,12 +96,24 @@ const RFTeamSection = () => {
 
                 {/* Social Links */}
                 <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all">
-                    <Mail className="w-4 h-4" />
-                  </button>
+                  {founder.linkedin && (
+                    <a 
+                      href={founder.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  )}
+                  {founder.email && (
+                    <a 
+                      href={`mailto:${founder.email}`}
+                      className="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </div>
 
