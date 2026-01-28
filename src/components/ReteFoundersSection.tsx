@@ -18,16 +18,16 @@ const ReteFoundersSection = () => {
       role: "Fondatore & Coordinatore Legale",
       image: avvocatoRossi,
       icon: Scale,
-      experience: "20+ anni di esperienza in diritto bancario, procedure di sovraindebitamento e tutela del debitore.",
-      highlight: "Ha gestito personalmente oltre 250 pratiche di esdebitazione con un tasso di successo dell'87%.",
+      experience: "Avvocato Cassazionista, fondatore dello Studio Legale Armando Rossi & Partners e ideatore del brand 'Tutela Debito'. Già Presidente dell'Ordine degli Avvocati di Napoli, oggi Delegato per i rapporti con Imprese e Consumo.",
+      highlight: "Autore della Collana 'Business & Law' (Edizioni Il Papavero), vanta pubblicazioni su quotidiani nazionali tra cui 'Il Riformista' in materia di crisi d'impresa.",
     },
     {
       name: "Dott. Comm. Roberto Fava",
       role: "Fondatore & Coordinatore Contabile",
       image: commercialistaFava,
       icon: Calculator,
-      experience: "20+ anni di esperienza in ristrutturazione del debito aziendale, concordati preventivi, transazioni fiscali e analisi finanziarie complesse.",
-      highlight: "Ha salvato oltre 30 aziende dal fallimento preservando centinaia di posti di lavoro.",
+      experience: "Curatore fallimentare presso i Tribunali di Napoli, Nola e Torre Annunziata con oltre venti anni di esperienza. CTU presso il Tribunale delle Imprese di Napoli ed esperto in gestione aziendale.",
+      highlight: "Nominato dalla Prefettura di Napoli quale esperto in gestione aziendale ai sensi del codice antimafia per misure di prevenzione collaborativa.",
     },
   ];
 
@@ -96,8 +96,74 @@ const ReteFoundersSection = () => {
             </div>
           </div>
 
+          {/* Di Cosa Si Occupa la Rete */}
+          <div className={`mt-16 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+              Di Cosa Si Occupa la <span className="text-primary">Rete</span>
+            </h3>
+            <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+              L'associazione professionale tra l'Avvocato Armando Rossi e il Dott. Commercialista Roberto Fava è interamente dedicata alla gestione della crisi da debito delle Imprese e all'esdebitazione di consumatori, professionisti e piccoli imprenditori.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Crisi d'Impresa */}
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Scale className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-bold text-foreground mb-3">Crisi d'Impresa</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Interventi per aziende in difficoltà con approccio integrato legale-contabile, applicando rigorosamente gli strumenti del Codice della Crisi e dell'Insolvenza.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Composizione negoziata</li>
+                  <li>• Concordato minore</li>
+                  <li>• Accordi di ristrutturazione</li>
+                  <li>• Piani attestati</li>
+                  <li>• Liquidazione controllata</li>
+                </ul>
+              </div>
+
+              {/* Esdebitazione */}
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Calculator className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-bold text-foreground mb-3">Esdebitazione</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Supporto completo a consumatori, professionisti e piccoli imprenditori in tutte le fasi del percorso di liberazione dai debiti.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Piano del consumatore</li>
+                  <li>• Ristrutturazione dei debiti</li>
+                  <li>• Esdebitazione del debitore incapiente</li>
+                  <li>• Analisi posizione debitoria</li>
+                  <li>• Liberazione debiti residuali</li>
+                </ul>
+              </div>
+
+              {/* Metodo Integrato */}
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-bold text-foreground mb-3">Metodo Integrato</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Valutiamo la sostenibilità aziendale, dialoghiamo con creditori, fisco e banche per chiudere il passato debitorio con soluzioni ordinate e legali.
+                </p>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• Valutazione sostenibilità</li>
+                  <li>• Dialogo con creditori</li>
+                  <li>• Predisposizione piani</li>
+                  <li>• Procedure davanti agli organi competenti</li>
+                  <li>• Soluzione ordinata alla crisi</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* Call to Action */}
-          <div className={`text-center ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+          <div className={`text-center mt-12 ${isInView ? 'animate-fade-up animation-delay-500' : 'opacity-0'}`}>
             <p className="text-lg text-foreground">
               E ora vogliamo condividere questo metodo con una <strong className="text-primary">rete nazionale di studi professionali seri</strong>.
             </p>

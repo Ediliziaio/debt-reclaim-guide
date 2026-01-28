@@ -17,19 +17,19 @@ const founders: Founder[] = [
   {
     name: "Avv. Armando Rossi",
     title: "Co-Fondatore",
-    role: "Esperto in Procedure di Sovraindebitamento",
+    role: "Avvocato Cassazionista, Esperto in Diritto d'Impresa",
     image: avvocatoRossi,
-    bio: "Oltre 15 anni di esperienza nella tutela dei debitori. Ha seguito personalmente centinaia di procedure di sovraindebitamento, ottenendo risultati straordinari per famiglie e piccoli imprenditori schiacciati dai debiti.",
-    specialties: ["Legge 3/2012", "Esdebitazione", "Blocco Pignoramenti", "Negoziazione Creditoria"],
+    bio: "Fondatore dello Studio Legale Armando Rossi & Partners, ideatore del brand 'Tutela Debito'. Già Presidente dell'Ordine degli Avvocati di Napoli e membro del Direttivo OCF, oggi Delegato per i rapporti con Imprese e Consumo. Autore e Direttore della Collana 'Business & Law', vanta numerose pubblicazioni in materia di contenzioso fiscale e bancario.",
+    specialties: ["Codice della Crisi", "Esdebitazione", "Diritto Tributario", "Composizione Negoziata"],
     icon: <Scale className="w-6 h-6" />
   },
   {
     name: "Dott. Comm. Roberto Fava",
     title: "Co-Fondatore",
-    role: "Specialista in Ristrutturazione del Debito Aziendale",
+    role: "Commercialista, Curatore Fallimentare",
     image: commercialistaFava,
-    bio: "Commercialista con focus esclusivo sulla crisi d'impresa. Ha ristrutturato oltre €50 milioni di debito aziendale, salvando decine di imprese dalla chiusura e preservando centinaia di posti di lavoro.",
-    specialties: ["Concordato Preventivo", "Transazione Fiscale", "Analisi Finanziaria", "Piano di Risanamento"],
+    bio: "Oltre venti anni di esperienza come curatore fallimentare presso i Tribunali di Napoli, Nola e Torre Annunziata. Consulente Tecnico d'Ufficio presso il Tribunale delle Imprese di Napoli. Esperto nominato dalla Prefettura per misure di prevenzione collaborativa ai sensi del codice antimafia.",
+    specialties: ["Concordato Preventivo", "Composizione Negoziata", "Business Plan", "Anatocismo e Usura"],
     icon: <Calculator className="w-6 h-6" />
   }
 ];
