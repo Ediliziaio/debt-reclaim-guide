@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    /* RF Debt Restructuring - Hope & Solutions Palette */
-    /* Primary Green (Speranza) #22c55e → HSL(142, 71%, 45%) */
-    /* Primary Blue (Fiducia) #3b82f6 → HSL(217, 91%, 60%) */
-    /* White (Purezza) #ffffff → HSL(0, 0%, 100%) */
+    /* Tutela Debito - Navy & Gold Professional Palette */
+    /* Primary Navy #2a3f5f → HSL(217, 38%, 27%) */
+    /* Gold Accent #f5c542 → HSL(45, 90%, 61%) */
+    /* Secondary Blue #3b82f6 → HSL(217, 91%, 60%) */
     
     /* Light Background - Clean White */
     --background: 0 0% 100%;
@@ -20,8 +20,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 15%;
 
-    /* Primary - Hope Green */
-    --primary: 142 71% 45%;
+    /* Primary - Navy Blue (Autorità) */
+    --primary: 217 38% 27%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary - Trust Blue */
@@ -32,11 +32,16 @@
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    /* Accent - Bright Green */
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Gold (Eccellenza) */
+    --accent: 45 90% 61%;
+    --accent-foreground: 220 20% 15%;
 
-    /* Success Green */
+    /* Gold Palette */
+    --gold: 45 90% 61%;
+    --gold-light: 45 90% 71%;
+    --gold-dark: 45 90% 51%;
+
+    /* Success Green (kept for success states) */
     --success: 142 71% 45%;
     --success-light: 142 71% 55%;
     --success-dark: 142 71% 35%;
@@ -47,15 +52,15 @@
     --trust-dark: 217 91% 50%;
 
     /* Navy for text/dark elements */
-    --navy: 220 30% 20%;
-    --navy-light: 220 25% 35%;
+    --navy: 217 38% 27%;
+    --navy-light: 217 38% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 142 71% 45%;
+    --ring: 217 38% 27%;
 
     --radius: 0.75rem;
 
@@ -64,24 +69,26 @@
     --font-body: 'Inter Tight', sans-serif;
 
     /* Shadows */
-    --shadow-primary: 0 10px 40px hsl(142 71% 45% / 0.25);
+    --shadow-primary: 0 10px 40px hsl(217 38% 27% / 0.25);
     --shadow-blue: 0 10px 40px hsl(217 91% 60% / 0.2);
+    --shadow-gold: 0 10px 40px hsl(45 90% 61% / 0.25);
     --shadow-soft: 0 4px 24px hsl(220 20% 15% / 0.08);
     --shadow-card: 0 2px 12px hsl(220 20% 15% / 0.05);
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(217 38% 27%) 0%, hsl(45 90% 61%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 38% 27%) 0%, hsl(217 38% 40%) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 70%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 61%) 0%, hsl(45 90% 71%) 100%);
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 220 20% 15%;
-    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary: 217 38% 27%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 40% 96%;
     --sidebar-accent-foreground: 220 20% 15%;
     --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 142 71% 45%;
+    --sidebar-ring: 217 38% 27%;
   }
 
   .dark {
@@ -91,19 +98,22 @@
     --card-foreground: 0 0% 98%;
     --popover: 220 20% 14%;
     --popover-foreground: 0 0% 98%;
-    --primary: 142 71% 45%;
+    --primary: 217 38% 35%;
     --primary-foreground: 0 0% 100%;
     --secondary: 217 91% 60%;
     --secondary-foreground: 0 0% 100%;
     --muted: 220 20% 18%;
     --muted-foreground: 215 16% 60%;
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 90% 61%;
+    --accent-foreground: 220 20% 15%;
+    --gold: 45 90% 61%;
+    --gold-light: 45 90% 71%;
+    --gold-dark: 45 90% 51%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 142 71% 45%;
+    --ring: 217 38% 27%;
   }
 }
 
@@ -130,12 +140,17 @@
 @layer components {
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 55%) 100%);
+    background-image: linear-gradient(135deg, hsl(217 38% 27%) 0%, hsl(217 38% 40%) 100%);
   }
 
   .text-gradient-hero {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
+    background-image: linear-gradient(135deg, hsl(217 38% 27%) 0%, hsl(45 90% 61%) 100%);
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(45 90% 61%) 0%, hsl(45 90% 71%) 100%);
   }
 
   .bg-gradient-hero {
@@ -150,12 +165,20 @@
     background: var(--gradient-secondary);
   }
 
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
   .shadow-primary {
     box-shadow: var(--shadow-primary);
   }
 
   .shadow-blue {
     box-shadow: var(--shadow-blue);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
   }
 
   .shadow-soft {
@@ -167,7 +190,11 @@
   }
 
   .glow-primary {
-    box-shadow: 0 0 30px hsl(142 71% 45% / 0.4), 0 0 60px hsl(142 71% 45% / 0.2);
+    box-shadow: 0 0 30px hsl(217 38% 27% / 0.4), 0 0 60px hsl(217 38% 27% / 0.2);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px hsl(45 90% 61% / 0.4), 0 0 60px hsl(45 90% 61% / 0.2);
   }
 
   .glow-blue {
@@ -232,10 +259,10 @@
 
   @keyframes glow-pulse {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(142 71% 45% / 0.3);
+      box-shadow: 0 0 20px hsl(45 90% 61% / 0.3);
     }
     50% {
-      box-shadow: 0 0 40px hsl(142 71% 45% / 0.6);
+      box-shadow: 0 0 40px hsl(45 90% 61% / 0.6);
     }
   }
 

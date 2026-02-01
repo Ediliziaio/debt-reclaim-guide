@@ -68,6 +68,12 @@ export default {
           DEFAULT: "hsl(var(--navy))",
           light: "hsl(var(--navy-light))",
         },
+        /* Gold */
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -102,8 +108,8 @@ export default {
           to: { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(142 71% 45% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(142 71% 45% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(45 90% 61% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(45 90% 61% / 0.6)" },
         },
         "count-up": {
           from: { opacity: "0", transform: "scale(0.5) translateY(20px)" },
