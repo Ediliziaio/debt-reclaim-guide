@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Briefcase, TrendingUp } from "lucide-react";
+import { ArrowRight, Users, MapPin, RefreshCw } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import heroImage from "@/assets/rete-hero-team.jpg";
 
@@ -38,15 +38,15 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
           </p>
 
           <p className={`text-sm md:text-lg text-white/70 mb-6 md:mb-8 ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
-            (E Moltiplica Fatturato E Competenze)
+            (E Diventa Il Professionista Di Riferimento Nel Tuo Territorio)
           </p>
 
           {/* Hook Text */}
           <div className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 md:p-6 mb-6 md:mb-10 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
             <p className="text-white/90 text-sm md:text-lg leading-relaxed">
               Se gestisci (o vorresti gestire) pratiche di esdebitazione e crisi d'impresa ma ti mancano 
-              <strong className="text-gold"> know-how, coordinamento o un flusso costante di clienti</strong>... 
-              hai 3 minuti per leggere questa proposta?
+              <strong className="text-gold"> know-how, coordinamento o un metodo collaudato</strong>... 
+              hai 3 minuti per scoprire come cambiare completamente il tuo approccio professionale?
             </p>
           </div>
 
@@ -69,9 +69,9 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
           {/* Stats Row - Responsive */}
           <div className={`grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 ${isInView ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
             {[
-              { icon: Briefcase, value: "24", label: "Studi nella Rete" },
-              { icon: TrendingUp, value: "€95k", label: "Fatturato Medio/Anno" },
-              { icon: Users, value: "96%", label: "Tasso di Rinnovo" },
+              { icon: Users, value: "24", label: "Studi nella Rete" },
+              { icon: MapPin, value: "14", label: "Regioni Coperte" },
+              { icon: RefreshCw, value: "96%", label: "Tasso di Rinnovo" },
             ].map((stat, index) => (
               <div key={index} className="flex sm:flex-col items-center justify-between sm:justify-center gap-2 bg-white/5 backdrop-blur-sm rounded-lg p-3 sm:p-0 sm:bg-transparent sm:text-center">
                 <div className="flex items-center gap-2 sm:flex-col sm:gap-0">

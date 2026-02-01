@@ -4,9 +4,9 @@ import {
   GraduationCap, 
   FileText, 
   Users, 
-  Target, 
   Wrench, 
   Award,
+  Rocket,
   ChevronDown,
   ChevronUp,
   Check
@@ -15,7 +15,6 @@ import {
 interface Benefit {
   icon: React.ElementType;
   title: string;
-  value: string;
   description: string;
   details: string[];
 }
@@ -27,83 +26,74 @@ const ReteBenefitsSection = () => {
   const benefits: Benefit[] = [
     {
       icon: GraduationCap,
-      title: "Formazione Tecnica Specialistica",
-      value: "€8.000/anno",
-      description: "Percorso formativo completo su tutte le procedure",
+      title: "Formazione Tecnica Specialistica Continua",
+      description: "Percorso formativo completo su tutte le procedure del Codice della Crisi",
       details: [
-        "Legge 3/2012 e Codice della Crisi (D.Lgs. 14/2019)",
-        "Procedure di esdebitazione del consumatore",
-        "Piano del consumatore e accordo di composizione della crisi",
-        "Concordato preventivo e accordi di ristrutturazione",
-        "Transazione fiscale con Agenzia delle Entrate",
-        "Webinar mensili + Masterclass trimestrali",
-        "Accesso piattaforma e-learning riservata",
+        "Webinar mensili su novità normative e giurisprudenziali",
+        "Workshop pratici su casi reali",
+        "Sessioni di aggiornamento con esperti nazionali",
+        "Accesso illimitato alla biblioteca digitale specializzata",
+        "Certificazione riconosciuta al termine del percorso",
       ],
     },
     {
       icon: FileText,
       title: "Modelli e Procedure Standardizzate",
-      value: "€12.000+",
-      description: "50+ modelli di atti già testati e funzionanti",
+      description: "Oltre 50 modelli di atti già testati su centinaia di casi reali",
       details: [
-        "Ricorsi, istanze, relazioni, piani già pronti",
-        "Checklist operative per ogni tipo di procedura",
-        "Flowchart decisionali per scegliere la strategia giusta",
-        "Database giurisprudenziale con 300+ sentenze commentate",
-        "Template comunicazione con clienti, OCC, tribunali, creditori",
+        "Ricorsi per esdebitazione",
+        "Piani del consumatore",
+        "Accordi di ristrutturazione",
+        "Memorie difensive",
+        "Istanze e documentazione amministrativa",
       ],
     },
     {
       icon: Users,
       title: "Coordinamento Tecnico Costante",
-      value: "INESTIMABILE",
-      description: "Supporto operativo su ogni pratica",
+      description: "Non sei mai solo di fronte a un problema complesso",
       details: [
-        "Avvocato esperto dedicato per supporto legale",
-        "Commercialista esperto per analisi finanziarie e piani",
-        "Gruppo WhatsApp/Telegram riservato per confronto immediato",
-        "Call settimanali di coordinamento con il team centrale",
-        "Revisione atti prima del deposito (se richiesto)",
-        "Affiancamento in tribunale per udienze complesse",
-      ],
-    },
-    {
-      icon: Target,
-      title: "Acquisizione Clienti Qualificati",
-      value: "€15-30.000/anno",
-      description: "Lead generation nazionale per la rete",
-      details: [
-        "Campagne marketing nazionale (Google Ads, Facebook, LinkedIn)",
-        "SEO e content marketing (primi posti su Google)",
-        "Partnership con associazioni consumatori e imprenditori",
-        "Distribuzione lead in base a zona geografica",
-        "Tasso di conversione medio: 65%",
+        "Gruppo riservato per consulenze rapide",
+        "Referente dedicato per ogni tipologia di pratica",
+        "Revisione preventiva degli atti critici",
+        "Supporto in fase di udienza e confronto con creditori",
+        "Confronto continuo con colleghi esperti",
       ],
     },
     {
       icon: Wrench,
-      title: "Strumenti Operativi Avanzati",
-      value: "€3.000/anno",
-      description: "Piattaforma gestionale riservata",
+      title: "Strumenti Operativi Professionali",
+      description: "Piattaforma gestionale riservata ai membri della rete",
       details: [
-        "CRM centralizzato per gestione clienti e pratiche",
-        "Software di calcolo per piani di rientro e sostenibilità",
-        "Repository documentale con tutti i modelli",
-        "Sistema di ticketing per assistenza tecnica",
-        "Area riservata con materiali sempre aggiornati",
+        "Database giurisprudenziale aggiornato settimanalmente",
+        "Sistema di case management per tracciare ogni pratica",
+        "Repository documentale con migliaia di precedenti",
+        "Calendario scadenze e alert automatici",
+        "Area riservata per formazione on-demand",
       ],
     },
     {
       icon: Award,
-      title: "Brand e Reputazione",
-      value: "INCALCOLABILE",
-      description: "Utilizzi il marchio RF Ristrutturazione Debiti",
+      title: "Posizionamento E Reputazione",
+      description: "Utilizzi il marchio RF Ristrutturazione Debiti, riconosciuto come punto di riferimento nazionale",
       details: [
-        "Presenza sul sito nazionale con scheda studio",
-        "Logo e certificazione 'Membro Rete RF'",
-        "Materiali di comunicazione brandizzati",
-        "Credibilità immediata verso i clienti",
-        "Associazione a un network riconosciuto",
+        "Presenza sul sito nazionale con la tua scheda professionale",
+        "Materiali di comunicazione professionali personalizzati",
+        "Supporto nella costruzione della tua reputazione locale",
+        "Network di referral con altri professionisti della rete",
+        "Partecipazione a eventi e convegni nazionali",
+      ],
+    },
+    {
+      icon: Rocket,
+      title: "Opportunità Di Sviluppo Continuo",
+      description: "La rete è un ecosistema di crescita professionale",
+      details: [
+        "Possibilità di specializzarti in verticali specifiche",
+        "Accesso a casi complessi e formativi",
+        "Mentorship con i fondatori e i senior della rete",
+        "Opportunità di diventare formatore per nuovi membri",
+        "Sviluppo di competenze trasversali (negoziazione, mediazione, advisory)",
       ],
     },
   ];
@@ -144,9 +134,6 @@ const ReteBenefitsSection = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="text-right hidden sm:block">
-                      <span className="text-lg font-bold text-gold">Valore: {benefit.value}</span>
-                    </div>
                     {expandedIndex === index ? (
                       <ChevronUp className="w-5 h-5 text-muted-foreground" />
                     ) : (
@@ -158,9 +145,6 @@ const ReteBenefitsSection = () => {
                 {expandedIndex === index && (
                   <div className="px-6 pb-6 animate-fade-in">
                     <div className="pt-4 border-t border-border">
-                      <div className="sm:hidden mb-4">
-                        <span className="text-lg font-bold text-gold">Valore: {benefit.value}</span>
-                      </div>
                       <ul className="space-y-2">
                         {benefit.details.map((detail, i) => (
                           <li key={i} className="flex items-start gap-3">
@@ -176,11 +160,11 @@ const ReteBenefitsSection = () => {
             ))}
           </div>
 
-          {/* Total Value */}
-          <div className={`bg-gradient-to-r from-navy to-gold rounded-2xl p-8 text-center ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
-            <p className="text-lg text-white/80 mb-2">VALORE TOTALE DEL PACCHETTO:</p>
-            <p className="text-4xl md:text-5xl font-bold text-white mb-4">€40.000-€60.000/anno</p>
-            <p className="text-white/80">Cosa ti chiediamo in cambio? Continua a leggere...</p>
+          {/* Summary */}
+          <div className={`text-center ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
+            <p className="text-lg text-muted-foreground">
+              Il know-how che serve davvero, quando serve davvero. <span className="text-gold font-semibold">Tecnologia che potenzia la tua professionalità.</span>
+            </p>
           </div>
         </div>
       </div>

@@ -44,12 +44,12 @@ const ReteUrgencySection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
-            <div className="inline-flex items-center gap-2 bg-destructive/10 border border-destructive/20 rounded-full px-4 py-2 mb-6">
-              <AlertTriangle className="w-4 h-4 text-destructive" />
-              <span className="text-sm font-medium text-destructive">Urgente</span>
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6">
+              <AlertTriangle className="w-4 h-4 text-amber-500" />
+              <span className="text-sm font-medium text-amber-500">Urgente</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Perché Devi Decidere <span className="text-primary">ADESSO</span>
+              Perché Devi Valutare Questa Opportunità <span className="text-gold">ADESSO</span>
             </h2>
             <p className="text-lg text-muted-foreground">
               (E Non "Ci Penso")

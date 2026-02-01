@@ -17,64 +17,65 @@ const ReteProcessSection = () => {
       icon: MessageSquare,
       step: "STEP 1",
       title: "Richiesta Informazioni",
-      description: "Compila il form oppure chiamaci",
+      description: "Compila il form di contatto con:",
       details: [
         "Nome, cognome, qualifica (Avv./Dott. Comm.)",
         "Città/provincia di attività",
         "Breve descrizione del tuo studio",
-        "Cosa ti interessa dell'adesione",
+        "Cosa ti interessa dell'opportunità di crescita",
       ],
+      note: "Tempo richiesto: 3 minuti",
     },
     {
       icon: Phone,
       step: "STEP 2",
       title: "Call Conoscitiva (30 minuti)",
-      description: "Parliamo con te per capire:",
+      description: "Parliamo con te per:",
       details: [
-        "Se il profilo è compatibile",
-        "Se la tua zona è ancora disponibile",
-        "Se ci sono i presupposti per collaborare",
-        "Se hai domande o dubbi specifici",
+        "Capire se il profilo è compatibile con la rete",
+        "Verificare se la tua zona è ancora disponibile",
+        "Valutare se ci sono i presupposti per collaborare",
+        "Rispondere a tutte le tue domande e perplessità",
       ],
-      note: "Senza impegno. Senza pressioni.",
+      note: "Senza impegno. Senza pressioni. Solo un confronto professionale.",
     },
     {
       icon: FileText,
       step: "STEP 3",
-      title: "Invio Documentazione Completa",
+      title: "Documentazione Completa",
       description: "Se c'è interesse reciproco, ricevi:",
       details: [
-        "Contratto di rete dettagliato",
-        "Prospetto economico completo",
-        "Overview del metodo operativo",
-        "Testimonianze studi già attivi",
-        "Piano di onboarding",
+        "Contratto di rete dettagliato con tutti i termini",
+        "Prospetto completo di diritti e doveri",
+        "Overview del metodo operativo e degli strumenti",
+        "Testimonianze dettagliate di studi già attivi",
+        "Piano di onboarding personalizzato",
       ],
-      note: "Hai 15 giorni per valutare tutto con calma.",
+      note: "Hai 15 giorni per valutare tutto con calma e consultarti con chi vuoi.",
     },
     {
       icon: PenTool,
       step: "STEP 4",
-      title: "Firma e Onboarding",
+      title: "Adesione e Onboarding",
       description: "Se decidi di procedere:",
       details: [
         "Firma del contratto di rete",
-        "Pagamento primo trimestre (€900+IVA)",
-        "Accesso immediato a piattaforma e materiali",
-        "Inizio percorso formativo",
-        "Assegnazione referente dedicato",
+        "Accesso immediato a piattaforma e materiali formativi",
+        "Inizio percorso formativo strutturato",
+        "Assegnazione del tuo referente dedicato",
+        "Pianificazione del tuo sviluppo professionale",
       ],
-      note: "Entro 30 giorni sei operativo sulla prima pratica.",
+      note: "Entro 30 giorni sei operativo e pronto per le prime pratiche.",
     },
     {
       icon: Trophy,
       step: "STEP 5",
       title: "Primi Risultati",
-      description: "Obiettivo: prima pratica chiusa entro 90 giorni",
+      description: "Obiettivo: Gestire la prima pratica con successo entro 90 giorni",
       stats: [
-        { value: "87%", label: "chiude prima pratica entro 60 giorni" },
-        { value: "94%", label: "recupera contributo entro 6 mesi" },
-        { value: "78%", label: "quadruplica fatturato entro 12 mesi" },
+        { value: "87%", label: "dei membri gestisce la prima pratica entro 60 giorni" },
+        { value: "94%", label: "raggiunge piena operatività entro 6 mesi" },
+        { value: "78%", label: "espande significativamente le competenze entro 12 mesi" },
       ],
     },
   ];
@@ -86,10 +87,10 @@ const ReteProcessSection = () => {
           {/* Header */}
           <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Come Funziona Il <span className="text-primary">Processo Di Adesione</span>
+              Come Funziona Il <span className="text-gold">Processo Di Selezione</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              (I Prossimi Passi)
+              Selezioniamo con cura i professionisti che entrano nella rete. Non cerchiamo numeri, cerchiamo colleghi con cui costruire qualcosa di solido.
             </p>
           </div>
 
@@ -121,7 +122,7 @@ const ReteProcessSection = () => {
                           <ul className={`space-y-2 mb-4 ${index % 2 === 0 ? 'md:text-left' : ''}`}>
                             {step.details.map((detail, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                                <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                                <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                                 {detail}
                               </li>
                             ))}
@@ -160,7 +161,7 @@ const ReteProcessSection = () => {
 
           {/* Arrow to Contact */}
           <div className={`mt-12 text-center ${isInView ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
-            <ArrowRight className="w-8 h-8 text-primary mx-auto animate-bounce-soft" />
+            <ArrowRight className="w-8 h-8 text-gold mx-auto animate-bounce-soft" />
           </div>
         </div>
       </div>

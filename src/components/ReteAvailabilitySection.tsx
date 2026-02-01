@@ -26,13 +26,13 @@ const ReteAvailabilitySection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className={`text-3xl md:text-4xl font-bold text-foreground text-center mb-4 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
-            Ultimi Posti Disponibili <span className="text-primary">Per Zona</span>
+            Disponibilità <span className="text-gold">Per Regione</span>
           </h2>
-          <p className={`text-center text-muted-foreground mb-12 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>Aggiornamento Gennaio 2026</p>
+          <p className={`text-center text-muted-foreground mb-12 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>Aggiornamento Febbraio 2026</p>
           
           <div className={`bg-card border border-border rounded-2xl overflow-hidden ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
             <div className="grid grid-cols-3 bg-muted/50 p-4 font-semibold text-foreground text-sm">
-              <span>Regione</span><span className="text-center">Posti</span><span className="text-right">Status</span>
+              <span>Regione</span><span className="text-center">Posti Disponibili</span><span className="text-right">Status</span>
             </div>
             {regions.map((region, index) => (
               <div key={index} className="grid grid-cols-3 p-4 border-t border-border items-center">

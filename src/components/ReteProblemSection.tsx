@@ -1,30 +1,32 @@
 import { useInView } from "@/hooks/useInView";
-import { XCircle, AlertTriangle } from "lucide-react";
+import { XCircle, AlertTriangle, Check } from "lucide-react";
 
 const ReteProblemSection = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const problems = [
-    "Non avevi le competenze specifiche per gestire la pratica?",
+    "Non avevi le competenze tecniche specifiche per gestirlo al meglio?",
     "Ti mancava il coordinamento con un commercialista (o con un avvocato)?",
-    "Non sapevi esattamente come impostare gli atti?",
-    "Avevi paura di sbagliare e compromettere il caso?",
-    "Non avevi precedenti solidi su cui basarti?",
+    "Non sapevi esattamente come impostare gli atti in modo ottimale?",
+    "Preferivi evitare il rischio di errore su una pratica delicata?",
+    "Non avevi precedenti solidi o procedure collaudate su cui basarti?",
   ];
 
   const requirements = [
-    "Competenze tecniche precise (legali + contabili)",
+    "Competenze tecniche precise (legali + contabili integrate)",
     "Coordinamento costante tra avvocato e commercialista",
-    "Precedenti giurisprudenziali solidi",
-    "Atti già testati e funzionanti",
-    "Un metodo collaudato su centinaia di casi",
+    "Precedenti giurisprudenziali solidi e aggiornati",
+    "Atti già testati su centinaia di casi reali",
+    "Un metodo collaudato e replicabile",
+    "Aggiornamento continuo sulle novità normative",
   ];
 
   const consequences = [
-    "Perdi opportunità di fatturato importanti",
-    "Rischi di sbagliare pratiche delicate",
+    "Rifiuti opportunità professionali importanti",
+    "Rischi errori su pratiche complesse",
     "Lavori il triplo per risultati incerti",
-    "I clienti vanno altrove (da chi è specializzato)",
+    "I clienti vanno da chi è veramente specializzato",
+    "Rimani fermo mentre altri colleghi crescono",
   ];
 
   return (
@@ -37,10 +39,10 @@ const ReteProblemSection = () => {
               Caro Collega Avvocato, Caro Collega Dottore Commercialista,
             </p>
             <p className="text-xl text-foreground font-medium mb-8">
-              Lascia che ti faccia una domanda scomoda:
+              Lascia che ti faccia una domanda diretta:
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-              Quante volte hai dovuto dire di <span className="text-destructive">NO</span> a un potenziale cliente con problemi di debito complessi perché:
+              Quante volte hai dovuto rifiutare un caso complesso di esdebitazione perché:
             </h2>
           </div>
 
@@ -57,27 +59,27 @@ const ReteProblemSection = () => {
           {/* Second Hook */}
           <div className={`bg-card border border-border rounded-xl p-8 mb-12 ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
             <p className="text-lg text-foreground mb-4">
-              E quante volte hai accettato il caso... ma poi hai <strong>brancolato nel buio</strong>, perdendo tempo prezioso, studiando da zero, improvvisando procedure, e chiedendoti se stavi facendo la cosa giusta?
+              E quante volte hai accettato il caso... ma poi ti sei trovato a <strong>studiare da zero</strong>, perdere tempo prezioso, improvvisare procedure, e chiederti se stavi davvero facendo la cosa giusta per il tuo cliente?
             </p>
           </div>
 
-          {/* The Brutal Truth */}
+          {/* The Truth */}
           <div className={`mb-12 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
             <div className="flex items-center gap-3 mb-6">
               <AlertTriangle className="w-8 h-8 text-amber-500" />
-              <h3 className="text-2xl font-bold text-foreground">La verità è brutale:</h3>
+              <h3 className="text-2xl font-bold text-foreground">La Verità Che Nessuno Ti Dice</h3>
             </div>
             <p className="text-xl text-foreground mb-6">
-              Il settore dell'esdebitazione e della crisi d'impresa è <strong className="text-destructive">ESTREMAMENTE</strong> specialistico.
+              Il settore dell'esdebitazione e della crisi d'impresa è <strong className="text-destructive">estremamente specialistico</strong>.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
-              Non basta conoscere "un po'" il Codice della Crisi. Non basta aver letto qualche articolo. Non basta improvvisarsi.
+              Non basta conoscere "un po'" il Codice della Crisi. Non basta aver letto qualche articolo o seguito un webinar. Non basta improvvisarsi esperti.
             </p>
-            <p className="text-lg font-semibold text-foreground mb-4">Servono:</p>
+            <p className="text-lg font-semibold text-foreground mb-4">Per eccellere in questo settore servono:</p>
             <ul className="space-y-3 mb-8">
               {requirements.map((req, index) => (
                 <li key={index} className="flex items-center gap-3 text-foreground">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <Check className={`w-5 h-5 flex-shrink-0 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                   {req}
                 </li>
               ))}
@@ -88,7 +90,7 @@ const ReteProblemSection = () => {
           <div className={`bg-navy rounded-2xl p-8 text-white ${isInView ? 'animate-fade-up animation-delay-500' : 'opacity-0'}`}>
             <h3 className="text-xl font-bold mb-4">E il problema?</h3>
             <p className="text-lg text-white/80 mb-6">
-              Se lavori da solo nel tuo studio, probabilmente <strong className="text-amber-400">NON hai tutto questo</strong>.
+              Se lavori da solo nel tuo studio, probabilmente <strong className="text-gold">NON hai tutto questo</strong>.
             </p>
             <p className="text-lg font-semibold mb-4">Risultato?</p>
             <div className="grid md:grid-cols-2 gap-4">

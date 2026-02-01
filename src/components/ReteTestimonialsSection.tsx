@@ -1,6 +1,6 @@
 import { useInView } from "@/hooks/useInView";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
-import { Quote, Users, MapPin, Euro, ThumbsUp, RefreshCw } from "lucide-react";
+import { Quote, Users, MapPin, Briefcase, RefreshCw } from "lucide-react";
 import testimonialGiulia from "@/assets/testimonial-giulia.jpg";
 import testimonialMarco from "@/assets/testimonial-marco.jpg";
 import testimonialFrancesco from "@/assets/testimonial-francesco.jpg";
@@ -11,69 +11,75 @@ const ReteTestimonialsSection = () => {
 
   const studiosCount = useAnimatedCounter({ end: 24, duration: 2000, isInView });
   const regionsCount = useAnimatedCounter({ end: 14, duration: 2000, isInView });
-  const revenueCount = useAnimatedCounter({ end: 95, duration: 2000, isInView });
-  const satisfactionCount = useAnimatedCounter({ end: 92, duration: 2000, isInView });
+  const spotsCount = useAnimatedCounter({ end: 50, duration: 2000, isInView });
   const renewalCount = useAnimatedCounter({ end: 96, duration: 2000, isInView });
 
   const stats = [
-    { icon: Users, value: studiosCount, label: "Studi attivi" },
-    { icon: MapPin, value: regionsCount, label: "Regioni coperte" },
-    { icon: Euro, value: revenueCount, suffix: "k", label: "Fatturato medio/anno" },
-    { icon: ThumbsUp, value: satisfactionCount, suffix: "%", label: "Soddisfazione" },
-    { icon: RefreshCw, value: renewalCount, suffix: "%", label: "Tasso rinnovo" },
+    { icon: Users, value: studiosCount, label: "Studi Attivi" },
+    { icon: MapPin, value: regionsCount, label: "Regioni Coperte" },
+    { icon: Briefcase, value: spotsCount, suffix: "+", label: "Posti Disponibili" },
+    { icon: RefreshCw, value: renewalCount, suffix: "%", label: "Tasso Rinnovo" },
   ];
 
   const testimonials = [
+    {
+      name: "Avv. Marco R.",
+      location: "Milano",
+      image: testimonialMarco,
+      role: "Partner dal 2023",
+      headline: "Ho sviluppato competenze che da solo mi avrebbero richiesto anni",
+      quote: "La vera differenza non sono solo i numeri, ma la sicurezza professionale che ho acquisito. Oggi gestisco pratiche complesse con la certezza di fare la cosa giusta per i miei clienti. Il supporto della rete è stato fondamentale, soprattutto nei primi mesi quando tutto era nuovo.",
+    },
     {
       name: "Avv. Giulia M.",
       location: "Milano",
       image: testimonialGiulia,
       role: "Avvocato",
-      quote: "Sono entrata nella rete 18 mesi fa. Avevo zero esperienza in esdebitazione. Oggi gestisco 12 pratiche attive con un fatturato di oltre €70.000 solo da questo settore. Il supporto del team centrale è stato fondamentale, soprattutto nei primi mesi. Ora mi sento sicura e competente.",
-      highlight: "€70.000+ di fatturato in 18 mesi",
+      headline: "Sono passata da contabilità ordinaria a specialista riconosciuta",
+      quote: "Sono entrata nella rete 18 mesi fa senza alcuna esperienza in esdebitazione. Oggi gestisco 12 pratiche attive e vengo cercata specificamente per la mia competenza in questo settore. Il percorso formativo strutturato e il supporto costante del team centrale hanno fatto tutta la differenza. Ora mi sento finalmente un'esperta.",
     },
     {
       name: "Dott. Comm. Marco T.",
       location: "Napoli",
       image: testimonialMarco,
       role: "Commercialista",
-      quote: "Prima gestivo solo contabilità ordinaria. Entrare nella rete mi ha aperto un mondo. Non solo ho quadruplicato il fatturato, ma finalmente lavoro su pratiche stimolanti, dove faccio davvero la differenza per i clienti. E il coordinamento con gli avvocati della rete è perfetto.",
-      highlight: "Fatturato quadruplicato",
+      headline: "Ho trovato un settore dove faccio davvero la differenza",
+      quote: "Prima gestivo solo contabilità ordinaria. Entrare nella rete mi ha aperto un mondo professionale che non conoscevo. Il coordinamento con gli avvocati della rete è perfetto e finalmente lavoro su casi dove posso davvero aiutare le persone in momenti difficili. È stimolante professionalmente e gratificante umanamente.",
     },
     {
       name: "Avv. Francesco P.",
       location: "Bologna",
       image: testimonialFrancesco,
       role: "Avvocato",
-      quote: "Quello che mi ha convinto è stato il metodo. Non ti lasciano solo. Hai modelli, procedure, supporto costante. E i lead che arrivano sono davvero qualificati. In 12 mesi ho chiuso 9 pratiche con un tasso di successo del 100%. Mai avuto risultati così in altri ambiti.",
-      highlight: "9 pratiche, 100% successo",
+      headline: "Il metodo strutturato elimina ogni incertezza",
+      quote: "Quello che mi ha convinto è stato l'approccio scientifico. Non ti lasciano solo, hai modelli testati, procedure collaudate, supporto costante. In 12 mesi ho chiuso 9 pratiche con risultati eccellenti. Mai avuto questa soddisfazione professionale in altri ambiti. Ogni caso è un'opportunità di apprendimento.",
     },
     {
       name: "Dott. Comm. Laura B.",
       location: "Bari",
       image: testimonialLaura,
       role: "Commercialista",
-      quote: "Ero scettica all'inizio. Poi ho fatto due conti: €3.600/anno di contributo contro €40.000+ di fatturato aggiuntivo. È stato un no-brainer. Oggi sono una delle prime in Puglia per esdebitazione. E il bello è che continuo a imparare dai colleghi della rete.",
-      highlight: "€40.000+ fatturato aggiuntivo",
+      headline: "Oggi sono un punto di riferimento riconosciuto",
+      quote: "All'inizio ero scettica: un altro network, un'altra promessa. Poi ho capito che qui c'era sostanza vera. Formazione continua, supporto tecnico autentico, strumenti professionali concreti. Oggi sono tra i principali riferimenti in Puglia per l'esdebitazione e continuo a imparare dai colleghi della rete.",
     },
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="testimonianze" className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} id="testimonianze" className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className={`text-center mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Chi Sono Gli Studi Che Stanno Già <span className="text-primary">Lavorando Con Noi</span>
+              La Voce Di Chi Ha Già <span className="text-gold">Scelto Di Crescere</span>
             </h2>
           </div>
 
           {/* Stats */}
-          <div className={`grid grid-cols-2 md:grid-cols-5 gap-4 mb-16 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>
             {stats.map((stat, index) => (
               <div key={index} className="bg-card border border-border rounded-xl p-4 text-center">
-                <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                <stat.icon className={`w-6 h-6 mx-auto mb-2 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                 <div className="text-2xl font-bold text-foreground">
                   {stat.value}{stat.suffix}
                 </div>
@@ -82,48 +88,70 @@ const ReteTestimonialsSection = () => {
             ))}
           </div>
 
-          {/* Testimonials */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
+          {/* Testimonials Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {testimonials.slice(0, 3).map((testimonial, index) => (
               <div 
                 key={index} 
                 className={`bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${(index + 2) * 100}ms` }}
               >
-                <Quote className="w-10 h-10 text-primary/20 mb-4" />
-                <p className="text-foreground mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <Quote className="w-10 h-10 text-gold/20 mb-4" />
+                <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 
                 <div className="flex items-center gap-4">
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-primary/20"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
                   />
-                  <div className="flex-1">
+                  <div>
                     <div className="font-bold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role} – {testimonial.location}</div>
+                    <div className="text-xs text-muted-foreground">{testimonial.role} – {testimonial.location}</div>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
 
-                <div className="mt-4 pt-4 border-t border-border">
-                  <span className="inline-block bg-gold/10 text-gold text-sm font-semibold px-3 py-1 rounded-full">
-                    {testimonial.highlight}
-                  </span>
+          {/* Second row */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+            {testimonials.slice(3).map((testimonial, index) => (
+              <div 
+                key={index} 
+                className={`bg-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-colors ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
+                style={{ animationDelay: `${(index + 5) * 100}ms` }}
+              >
+                <Quote className="w-10 h-10 text-gold/20 mb-4" />
+                <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-gold/20"
+                  />
+                  <div>
+                    <div className="font-bold text-foreground">{testimonial.name}</div>
+                    <div className="text-xs text-muted-foreground">{testimonial.role} – {testimonial.location}</div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* CTA */}
-          <div className={`text-center bg-muted/50 rounded-2xl p-8 ${isInView ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
-            <p className="text-lg text-foreground mb-2">
-              Questi colleghi un anno fa erano nella <strong>TUA stessa posizione</strong>.
+          <div className={`text-center bg-navy rounded-2xl p-8 ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
+            <p className="text-lg text-white mb-2">
+              Questi colleghi un anno fa erano nella <strong className="text-gold">TUA stessa posizione</strong>.
             </p>
-            <p className="text-muted-foreground mb-4">
-              Oggi fatturano più di te. Lavorano su pratiche più interessanti. Hanno competenze che tu non hai (ancora).
+            <p className="text-white/70 mb-4">
+              Oggi hanno competenze che tu non hai (ancora). Gestiscono pratiche che tu rifiuti. Sono riconosciuti come esperti nel loro territorio.
             </p>
-            <p className="text-xl font-bold text-primary">
-              La differenza? Loro hanno deciso di entrare nella rete.
+            <p className="text-xl font-bold text-gold">
+              La differenza? Hanno scelto di investire nella loro crescita professionale.
             </p>
           </div>
         </div>

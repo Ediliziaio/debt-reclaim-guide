@@ -29,9 +29,9 @@ const ReteContactFormSection = () => {
         <div className="max-w-3xl mx-auto">
           <div className={`text-center mb-8 md:mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-4">
-              Richiedi Informazioni <span className="text-primary">ADESSO</span>
+              Richiedi Informazioni <span className="text-gold">Senza Impegno</span>
             </h2>
-            <p className="text-white/70 text-sm md:text-base">Senza Impegno</p>
+            <p className="text-white/70 text-sm md:text-base">Compila il form per ricevere la documentazione completa e valutare se questa opportunità di crescita professionale fa per te.</p>
           </div>
 
           <form onSubmit={handleSubmit} className={`bg-card rounded-xl md:rounded-2xl p-5 md:p-8 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
@@ -95,13 +95,13 @@ const ReteContactFormSection = () => {
               
               {/* Anni attività */}
               <div className="space-y-1.5 md:space-y-2">
-                <Label htmlFor="anni" className="text-sm md:text-base">Anni di attività *</Label>
+                <Label htmlFor="anni" className="text-sm md:text-base">Anni di attività professionale *</Label>
                 <Input id="anni" type="number" min="3" required className="h-11 md:h-10" />
               </div>
               
               {/* Quando */}
               <div className="space-y-1.5 md:space-y-2">
-                <Label htmlFor="quando" className="text-sm md:text-base">Quando vorresti iniziare? *</Label>
+                <Label htmlFor="quando" className="text-sm md:text-base">Quando vorresti valutare l'inizio? *</Label>
                 <Select>
                   <SelectTrigger className="h-11 md:h-10">
                     <SelectValue placeholder="Seleziona..." />
@@ -118,12 +118,12 @@ const ReteContactFormSection = () => {
             
             {/* Perché */}
             <div className="mb-4 md:mb-6 space-y-1.5 md:space-y-2">
-              <Label htmlFor="perche" className="text-sm md:text-base">Perché vuoi entrare nella rete? *</Label>
+              <Label htmlFor="perche" className="text-sm md:text-base">Perché sei interessato a questa opportunità di specializzazione? *</Label>
               <Textarea id="perche" required rows={3} className="min-h-[80px] md:min-h-[100px]" />
             </div>
             
             {/* Submit */}
-            <Button type="submit" variant="hero" size="lg" className="w-full h-12 md:h-11 text-base" disabled={isSubmitting}>
+            <Button type="submit" variant="cta" size="lg" className="w-full h-12 md:h-11 text-base" disabled={isSubmitting}>
               {isSubmitting ? (
                 "Invio in corso..."
               ) : (

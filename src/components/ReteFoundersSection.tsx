@@ -19,7 +19,7 @@ const ReteFoundersSection = () => {
       image: avvocatoRossi,
       icon: Scale,
       experience: "Avvocato Cassazionista, fondatore dello Studio Legale Armando Rossi & Partners e ideatore del brand 'Tutela Debito'. Già Presidente dell'Ordine degli Avvocati di Napoli, oggi Delegato per i rapporti con Imprese e Consumo.",
-      highlight: "Autore della Collana 'Business & Law' (Edizioni Il Papavero), vanta pubblicazioni su quotidiani nazionali tra cui 'Il Riformista' in materia di crisi d'impresa.",
+      highlight: "Autore della Collana 'Business & Law' (Edizioni Il Papavero), con pubblicazioni su quotidiani nazionali tra cui 'Il Riformista' in materia di crisi d'impresa.",
       linkedin: "https://www.linkedin.com/in/avvocato-armando-rossi/",
       email: "a.rossi@tuteladebito.it"
     },
@@ -49,7 +49,7 @@ const ReteFoundersSection = () => {
           {/* Header */}
           <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Chi Siamo E Perché Dovresti Considerare <span className="text-primary">Seriamente</span> Questa Opportunità
+              Chi Siamo E Perché La Nostra Esperienza <span className="text-gold">Fa La Differenza</span>
             </h2>
             <p className="text-lg text-muted-foreground">
               RF Ristrutturazione Debiti è fondata e coordinata da:
@@ -85,12 +85,12 @@ const ReteFoundersSection = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <founder.icon className="w-5 h-5 text-primary" />
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${index === 0 ? 'bg-primary/10' : 'bg-gold/10'}`}>
+                      <founder.icon className={`w-5 h-5 ${index === 0 ? 'text-primary' : 'text-gold'}`} />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-foreground">{founder.name}</h3>
-                      <p className="text-sm text-primary">{founder.role}</p>
+                      <p className={`text-sm ${index === 0 ? 'text-primary' : 'text-gold'}`}>{founder.role}</p>
                     </div>
                   </div>
                   <p className="text-muted-foreground mb-4">{founder.experience}</p>
@@ -105,7 +105,7 @@ const ReteFoundersSection = () => {
           {/* Method Statement */}
           <div className={`bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
             <p className="text-xl text-white mb-8">
-              Insieme abbiamo creato un <strong className="text-gold">metodo di lavoro collaudato</strong> su oltre 500 casi, con:
+              Un Metodo Collaudato Su <strong className="text-gold">Risultati Reali</strong>
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -123,7 +123,7 @@ const ReteFoundersSection = () => {
           {/* Di Cosa Si Occupa la Rete */}
           <div className={`mt-16 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
-              Di Cosa Si Occupa la <span className="text-primary">Rete</span>
+              Le Aree Di Specializzazione Della <span className="text-gold">Rete</span>
             </h3>
             <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
               L'associazione professionale tra l'Avvocato Armando Rossi e il Dott. Commercialista Roberto Fava è interamente dedicata alla gestione della crisi da debito delle Imprese e all'esdebitazione di consumatori, professionisti e piccoli imprenditori.
@@ -149,9 +149,9 @@ const ReteFoundersSection = () => {
               </div>
 
               {/* Esdebitazione */}
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Calculator className="w-6 h-6 text-primary" />
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-gold/30 transition-colors">
+                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                  <Calculator className="w-6 h-6 text-gold" />
                 </div>
                 <h4 className="text-lg font-bold text-foreground mb-3">Esdebitazione</h4>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -184,16 +184,6 @@ const ReteFoundersSection = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className={`text-center mt-12 ${isInView ? 'animate-fade-up animation-delay-500' : 'opacity-0'}`}>
-            <p className="text-lg text-foreground">
-              E ora vogliamo condividere questo metodo con una <strong className="text-primary">rete nazionale di studi professionali seri</strong>.
-            </p>
-            <p className="text-muted-foreground mt-4">
-              Non stiamo cercando "affiliati" da spremere. Stiamo costruendo una rete di colleghi con cui lavorare fianco a fianco, crescere insieme e dominare un settore in fortissima espansione.
-            </p>
           </div>
         </div>
       </div>
