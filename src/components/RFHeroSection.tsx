@@ -46,7 +46,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl text-navy-light font-medium mb-3 md:mb-4 opacity-0 animate-fade-up animation-delay-200">
-            Finalmente la <span className="text-secondary font-bold">PRIMA Rete Nazionale</span> che unisce 
+            Finalmente la <span className="text-primary font-bold">PRIMA Rete Nazionale</span> che unisce 
             Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa
           </p>
 
@@ -87,8 +87,8 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
               <span>100% Riservato</span>
             </div>
             <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-secondary" />
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
               </div>
               <span>Risposta in 24h</span>
             </div>

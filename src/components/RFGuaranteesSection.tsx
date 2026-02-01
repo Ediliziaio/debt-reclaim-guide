@@ -97,7 +97,7 @@ const RFGuaranteesSection = () => {
           <div className={`text-center mb-12 transition-all duration-700 ${tableInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Perché Scegliere{" "}
-              <span className="text-primary">RF Debt Restructuring?</span>
+              <span className="text-primary">RF Ristrutturazione Debiti?</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Ecco cosa ci distingue dagli altri studi legali e commercialisti generici.
@@ -115,7 +115,7 @@ const RFGuaranteesSection = () => {
                 Gli Altri
               </div>
               <div className="p-4 md:p-6 font-heading font-bold text-primary text-center bg-primary/5">
-                RF Debt Restructuring
+                RF Ristrutturazione Debiti
               </div>
             </div>
 

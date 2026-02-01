@@ -82,7 +82,7 @@ const RFCaseStudiesSection = () => {
                 </div>
                 
                 <p className="text-sm text-muted-foreground mb-3">{caseItem.situation}</p>
-                <p className="text-sm font-medium text-secondary mb-4">{caseItem.solution}</p>
+                <p className="text-sm font-medium text-primary mb-4">{caseItem.solution}</p>
                 
                 <div className="space-y-2">
                   {caseItem.results.map((result, i) => (

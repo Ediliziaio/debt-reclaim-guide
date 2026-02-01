@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>RF Debt Restructuring | Esdebitazione e Crisi D'Impresa</title>
+        <title>RF Ristrutturazione Debiti | Esdebitazione e Crisi D'Impresa</title>
         <meta name="description" content="La prima rete nazionale di Avvocati e Commercialisti specializzati in esdebitazione e crisi d'impresa. Riduci il tuo debito fino all'80%. Consulenza gratuita." />
       </Helmet>
 

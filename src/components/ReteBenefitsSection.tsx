@@ -97,7 +97,7 @@ const ReteBenefitsSection = () => {
       icon: Award,
       title: "Brand e Reputazione",
       value: "INCALCOLABILE",
-      description: "Utilizzi il marchio RF Debt Restructuring",
+      description: "Utilizzi il marchio RF Ristrutturazione Debiti",
       details: [
         "Presenza sul sito nazionale con scheda studio",
         "Logo e certificazione 'Membro Rete RF'",

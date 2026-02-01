@@ -26,7 +26,7 @@ const Rete = () => {
   return (
     <>
       <Helmet>
-        <title>Rete Professionisti | RF Debt Restructuring - Per Avvocati e Commercialisti</title>
+        <title>Rete Professionisti | RF Ristrutturazione Debiti - Per Avvocati e Commercialisti</title>
         <meta name="description" content="Entra nella prima rete nazionale specializzata in esdebitazione e crisi d'impresa. Formazione, lead qualificati e supporto costante per avvocati e commercialisti." />
       </Helmet>
       
