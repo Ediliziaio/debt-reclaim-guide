@@ -1,4 +1,3 @@
-import { useInView } from "@/hooks/useInView";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 
@@ -7,8 +6,6 @@ interface ReteFinalCTASectionProps {
 }
 
 const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const stayPath = [
     "Continua a lavorare come hai sempre fatto",
     "Rifiuta i casi complessi",
@@ -24,11 +21,11 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-gradient-to-br from-navy via-navy to-navy-dark">
+    <section className="py-24 bg-gradient-to-br from-navy via-navy to-navy-dark">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Il Momento Di Decidere È <span className="text-gold">Adesso</span>
             </h2>
@@ -36,7 +33,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
           </div>
 
           {/* Two Paths */}
-          <div className={`grid md:grid-cols-2 gap-8 mb-12 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Stay Path */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
@@ -75,7 +72,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
           </div>
 
           {/* Final Message */}
-          <div className={`text-center mb-12 ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
+          <div className="text-center mb-12">
             <p className="text-lg text-white/80 mb-6">
               La differenza tra un professionista che cresce e uno che rimane fermo non è il talento.
             </p>
@@ -88,7 +85,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
           </div>
 
           {/* CTA */}
-          <div className={`text-center ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+          <div className="text-center">
             <Button 
               variant="cta" 
               size="xxl" 

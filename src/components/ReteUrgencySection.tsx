@@ -1,9 +1,6 @@
-import { useInView } from "@/hooks/useInView";
 import { MapPin, Zap, Clock, AlertTriangle } from "lucide-react";
 
 const ReteUrgencySection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const reasons = [
     {
       icon: MapPin,
@@ -39,11 +36,11 @@ const ReteUrgencySection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6">
               <AlertTriangle className="w-4 h-4 text-amber-500" />
               <span className="text-sm font-medium text-amber-500">Urgente</span>
@@ -61,8 +58,7 @@ const ReteUrgencySection = () => {
             {reasons.map((reason, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-colors ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${(index + 1) * 150}ms` }}
+                className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-colors"
               >
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   <div className="flex items-center gap-4 md:w-1/3">

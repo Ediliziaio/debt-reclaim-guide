@@ -1,9 +1,6 @@
-import { useInView } from "@/hooks/useInView";
 import { Target, TrendingUp, Award, Check } from "lucide-react";
 
 const ReteGrowthPathSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const years = [
     {
       icon: Target,
@@ -50,11 +47,11 @@ const ReteGrowthPathSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Il Percorso Di Crescita <span className="text-gold">Professionale</span>
             </h2>
@@ -72,8 +69,7 @@ const ReteGrowthPathSection = () => {
               {years.map((year, index) => (
                 <div 
                   key={index} 
-                  className={`relative ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                  style={{ animationDelay: `${(index + 1) * 150}ms` }}
+                  className="relative"
                 >
                   <div className={`md:flex md:items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Content */}

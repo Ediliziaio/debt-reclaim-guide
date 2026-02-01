@@ -1,17 +1,13 @@
-import { useInView } from "@/hooks/useInView";
 import { 
   MessageSquare, 
   Phone, 
   FileText, 
   PenTool, 
   Trophy,
-  ArrowRight,
   Check
 } from "lucide-react";
 
 const ReteProcessSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const steps = [
     {
       icon: MessageSquare,
@@ -81,11 +77,11 @@ const ReteProcessSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
+    <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Come Funziona Il <span className="text-gold">Processo Di Selezione</span>
             </h2>
@@ -104,8 +100,7 @@ const ReteProcessSection = () => {
               {steps.map((step, index) => (
                 <div 
                   key={index} 
-                  className={`relative ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                  style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                  className="relative"
                 >
                   <div className={`md:flex md:items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Content */}
@@ -157,11 +152,6 @@ const ReteProcessSection = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Arrow to Contact */}
-          <div className={`mt-12 text-center ${isInView ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
-            <ArrowRight className="w-8 h-8 text-gold mx-auto animate-bounce-soft" />
           </div>
         </div>
       </div>

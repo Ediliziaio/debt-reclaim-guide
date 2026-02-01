@@ -47,7 +47,7 @@ const ReteFoundersSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Chi Siamo E Perché La Nostra Esperienza <span className="text-gold">Fa La Differenza</span>
             </h2>
@@ -56,7 +56,7 @@ const ReteFoundersSection = () => {
             </p>
           </div>
 
-          <div className={`grid md:grid-cols-2 gap-8 mb-16 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {founders.map((founder, index) => (
               <div key={index} className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-colors group">
                 <div className="aspect-square overflow-hidden relative">
@@ -103,7 +103,7 @@ const ReteFoundersSection = () => {
           </div>
 
           {/* Method Statement */}
-          <div className={`bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
+          <div className="bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center">
             <p className="text-xl text-white mb-8">
               Un Metodo Collaudato Su <strong className="text-gold">Risultati Reali</strong>
             </p>
@@ -121,7 +121,7 @@ const ReteFoundersSection = () => {
           </div>
 
           {/* Di Cosa Si Occupa la Rete */}
-          <div className={`mt-16 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+          <div className="mt-16">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
               Le Aree Di Specializzazione Della <span className="text-gold">Rete</span>
             </h3>

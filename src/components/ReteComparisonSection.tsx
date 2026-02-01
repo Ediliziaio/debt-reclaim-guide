@@ -1,4 +1,3 @@
-import { useInView } from "@/hooks/useInView";
 import { Check, X, ArrowRight } from "lucide-react";
 
 interface ReteComparisonSectionProps {
@@ -6,8 +5,6 @@ interface ReteComparisonSectionProps {
 }
 
 const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const dontInvest = [
     "Continuerai a rifiutare casi complessi (che andranno ad altri)",
     "Continuerai a lavorare solo su pratiche ordinarie",
@@ -28,11 +25,11 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Succede Se <span className="text-destructive">Rimani Fermo</span>?
             </h2>
@@ -40,7 +37,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Intro */}
-          <div className={`text-center mb-12 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>
+          <div className="text-center mb-12">
             <p className="text-lg text-foreground mb-4">
               Il mercato dell'esdebitazione sta <span className="text-gold font-semibold">crescendo rapidamente</span>.
             </p>
@@ -55,7 +52,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Comparison Grid */}
-          <div className={`grid md:grid-cols-2 gap-8 mb-12 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Don't Invest Column */}
             <div className="bg-destructive/5 border border-destructive/20 rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
@@ -94,7 +91,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Final Statement */}
-          <div className={`bg-navy rounded-2xl p-8 text-center ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
+          <div className="bg-navy rounded-2xl p-8 text-center">
             <p className="text-xl text-white mb-4">La scelta è tua.</p>
             <p className="text-lg text-white/70 mb-6">
               Ma tra 12 mesi la situazione sarà molto diversa.

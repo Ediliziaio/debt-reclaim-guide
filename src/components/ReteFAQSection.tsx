@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { useInView } from "@/hooks/useInView";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const ReteFAQSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
@@ -42,15 +40,15 @@ const ReteFAQSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="faq" className="py-24 bg-background">
+    <section id="faq" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className={`text-3xl md:text-4xl font-bold text-foreground text-center mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Domande <span className="text-gold">Frequenti</span>
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className={`bg-card border border-border rounded-xl overflow-hidden ${isInView ? 'animate-fade-up' : 'opacity-0'}`} style={{ animationDelay: `${index * 50}ms` }}>
+              <div key={index} className="bg-card border border-border rounded-xl overflow-hidden">
                 <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="w-full flex items-center justify-between p-5 text-left">
                   <span className="font-semibold text-foreground pr-4">{faq.q}</span>
                   {openIndex === index ? <ChevronUp className="w-5 h-5 text-gold flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}

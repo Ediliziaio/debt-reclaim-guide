@@ -1,8 +1,4 @@
-import { useInView } from "@/hooks/useInView";
-
 const ReteAvailabilitySection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const regions = [
     { name: "Lombardia", spots: "3 studi", status: "yellow" },
     { name: "Lazio", spots: "2 studi", status: "yellow" },
@@ -22,15 +18,15 @@ const ReteAvailabilitySection = () => {
   const statusLabels = { green: "Disponibili", yellow: "Pochi posti", red: "Quasi completo" };
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
+    <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className={`text-3xl md:text-4xl font-bold text-foreground text-center mb-4 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
             Disponibilità <span className="text-gold">Per Regione</span>
           </h2>
-          <p className={`text-center text-muted-foreground mb-12 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>Aggiornamento Febbraio 2026</p>
+          <p className="text-center text-muted-foreground mb-12">Aggiornamento Febbraio 2026</p>
           
-          <div className={`bg-card border border-border rounded-2xl overflow-hidden ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <div className="bg-card border border-border rounded-2xl overflow-hidden">
             <div className="grid grid-cols-3 bg-muted/50 p-4 font-semibold text-foreground text-sm">
               <span>Regione</span><span className="text-center">Posti Disponibili</span><span className="text-right">Status</span>
             </div>
