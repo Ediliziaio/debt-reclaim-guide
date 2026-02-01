@@ -1,81 +1,110 @@
 
-## Piano: Aggiornamento Biografie Fondatori e Descrizione Rete
 
-### Panoramica
-Aggiorneremo le descrizioni dei fondatori in entrambe le landing page con le biografie professionali fornite e aggiungeremo una nuova sezione che descrive l'attivita della rete nella pagina dedicata ai professionisti.
+## Piano: Cambio Schema Colori da Verde a Blu Navy + Oro
 
----
+### Analisi del Logo
 
-### 1. Aggiornamento RFTeamSection.tsx (Pagina B2C - Home)
+Dal logo "Tutela debito" che hai condiviso, ho identificato i seguenti colori:
 
-**File:** `src/components/RFTeamSection.tsx`
+| Colore | Uso nel Logo | Valore Approssimativo |
+|--------|-------------|----------------------|
+| **Navy Blue** | Testo "Tutela" | `#2a3f5f` (HSL: 217 38% 27%) |
+| **Gold/Giallo** | Testo "debito" + icona mano | `#f5c542` (HSL: 45 90% 61%) |
 
-Modifiche all'array `founders` (linee 16-35):
+### Situazione Attuale
 
-**Avv. Armando Rossi:**
-- **role:** "Avvocato Cassazionista, Esperto in Diritto d'Impresa"
-- **bio:** "Fondatore dello Studio Legale Armando Rossi & Partners, ideatore del brand 'Tutela Debito'. Gia Presidente dell'Ordine degli Avvocati di Napoli e membro del Direttivo OCF, oggi Delegato per i rapporti con Imprese e Consumo. Autore e Direttore della Collana 'Business & Law', vanta numerose pubblicazioni in materia di contenzioso fiscale e bancario."
-- **specialties:** ["Codice della Crisi", "Esdebitazione", "Diritto Tributario", "Composizione Negoziata"]
+- **Colore primario attuale**: Verde (HSL 142 71% 45%) - "Speranza"
+- **Colore secondario**: Blu (HSL 217 91% 60%) - "Fiducia"
+- **Nota**: Alcuni componenti usano gia `text-gold` ma il colore NON e definito nel CSS
 
-**Dott. Comm. Roberto Fava:**
-- **role:** "Commercialista, Curatore Fallimentare"
-- **bio:** "Oltre venti anni di esperienza come curatore fallimentare presso i Tribunali di Napoli, Nola e Torre Annunziata. Consulente Tecnico d'Ufficio presso il Tribunale delle Imprese di Napoli. Esperto nominato dalla Prefettura per misure di prevenzione collaborativa ai sensi del codice antimafia."
-- **specialties:** ["Concordato Preventivo", "Composizione Negoziata", "Business Plan", "Anatocismo e Usura"]
+### Modifiche Proposte
 
----
+#### 1. File `src/index.css` - Variabili CSS Principali
 
-### 2. Aggiornamento ReteFoundersSection.tsx (Pagina B2B - Rete)
+Cambiare le variabili root:
 
-**File:** `src/components/ReteFoundersSection.tsx`
+| Variabile | Da (Verde) | A (Navy/Gold) |
+|-----------|-----------|----------------|
+| `--primary` | 142 71% 45% | 217 38% 27% (Navy) |
+| `--primary-foreground` | 0 0% 100% | 0 0% 100% (invariato) |
+| `--accent` | 142 76% 36% | 45 90% 61% (Gold) |
+| `--ring` | 142 71% 45% | 217 38% 27% (Navy) |
 
-Modifiche all'array `founders` (linee 15-32):
+**Aggiungere nuove variabili Gold:**
 
-**Avv. Armando Rossi:**
-- **experience:** "Avvocato Cassazionista, fondatore dello Studio Legale Armando Rossi & Partners e ideatore del brand 'Tutela Debito'. Gia Presidente dell'Ordine degli Avvocati di Napoli, oggi Delegato per i rapporti con Imprese e Consumo."
-- **highlight:** "Autore della Collana 'Business & Law' (Edizioni Il Papavero), vanta pubblicazioni su quotidiani nazionali tra cui 'Il Riformista' in materia di crisi d'impresa."
-
-**Dott. Comm. Roberto Fava:**
-- **experience:** "Curatore fallimentare presso i Tribunali di Napoli, Nola e Torre Annunziata con oltre venti anni di esperienza. CTU presso il Tribunale delle Imprese di Napoli ed esperto in gestione aziendale."
-- **highlight:** "Nominato dalla Prefettura di Napoli quale esperto in gestione aziendale ai sensi del codice antimafia per misure di prevenzione collaborativa."
-
----
-
-### 3. Nuova Sezione "Di Cosa Si Occupa la Rete" (Pagina Professionisti)
-
-**File:** `src/components/ReteFoundersSection.tsx`
-
-Aggiungere dopo il blocco "Method Statement" (dopo linea 97) una nuova sezione con la descrizione dell'attivita:
-
-```text
-Struttura della nuova sezione:
-- Titolo: "Di Cosa Si Occupa la Rete"
-- Sottotitolo introduttivo
-- 3 card con le aree principali:
-  1. Crisi d'Impresa - composizione negoziata, concordati, ristrutturazioni
-  2. Esdebitazione Persone - piano del consumatore, ristrutturazione debiti
-  3. Approccio Integrato - sinergia legale-contabile
+```css
+/* Gold Accent */
+--gold: 45 90% 61%;
+--gold-light: 45 90% 71%;
+--gold-dark: 45 90% 51%;
 ```
 
-Contenuto delle card derivato dal testo fornito:
+**Aggiornare ombre e gradienti:**
 
-| Area | Descrizione |
-|------|-------------|
-| **Crisi d'Impresa** | Interventi per aziende in difficolta con approccio integrato legale-contabile. Composizione negoziata, concordato minore, accordi di ristrutturazione, piani attestati, liquidazione controllata. |
-| **Esdebitazione** | Supporto a consumatori, professionisti e piccoli imprenditori. Piano del consumatore, ristrutturazione dei debiti, esdebitazione del debitore incapiente. |
-| **Metodo Integrato** | Valutazione sostenibilita aziendale, dialogo con creditori, fisco, banche. Predisposizione piani e procedure per chiudere il passato debitorio. |
+- `--shadow-primary`: Usare il colore navy
+- `--gradient-primary`: Da navy a navy-light
+- `--gradient-hero`: Da navy a gold
+
+**Aggiornare animazioni glow:**
+
+- `glow-pulse`: Cambiare da verde a gold
+
+#### 2. File `tailwind.config.ts` - Estensione Colori
+
+Aggiungere la palette gold:
+
+```typescript
+gold: {
+  DEFAULT: "hsl(var(--gold))",
+  light: "hsl(var(--gold-light))",
+  dark: "hsl(var(--gold-dark))",
+},
+```
+
+Aggiornare le keyframes `glow-pulse` da verde a gold.
+
+#### 3. File `src/components/ui/button.tsx` - Varianti Bottoni
+
+Aggiornare le varianti:
+
+- `hero`: Gradiente da navy a gold invece che da verde
+- `outline`: Border navy
+- `cta`: Mantenere blu o cambiare a gold
 
 ---
 
-### Riepilogo Modifiche
+### Riepilogo Colori Finali
 
-| File | Tipo Modifica | Linee Interessate |
-|------|---------------|-------------------|
-| RFTeamSection.tsx | Update founders array | 16-35 |
-| ReteFoundersSection.tsx | Update founders array | 15-32 |
-| ReteFoundersSection.tsx | Nuova sezione "Rete" | Dopo linea 97 |
+| Ruolo | Colore | HSL | HEX Approssimativo |
+|-------|--------|-----|---------------------|
+| Primary (Navy) | Blu scuro | 217 38% 27% | #2a3f5f |
+| Gold Accent | Oro | 45 90% 61% | #f5c542 |
+| Gold Light | Oro chiaro | 45 90% 71% | #f8d76e |
+| Gold Dark | Oro scuro | 45 90% 51% | #d4a82e |
+| Secondary | Blu medio | 217 91% 60% | #3b82f6 |
 
-### Risultato Atteso
+---
 
-- Biografie professionali e accurate per entrambi i fondatori su entrambe le pagine
-- Nuova sezione nella pagina /rete che spiega chiaramente cosa fa l'associazione professionale
-- Mantenimento dello stile visivo esistente e coerenza con il design attuale
+### File da Modificare
+
+| File | Modifiche |
+|------|-----------|
+| `src/index.css` | Variabili CSS principali, gradienti, ombre, animazioni |
+| `tailwind.config.ts` | Aggiunta palette gold, update keyframes |
+| `src/components/ui/button.tsx` | Varianti hero e cta |
+
+---
+
+### Impatto Visivo
+
+Dopo le modifiche:
+- Il colore **primario** diventa **Navy Blue** (autorita, professionalita)
+- Il colore **accento** diventa **Gold** (eccellenza, valore)
+- Tutti i componenti che usano `text-primary`, `bg-primary`, ecc. cambieranno automaticamente
+- I componenti che gia usano `text-gold` inizieranno a funzionare correttamente
+- I gradienti e le ombre riflettono la nuova palette
+
+### Nota Importante
+
+Dopo aver approvato questo piano, mi manderai il logo esatto che copirero nella cartella assets per sostituire quello attuale.
+
