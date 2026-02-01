@@ -69,14 +69,14 @@ const ReteTestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               La Voce Di Chi Ha Già <span className="text-gold">Scelto Di Crescere</span>
             </h2>
           </div>
 
           {/* Stats */}
-          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {stats.map((stat, index) => (
               <div key={index} className="bg-card border border-border rounded-xl p-4 text-center">
                 <stat.icon className={`w-6 h-6 mx-auto mb-2 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
@@ -93,8 +93,7 @@ const ReteTestimonialsSection = () => {
             {testimonials.slice(0, 3).map((testimonial, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${(index + 2) * 100}ms` }}
+                className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors"
               >
                 <Quote className="w-10 h-10 text-gold/20 mb-4" />
                 <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
@@ -120,8 +119,7 @@ const ReteTestimonialsSection = () => {
             {testimonials.slice(3).map((testimonial, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-colors ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${(index + 5) * 100}ms` }}
+                className="bg-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-colors"
               >
                 <Quote className="w-10 h-10 text-gold/20 mb-4" />
                 <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
@@ -143,7 +141,7 @@ const ReteTestimonialsSection = () => {
           </div>
 
           {/* CTA */}
-          <div className={`text-center bg-navy rounded-2xl p-8 ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
+          <div className="text-center bg-navy rounded-2xl p-8">
             <p className="text-lg text-white mb-2">
               Questi colleghi un anno fa erano nella <strong className="text-gold">TUA stessa posizione</strong>.
             </p>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useInView } from "@/hooks/useInView";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,7 +9,6 @@ import { Send, Clock, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ReteContactFormSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -24,17 +22,17 @@ const ReteContactFormSection = () => {
   };
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="contatto" className="py-16 md:py-24 bg-navy">
+    <section id="contatto" className="py-16 md:py-24 bg-navy">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <div className={`text-center mb-8 md:mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-4">
               Richiedi Informazioni <span className="text-gold">Senza Impegno</span>
             </h2>
             <p className="text-white/70 text-sm md:text-base">Compila il form per ricevere la documentazione completa e valutare se questa opportunità di crescita professionale fa per te.</p>
           </div>
 
-          <form onSubmit={handleSubmit} className={`bg-card rounded-xl md:rounded-2xl p-5 md:p-8 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <form onSubmit={handleSubmit} className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
               {/* Nome */}
               <div className="space-y-1.5 md:space-y-2">

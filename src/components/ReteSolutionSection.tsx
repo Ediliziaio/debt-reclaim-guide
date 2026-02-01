@@ -1,9 +1,6 @@
-import { useInView } from "@/hooks/useInView";
 import { Check, Sparkles } from "lucide-react";
 
 const ReteSolutionSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
-
   const benefits = [
     "Formazione tecnica completa (legale + contabile)",
     "Coordinamento costante con professionisti esperti",
@@ -24,11 +21,11 @@ const ReteSolutionSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="vantaggi" className="py-24 bg-background">
+    <section id="vantaggi" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gold">La Soluzione</span>
@@ -39,7 +36,7 @@ const ReteSolutionSection = () => {
           </div>
 
           {/* Network Introduction */}
-          <div className={`bg-gradient-to-br from-primary/10 via-gold/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 mb-12 ${isInView ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+          <div className="bg-gradient-to-br from-primary/10 via-gold/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 mb-12">
             <p className="text-xl text-foreground mb-6">
               <strong className="text-gold">RF Ristrutturazione Debiti</strong> è la <strong>PRIMA rete nazionale</strong> in Italia che unisce Avvocati e Commercialisti specializzati esclusivamente in:
             </p>
@@ -59,7 +56,7 @@ const ReteSolutionSection = () => {
           </div>
 
           {/* What You Get */}
-          <div className={`mb-12 ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
+          <div className="mb-12">
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
               In parole semplici: Ti diamo <span className="text-gold">gli strumenti per diventare un vero specialista</span>
             </h3>
@@ -74,7 +71,7 @@ const ReteSolutionSection = () => {
           </div>
 
           {/* Results */}
-          <div className={`bg-navy rounded-2xl p-8 md:p-12 ${isInView ? 'animate-fade-up animation-delay-400' : 'opacity-0'}`}>
+          <div className="bg-navy rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Risultato per te?
             </h3>

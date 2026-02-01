@@ -49,7 +49,7 @@ const ReteMarketStatsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6">
               <Sparkles className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gold">Opportunità</span>
@@ -64,8 +64,7 @@ const ReteMarketStatsSection = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-8 hover:border-${stat.color}/30 transition-colors ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                className={`bg-card border border-border rounded-2xl p-8 hover:border-${stat.color}/30 transition-colors`}
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${stat.color === 'gold' ? 'bg-gold/10' : 'bg-primary/10'}`}>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useInView } from "@/hooks/useInView";
 import { 
   GraduationCap, 
   FileText, 
@@ -20,7 +19,6 @@ interface Benefit {
 }
 
 const ReteBenefitsSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const benefits: Benefit[] = [
@@ -99,11 +97,11 @@ const ReteBenefitsSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
+    <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Ottieni Entrando Nella Rete <span className="text-gold">RF Ristrutturazione Debiti</span>
             </h2>
@@ -117,8 +115,7 @@ const ReteBenefitsSection = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all ${isInView ? 'animate-fade-up' : 'opacity-0'}`}
-                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all"
               >
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -143,7 +140,7 @@ const ReteBenefitsSection = () => {
                 </button>
                 
                 {expandedIndex === index && (
-                  <div className="px-6 pb-6 animate-fade-in">
+                  <div className="px-6 pb-6">
                     <div className="pt-4 border-t border-border">
                       <ul className="space-y-2">
                         {benefit.details.map((detail, i) => (
@@ -161,7 +158,7 @@ const ReteBenefitsSection = () => {
           </div>
 
           {/* Summary */}
-          <div className={`text-center ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
+          <div className="text-center">
             <p className="text-lg text-muted-foreground">
               Il know-how che serve davvero, quando serve davvero. <span className="text-gold font-semibold">Tecnologia che potenzia la tua professionalità.</span>
             </p>
