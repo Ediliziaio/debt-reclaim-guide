@@ -75,7 +75,7 @@ const RFCaseStudiesSection = () => {
                       <p className="text-sm text-muted-foreground">{caseItem.subtitle}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm">
+                  <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-sm">
                     <TrendingDown className="w-4 h-4" />
                     -{caseItem.reduction}
                   </div>
