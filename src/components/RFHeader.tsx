@@ -41,7 +41,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center">
-            <img src={rfLogo} alt="RF Debt Restructuring" className="h-8 md:h-10 w-auto" />
+            <img src={rfLogo} alt="RF Ristrutturazione Debiti" className="h-8 md:h-10 w-auto" />
           </a>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">

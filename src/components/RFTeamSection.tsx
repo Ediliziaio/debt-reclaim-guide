@@ -120,13 +120,13 @@ const RFTeamSection = () => {
               {/* Content */}
               <div className="p-6 md:p-8">
                 <div className="mb-4">
-                  <span className="text-primary text-sm font-semibold uppercase tracking-wide">
+                  <span className="text-gold text-sm font-semibold uppercase tracking-wide">
                     {founder.title}
                   </span>
                   <h3 className="font-heading text-2xl font-bold text-white mt-1">
                     {founder.name}
                   </h3>
-                  <p className="text-trust font-medium text-sm mt-1">
+                  <p className="text-gold-light font-medium text-sm mt-1">
                     {founder.role}
                   </p>
                 </div>
