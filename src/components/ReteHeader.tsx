@@ -66,7 +66,7 @@ const ReteHeader = ({ onOpenContact }: ReteHeaderProps) => {
                 {label}
               </button>
             ))}
-            <Button variant="hero" size="sm" onClick={onOpenContact}>
+            <Button variant="cta" size="sm" onClick={onOpenContact}>
               Richiedi Info
             </Button>
           </nav>
@@ -89,7 +89,7 @@ const ReteHeader = ({ onOpenContact }: ReteHeaderProps) => {
                   {label}
                 </button>
               ))}
-              <Button variant="hero" className="mt-2" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
+              <Button variant="cta" className="mt-2" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
                 Richiedi Informazioni
               </Button>
             </div>

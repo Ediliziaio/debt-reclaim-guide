@@ -106,7 +106,7 @@ const ReteTestimonialsSection = () => {
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-border">
-                  <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full">
+                  <span className="inline-block bg-gold/10 text-gold text-sm font-semibold px-3 py-1 rounded-full">
                     {testimonial.highlight}
                   </span>
                 </div>

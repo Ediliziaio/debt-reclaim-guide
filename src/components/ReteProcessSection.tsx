@@ -111,7 +111,7 @@ const ReteProcessSection = () => {
                     <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                       <div className={`bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors ${index % 2 === 0 ? 'md:mr-6' : 'md:ml-6'}`}>
                         <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                          <span className="text-sm font-semibold text-primary">{step.step}</span>
+                          <span className={`text-sm font-semibold ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`}>{step.step}</span>
                           <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
                         </div>
                         
@@ -121,7 +121,7 @@ const ReteProcessSection = () => {
                           <ul className={`space-y-2 mb-4 ${index % 2 === 0 ? 'md:text-left' : ''}`}>
                             {step.details.map((detail, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                                <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                                <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                                 {detail}
                               </li>
                             ))}
@@ -132,7 +132,7 @@ const ReteProcessSection = () => {
                           <div className="space-y-3">
                             {step.stats.map((stat, i) => (
                               <div key={i} className={`flex items-center gap-3 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                                <span className="text-2xl font-bold text-primary">{stat.value}</span>
+                                <span className="text-2xl font-bold text-gold">{stat.value}</span>
                                 <span className="text-sm text-muted-foreground">{stat.label}</span>
                               </div>
                             ))}
@@ -140,14 +140,14 @@ const ReteProcessSection = () => {
                         )}
                         
                         {step.note && (
-                          <p className="text-sm text-primary font-medium mt-4">{step.note}</p>
+                          <p className={`text-sm font-medium mt-4 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`}>{step.note}</p>
                         )}
                       </div>
                     </div>
 
                     {/* Icon (center) */}
-                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-primary items-center justify-center z-10">
-                      <step.icon className="w-6 h-6 text-primary-foreground" />
+                    <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center z-10 ${index % 2 === 0 ? 'bg-primary' : 'bg-gold'}`}>
+                      <step.icon className={`w-6 h-6 ${index % 2 === 0 ? 'text-primary-foreground' : 'text-navy-dark'}`} />
                     </div>
 
                     {/* Empty space for the other side */}

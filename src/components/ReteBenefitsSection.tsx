@@ -115,7 +115,7 @@ const ReteBenefitsSection = () => {
           {/* Header */}
           <div className={`text-center mb-16 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Cosa Ottieni Entrando Nella Rete <span className="text-primary">RF Debt Restructuring</span>
+              Cosa Ottieni Entrando Nella Rete <span className="text-gold">RF Ristrutturazione Debiti</span>
             </h2>
             <p className="text-lg text-muted-foreground">
               Clicca su ogni voce per vedere i dettagli completi
@@ -135,8 +135,8 @@ const ReteBenefitsSection = () => {
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <benefit.icon className="w-6 h-6 text-primary" />
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-primary/10' : 'bg-gold/10'}`}>
+                      <benefit.icon className={`w-6 h-6 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-foreground">{benefit.title}</h3>
@@ -145,7 +145,7 @@ const ReteBenefitsSection = () => {
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right hidden sm:block">
-                      <span className="text-lg font-bold text-primary">Valore: {benefit.value}</span>
+                      <span className="text-lg font-bold text-gold">Valore: {benefit.value}</span>
                     </div>
                     {expandedIndex === index ? (
                       <ChevronUp className="w-5 h-5 text-muted-foreground" />
@@ -159,12 +159,12 @@ const ReteBenefitsSection = () => {
                   <div className="px-6 pb-6 animate-fade-in">
                     <div className="pt-4 border-t border-border">
                       <div className="sm:hidden mb-4">
-                        <span className="text-lg font-bold text-primary">Valore: {benefit.value}</span>
+                        <span className="text-lg font-bold text-gold">Valore: {benefit.value}</span>
                       </div>
                       <ul className="space-y-2">
                         {benefit.details.map((detail, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                            <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
                             <span className="text-foreground">{detail}</span>
                           </li>
                         ))}
@@ -177,7 +177,7 @@ const ReteBenefitsSection = () => {
           </div>
 
           {/* Total Value */}
-          <div className={`bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-center ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
+          <div className={`bg-gradient-to-r from-navy to-gold rounded-2xl p-8 text-center ${isInView ? 'animate-fade-up animation-delay-700' : 'opacity-0'}`}>
             <p className="text-lg text-white/80 mb-2">VALORE TOTALE DEL PACCHETTO:</p>
             <p className="text-4xl md:text-5xl font-bold text-white mb-4">€40.000-€60.000/anno</p>
             <p className="text-white/80">Cosa ti chiediamo in cambio? Continua a leggere...</p>
