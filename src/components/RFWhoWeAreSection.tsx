@@ -58,8 +58,8 @@ const RFWhoWeAreSection = () => {
               <p className="opacity-80">Privati, professionisti, piccole imprese</p>
             </div>
             <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
-                <Calculator className="w-7 h-7 text-secondary" />
+              <div className="w-14 h-14 rounded-xl bg-gold/20 flex items-center justify-center mb-4">
+                <Calculator className="w-7 h-7 text-gold" />
               </div>
               <h3 className="text-2xl font-bold mb-2">Codice della Crisi</h3>
               <p className="opacity-80">Procedure aziendali e dell'Insolvenza</p>
@@ -91,7 +91,7 @@ const RFWhoWeAreSection = () => {
           {/* Why it matters */}
           <div className={`text-center transition-all duration-700 delay-600 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              Perché questo è un <span className="text-primary">vantaggio enorme</span> per te?
+              Perché questo è un <span className="text-gold">vantaggio enorme</span> per te?
             </h3>
             <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
               Semplice: il debito è un problema che ha <strong>SEMPRE</strong> due facce.
@@ -102,7 +102,7 @@ const RFWhoWeAreSection = () => {
                 <span className="font-semibold">Faccia Legale</span>
               </div>
               <span className="text-3xl font-bold text-gold">+</span>
-              <div className="flex items-center gap-3 p-4 px-6 rounded-full bg-secondary/20 text-secondary">
+              <div className="flex items-center gap-3 p-4 px-6 rounded-full bg-gold-light/20 text-gold-light">
                 <Calculator className="w-5 h-5" />
                 <span className="font-semibold">Faccia Contabile</span>
               </div>
