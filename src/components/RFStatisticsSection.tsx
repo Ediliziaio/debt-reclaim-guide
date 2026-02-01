@@ -55,7 +55,7 @@ const RFStatisticsSection = () => {
     <section id="statistiche" ref={ref} className="py-24 md:py-32 bg-gradient-to-br from-muted/50 to-background relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[100px]" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -125,9 +125,9 @@ const StatCard = ({ stat, index, isInView }: StatCardProps) => {
       border: 'border-primary/20 hover:border-primary/40',
     },
     secondary: {
-      bg: 'bg-secondary/10',
-      text: 'text-secondary',
-      border: 'border-secondary/20 hover:border-secondary/40',
+      bg: 'bg-gold/10',
+      text: 'text-gold',
+      border: 'border-gold/20 hover:border-gold/40',
     },
   };
 

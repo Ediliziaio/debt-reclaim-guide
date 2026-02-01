@@ -65,12 +65,12 @@ const RFGoodNewsSection = () => {
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 group-hover:bg-primary flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                    <benefit.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                  <div className="w-12 h-12 rounded-xl bg-gold/10 group-hover:bg-gold flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                    <benefit.icon className="w-6 h-6 text-gold group-hover:text-gold-foreground transition-colors duration-300" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <Check className={`w-5 h-5 text-primary transition-all duration-500 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`} style={{ transitionDelay: `${600 + index * 100}ms` }} />
+                      <Check className={`w-5 h-5 text-gold transition-all duration-500 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`} style={{ transitionDelay: `${600 + index * 100}ms` }} />
                       <p className="text-lg md:text-xl font-semibold text-foreground">
                         {benefit.text}
                       </p>

@@ -12,7 +12,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-[80px] md:blur-[120px] translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-secondary/5 rounded-full blur-[60px] md:blur-[100px] -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gold/5 rounded-full blur-[60px] md:blur-[100px] -translate-x-1/3 translate-y-1/3" />
       </div>
 
       {/* Hero Image - positioned right */}
@@ -39,7 +39,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
 
           {/* Main headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] mb-4 md:mb-6 opacity-0 animate-fade-up animation-delay-100">
-            <span className="text-primary">BASTA</span> Notti Insonni{" "}
+            <span className="text-gold">BASTA</span> Notti Insonni{" "}
             <br className="hidden sm:block" />
             Per I Debiti.
           </h1>
@@ -59,7 +59,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mb-8 md:mb-10 opacity-0 animate-fade-up animation-delay-400">
             <Button 
-              variant="hero" 
+              variant="cta" 
               size="lg" 
               onClick={onOpenContact}
               className="group w-full sm:w-auto text-sm md:text-base"
