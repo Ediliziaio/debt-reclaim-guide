@@ -37,22 +37,22 @@ const RFWhoWeAreSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <span className={`inline-block px-4 py-2 rounded-full bg-primary/20 text-primary font-semibold text-sm mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+            <span className={`inline-block px-4 py-2 rounded-full bg-gold/20 text-gold font-semibold text-sm mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               Chi Siamo
             </span>
             <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <span className="text-primary">RF Debt Restructuring</span>
+              <span className="text-gold">RF Debt Restructuring</span>
             </h2>
             <p className={`text-xl md:text-2xl opacity-90 max-w-3xl mx-auto transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              La <strong className="text-primary">PRIMA rete nazionale</strong> in Italia che unisce Avvocati esperti e Commercialisti specializzati esclusivamente in:
+              La <strong className="text-gold">PRIMA rete nazionale</strong> in Italia che unisce Avvocati esperti e Commercialisti specializzati esclusivamente in:
             </p>
           </div>
 
           {/* Services */}
           <div className={`grid md:grid-cols-2 gap-6 mb-16 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                <Scale className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 rounded-xl bg-gold/20 flex items-center justify-center mb-4">
+                <Scale className="w-7 h-7 text-gold" />
               </div>
               <h3 className="text-2xl font-bold mb-2">Esdebitazione</h3>
               <p className="opacity-80">Privati, professionisti, piccole imprese</p>
@@ -81,7 +81,7 @@ const RFWhoWeAreSection = () => {
                   className={`flex items-center gap-4 p-4 rounded-xl bg-white/5 transition-all duration-500 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
                   style={{ transitionDelay: `${500 + index * 100}ms` }}
                 >
-                  <item.icon className="w-6 h-6 text-primary flex-shrink-0" />
+                  <item.icon className="w-6 h-6 text-gold flex-shrink-0" />
                   <span className="opacity-90">{item.text}</span>
                 </div>
               ))}
@@ -97,11 +97,11 @@ const RFWhoWeAreSection = () => {
               Semplice: il debito è un problema che ha <strong>SEMPRE</strong> due facce.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-              <div className="flex items-center gap-3 p-4 px-6 rounded-full bg-primary/20 text-primary">
+              <div className="flex items-center gap-3 p-4 px-6 rounded-full bg-gold/20 text-gold">
                 <Scale className="w-5 h-5" />
                 <span className="font-semibold">Faccia Legale</span>
               </div>
-              <span className="text-3xl font-bold text-primary">+</span>
+              <span className="text-3xl font-bold text-gold">+</span>
               <div className="flex items-center gap-3 p-4 px-6 rounded-full bg-secondary/20 text-secondary">
                 <Calculator className="w-5 h-5" />
                 <span className="font-semibold">Faccia Contabile</span>
@@ -110,7 +110,7 @@ const RFWhoWeAreSection = () => {
             <p className="text-lg mt-8 max-w-xl mx-auto">
               Se hai solo un avvocato, manca metà della soluzione.<br />
               Se hai solo un commercialista, manca l'altra metà.<br /><br />
-              <strong className="text-primary text-xl">Noi abbiamo ENTRAMBI. Dal primo giorno.</strong>
+              <strong className="text-gold text-xl">Noi abbiamo ENTRAMBI. Dal primo giorno.</strong>
             </p>
           </div>
         </div>

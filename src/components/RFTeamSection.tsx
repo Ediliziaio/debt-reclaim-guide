@@ -54,14 +54,14 @@ const RFTeamSection = () => {
       <div className="container mx-auto px-4 relative z-10" ref={ref as React.RefObject<HTMLDivElement>}>
         {/* Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6">
-            <Users className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-wide">I Fondatori</span>
+          <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-full px-4 py-2 mb-6">
+            <Users className="w-4 h-4 text-gold" />
+            <span className="text-sm font-semibold text-gold uppercase tracking-wide">I Fondatori</span>
           </div>
           
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Chi C'è Dietro{" "}
-            <span className="text-primary">RF Debt Restructuring</span>
+            <span className="text-gold">RF Debt Restructuring</span>
           </h2>
           
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
@@ -140,7 +140,7 @@ const RFTeamSection = () => {
                   {founder.specialties.map((specialty) => (
                     <span
                       key={specialty}
-                      className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary font-medium"
+                      className="px-3 py-1 bg-gold/10 border border-gold/20 rounded-full text-xs text-gold font-medium"
                     >
                       {specialty}
                     </span>
@@ -155,7 +155,7 @@ const RFTeamSection = () => {
         <div className={`text-center mt-16 max-w-3xl mx-auto transition-all duration-700 delay-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <blockquote className="text-xl md:text-2xl text-white/80 italic font-light leading-relaxed">
             "La nostra forza è l'integrazione: dove l'avvocato vede la soluzione legale, 
-            il commercialista vede la sostenibilità economica. <span className="text-primary font-medium not-italic">Insieme, costruiamo il tuo percorso di rinascita.</span>"
+            il commercialista vede la sostenibilità economica. <span className="text-gold font-medium not-italic">Insieme, costruiamo il tuo percorso di rinascita.</span>"
           </blockquote>
         </div>
       </div>

@@ -153,16 +153,16 @@ const RFUrgencySection = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10 rounded-3xl" />
             
             <div className="relative bg-navy/50 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 md:p-12 text-center">
-              <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-8 h-8 text-gold" />
               </div>
               
               <h3 className="text-2xl md:text-3xl font-bold text-background mb-4">
-                Ma C'è Ancora <span className="text-primary">Tempo</span>
+                Ma C'è Ancora <span className="text-gold">Tempo</span>
               </h3>
               
               <p className="text-background/70 text-lg mb-8">
-                In questo momento, mentre stai leggendo, <strong className="text-primary">hai ancora tempo.</strong> Puoi ancora:
+                In questo momento, mentre stai leggendo, <strong className="text-gold">hai ancora tempo.</strong> Puoi ancora:
               </p>
               
               <div className="grid md:grid-cols-2 gap-4 text-left mb-8">
@@ -172,16 +172,16 @@ const RFUrgencySection = () => {
                     className={`flex items-center gap-3 transition-all duration-500 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
                     style={{ transitionDelay: `${1200 + index * 100}ms` }}
                   >
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-primary" />
+                    <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-4 h-4 text-gold" />
                     </div>
                     <span className="text-background/80">{point}</span>
                   </div>
                 ))}
               </div>
               
-              <div className={`inline-block px-6 py-3 rounded-full bg-primary/20 border border-primary/30 transition-all duration-700 delay-1500 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-                <p className="text-primary font-bold text-lg">
+              <div className={`inline-block px-6 py-3 rounded-full bg-gold/20 border border-gold/30 transition-all duration-700 delay-1500 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                <p className="text-gold font-bold text-lg">
                   Però devi decidere. <span className="underline">ADESSO.</span>
                 </p>
               </div>
