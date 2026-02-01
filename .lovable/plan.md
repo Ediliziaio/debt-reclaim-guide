@@ -1,79 +1,150 @@
 
 
-## Piano: Header con Sfondo Bianco Fisso
+## Piano: Rimozione Animazioni e Correzione Mappa Professionisti
 
-### Problema Identificato
+### Problema 1: Animazioni da Rimuovere
 
-L'header della pagina `/rete` ha attualmente:
-- Sfondo **trasparente** (`bg-transparent`) quando `isScrolled = false`
-- Il logo RF ha elementi blu che si confondono con lo sfondo blu sfumato della hero section
-- Questo crea un conflitto visivo e riduce la leggibilità
+Tutte le sezioni della pagina /rete utilizzano `useInView` con classi di animazione come:
+- `animate-fade-up`
+- `animation-delay-XXX`
+- `opacity-0` (quando `isInView` e false)
+- `animate-fade-in`
+- `animate-bounce-soft`
 
-### Soluzione Proposta
-
-Cambiare l'header per avere **sempre sfondo bianco**, indipendentemente dallo scroll. Questo:
-- Elimina il conflitto cromatico logo blu / sfondo blu
-- Mantiene leggibilità costante
-- Semplifica la logica dei colori (non serve più alternare bianco/scuro)
-
----
-
-### Modifiche Tecniche
-
-**File: `src/components/ReteHeader.tsx`**
-
-| Linea | Elemento | Da | A |
-|-------|----------|-----|-----|
-| 43-46 | Colori dinamici | Alternanza bianco/scuro | Colori fissi scuri |
-| 49 | Background header | `bg-transparent` quando non scrollato | `bg-background/95 backdrop-blur-md` sempre |
-| 53 | Link "Torna al sito" | `mutedColor` dinamico | `text-muted-foreground` fisso |
-| 57 | Divider | `dividerColor` dinamico | `bg-border` fisso |
-| 65 | Nav items | `mutedColor` dinamico | `text-muted-foreground` fisso |
-| 74 | Icona menu mobile | `textColor` dinamico | `text-foreground` fisso |
-| 81 | Menu mobile sfondo | Sfondo navy quando non scrollato | Sfondo bianco sempre |
-| 87 | Menu mobile testo | Testo bianco quando non scrollato | Testo scuro sempre |
+Queste animazioni causano problemi di UX perche:
+1. Gli elementi appaiono invisibili (`opacity-0`) finche non entrano in vista
+2. Ritardi nelle animazioni (`animation-delay-XXX`) rallentano la percezione
+3. Effetti di bounce/pulse sono distraenti
 
 ---
 
-### Codice Aggiornato
+### Problema 2: Mappa con Puntini Non Funzionanti
 
+La mappa in `ReteMapSection.tsx` ha diversi problemi:
+1. I marker usano animazioni complesse (`marker-appear`, `pulse-glow`)
+2. Le posizioni sono basate su coordinate fisse (x, y su 500x800) che potrebbero non essere precise
+3. Il glow effect e troppo aggressivo
+4. La logica di posizionamento con percentuali potrebbe non funzionare correttamente
+
+---
+
+### File da Modificare
+
+| File | Modifiche |
+|------|-----------|
+| `ReteHeroSection.tsx` | Rimuovere tutte le animazioni, contenuto sempre visibile |
+| `ReteProblemSection.tsx` | Rimuovere animazioni |
+| `ReteSolutionSection.tsx` | Rimuovere animazioni |
+| `ReteFoundersSection.tsx` | Rimuovere animazioni |
+| `ReteMarketStatsSection.tsx` | Rimuovere animazioni |
+| `ReteBenefitsSection.tsx` | Rimuovere animazioni |
+| `ReteGrowthPathSection.tsx` | Rimuovere animazioni |
+| `ReteTestimonialsSection.tsx` | Rimuovere animazioni |
+| `ReteComparisonSection.tsx` | Rimuovere animazioni |
+| `ReteUrgencySection.tsx` | Rimuovere animazioni |
+| `ReteProcessSection.tsx` | Rimuovere animazioni, rimuovere freccia bouncy |
+| `ReteFAQSection.tsx` | Rimuovere animazioni |
+| `ReteMapSection.tsx` | Rimuovere animazioni + semplificare marker |
+| `ReteAvailabilitySection.tsx` | Rimuovere animazioni |
+| `ReteContactFormSection.tsx` | Rimuovere animazioni |
+| `ReteFinalCTASection.tsx` | Rimuovere animazioni |
+
+---
+
+### Dettaglio: Rimozione Animazioni (Pattern Generale)
+
+Per ogni file:
+
+**Prima:**
 ```tsx
-// Linea 43-46 - Rimuovere logica colori dinamici
-// Non più necessari:
-// const textColor = isScrolled ? "text-foreground" : "text-white";
-// const mutedColor = isScrolled ? "text-muted-foreground" : "text-white/80";
-// const borderColor = isScrolled ? "border-border" : "border-white/20";
-// const dividerColor = isScrolled ? "bg-border" : "bg-white/30";
-
-// Linea 49 - Header sempre con sfondo bianco
-<header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md ${isScrolled ? "shadow-soft border-b border-border" : ""}`}>
-
-// Linea 53 - Link fisso scuro
-<Link to="/" className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-primary transition-colors">
-
-// Linea 57 - Divider fisso
-<div className="h-5 sm:h-6 w-px bg-border hidden xs:block" />
-
-// Linea 65 - Nav items fissi scuri
-<button ... className="text-sm text-muted-foreground hover:text-primary transition-colors">
-
-// Linea 74 - Icona menu mobile
-<button className="md:hidden p-2 text-foreground" ...>
-
-// Linea 81 - Menu mobile sempre con sfondo bianco
-<nav className="md:hidden py-4 border-t border-border animate-fade-in">
-
-// Linea 87 - Testo menu mobile sempre scuro
-className="text-left py-2 text-muted-foreground hover:text-primary transition-colors"
+<div className={`... ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
 ```
+
+**Dopo:**
+```tsx
+<div className="...">
+```
+
+**Prima:**
+```tsx
+style={{ animationDelay: `${(index + 1) * 100}ms` }}
+```
+
+**Dopo:**
+Rimuovere completamente la prop `style`
+
+---
+
+### Dettaglio: Correzione ReteMapSection.tsx
+
+1. **Rimuovere CSS animations inline** (pulse-glow, marker-appear, map-pulse)
+2. **Semplificare i marker**:
+   - Rimuovere `animate-pulse-glow`
+   - Rimuovere `animate-ping` per il ring interno
+   - Usare solo colori solidi senza glow pulsante
+3. **Posizioni marker**: Mantenere le coordinate attuali ma verificare che funzionino
+4. **Rimuovere** `map-pulse-animation` dalla mappa
+
+**Nuovo stile marker semplificato:**
+```tsx
+<div
+  className={`absolute cursor-pointer
+    ${config.color} rounded-full border-2 border-white
+    hover:scale-125 hover:z-20 transition-transform
+    ${activeRegion?.name === region.name ? 'scale-125 z-20' : ''}
+  `}
+  style={{
+    left: `${(region.x / 500) * 100}%`,
+    top: `${(region.y / 800) * 100}%`,
+    width: `${markerSize}px`,
+    height: `${markerSize}px`,
+    transform: 'translate(-50%, -50%)',
+    boxShadow: config.shadow, // ombra statica, non animata
+  }}
+>
+```
+
+**Nuovo statusConfig semplificato:**
+```tsx
+const statusConfig = {
+  "disponibile": {
+    color: "bg-primary",
+    shadow: "0 0 12px 4px hsl(142 71% 45% / 0.5)",
+    label: "Disponibile",
+  },
+  "pochi": {
+    color: "bg-amber-500",
+    shadow: "0 0 10px 3px hsl(38 92% 50% / 0.4)",
+    label: "Pochi posti",
+  },
+  "quasi-completo": {
+    color: "bg-destructive",
+    shadow: "0 0 10px 3px hsl(0 84% 60% / 0.4)",
+    label: "Quasi completo",
+  },
+};
+```
+
+---
+
+### Riepilogo Modifiche
+
+| Categoria | Modifica |
+|-----------|----------|
+| **16 file** | Rimuovere `useInView` o renderlo non-animato |
+| **16 file** | Rimuovere classi `animate-*` e `opacity-0` condizionali |
+| **16 file** | Rimuovere `animation-delay-*` |
+| **1 file (ReteMapSection)** | Semplificare marker senza animazioni |
+| **1 file (ReteProcessSection)** | Rimuovere freccia bouncy |
+| **1 file (ReteHeroSection)** | Rimuovere scroll indicator bouncy |
 
 ---
 
 ### Risultato Atteso
 
-- Header sempre visibile con sfondo bianco semi-trasparente
-- Logo RF perfettamente leggibile su sfondo chiaro
-- Ombra sottile appare solo dopo scroll per separazione visiva
-- Menu mobile coerente con sfondo bianco
-- Contrasto ottimale tra testo scuro e sfondo chiaro
+- Contenuto sempre visibile immediatamente
+- Nessun effetto di comparsa/scomparsa
+- Mappa con marker statici ma interattivi (hover/click)
+- Glow statico sui marker (non pulsante)
+- UX piu fluida e professionale
 
