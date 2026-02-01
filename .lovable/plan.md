@@ -1,143 +1,84 @@
 
+## Piano: Correzione Finale Testo Brand + Colori Celesti
 
-## Piano: Correzione Finale Contrasti + Cambio Nome Brand
+### Parte 1: Cambio Nome Brand "RF Debt Restructuring" → "RF Ristrutturazione Debiti"
 
-### Problemi Identificati
+Il testo "RF Debt Restructuring" appare in 11 file e va sostituito con "RF Ristrutturazione Debiti".
 
-| File | Linea | Problema | Colore Attuale | Sfondo |
-|------|-------|----------|----------------|--------|
-| **RFWhoWeAreSection.tsx** | 94 | "vantaggio enorme" | `text-primary` (Navy) | Navy |
-| **RFWhoWeAreSection.tsx** | 61-62 | Icona Calculator | `bg-secondary/20 text-secondary` (Celeste) | Navy |
-| **RFWhoWeAreSection.tsx** | 105-107 | "Faccia Contabile" badge | `bg-secondary/20 text-secondary` (Celeste) | Navy |
-| **RFTeamSection.tsx** | 123 | "Co-Fondatore" | `text-primary` (Navy) | Navy |
-| **RFTeamSection.tsx** | 129 | "Avvocato Cassazionista..." | `text-trust` (Celeste) | Navy |
-| **RFHeader.tsx** | 44 | alt logo | "RF Debt Restructuring" | - |
-| **ReteHeader.tsx** | 59 | alt logo | "RF Debt Restructuring" | - |
-
----
-
-### Modifiche Proposte
-
-#### 1. RFWhoWeAreSection.tsx
-
-**Linea 94** - Titolo "vantaggio enorme":
-```tsx
-// Da
-<span className="text-primary">vantaggio enorme</span>
-
-// A
-<span className="text-gold">vantaggio enorme</span>
-```
-
-**Linee 61-62** - Box "Codice della Crisi":
-```tsx
-// Da
-<div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
-  <Calculator className="w-7 h-7 text-secondary" />
-</div>
-
-// A
-<div className="w-14 h-14 rounded-xl bg-gold/20 flex items-center justify-center mb-4">
-  <Calculator className="w-7 h-7 text-gold" />
-</div>
-```
-
-**Linee 105-107** - Badge "Faccia Contabile":
-```tsx
-// Da
-<div className="flex items-center gap-3 p-4 px-6 rounded-full bg-secondary/20 text-secondary">
-  <Calculator className="w-5 h-5" />
-  <span className="font-semibold">Faccia Contabile</span>
-</div>
-
-// A
-<div className="flex items-center gap-3 p-4 px-6 rounded-full bg-gold-light/20 text-gold-light">
-  <Calculator className="w-5 h-5" />
-  <span className="font-semibold">Faccia Contabile</span>
-</div>
-```
+| File | Occorrenze |
+|------|------------|
+| RFWhoWeAreSection.tsx | 1 (linea 44) |
+| RFTeamSection.tsx | 1 (linea 64) |
+| RFTargetAudienceSection.tsx | 1 (linea 40) |
+| RFGuaranteesSection.tsx | 2 (linee 100, 118) |
+| RFFAQSection.tsx | 1 (linea 66) |
+| Index.tsx | 1 (meta title, linea 30) |
+| Rete.tsx | 1 (meta title, linea 29) |
+| CasiStudio.tsx | 2 (linee 50, 234) |
+| ReteFoundersSection.tsx | 1 (linea 55) |
+| ReteSolutionSection.tsx | 1 (linea 44) |
+| ReteBenefitsSection.tsx | 1 (linea 100) |
 
 ---
 
-#### 2. RFTeamSection.tsx
+### Parte 2: Correzione Colore Celeste (`text-secondary` / #3C83F6)
 
-**Linea 123** - "Co-Fondatore":
-```tsx
-// Da
-<span className="text-primary text-sm font-semibold uppercase tracking-wide">
-  {founder.title}
-</span>
+Il colore `secondary` (celeste #3C83F6) viene usato in alcune sezioni. L'utente preferisce non usare questo colore.
 
-// A
-<span className="text-gold text-sm font-semibold uppercase tracking-wide">
-  {founder.title}
-</span>
-```
+**Opzioni di sostituzione:**
+- Su sfondo chiaro: `text-primary` (Navy) o `text-gold`
+- Su sfondo navy: `text-gold`
 
-**Linea 129** - Ruolo professionale:
-```tsx
-// Da
-<p className="text-trust font-medium text-sm mt-1">
-  {founder.role}
-</p>
-
-// A
-<p className="text-gold-light font-medium text-sm mt-1">
-  {founder.role}
-</p>
-```
+| File | Linea | Elemento | Da | A |
+|------|-------|----------|-----|-----|
+| **RFHeroSection.tsx** | 49 | "PRIMA Rete Nazionale" | `text-secondary` | `text-primary` |
+| **RFHeroSection.tsx** | 90-91 | Icona Clock + bg | `bg-secondary/10 text-secondary` | `bg-primary/10 text-primary` |
+| **RFGoodNewsSection.tsx** | 88 | Box sfondo | `bg-secondary/10 border-secondary/20` | `bg-primary/10 border-primary/20` |
+| **RFGoodNewsSection.tsx** | 90 | "SOLO" | `text-secondary` | `text-primary` |
+| **RFGoodNewsSection.tsx** | 97 | Frase finale | `text-secondary` | `text-primary` |
+| **RFCaseStudiesSection.tsx** | 85 | Soluzione | `text-secondary` | `text-primary` |
+| **RFHeader.tsx** | 55 | Link Rete | `bg-secondary/10 text-secondary` | `bg-gold/20 text-gold` |
+| **RFHeader.tsx** | 84 | Link mobile | `text-secondary` | `text-gold` |
 
 ---
 
-#### 3. RFHeader.tsx - Linea 44
+### Riepilogo Tecnico
 
-```tsx
-// Da
-<img src={rfLogo} alt="RF Debt Restructuring" className="h-8 md:h-10 w-auto" />
+**File da modificare per nome brand (11 file):**
+- RFWhoWeAreSection.tsx
+- RFTeamSection.tsx
+- RFTargetAudienceSection.tsx
+- RFGuaranteesSection.tsx
+- RFFAQSection.tsx
+- Index.tsx
+- Rete.tsx
+- CasiStudio.tsx
+- ReteFoundersSection.tsx
+- ReteSolutionSection.tsx
+- ReteBenefitsSection.tsx
 
-// A
-<img src={rfLogo} alt="RF Ristrutturazione Debiti" className="h-8 md:h-10 w-auto" />
-```
-
----
-
-#### 4. ReteHeader.tsx - Linea 59
-
-```tsx
-// Da
-<img src={rfLogo} alt="RF Debt Restructuring" className="h-8 sm:h-10 w-auto" />
-
-// A
-<img src={rfLogo} alt="RF Ristrutturazione Debiti" className="h-8 sm:h-10 w-auto" />
-```
-
----
-
-### Riepilogo File da Modificare
-
-| File | Modifiche |
-|------|-----------|
-| RFWhoWeAreSection.tsx | 3 modifiche contrasto (primary/secondary → gold) |
-| RFTeamSection.tsx | 2 modifiche contrasto (primary/trust → gold) |
-| RFHeader.tsx | 1 modifica alt text logo |
-| ReteHeader.tsx | 1 modifica alt text logo |
+**File da modificare per colore celeste (4 file):**
+- RFHeroSection.tsx
+- RFGoodNewsSection.tsx
+- RFCaseStudiesSection.tsx
+- RFHeader.tsx
 
 ---
 
-### Palette Finale su Sfondo Navy
+### Palette Finale Coerente
 
-| Elemento | Colore Corretto |
-|----------|-----------------|
-| Accenti primari | `text-gold` |
-| Accenti secondari | `text-gold-light` |
-| Badge background | `bg-gold/20` o `bg-gold-light/20` |
-| Testo normale | `text-white` o `text-white/80` |
+| Contesto | Colore |
+|----------|--------|
+| Sfondo chiaro, accenti primari | `text-primary` (Navy) |
+| Sfondo Navy, tutti gli accenti | `text-gold` o `text-gold-light` |
+| Link speciali (Rete Professionisti) | `text-gold` con `bg-gold/20` |
+| Nessun uso di | `text-secondary` (celeste) |
+
+---
 
 ### Risultato Atteso
 
-- Nessun testo Navy o Celeste su sfondo Navy
-- "Co-Fondatore" visibile in Gold
-- Ruoli professionisti visibili in Gold-light
-- "Faccia Contabile" distinguibile da "Faccia Legale" ma comunque leggibile
-- Alt text aggiornato in italiano su entrambi gli header
-
+- Nome brand unificato: "RF Ristrutturazione Debiti" ovunque
+- Nessun testo celeste (#3C83F6) visibile
+- Palette coerente Navy + Gold su tutto il sito
+- Massima leggibilita su tutti gli sfondi
