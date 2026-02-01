@@ -46,7 +46,7 @@ const ReteROISection = () => {
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {/* Conservative Scenario */}
             <div className={`bg-card border border-border rounded-2xl overflow-hidden ${isInView ? 'animate-fade-up animation-delay-100' : 'opacity-0'}`}>
-              <div className="bg-secondary/10 p-6 border-b border-border">
+              <div className="bg-primary/10 p-6 border-b border-border">
                 <h3 className="text-xl font-bold text-foreground">SCENARIO CONSERVATIVO</h3>
                 <p className="text-muted-foreground">(primo anno di adesione)</p>
               </div>
@@ -99,7 +99,7 @@ const ReteROISection = () => {
                     </div>
                   ))}
                 </div>
-                <div className="bg-gradient-to-r from-primary to-secondary rounded-xl p-6 text-center">
+                <div className="bg-gradient-to-r from-navy to-gold rounded-xl p-6 text-center">
                   <p className="text-white/80 text-sm mb-1">TOTALE FATTURATO LORDO</p>
                   <p className="text-4xl font-bold text-white mb-3">
                     +€{realisticTotal.toLocaleString()}

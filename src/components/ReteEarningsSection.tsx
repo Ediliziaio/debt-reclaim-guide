@@ -78,11 +78,11 @@ const ReteEarningsSection = () => {
               <p className="text-white/80 text-sm md:text-base">Fatturato Medio Annuo</p>
               <p className="text-xs md:text-sm text-white/60 mt-1 md:mt-2">dopo il secondo anno</p>
             </div>
-            <div className="bg-secondary rounded-xl md:rounded-2xl p-5 md:p-8 text-white text-center">
-              <TrendingUp className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 opacity-90" />
+            <div className="bg-gold rounded-xl md:rounded-2xl p-5 md:p-8 text-navy-dark text-center">
+              <TrendingUp className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 opacity-90 text-navy-dark" />
               <p className="text-3xl md:text-5xl font-bold mb-1 md:mb-2">+{roiPercent}%</p>
-              <p className="text-white/80 text-sm md:text-base">ROI Medio</p>
-              <p className="text-xs md:text-sm text-white/60 mt-1 md:mt-2">sul contributo annuale</p>
+              <p className="text-navy-dark/80 text-sm md:text-base">ROI Medio</p>
+              <p className="text-xs md:text-sm text-navy-dark/60 mt-1 md:mt-2">sul contributo annuale</p>
             </div>
             <div className="bg-navy rounded-xl md:rounded-2xl p-5 md:p-8 text-white text-center">
               <Target className="w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 md:mb-4 opacity-90" />
@@ -136,9 +136,9 @@ const ReteEarningsSection = () => {
                       €{proj.min.toLocaleString()} - €{proj.max.toLocaleString()}
                     </span>
                   </div>
-                  <div className="h-3 md:h-4 bg-muted rounded-full overflow-hidden">
+                    <div className="h-3 md:h-4 bg-muted rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 ease-out"
+                      className="h-full bg-gradient-to-r from-primary to-gold rounded-full transition-all duration-1000 ease-out"
                       style={{ 
                         width: isInView ? `${proj.progress}%` : '0%',
                         transitionDelay: `${index * 200 + 500}ms`

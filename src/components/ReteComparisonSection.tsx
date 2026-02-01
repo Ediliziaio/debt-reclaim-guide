@@ -76,17 +76,17 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
             </div>
 
             {/* Join Column */}
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8">
+            <div className="bg-gold/5 border border-gold/20 rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Check className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
+                  <Check className="w-6 h-6 text-gold" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Se ENTRI nella rete:</h3>
               </div>
               <ul className="space-y-4">
                 {doJoin.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item}</span>
                   </li>
                 ))}
@@ -102,7 +102,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
             </p>
             <button 
               onClick={onOpenContact}
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-navy-dark font-semibold px-8 py-4 rounded-xl transition-colors"
             >
               Scegli di Entrare Ora
               <ArrowRight className="w-5 h-5" />
