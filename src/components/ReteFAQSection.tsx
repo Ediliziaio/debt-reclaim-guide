@@ -7,14 +7,38 @@ const ReteFAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
-    { q: "Sono solo un piccolo studio... posso comunque aderire?", a: "Assolutamente sì. Il 65% degli studi nella rete sono professionisti individuali o studi di 2-3 persone. Non serve un mega-studio. Serve voglia di imparare e lavorare seriamente." },
-    { q: "Non ho esperienza in esdebitazione... posso comunque partire?", a: "Sì, è esattamente il motivo per cui esiste la rete. Ti formiamo da zero. Ti affianchiamo su ogni pratica. Ti diamo tutti gli strumenti. Il 70% degli studi nella rete non aveva mai gestito una pratica di esdebitazione prima di aderire." },
-    { q: "Quanto tempo devo dedicare alla rete?", a: "Dipende da quante pratiche vuoi gestire. Minimo: 2-3 pratiche = 10-15 ore/settimana + 2-3 ore formazione. Puoi gestire l'esdebitazione come attività esclusiva oppure come integrazione." },
-    { q: "Posso aderire anche se faccio già altro?", a: "Certo. Molti colleghi nella rete gestiscono anche contabilità ordinaria, diritto di famiglia, successioni. L'esdebitazione diventa una specializzazione aggiuntiva che aumenta il fatturato." },
-    { q: "I lead che arrivano sono davvero qualificati?", a: "Sì, li filtriamo prima. Ti mandiamo solo persone con debiti documentati, motivate a risolvere, con requisiti per le procedure, nella tua zona. Tasso di conversione medio: 65%." },
-    { q: "Cosa succede se la mia zona è già coperta?", a: "Valutiamo caso per caso. Se la domanda è alta e le competenze sono complementari, possiamo comunque accettarti. Ma i posti sono limitati per garantire qualità." },
-    { q: "Posso uscire dalla rete se non sono soddisfatto?", a: "Sì, con preavviso trimestrale. Non ti teniamo in ostaggio. Tasso di rinnovo: 96%, tasso di uscita volontaria: 2%." },
-    { q: "Il contributo annuale è deducibile?", a: "Sì, al 100%. È un costo professionale documentato e fatturato regolarmente. Piena deducibilità fiscale." },
+    { 
+      q: "Sono solo un piccolo studio... posso comunque aderire?", 
+      a: "Assolutamente sì. La rete è pensata proprio per studi piccoli e medi che vogliono accedere a competenze e strumenti normalmente riservati a grandi organizzazioni. Molti dei nostri membri più soddisfatti sono professionisti individuali o piccoli studi associati." 
+    },
+    { 
+      q: "Non ho esperienza in esdebitazione... posso comunque partire?", 
+      a: "Sì, è proprio per questo che esiste il percorso formativo strutturato. Molti membri sono partiti da zero e oggi sono riconosciuti come esperti. Il metodo ti accompagna passo passo dall'apprendimento delle basi fino alla gestione di casi complessi." 
+    },
+    { 
+      q: "Quanto tempo devo dedicare alla rete?", 
+      a: "Dipende dai tuoi obiettivi di crescita. L'attività minima richiesta è: Formazione: 4-6 ore/mese (webinar e aggiornamenti). Gestione pratiche: secondo il tuo carico di lavoro. Coordinamento: 2-3 ore/mese (call operative, confronti). È un'attività che si integra perfettamente con la tua attività professionale esistente." 
+    },
+    { 
+      q: "Posso aderire anche se ho già altri impegni professionali?", 
+      a: "Certamente. La maggior parte dei membri continua a gestire le proprie attività tradizionali e integra l'esdebitazione come area di specializzazione. Non devi abbandonare nulla, aggiungi competenze." 
+    },
+    { 
+      q: "Come funziona il coordinamento tra avvocati e commercialisti?", 
+      a: "È uno dei punti di forza della rete. Ogni pratica ha un team integrato avvocato-commercialista. La piattaforma gestionale coordina automaticamente le attività, ci sono protocolli chiari di collaborazione e referenti dedicati per ogni tipologia di caso." 
+    },
+    { 
+      q: "Cosa succede se la mia zona è già coperta?", 
+      a: "Se la provincia ha già raggiunto il numero massimo di studi, viene creata una lista d'attesa. In alcuni casi possiamo valutare l'ingresso in zone limitrofe o in aree metropolitane più ampie. Contattaci per verificare la situazione attuale." 
+    },
+    { 
+      q: "Posso uscire dalla rete se cambio idea?", 
+      a: "Sì. Il contratto prevede clausole di recesso con preavviso. Crediamo nella collaborazione volontaria e motivata, non vogliamo trattenere chi non è convinto. Il tasso di rinnovo del 96% dimostra che chi entra, resta perché vede valore concreto." 
+    },
+    { 
+      q: "C'è un periodo di prova?", 
+      a: "I primi 6 mesi sono considerati un periodo di reciproco adattamento. Se entro questo termine ritieni che la rete non sia adatta a te, il recesso è facilitato. Allo stesso modo, valutiamo se il nuovo membro si integra bene nel metodo e nei valori della rete." 
+    },
   ];
 
   return (
@@ -22,14 +46,14 @@ const ReteFAQSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className={`text-3xl md:text-4xl font-bold text-foreground text-center mb-12 ${isInView ? 'animate-fade-up' : 'opacity-0'}`}>
-            Domande Frequenti <span className="text-primary">(FAQ)</span>
+            Domande <span className="text-gold">Frequenti</span>
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className={`bg-card border border-border rounded-xl overflow-hidden ${isInView ? 'animate-fade-up' : 'opacity-0'}`} style={{ animationDelay: `${index * 50}ms` }}>
                 <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="w-full flex items-center justify-between p-5 text-left">
                   <span className="font-semibold text-foreground pr-4">{faq.q}</span>
-                  {openIndex === index ? <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
+                  {openIndex === index ? <ChevronUp className="w-5 h-5 text-gold flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
                 </button>
                 {openIndex === index && <div className="px-5 pb-5 text-muted-foreground border-t border-border pt-4">{faq.a}</div>}
               </div>
