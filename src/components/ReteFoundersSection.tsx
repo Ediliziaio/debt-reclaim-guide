@@ -105,12 +105,12 @@ const ReteFoundersSection = () => {
           {/* Method Statement */}
           <div className={`bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center ${isInView ? 'animate-fade-up animation-delay-300' : 'opacity-0'}`}>
             <p className="text-xl text-white mb-8">
-              Insieme abbiamo creato un <strong className="text-primary">metodo di lavoro collaudato</strong> su oltre 500 casi, con:
+              Insieme abbiamo creato un <strong className="text-gold">metodo di lavoro collaudato</strong> su oltre 500 casi, con:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                  <stat.icon className="w-8 h-8 text-gold mx-auto mb-3" />
                   <div className="text-3xl md:text-4xl font-bold text-white">
                     {stat.prefix}{stat.value}{stat.suffix}
                   </div>

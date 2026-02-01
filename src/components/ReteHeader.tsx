@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import rfLogo from "@/assets/rf-logo.png";
 
 interface ReteHeaderProps {
   onOpenContact: () => void;
@@ -54,9 +55,8 @@ const ReteHeader = ({ onOpenContact }: ReteHeaderProps) => {
               <span className="text-xs sm:text-sm hidden xs:inline">Torna al sito</span>
             </Link>
             <div className={`h-5 sm:h-6 w-px ${dividerColor} hidden xs:block`} />
-            <a href="#" className="flex items-center gap-1.5 sm:gap-2" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-              <span className="text-xl sm:text-2xl font-bold text-primary">RF</span>
-              <span className={`text-sm sm:text-lg font-semibold ${textColor} hidden sm:block`}>Rete Professionisti</span>
+            <a href="#" className="flex items-center" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+              <img src={rfLogo} alt="RF Debt Restructuring" className="h-8 sm:h-10 w-auto" />
             </a>
           </div>
 

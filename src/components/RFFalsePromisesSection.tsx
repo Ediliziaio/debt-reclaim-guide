@@ -70,7 +70,7 @@ const RFFalsePromisesSection = () => {
             <p className="text-lg mt-4 opacity-80">
               Gli interessi si accumulano. I creditori si incattiviscono. Le azioni legali si moltiplicano.
             </p>
-            <p className="text-xl mt-6 font-semibold text-primary">
+            <p className="text-xl mt-6 font-semibold text-gold">
               E tu? Tu sei sempre più schiacciato, sempre più isolato, sempre più disperato.
             </p>
           </div>

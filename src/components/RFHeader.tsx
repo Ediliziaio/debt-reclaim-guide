@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import rfLogo from "@/assets/rf-logo.png";
 
 interface RFHeaderProps {
   onOpenContact: () => void;
@@ -39,9 +40,8 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border" : "bg-background/80 backdrop-blur-sm"}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="/" className="flex items-center gap-2">
-            <span className="text-xl md:text-2xl font-bold text-primary">RF</span>
-            <span className="text-base md:text-lg font-semibold text-foreground hidden sm:block">Debt Restructuring</span>
+          <a href="/" className="flex items-center">
+            <img src={rfLogo} alt="RF Debt Restructuring" className="h-8 md:h-10 w-auto" />
           </a>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
