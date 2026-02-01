@@ -85,16 +85,16 @@ const RFGoodNewsSection = () => {
           </div>
 
           {/* Caveat */}
-          <div className={`text-center p-8 rounded-3xl bg-secondary/10 border border-secondary/20 transition-all duration-700 delay-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`text-center p-8 rounded-3xl bg-primary/10 border border-primary/20 transition-all duration-700 delay-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="text-lg text-foreground mb-4">
-              <strong>Il problema?</strong> Questi strumenti funzionano <span className="text-secondary font-bold">SOLO</span> se:
+              <strong>Il problema?</strong> Questi strumenti funzionano <span className="text-primary font-bold">SOLO</span> se:
             </p>
             <ul className="text-muted-foreground space-y-2 max-w-lg mx-auto">
               <li>✓ Hai al tuo fianco professionisti che li conoscono DAVVERO</li>
               <li>✓ Chi ti segue ha già gestito centinaia di casi simili al tuo</li>
               <li>✓ La strategia è costruita su DIRITTO, non su speranze</li>
             </ul>
-            <p className="text-xl font-bold text-secondary mt-6">
+            <p className="text-xl font-bold text-primary mt-6">
               Ed è esattamente qui che entriamo in gioco noi.
             </p>
           </div>

@@ -52,7 +52,7 @@ const ReteFoundersSection = () => {
               Chi Siamo E Perché Dovresti Considerare <span className="text-primary">Seriamente</span> Questa Opportunità
             </h2>
             <p className="text-lg text-muted-foreground">
-              RF Debt Restructuring è fondata e coordinata da:
+              RF Ristrutturazione Debiti è fondata e coordinata da:
             </p>
           </div>
 

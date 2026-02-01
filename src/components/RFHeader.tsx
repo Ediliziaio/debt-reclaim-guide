@@ -52,7 +52,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
             ))}
             <Link 
               to="/rete" 
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary hover:bg-secondary/20 transition-colors text-sm font-medium"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/20 text-gold hover:bg-gold/30 transition-colors text-sm font-medium"
             >
               <Users className="w-4 h-4" />
               Per Professionisti
@@ -81,7 +81,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
               ))}
               <Link 
                 to="/rete" 
-                className="flex items-center gap-2 py-2 text-secondary font-medium"
+                className="flex items-center gap-2 py-2 text-gold font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Users className="w-4 h-4" />

@@ -41,7 +41,7 @@ const RFWhoWeAreSection = () => {
               Chi Siamo
             </span>
             <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <span className="text-gold">RF Debt Restructuring</span>
+              <span className="text-gold">RF Ristrutturazione Debiti</span>
             </h2>
             <p className={`text-xl md:text-2xl opacity-90 max-w-3xl mx-auto transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               La <strong className="text-gold">PRIMA rete nazionale</strong> in Italia che unisce Avvocati esperti e Commercialisti specializzati esclusivamente in:

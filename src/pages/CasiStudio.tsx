@@ -47,7 +47,7 @@ const caseStudies: CaseStudy[] = [
       "Vita familiare normalizzata"
     ],
     reduction: "80%",
-    quote: "Pensavamo di perdere tutto. Grazie a RF Debt Restructuring abbiamo salvato la nostra casa e ricostruito la nostra vita. Oggi guardiamo al futuro con speranza.",
+    quote: "Pensavamo di perdere tutto. Grazie a RF Ristrutturazione Debiti abbiamo salvato la nostra casa e ricostruito la nostra vita. Oggi guardiamo al futuro con speranza.",
     quoteName: "Marco R., Milano"
   },
   {
@@ -231,7 +231,7 @@ const CasiStudio = () => {
   return (
     <>
       <Helmet>
-        <title>Casi Studio | RF Debt Restructuring - Storie di Successo</title>
+        <title>Casi Studio | RF Ristrutturazione Debiti - Storie di Successo</title>
         <meta name="description" content="Scopri come abbiamo aiutato famiglie e imprese a uscire dal debito. Casi reali con risultati documentati: riduzione media del 60%." />
       </Helmet>
 
