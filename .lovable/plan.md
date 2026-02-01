@@ -1,79 +1,100 @@
 
 
-## Piano: Correzione Problemi di Contrasto (Blu su Blu)
+## Piano: Inserimento Logo + Correzione Contrasto Celeste su Blu Navy
 
-### Analisi del Problema
+### Parte 1: Inserimento Logo Ufficiale
 
-Dopo il rebranding da verde a **Navy Blue** (`#2a3f5f`), ora il colore `--primary` e` è Navy Blue. Questo crea **problemi di contrasto critici** in tutte le sezioni con sfondo Navy (`bg-navy`) dove il testo usa `text-primary`.
+Il logo "RF Ristrutturazione Debiti" verra copiato nella cartella assets e utilizzato nei componenti header.
 
-### Elementi con Contrasto Insufficiente Identificati
+**File da creare:**
+- `src/assets/rf-logo.png` - copia da `user-uploads://AR_Group_1.png`
 
-| Componente | Problema | Ubicazione |
-|------------|----------|------------|
-| **RFWhoWeAreSection** | Badge "Chi Siamo" con `bg-primary/20 text-primary` su sfondo navy | Linea 40 |
-| **RFWhoWeAreSection** | Titolo `text-primary` su sfondo navy | Linea 44 |
-| **RFWhoWeAreSection** | Icone `text-primary` su sfondo navy | Linee 55, 84, 101 |
-| **RFTeamSection** | Badge e titoli `text-primary` su sfondo navy | Linee 57-59, 64 |
-| **RFTeamSection** | Specialties badge `text-primary` su sfondo navy | Linea 144 |
-| **RFHeroSection** | Badge `text-primary` su sfondo light (ok, ma bg-primary/10 è troppo tenue) | Linea 34 |
-| **RFGoodNewsSection** | Badge `text-primary` su sfondo light | Linea 47 |
-| **RFUrgencySection** | Icone `text-primary` su sfondo navy | Linea 157 |
-| **RFGuaranteesSection** | Badge `text-primary` su sfondo light | Linea 54-56 |
-| **RFTargetAudienceSection** | Badge e testi `text-primary` su sfondo light | Linee 33-35 |
+**File da modificare:**
+- `src/components/RFHeader.tsx` - sostituire il testo "RF" + "Debt Restructuring" con il logo immagine
+- `src/components/ReteHeader.tsx` - stesso aggiornamento per la pagina /rete
 
-### Regola di Contrasto da Applicare
+---
 
-| Sfondo | Colore Testo Accento | Motivazione |
-|--------|---------------------|-------------|
-| **Chiaro** (bg-background, bg-muted) | `text-primary` (Navy) | Navy su bianco ha ottimo contrasto |
-| **Navy** (bg-navy) | `text-gold` o `text-gold-light` | Gold su Navy ha eccellente contrasto |
+### Parte 2: Correzione Problemi di Contrasto (Celeste su Navy)
 
-### Modifiche Proposte
+Ho identificato che il colore `secondary` (blu celeste HSL 217 91% 60%) viene usato in diversi punti su sfondo Navy, creando contrasto insufficiente. Il problema e visibile perche il celeste e troppo vicino al blu navy.
 
-#### 1. RFWhoWeAreSection.tsx
-- Linea 40: cambiare da `bg-primary/20 text-primary` a `bg-gold/20 text-gold`
-- Linea 44: cambiare da `text-primary` a `text-gold`
-- Linea 47: cambiare da `text-primary` a `text-gold`
-- Linee 54-55: cambiare da `bg-primary/20` e `text-primary` a `bg-gold/20` e `text-gold`
-- Linea 84: cambiare da `text-primary` a `text-gold`
-- Linee 100-101, 104-105: cambiare `text-primary` a `text-gold`
-- Linea 113: cambiare da `text-primary` a `text-gold`
+**Regola da applicare:**
+- Su sfondo Navy: usare `text-gold` invece di `text-secondary`
+- Su sfondo chiaro: `text-secondary` o `text-primary` rimangono validi
 
-#### 2. RFTeamSection.tsx
-- Linea 57: cambiare da `bg-primary/20 border-primary/30` a `bg-gold/20 border-gold/30`
-- Linea 58-59: cambiare `text-primary` a `text-gold`
-- Linea 64: cambiare `text-primary` a `text-gold`
-- Linea 143-144: cambiare specialties badge da `bg-primary/10 border-primary/20 text-primary` a `bg-gold/10 border-gold/20 text-gold`
+**File con problemi identificati:**
 
-#### 3. RFUrgencySection.tsx
-- Linee 156-157: cambiare da `bg-primary/20` e `text-primary` a `bg-gold/20` e `text-gold`
-- Linea 161, 165: cambiare `text-primary` a `text-gold`
-- Linea 175-176: cambiare da `bg-primary/20` e `text-primary` a `bg-gold/20` e `text-gold`
-- Linea 183: cambiare da `bg-primary/20 border-primary/30` a `bg-gold/20 border-gold/30`
-- Linea 184: cambiare `text-primary` a `text-gold`
+| File | Elemento | Problema | Soluzione |
+|------|----------|----------|-----------|
+| **RFFinalCTA.tsx** | Linea 22-23 | Icona Shield con `text-primary` (navy) su sfondo navy | Cambiare a `text-gold` |
+| **RFFinalCTA.tsx** | Linee 27, 32 | Testo `text-primary` su sfondo navy | Cambiare a `text-gold` |
+| **RFFinalCTA.tsx** | Linee 44, 48, 52 | Icone info `text-primary` su sfondo navy | Cambiare a `text-gold` |
+| **RFFalsePromisesSection.tsx** | Linea 73 | Testo `text-primary` su sfondo navy | Cambiare a `text-gold` |
+| **RFHeroSection.tsx** | Linea 49 | `text-secondary` su sfondo chiaro | OK, ma potrebbe usare Navy per coerenza |
+| **ReteFoundersSection.tsx** | Linea 108 | `text-primary` su sfondo navy ("metodo di lavoro collaudato") | Cambiare a `text-gold` |
+| **ReteFoundersSection.tsx** | Linea 113 | Icone statistiche `text-primary` su sfondo navy | Cambiare a `text-gold` |
 
-#### 4. Sezioni con sfondo chiaro (nessuna modifica)
-I seguenti componenti usano `text-primary` su sfondo chiaro, il che funziona bene con Navy su bianco:
-- RFHeroSection (sfondo light)
-- RFGoodNewsSection (sfondo light)
-- RFGuaranteesSection (sfondo muted/light)
-- RFMethodSection (sfondo muted)
-- RFStatisticsSection (sfondo muted)
-- RFTargetAudienceSection (sfondo light)
+---
 
-### Riepilogo File da Modificare
+### Riepilogo Modifiche Tecniche
 
-| File | Numero Modifiche | Tipo |
-|------|-----------------|------|
-| RFWhoWeAreSection.tsx | 12 | text-primary → text-gold su sfondo navy |
-| RFTeamSection.tsx | 7 | text-primary → text-gold su sfondo navy |
-| RFUrgencySection.tsx | 10 | text-primary → text-gold su sfondo navy |
+**1. Logo (2 file)**
+```
+RFHeader.tsx, ReteHeader.tsx:
+- Import logo
+- Sostituire <span>RF</span> con <img src={logo}>
+- Mantenere responsive (altezza ~32-40px)
+```
+
+**2. Contrasto RFFinalCTA.tsx (linee 22-52)**
+```tsx
+// Da
+<Shield className="w-10 h-10 text-primary" />
+<span className="text-primary">Gratuita</span>
+<Phone className="w-4 h-4 text-primary" />
+
+// A
+<Shield className="w-10 h-10 text-gold" />
+<span className="text-gold">Gratuita</span>
+<Phone className="w-4 h-4 text-gold" />
+```
+
+**3. Contrasto RFFalsePromisesSection.tsx (linea 73)**
+```tsx
+// Da
+<p className="text-xl mt-6 font-semibold text-primary">
+
+// A
+<p className="text-xl mt-6 font-semibold text-gold">
+```
+
+**4. Contrasto ReteFoundersSection.tsx (linee 108, 113)**
+```tsx
+// Da
+<strong className="text-primary">metodo di lavoro collaudato</strong>
+<stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+
+// A
+<strong className="text-gold">metodo di lavoro collaudato</strong>
+<stat.icon className="w-8 h-8 text-gold mx-auto mb-3" />
+```
+
+---
 
 ### Risultato Atteso
 
 Dopo le modifiche:
-- **Sfondo Navy**: testo e icone accento saranno **Gold** (eccellente contrasto)
-- **Sfondo Light**: testo e icone accento rimarranno **Navy** (eccellente contrasto)
-- Palette coerente: Navy come colore primario autorevole, Gold come accento di eccellenza
-- Leggibilità garantita su tutte le sezioni
+- Logo RF ufficiale visibile nell'header su entrambe le pagine
+- Nessun testo celeste o blu navy su sfondo navy
+- Accenti dorati su tutte le sezioni scure
+- Piena leggibilita in ogni sezione del sito
+
+---
+
+### Aggiunta Memory
+
+Aggiorneremo la memoria del progetto con le seguenti regole di design per riferimenti futuri:
+- **Palette**: Navy (#2a3f5f) primario, Gold (#f5c542) accento
+- **Contrasto**: Su sfondo Navy usare sempre Gold per accenti
 
