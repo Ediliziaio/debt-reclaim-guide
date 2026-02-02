@@ -74,37 +74,37 @@ const RFUrgencySection = () => {
   };
 
   return (
-    <section ref={ref} className="py-20 md:py-28 bg-navy relative overflow-hidden">
+    <section ref={ref} className="py-12 md:py-20 lg:py-28 bg-navy relative overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-red-950/20 via-transparent to-primary/5" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/20 border border-red-500/30 mb-6 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <AlertTriangle className="w-4 h-4 text-red-400 animate-pulse" />
-            <span className="text-red-400 text-sm font-medium">Attenzione: Non Ignorare Questo</span>
+        <div className="text-center mb-10 md:mb-16">
+          <div className={`inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-red-500/20 border border-red-500/30 mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <AlertTriangle className="w-3.5 h-3.5 md:w-4 md:h-4 text-red-400 animate-pulse" />
+            <span className="text-red-400 text-xs md:text-sm font-medium">Attenzione: Non Ignorare Questo</span>
           </div>
           
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-background mb-4 md:mb-6 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Cosa Succede Se <span className="text-red-400">NON</span> Fai Nulla?
           </h2>
           
-          <p className={`text-lg text-background/70 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className={`text-sm md:text-lg text-background/70 max-w-2xl mx-auto transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Lascia che te lo dica chiaramente: <strong className="text-red-400">ogni giorno che passa senza agire, la tua situazione PEGGIORA.</strong>
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="max-w-4xl mx-auto mb-20">
+        <div className="max-w-4xl mx-auto mb-12 md:mb-20">
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-yellow-500 via-orange-500 to-red-700 transform md:-translate-x-1/2" />
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-yellow-500 via-orange-500 to-red-700 transform md:-translate-x-1/2" />
             
             {timelineSteps.map((step, index) => (
               <div
                 key={index}
-                className={`relative flex items-start mb-12 last:mb-0 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`relative flex items-start mb-8 md:mb-12 last:mb-0 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${300 + index * 150}ms` }}
               >
                 {/* Desktop: Alternating layout */}
@@ -120,8 +120,8 @@ const RFUrgencySection = () => {
                   
                   {/* Icon */}
                   <div className="w-2/12 flex justify-center">
-                    <div className={`w-16 h-16 rounded-full border-2 flex items-center justify-center ${getSeverityColor(step.severity)} ${isInView ? 'animate-pulse' : ''}`}>
-                      <step.icon className="w-7 h-7" />
+                    <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full border-2 flex items-center justify-center ${getSeverityColor(step.severity)} ${isInView ? 'animate-pulse' : ''}`}>
+                      <step.icon className="w-6 h-6 md:w-7 md:h-7" />
                     </div>
                   </div>
                   
@@ -130,15 +130,15 @@ const RFUrgencySection = () => {
 
                 {/* Mobile: Left-aligned layout */}
                 <div className="flex md:hidden items-start">
-                  <div className={`w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${getSeverityColor(step.severity)} ${isInView ? 'animate-pulse' : ''}`}>
-                    <step.icon className="w-7 h-7" />
+                  <div className={`w-12 h-12 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${getSeverityColor(step.severity)} ${isInView ? 'animate-pulse' : ''}`}>
+                    <step.icon className="w-5 h-5" />
                   </div>
-                  <div className="ml-6">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-2 ${getSeverityColor(step.severity)}`}>
+                  <div className="ml-4">
+                    <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold mb-1.5 ${getSeverityColor(step.severity)}`}>
                       {step.time}
                     </span>
-                    <h3 className="text-lg font-bold text-background mb-1">{step.title}</h3>
-                    <p className="text-background/60 text-sm">{step.description}</p>
+                    <h3 className="text-base font-bold text-background mb-1">{step.title}</h3>
+                    <p className="text-background/60 text-xs">{step.description}</p>
                   </div>
                 </div>
               </div>
@@ -150,38 +150,38 @@ const RFUrgencySection = () => {
         <div className={`max-w-3xl mx-auto transition-all duration-1000 delay-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="relative">
             {/* Gradient transition */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10 rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10 rounded-2xl md:rounded-3xl" />
             
-            <div className="relative bg-navy/50 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 md:p-12 text-center">
-              <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-gold" />
+            <div className="relative bg-navy/50 backdrop-blur-sm border border-primary/20 rounded-2xl md:rounded-3xl p-5 md:p-12 text-center">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <Clock className="w-6 h-6 md:w-8 md:h-8 text-gold" />
               </div>
               
-              <h3 className="text-2xl md:text-3xl font-bold text-background mb-4">
+              <h3 className="text-xl md:text-3xl font-bold text-background mb-3 md:mb-4">
                 Ma C'è Ancora <span className="text-gold">Tempo</span>
               </h3>
               
-              <p className="text-background/70 text-lg mb-8">
+              <p className="text-background/70 text-sm md:text-lg mb-6 md:mb-8">
                 In questo momento, mentre stai leggendo, <strong className="text-gold">hai ancora tempo.</strong> Puoi ancora:
               </p>
               
-              <div className="grid md:grid-cols-2 gap-4 text-left mb-8">
+              <div className="grid md:grid-cols-2 gap-3 md:gap-4 text-left mb-6 md:mb-8">
                 {hopePoints.map((point, index) => (
                   <div 
                     key={index}
-                    className={`flex items-center gap-3 transition-all duration-500 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    className={`flex items-center gap-2 md:gap-3 transition-all duration-500 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
                     style={{ transitionDelay: `${1200 + index * 100}ms` }}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-gold" />
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 md:w-4 md:h-4 text-gold" />
                     </div>
-                    <span className="text-background/80">{point}</span>
+                    <span className="text-xs md:text-base text-background/80">{point}</span>
                   </div>
                 ))}
               </div>
               
-              <div className={`inline-block px-6 py-3 rounded-full bg-gold/20 border border-gold/30 transition-all duration-700 delay-1500 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-                <p className="text-gold font-bold text-lg">
+              <div className={`inline-block px-4 py-2 md:px-6 md:py-3 rounded-full bg-gold/20 border border-gold/30 transition-all duration-700 delay-1500 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                <p className="text-gold font-bold text-sm md:text-lg">
                   Però devi decidere. <span className="underline">ADESSO.</span>
                 </p>
               </div>

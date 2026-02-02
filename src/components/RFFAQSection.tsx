@@ -94,50 +94,52 @@ const RFFAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section id="faq" className="py-12 md:py-20 lg:py-28 bg-background relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-trust/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-trust/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10" ref={ref as React.RefObject<HTMLDivElement>}>
         {/* Header */}
-        <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-            <HelpCircle className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-wide">Domande Frequenti</span>
+        <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6">
+            <HelpCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+            <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wide">Domande Frequenti</span>
           </div>
           
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
             Hai Domande?{" "}
             <span className="text-primary">Abbiamo Risposte.</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Ecco le risposte alle domande più frequenti che riceviamo. 
             Se non trovi quello che cerchi, contattaci direttamente.
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className={`flex flex-wrap justify-center gap-2 mb-10 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {faqCategories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => {
-                setActiveCategory(category.id);
-                setOpenQuestion(null);
-              }}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === category.id
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground'
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
+        {/* Category Tabs - Horizontal scroll on mobile */}
+        <div className={`mb-6 md:mb-10 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex md:flex-wrap md:justify-center gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+            {faqCategories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => {
+                  setActiveCategory(category.id);
+                  setOpenQuestion(null);
+                }}
+                className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 whitespace-nowrap min-h-[40px] ${
+                  activeCategory === category.id
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground'
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* FAQ Accordion */}
@@ -145,25 +147,25 @@ const RFFAQSection = () => {
           {currentCategory?.questions.map((faq, index) => (
             <div
               key={faq.question}
-              className={`mb-4 transition-all duration-500 ${
+              className={`mb-3 md:mb-4 transition-all duration-500 ${
                 isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <button
                 onClick={() => toggleQuestion(faq.question)}
-                className={`w-full text-left p-5 rounded-xl border transition-all duration-300 ${
+                className={`w-full text-left p-4 md:p-5 rounded-lg md:rounded-xl border transition-all duration-300 min-h-[56px] ${
                   openQuestion === faq.question
                     ? 'bg-primary/5 border-primary/30 shadow-md'
                     : 'bg-background border-border hover:border-primary/20 hover:shadow-sm'
                 }`}
               >
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-heading font-semibold text-foreground text-left">
+                <div className="flex items-center justify-between gap-3 md:gap-4">
+                  <h3 className="font-heading font-semibold text-foreground text-left text-sm md:text-base">
                     {faq.question}
                   </h3>
                   <ChevronDown
-                    className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                       openQuestion === faq.question ? 'rotate-180' : ''
                     }`}
                   />
@@ -175,7 +177,7 @@ const RFFAQSection = () => {
                   openQuestion === faq.question ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="p-5 pt-2 text-muted-foreground leading-relaxed">
+                <div className="p-4 md:p-5 pt-2 text-xs md:text-base text-muted-foreground leading-relaxed">
                   {faq.answer}
                 </div>
               </div>
@@ -184,12 +186,12 @@ const RFFAQSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className={`text-center mt-12 transition-all duration-700 delay-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-muted-foreground mb-4">
+        <div className={`text-center mt-8 md:mt-12 transition-all duration-700 delay-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">
             Non hai trovato la risposta che cercavi?
           </p>
-          <div className="inline-flex items-center gap-2 text-primary font-semibold">
-            <MessageCircle className="w-5 h-5" />
+          <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm md:text-base">
+            <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
             <span>Contattaci per una consulenza gratuita</span>
           </div>
         </div>

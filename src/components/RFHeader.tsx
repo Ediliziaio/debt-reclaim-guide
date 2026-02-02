@@ -39,9 +39,9 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border" : "bg-background/80 backdrop-blur-sm"}`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-20">
           <a href="/" className="flex items-center">
-            <img src={rfLogo} alt="RF Ristrutturazioni Debiti" className="h-8 md:h-10 w-auto" />
+            <img src={rfLogo} alt="RF Ristrutturazioni Debiti" className="h-9 md:h-10 w-auto" />
           </a>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -62,32 +62,32 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
             </Button>
           </nav>
 
-          <button className={`md:hidden p-2 ${textColor}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button className={`md:hidden p-3 min-h-[44px] min-w-[44px] flex items-center justify-center ${textColor}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border animate-fade-in bg-background">
-            <div className="flex flex-col gap-3">
+          <nav className="md:hidden py-4 border-t border-border animate-fade-in bg-background safe-bottom">
+            <div className="flex flex-col gap-1">
               {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id) => (
                 <button 
                   key={id} 
                   onClick={() => scrollToSection(id)} 
-                  className="text-left py-2 text-muted-foreground hover:text-primary transition-colors capitalize"
+                  className="text-left py-3 px-2 min-h-[44px] text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors capitalize"
                 >
                   {id.replace("-", " ")}
                 </button>
               ))}
               <Link 
                 to="/rete" 
-                className="flex items-center gap-2 py-2 text-gold font-medium"
+                className="flex items-center gap-2 py-3 px-2 min-h-[44px] text-gold font-medium hover:bg-gold/10 rounded-lg transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Users className="w-4 h-4" />
+                <Users className="w-5 h-5" />
                 Per Professionisti
               </Link>
-              <Button variant="hero" className="mt-2" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
+              <Button variant="hero" className="mt-3 min-h-[48px]" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
                 Consulenza Gratuita
               </Button>
             </div>
