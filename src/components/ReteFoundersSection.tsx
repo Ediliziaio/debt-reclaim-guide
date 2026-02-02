@@ -47,7 +47,7 @@ const ReteFoundersSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Chi Siamo E Perché La Nostra Esperienza <span className="text-gold">Fa La Differenza</span>
             </h2>
@@ -58,7 +58,11 @@ const ReteFoundersSection = () => {
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {founders.map((founder, index) => (
-              <div key={index} className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-colors group">
+              <div 
+                key={index} 
+                className={`bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-700 group ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${200 + index * 150}ms` }}
+              >
                 <div className="aspect-square overflow-hidden relative">
                   <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
                   {/* Social Links on Hover */}
@@ -103,13 +107,17 @@ const ReteFoundersSection = () => {
           </div>
 
           {/* Method Statement */}
-          <div className="bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center">
+          <div className={`bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '500ms' }}>
             <p className="text-xl text-white mb-8">
               Un Metodo Collaudato Su <strong className="text-gold">Risultati Reali</strong>
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
+                <div 
+                  key={index} 
+                  className={`text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${600 + index * 100}ms` }}
+                >
                   <stat.icon className="w-8 h-8 text-gold mx-auto mb-3" />
                   <div className="text-3xl md:text-4xl font-bold text-white">
                     {stat.prefix}{stat.value}{stat.suffix}
@@ -121,7 +129,7 @@ const ReteFoundersSection = () => {
           </div>
 
           {/* Di Cosa Si Occupa la Rete */}
-          <div className="mt-16">
+          <div className={`mt-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
               Le Aree Di Specializzazione Della <span className="text-gold">Rete</span>
             </h3>
@@ -131,7 +139,7 @@ const ReteFoundersSection = () => {
             
             <div className="grid md:grid-cols-3 gap-6">
               {/* Crisi d'Impresa */}
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+              <div className={`bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1000ms' }}>
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <Scale className="w-6 h-6 text-primary" />
                 </div>
@@ -149,7 +157,7 @@ const ReteFoundersSection = () => {
               </div>
 
               {/* Esdebitazione */}
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-gold/30 transition-colors">
+              <div className={`bg-card border border-border rounded-xl p-6 hover:border-gold/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1100ms' }}>
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
                   <Calculator className="w-6 h-6 text-gold" />
                 </div>
@@ -167,7 +175,7 @@ const ReteFoundersSection = () => {
               </div>
 
               {/* Metodo Integrato */}
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+              <div className={`bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1200ms' }}>
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <TrendingUp className="w-6 h-6 text-primary" />
                 </div>

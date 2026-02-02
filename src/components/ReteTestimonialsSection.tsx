@@ -69,7 +69,7 @@ const ReteTestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               La Voce Di Chi Ha Già <span className="text-gold">Scelto Di Crescere</span>
             </h2>
@@ -78,7 +78,11 @@ const ReteTestimonialsSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-card border border-border rounded-xl p-4 text-center">
+              <div 
+                key={index} 
+                className={`bg-card border border-border rounded-xl p-4 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${200 + index * 100}ms` }}
+              >
                 <stat.icon className={`w-6 h-6 mx-auto mb-2 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                 <div className="text-2xl font-bold text-foreground">
                   {stat.value}{stat.suffix}
@@ -93,7 +97,8 @@ const ReteTestimonialsSection = () => {
             {testimonials.slice(0, 3).map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors"
+                className={`bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
                 <Quote className="w-10 h-10 text-gold/20 mb-4" />
                 <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
@@ -119,7 +124,8 @@ const ReteTestimonialsSection = () => {
             {testimonials.slice(3).map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-colors"
+                className={`bg-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${700 + index * 100}ms` }}
               >
                 <Quote className="w-10 h-10 text-gold/20 mb-4" />
                 <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
@@ -141,7 +147,7 @@ const ReteTestimonialsSection = () => {
           </div>
 
           {/* CTA */}
-          <div className="text-center bg-navy rounded-2xl p-8">
+          <div className={`text-center bg-navy rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
             <p className="text-lg text-white mb-2">
               Questi colleghi un anno fa erano nella <strong className="text-gold">TUA stessa posizione</strong>.
             </p>

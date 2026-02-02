@@ -1,6 +1,9 @@
 import { Target, TrendingUp, Award, Check } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const ReteGrowthPathSection = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   const years = [
     {
       icon: Target,
@@ -47,11 +50,11 @@ const ReteGrowthPathSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Il Percorso Di Crescita <span className="text-gold">Professionale</span>
             </h2>
@@ -69,7 +72,8 @@ const ReteGrowthPathSection = () => {
               {years.map((year, index) => (
                 <div 
                   key={index} 
-                  className="relative"
+                  className={`relative transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${200 + index * 200}ms` }}
                 >
                   <div className={`md:flex md:items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Content */}
@@ -101,7 +105,7 @@ const ReteGrowthPathSection = () => {
                     </div>
 
                     {/* Center Icon */}
-                    <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full items-center justify-center z-10 border-4 border-background ${year.color === 'gold' ? 'bg-gold' : 'bg-primary'}`}>
+                    <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full items-center justify-center z-10 border-4 border-background transition-all duration-700 ${year.color === 'gold' ? 'bg-gold' : 'bg-primary'} ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} style={{ transitionDelay: `${300 + index * 200}ms` }}>
                       <year.icon className={`w-7 h-7 ${year.color === 'gold' ? 'text-navy-dark' : 'text-primary-foreground'}`} />
                     </div>
 

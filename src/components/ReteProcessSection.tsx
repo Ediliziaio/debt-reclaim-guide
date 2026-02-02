@@ -1,3 +1,4 @@
+import { useInView } from "@/hooks/useInView";
 import { 
   MessageSquare, 
   Phone, 
@@ -8,6 +9,8 @@ import {
 } from "lucide-react";
 
 const ReteProcessSection = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   const steps = [
     {
       icon: MessageSquare,
@@ -77,11 +80,11 @@ const ReteProcessSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Come Funziona Il <span className="text-gold">Processo Di Selezione</span>
             </h2>
@@ -100,7 +103,8 @@ const ReteProcessSection = () => {
               {steps.map((step, index) => (
                 <div 
                   key={index} 
-                  className="relative"
+                  className={`relative transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${200 + index * 150}ms` }}
                 >
                   <div className={`md:flex md:items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Content */}
@@ -142,7 +146,7 @@ const ReteProcessSection = () => {
                     </div>
 
                     {/* Icon (center) */}
-                    <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center z-10 ${index % 2 === 0 ? 'bg-primary' : 'bg-gold'}`}>
+                    <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center z-10 transition-all duration-700 ${index % 2 === 0 ? 'bg-primary' : 'bg-gold'} ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} style={{ transitionDelay: `${300 + index * 150}ms` }}>
                       <step.icon className={`w-6 h-6 ${index % 2 === 0 ? 'text-primary-foreground' : 'text-navy-dark'}`} />
                     </div>
 

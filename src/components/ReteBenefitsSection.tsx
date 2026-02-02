@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useInView } from "@/hooks/useInView";
 import { 
   GraduationCap, 
   FileText, 
@@ -19,6 +20,7 @@ interface Benefit {
 }
 
 const ReteBenefitsSection = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const benefits: Benefit[] = [
@@ -97,11 +99,11 @@ const ReteBenefitsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Ottieni Entrando Nella Rete <span className="text-gold">RF Ristrutturazioni Debiti</span>
             </h2>
@@ -115,7 +117,8 @@ const ReteBenefitsSection = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all"
+                className={`bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${200 + index * 100}ms` }}
               >
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -158,7 +161,7 @@ const ReteBenefitsSection = () => {
           </div>
 
           {/* Summary */}
-          <div className="text-center">
+          <div className={`text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
             <p className="text-lg text-muted-foreground">
               Il know-how che serve davvero, quando serve davvero. <span className="text-gold font-semibold">Tecnologia che potenzia la tua professionalità.</span>
             </p>

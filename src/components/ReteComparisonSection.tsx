@@ -1,10 +1,13 @@
 import { Check, X, ArrowRight } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 interface ReteComparisonSectionProps {
   onOpenContact: () => void;
 }
 
 const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   const dontInvest = [
     "Continuerai a rifiutare casi complessi (che andranno ad altri)",
     "Continuerai a lavorare solo su pratiche ordinarie",
@@ -25,11 +28,11 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Succede Se <span className="text-destructive">Rimani Fermo</span>?
             </h2>
@@ -37,7 +40,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Intro */}
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <p className="text-lg text-foreground mb-4">
               Il mercato dell'esdebitazione sta <span className="text-gold font-semibold">crescendo rapidamente</span>.
             </p>
@@ -54,7 +57,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           {/* Comparison Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Don't Invest Column */}
-            <div className="bg-destructive/5 border border-destructive/20 rounded-2xl p-8">
+            <div className={`bg-destructive/5 border border-destructive/20 rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
                   <X className="w-6 h-6 text-destructive" />
@@ -63,7 +66,11 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
               </div>
               <ul className="space-y-4">
                 {dontInvest.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                  <li 
+                    key={index} 
+                    className={`flex items-start gap-3 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: `${400 + index * 80}ms` }}
+                  >
                     <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item}</span>
                   </li>
@@ -72,7 +79,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
             </div>
 
             {/* Specialize Column */}
-            <div className="bg-gold/5 border border-gold/20 rounded-2xl p-8">
+            <div className={`bg-gold/5 border border-gold/20 rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
                   <Check className="w-6 h-6 text-gold" />
@@ -81,7 +88,11 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
               </div>
               <ul className="space-y-4">
                 {doSpecialize.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                  <li 
+                    key={index} 
+                    className={`flex items-start gap-3 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                    style={{ transitionDelay: `${400 + index * 80}ms` }}
+                  >
                     <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item}</span>
                   </li>
@@ -91,7 +102,7 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Final Statement */}
-          <div className="bg-navy rounded-2xl p-8 text-center">
+          <div className={`bg-navy rounded-2xl p-8 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
             <p className="text-xl text-white mb-4">La scelta è tua.</p>
             <p className="text-lg text-white/70 mb-6">
               Ma tra 12 mesi la situazione sarà molto diversa.

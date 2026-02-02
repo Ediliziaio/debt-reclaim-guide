@@ -49,8 +49,8 @@ const ReteMarketStatsSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <Sparkles className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gold">Opportunità</span>
             </div>
@@ -64,7 +64,8 @@ const ReteMarketStatsSection = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-8 hover:border-${stat.color}/30 transition-colors`}
+                className={`bg-card border border-border rounded-2xl p-8 hover:border-${stat.color}/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${stat.color === 'gold' ? 'bg-gold/10' : 'bg-primary/10'}`}>
