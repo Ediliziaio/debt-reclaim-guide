@@ -1,4 +1,5 @@
-import { Scale, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import rfLogo from "@/assets/rf-logo-new.png";
 
 const Footer = () => {
   return (
@@ -8,18 +9,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold to-gold-light flex items-center justify-center">
-                <Scale className="w-5 h-5 text-navy-dark" />
-              </div>
-              <div>
-                <h3 className="font-heading text-lg font-semibold text-foreground">
-                  Studio Tutela Debito
-                </h3>
-                <p className="text-xs text-muted-foreground">Avvocati specializzati</p>
-              </div>
+              <img src={rfLogo} alt="RF Ristrutturazioni Debiti" className="h-10 w-auto" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
-              Studio legale specializzato nella gestione e ristrutturazione dei debiti. 
+              La prima rete nazionale di Avvocati e Commercialisti specializzati in esdebitazione e crisi d'impresa.
               Ti affianchiamo con competenza, metodo e trasparenza.
             </p>
           </div>
@@ -70,7 +63,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} Studio Tutela Debito. Tutti i diritti riservati.
+              © {new Date().getFullYear()} RF Ristrutturazioni Debiti. Tutti i diritti riservati.
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-xs text-muted-foreground hover:text-gold transition-colors">

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import rfLogo from "@/assets/rf-logo.png";
+import rfLogo from "@/assets/rf-logo-new.png";
 
 interface RFHeaderProps {
   onOpenContact: () => void;
