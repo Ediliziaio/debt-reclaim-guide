@@ -45,42 +45,42 @@ const ReteMarketStatsSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <Sparkles className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gold">Opportunità</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Perché Questo È Il Momento Giusto <span className="text-gold">Per Specializzarsi</span>
             </h2>
           </div>
 
           {/* Stats Grid - 3 Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-10 md:mb-12">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-8 hover:border-${stat.color}/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-card border border-border rounded-2xl p-5 md:p-8 hover:border-${stat.color}/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${stat.color === 'gold' ? 'bg-gold/10' : 'bg-primary/10'}`}>
-                    <stat.icon className={`w-6 h-6 ${stat.color === 'gold' ? 'text-gold' : 'text-primary'}`} />
+                <div className="flex items-center gap-3 mb-4 md:mb-6">
+                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center ${stat.color === 'gold' ? 'bg-gold/10' : 'bg-primary/10'}`}>
+                    <stat.icon className={`w-5 h-5 md:w-6 md:h-6 ${stat.color === 'gold' ? 'text-gold' : 'text-primary'}`} />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">{stat.title}</h3>
+                  <h3 className="text-base md:text-lg font-bold text-foreground">{stat.title}</h3>
                 </div>
 
-                <div className="mb-6">
-                  <div className="text-3xl font-bold text-foreground mb-2">
+                <div className="mb-4 md:mb-6">
+                  <div className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                     <span className={stat.color === 'gold' ? 'text-gold' : 'text-primary'}>{stat.highlight}</span>
-                    <span className="text-sm font-normal text-muted-foreground">{stat.highlightSuffix}</span>
+                    <span className="text-xs md:text-sm font-normal text-muted-foreground">{stat.highlightSuffix}</span>
                   </div>
                   {stat.subValue && (
-                    <div className="text-lg text-foreground">
+                    <div className="text-base md:text-lg text-foreground">
                       <span className={`font-semibold ${stat.color === 'gold' ? 'text-gold' : 'text-primary'}`}>{stat.subValue}</span>
                       <span className="text-muted-foreground">{stat.subLabel}</span>
                     </div>

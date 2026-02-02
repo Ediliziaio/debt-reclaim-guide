@@ -39,39 +39,39 @@ const ReteUrgencySection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <AlertTriangle className="w-4 h-4 text-amber-500" />
               <span className="text-sm font-medium text-amber-500">Urgente</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Perché Devi Valutare Questa Opportunità <span className="text-gold">ADESSO</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground">
               (E Non "Ci Penso")
             </p>
           </div>
 
           {/* Reasons */}
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             {reasons.map((reason, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-card border border-border rounded-2xl p-5 md:p-8 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="flex items-center gap-4 md:w-1/3">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <reason.icon className="w-7 h-7 text-primary" />
+                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                  <div className="flex items-center gap-3 md:gap-4 md:w-1/3">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <reason.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
                     </div>
                     <div>
-                      <span className="text-sm font-semibold text-primary">MOTIVO #{index + 1}</span>
-                      <h3 className="text-xl font-bold text-foreground">{reason.title}</h3>
+                      <span className="text-xs md:text-sm font-semibold text-primary">MOTIVO #{index + 1}</span>
+                      <h3 className="text-lg md:text-xl font-bold text-foreground">{reason.title}</h3>
                     </div>
                   </div>
                   

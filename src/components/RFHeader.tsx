@@ -62,32 +62,46 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
             </Button>
           </nav>
 
-          <button className={`md:hidden p-3 min-h-[44px] min-w-[44px] flex items-center justify-center ${textColor}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          {/* Animated Hamburger */}
+          <button 
+            className={`md:hidden p-2 relative w-11 h-11 flex items-center justify-center touch-target ${textColor}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45' : '-translate-y-2'}`} />
+            <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45' : 'translate-y-2'}`} />
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border animate-fade-in bg-background safe-bottom">
+          <nav className="md:hidden py-4 border-t border-border animate-menu-open overflow-hidden bg-background safe-bottom">
             <div className="flex flex-col gap-1">
-              {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id) => (
+              {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id, index) => (
                 <button 
                   key={id} 
                   onClick={() => scrollToSection(id)} 
-                  className="text-left py-3 px-2 min-h-[44px] text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors capitalize"
+                  className="text-left py-3 px-2 min-h-[48px] text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all capitalize animate-menu-item"
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {id.replace("-", " ")}
                 </button>
               ))}
               <Link 
                 to="/rete" 
-                className="flex items-center gap-2 py-3 px-2 min-h-[44px] text-gold font-medium hover:bg-gold/10 rounded-lg transition-colors"
+                className="flex items-center gap-2 py-3 px-2 min-h-[48px] text-gold font-medium hover:bg-gold/10 rounded-lg transition-colors animate-menu-item"
+                style={{ animationDelay: '200ms' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Users className="w-5 h-5" />
                 Per Professionisti
               </Link>
-              <Button variant="hero" className="mt-3 min-h-[48px]" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
+              <Button 
+                variant="hero" 
+                className="mt-3 min-h-[48px] w-full animate-menu-item" 
+                style={{ animationDelay: '250ms' }}
+                onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}
+              >
                 Consulenza Gratuita
               </Button>
             </div>

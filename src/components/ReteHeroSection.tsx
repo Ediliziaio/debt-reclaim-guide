@@ -8,7 +8,7 @@ interface ReteHeroSectionProps {
 
 const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 md:pt-20 pb-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-12 md:pt-20 pb-8 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Team di professionisti" className="w-full h-full object-cover" />
@@ -49,14 +49,14 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12 animate-fade-up animation-delay-500">
-            <Button variant="cta" size="lg" onClick={onOpenContact} className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto">
+            <Button variant="cta" size="lg" onClick={onOpenContact} className="text-sm md:text-lg px-6 md:px-8 min-h-[48px] md:py-6 w-full sm:w-auto">
               Richiedi Informazioni
               <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
+              className="text-sm md:text-lg px-6 md:px-8 min-h-[48px] md:py-6 border-white/30 text-white hover:bg-white/10 w-full sm:w-auto"
               onClick={() => document.getElementById('vantaggi')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Scopri i Vantaggi
@@ -64,7 +64,7 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
           </div>
 
           {/* Stats Row - Responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 animate-fade-up animation-delay-600">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-6 animate-fade-up animation-delay-600">
             {[
               { icon: Users, value: "24", label: "Studi nella Rete" },
               { icon: MapPin, value: "14", label: "Regioni Coperte" },

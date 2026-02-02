@@ -65,18 +65,18 @@ const ReteTestimonialsSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="testimonianze" className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} id="testimonianze" className="py-16 md:py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               La Voce Di Chi Ha Già <span className="text-gold">Scelto Di Crescere</span>
             </h2>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:mb-16">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
@@ -93,16 +93,16 @@ const ReteTestimonialsSection = () => {
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-12">
             {testimonials.slice(0, 3).map((testimonial, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-card border border-border rounded-2xl p-4 md:p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
-                <Quote className="w-10 h-10 text-gold/20 mb-4" />
-                <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <Quote className="w-8 h-8 md:w-10 md:h-10 text-gold/20 mb-3 md:mb-4" />
+                <h4 className="text-base md:text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
+                <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 
                 <div className="flex items-center gap-4">
                   <img 
@@ -120,16 +120,16 @@ const ReteTestimonialsSection = () => {
           </div>
 
           {/* Second row */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto mb-10 md:mb-12">
             {testimonials.slice(3).map((testimonial, index) => (
               <div 
                 key={index} 
-                className={`bg-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`bg-card border border-border rounded-2xl p-4 md:p-6 hover:border-gold/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${700 + index * 100}ms` }}
               >
-                <Quote className="w-10 h-10 text-gold/20 mb-4" />
-                <h4 className="text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                <Quote className="w-8 h-8 md:w-10 md:h-10 text-gold/20 mb-3 md:mb-4" />
+                <h4 className="text-base md:text-lg font-bold text-foreground mb-3">"{testimonial.headline}"</h4>
+                <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 
                 <div className="flex items-center gap-4">
                   <img 
@@ -147,7 +147,7 @@ const ReteTestimonialsSection = () => {
           </div>
 
           {/* CTA */}
-          <div className={`text-center bg-navy rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
+          <div className={`text-center bg-navy rounded-2xl p-5 md:p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
             <p className="text-lg text-white mb-2">
               Questi colleghi un anno fa erano nella <strong className="text-gold">TUA stessa posizione</strong>.
             </p>
