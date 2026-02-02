@@ -41,7 +41,7 @@ const ReteSolutionSection = () => {
           {/* Network Introduction */}
           <div className={`bg-gradient-to-br from-primary/10 via-gold/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <p className="text-xl text-foreground mb-6">
-              <strong className="text-gold">RF Ristrutturazione Debiti</strong> è la <strong>PRIMA rete nazionale</strong> in Italia che unisce Avvocati e Commercialisti specializzati esclusivamente in:
+              <strong className="text-gold">RF Ristrutturazioni Debiti</strong> è la <strong>PRIMA rete nazionale</strong> in Italia che unisce Avvocati e Commercialisti specializzati esclusivamente in:
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-lg text-foreground">
