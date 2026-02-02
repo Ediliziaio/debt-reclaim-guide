@@ -99,6 +99,18 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
               <span>Primo Colloquio Gratuito</span>
             </div>
           </div>
+
+          {/* Mobile/Tablet Hero Image */}
+          <div className="mt-8 lg:hidden opacity-0 animate-fade-up animation-delay-600">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src={heroImage} 
+                alt="Libertà dai debiti" 
+                className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </div>
+          </div>
         </div>
       </div>
 
