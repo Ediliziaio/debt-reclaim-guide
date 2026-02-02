@@ -1,6 +1,7 @@
 import { useInView } from "@/hooks/useInView";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { Quote, Users, MapPin, Briefcase, RefreshCw } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 import testimonialGiulia from "@/assets/testimonial-giulia.jpg";
 import testimonialMarco from "@/assets/testimonial-marco.jpg";
 import testimonialFrancesco from "@/assets/testimonial-francesco.jpg";
@@ -105,10 +106,11 @@ const ReteTestimonialsSection = () => {
                 <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 
                 <div className="flex items-center gap-4">
-                  <img 
+                  <OptimizedImage 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                    className="w-12 h-12 rounded-full object-cover"
+                    containerClassName="w-12 h-12 rounded-full border-2 border-primary/20 overflow-hidden flex-shrink-0"
                   />
                   <div>
                     <div className="font-bold text-foreground">{testimonial.name}</div>
@@ -132,10 +134,11 @@ const ReteTestimonialsSection = () => {
                 <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">"{testimonial.quote}"</p>
                 
                 <div className="flex items-center gap-4">
-                  <img 
+                  <OptimizedImage 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-gold/20"
+                    className="w-12 h-12 rounded-full object-cover"
+                    containerClassName="w-12 h-12 rounded-full border-2 border-gold/20 overflow-hidden flex-shrink-0"
                   />
                   <div>
                     <div className="font-bold text-foreground">{testimonial.name}</div>

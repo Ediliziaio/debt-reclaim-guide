@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-lawyer.jpg";
 
 interface HeroSectionProps {
@@ -64,10 +65,12 @@ const HeroSection = ({ onOpenContact }: HeroSectionProps) => {
           {/* Right: Image */}
           <div className="relative opacity-0 animate-fade-up animation-delay-200 hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-              <img 
+              <OptimizedImage 
                 src={heroImage} 
                 alt="Studio legale professionale" 
                 className="w-full h-[500px] object-cover"
+                containerClassName="w-full h-[500px]"
+                priority={true}
               />
               {/* Gold overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />

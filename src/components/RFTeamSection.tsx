@@ -1,5 +1,6 @@
 import { Users, Scale, Calculator, Linkedin, Mail } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
+import OptimizedImage from "@/components/ui/optimized-image";
 import avvocatoRossi from "@/assets/avvocato-rossi.jpg";
 import commercialistaFava from "@/assets/commercialista-fava.jpg";
 
@@ -82,10 +83,12 @@ const RFTeamSection = () => {
             >
               {/* Image Container */}
               <div className="relative aspect-[4/3] md:aspect-square overflow-hidden">
-                <img
+                <OptimizedImage
                   src={founder.image}
                   alt={founder.name}
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  containerClassName="w-full h-full"
+                  placeholderColor="bg-navy/50"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
                 
