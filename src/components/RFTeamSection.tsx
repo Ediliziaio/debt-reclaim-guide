@@ -61,7 +61,7 @@ const RFTeamSection = () => {
           
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Chi C'è Dietro{" "}
-            <span className="text-gold">RF Ristrutturazione Debiti</span>
+            <span className="text-gold">RF Ristrutturazioni Debiti</span>
           </h2>
           
           <p className="text-lg text-white/70 max-w-2xl mx-auto">

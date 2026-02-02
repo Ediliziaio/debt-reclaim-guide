@@ -73,7 +73,7 @@ const ReteBenefitsSection = () => {
     {
       icon: Award,
       title: "Posizionamento E Reputazione",
-      description: "Utilizzi il marchio RF Ristrutturazione Debiti, riconosciuto come punto di riferimento nazionale",
+      description: "Utilizzi il marchio RF Ristrutturazioni Debiti, riconosciuto come punto di riferimento nazionale",
       details: [
         "Presenza sul sito nazionale con la tua scheda professionale",
         "Materiali di comunicazione professionali personalizzati",
@@ -103,7 +103,7 @@ const ReteBenefitsSection = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Cosa Ottieni Entrando Nella Rete <span className="text-gold">RF Ristrutturazione Debiti</span>
+              Cosa Ottieni Entrando Nella Rete <span className="text-gold">RF Ristrutturazioni Debiti</span>
             </h2>
             <p className="text-lg text-muted-foreground">
               Clicca su ogni voce per vedere i dettagli completi

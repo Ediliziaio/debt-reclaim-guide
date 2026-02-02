@@ -63,7 +63,7 @@ const faqCategories: FAQCategory[] = [
     label: "Procedure e Costi",
     questions: [
       {
-        question: "Quanto costa affidarsi a RF Ristrutturazione Debiti?",
+        question: "Quanto costa affidarsi a RF Ristrutturazioni Debiti?",
         answer: "La consulenza iniziale è GRATUITA e senza impegno. Durante questo incontro analizziamo la tua situazione e ti diciamo onestamente se possiamo aiutarti. Solo dopo, in caso di esito positivo, ti presentiamo un preventivo dettagliato con tutti i costi. Non ci sono sorprese: sai esattamente quanto spenderai dall'inizio alla fine."
       },
       {

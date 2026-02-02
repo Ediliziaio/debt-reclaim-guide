@@ -96,7 +96,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
               <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
             <p className="text-white/50 text-sm mt-4">
-              RF Ristrutturazione Debiti - La prima rete nazionale specializzata in esdebitazione e crisi d'impresa
+              RF Ristrutturazioni Debiti - La prima rete nazionale specializzata in esdebitazione e crisi d'impresa
             </p>
             <p className="text-gold/70 text-sm mt-2">
               Costruiamo insieme l'eccellenza professionale nel settore della crisi da debito
