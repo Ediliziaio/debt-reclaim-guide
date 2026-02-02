@@ -8,7 +8,7 @@ interface RFHeroSectionProps {
 
 const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted pt-16 md:pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted pt-12 md:pt-20">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-[80px] md:blur-[120px] translate-x-1/3 -translate-y-1/3" />
@@ -57,21 +57,21 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mb-8 md:mb-10 opacity-0 animate-fade-up animation-delay-400">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mb-6 md:mb-10 opacity-0 animate-fade-up animation-delay-400">
             <Button 
               variant="cta" 
-              size="lg" 
+              size="xl" 
               onClick={onOpenContact}
-              className="group w-full sm:w-auto text-sm md:text-base"
+              className="group w-full sm:w-auto text-sm md:text-base min-h-[48px]"
             >
               Prenota Consulenza Gratuita
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button 
               variant="outline" 
-              size="lg" 
+              size="xl" 
               onClick={onOpenContact}
-              className="w-full sm:w-auto text-sm md:text-base"
+              className="w-full sm:w-auto text-sm md:text-base min-h-[48px]"
             >
               <Phone className="w-4 h-4 md:w-5 md:h-5" />
               Chiama Ora
@@ -101,12 +101,12 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           </div>
 
           {/* Mobile/Tablet Hero Image */}
-          <div className="mt-8 lg:hidden opacity-0 animate-fade-up animation-delay-600">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <div className="mt-6 lg:hidden opacity-0 animate-fade-up animation-delay-600">
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img 
                 src={heroImage} 
                 alt="Libertà dai debiti" 
-                className="w-full h-[250px] sm:h-[300px] md:h-[350px] object-cover"
+                className="w-full h-[180px] sm:h-[220px] md:h-[280px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>

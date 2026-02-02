@@ -46,48 +46,48 @@ const RFCaseStudiesSection = () => {
   ];
 
   return (
-    <section id="casi-risolti" ref={ref} className="py-24 md:py-32 bg-background relative">
+    <section id="casi-risolti" ref={ref} className="py-12 md:py-24 lg:py-32 bg-background relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="text-center mb-8 md:mb-16">
+            <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
               Casi Reali
             </span>
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               Persone Reali. Risultati Reali.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {cases.map((caseItem, index) => (
               <div
                 key={index}
-                className={`group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-500 shadow-card hover:shadow-soft ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-500 shadow-card hover:shadow-soft ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${200 + index * 100}ms` }}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <caseItem.icon className="w-6 h-6 text-primary" />
+                <div className="flex items-start justify-between mb-3 md:mb-4">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center">
+                      <caseItem.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground">{caseItem.title}</h3>
-                      <p className="text-sm text-muted-foreground">{caseItem.subtitle}</p>
+                      <h3 className="font-bold text-foreground text-sm md:text-base">{caseItem.title}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">{caseItem.subtitle}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-gold/10 text-gold font-bold text-sm">
-                    <TrendingDown className="w-4 h-4" />
+                  <div className="flex items-center gap-1 px-2 py-0.5 md:px-3 md:py-1 rounded-full bg-gold/10 text-gold font-bold text-xs md:text-sm">
+                    <TrendingDown className="w-3 h-3 md:w-4 md:h-4" />
                     -{caseItem.reduction}
                   </div>
                 </div>
                 
-                <p className="text-sm text-muted-foreground mb-3">{caseItem.situation}</p>
-                <p className="text-sm font-medium text-primary mb-4">{caseItem.solution}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">{caseItem.situation}</p>
+                <p className="text-xs md:text-sm font-medium text-primary mb-3 md:mb-4">{caseItem.solution}</p>
                 
-                <div className="space-y-2">
+                <div className="space-y-1.5 md:space-y-2">
                   {caseItem.results.map((result, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm">
-                      <ArrowRight className="w-4 h-4 text-primary" />
+                    <div key={i} className="flex items-center gap-2 text-xs md:text-sm">
+                      <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-primary flex-shrink-0" />
                       <span className="text-foreground font-medium">{result}</span>
                     </div>
                   ))}
@@ -96,9 +96,9 @@ const RFCaseStudiesSection = () => {
             ))}
           </div>
 
-          <div className={`text-center mt-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
+          <div className={`text-center mt-8 md:mt-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
             <Link to="/casi-studio">
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="outline" size="lg" className="group min-h-[48px]">
                 Vedi Tutti i Casi Studio
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
