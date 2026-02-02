@@ -1,5 +1,6 @@
 import { Users, Linkedin } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
+import OptimizedImage from "@/components/ui/optimized-image";
 
 interface TeamMember {
   name: string;
@@ -103,10 +104,11 @@ const TeamSection = () => {
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden">
-                <img
+                <OptimizedImage
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  containerClassName="w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                 

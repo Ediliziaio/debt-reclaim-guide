@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Shield, Clock } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-hope.jpg";
 
 interface RFHeroSectionProps {
@@ -15,13 +16,15 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
         <div className="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gold/5 rounded-full blur-[60px] md:blur-[100px] -translate-x-1/3 translate-y-1/3" />
       </div>
 
-      {/* Hero Image - positioned right */}
+      {/* Hero Image - positioned right - Priority loading for above-fold */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
         <div className="absolute inset-0">
-          <img 
+          <OptimizedImage 
             src={heroImage} 
             alt="Libertà dai debiti" 
             className="w-full h-full object-cover"
+            containerClassName="w-full h-full"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
@@ -103,10 +106,11 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           {/* Mobile/Tablet Hero Image */}
           <div className="mt-6 lg:hidden opacity-0 animate-fade-up animation-delay-600">
             <div className="relative rounded-xl overflow-hidden shadow-lg">
-              <img 
+              <OptimizedImage 
                 src={heroImage} 
                 alt="Libertà dai debiti" 
                 className="w-full h-[180px] sm:h-[220px] md:h-[280px] object-cover"
+                containerClassName="w-full h-[180px] sm:h-[220px] md:h-[280px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>

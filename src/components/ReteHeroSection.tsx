@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, MapPin, RefreshCw } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 import heroImage from "@/assets/rete-hero-team.jpg";
 
 interface ReteHeroSectionProps {
@@ -11,7 +12,13 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
     <section className="relative min-h-screen flex items-center pt-12 md:pt-20 pb-8 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Team di professionisti" className="w-full h-full object-cover" />
+        <OptimizedImage 
+          src={heroImage} 
+          alt="Team di professionisti" 
+          className="w-full h-full object-cover"
+          containerClassName="w-full h-full"
+          priority={true}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/70" />
       </div>
 

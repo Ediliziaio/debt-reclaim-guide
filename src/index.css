@@ -451,4 +451,30 @@
   .animate-menu-item {
     animation: menu-item-slide 0.3s ease-out forwards;
   }
+
+  /* Image loading shimmer effect */
+  @keyframes image-shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: image-shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* Blur-up image placeholder */
+  .image-blur-up {
+    filter: blur(20px);
+    transform: scale(1.1);
+    transition: filter 0.4s ease-out, transform 0.4s ease-out;
+  }
+
+  .image-blur-up.loaded {
+    filter: blur(0);
+    transform: scale(1);
+  }
 }

@@ -1,6 +1,7 @@
 import { useInView } from "@/hooks/useInView";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
 import { Award, Scale, Calculator, TrendingUp, Linkedin, Mail } from "lucide-react";
+import OptimizedImage from "@/components/ui/optimized-image";
 import avvocatoRossi from "@/assets/avvocato-rossi.jpg";
 import commercialistaFava from "@/assets/commercialista-fava.jpg";
 
@@ -64,7 +65,12 @@ const ReteFoundersSection = () => {
                 style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
                 <div className="aspect-[4/3] md:aspect-square overflow-hidden relative">
-                  <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
+                  <OptimizedImage 
+                    src={founder.image} 
+                    alt={founder.name} 
+                    className="w-full h-full object-cover object-top"
+                    containerClassName="w-full h-full"
+                  />
                   {/* Social Links on Hover */}
                   <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {founder.linkedin && (
