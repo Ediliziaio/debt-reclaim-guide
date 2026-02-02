@@ -42,24 +42,24 @@ const ReteFAQSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="faq" className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} id="faq" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className={`text-3xl md:text-4xl font-bold text-foreground text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className={`text-2xl md:text-4xl font-bold text-foreground text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Domande <span className="text-gold">Frequenti</span>
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
                 className={`bg-card border border-border rounded-xl overflow-hidden transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${200 + index * 80}ms` }}
               >
-                <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="w-full flex items-center justify-between p-5 text-left">
-                  <span className="font-semibold text-foreground pr-4">{faq.q}</span>
+                <button onClick={() => setOpenIndex(openIndex === index ? null : index)} className="w-full flex items-center justify-between p-4 md:p-5 text-left min-h-[48px]">
+                  <span className="text-sm md:text-base font-semibold text-foreground pr-4">{faq.q}</span>
                   {openIndex === index ? <ChevronUp className="w-5 h-5 text-gold flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
                 </button>
-                {openIndex === index && <div className="px-5 pb-5 text-muted-foreground border-t border-border pt-4">{faq.a}</div>}
+                {openIndex === index && <div className="px-4 md:px-5 pb-4 md:pb-5 text-sm md:text-base text-muted-foreground border-t border-border pt-4">{faq.a}</div>}
               </div>
             ))}
           </div>

@@ -50,15 +50,15 @@ const ReteGrowthPathSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Il Percorso Di Crescita <span className="text-gold">Professionale</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground">
               Un piano chiaro per la tua evoluzione nel settore
             </p>
           </div>
@@ -68,7 +68,7 @@ const ReteGrowthPathSection = () => {
             {/* Connecting Line */}
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" />
 
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {years.map((year, index) => (
                 <div 
                   key={index} 
@@ -78,14 +78,14 @@ const ReteGrowthPathSection = () => {
                   <div className={`md:flex md:items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Content */}
                     <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}`}>
-                      <div className={`bg-card border border-border rounded-2xl p-8 hover:border-${year.color}/30 transition-colors`}>
-                        <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${year.color === 'gold' ? 'bg-gold/10' : 'bg-primary/10'}`}>
-                            <year.icon className={`w-6 h-6 ${year.color === 'gold' ? 'text-gold' : 'text-primary'}`} />
+                      <div className={`bg-card border border-border rounded-2xl p-5 md:p-8 hover:border-${year.color}/30 transition-colors`}>
+                        <div className={`flex items-center gap-3 md:gap-4 mb-4 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                          <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center ${year.color === 'gold' ? 'bg-gold/10' : 'bg-primary/10'}`}>
+                            <year.icon className={`w-5 h-5 md:w-6 md:h-6 ${year.color === 'gold' ? 'text-gold' : 'text-primary'}`} />
                           </div>
                           <div>
-                            <h3 className={`text-xl font-bold ${year.color === 'gold' ? 'text-gold' : 'text-primary'}`}>{year.year}</h3>
-                            <p className="text-foreground font-semibold">{year.subtitle}</p>
+                            <h3 className={`text-lg md:text-xl font-bold ${year.color === 'gold' ? 'text-gold' : 'text-primary'}`}>{year.year}</h3>
+                            <p className="text-sm md:text-base text-foreground font-semibold">{year.subtitle}</p>
                           </div>
                         </div>
                         

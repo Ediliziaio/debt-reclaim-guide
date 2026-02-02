@@ -28,19 +28,19 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Succede Se <span className="text-destructive">Rimani Fermo</span>?
             </h2>
-            <p className="text-lg text-muted-foreground">Sii onesto con te stesso</p>
+            <p className="text-base md:text-lg text-muted-foreground">Sii onesto con te stesso</p>
           </div>
 
           {/* Intro */}
-          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
+          <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <p className="text-lg text-foreground mb-4">
               Il mercato dell'esdebitazione sta <span className="text-gold font-semibold">crescendo rapidamente</span>.
             </p>
@@ -55,16 +55,16 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Comparison Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-10 md:mb-12">
             {/* Don't Invest Column */}
-            <div className={`bg-destructive/5 border border-destructive/20 rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
-                  <X className="w-6 h-6 text-destructive" />
+            <div className={`bg-destructive/5 border border-destructive/20 rounded-2xl p-5 md:p-8 transition-all duration-700 ${isInView ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
+              <div className="flex items-center gap-3 mb-4 md:mb-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                  <X className="w-5 h-5 md:w-6 md:h-6 text-destructive" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Se NON investi nella tua specializzazione:</h3>
+                <h3 className="text-base md:text-xl font-bold text-foreground">Se NON investi nella tua specializzazione:</h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3 md:space-y-4">
                 {dontInvest.map((item, index) => (
                   <li 
                     key={index} 
@@ -79,14 +79,14 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
             </div>
 
             {/* Specialize Column */}
-            <div className={`bg-gold/5 border border-gold/20 rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                  <Check className="w-6 h-6 text-gold" />
+            <div className={`bg-gold/5 border border-gold/20 rounded-2xl p-5 md:p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
+              <div className="flex items-center gap-3 mb-4 md:mb-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 flex items-center justify-center">
+                  <Check className="w-5 h-5 md:w-6 md:h-6 text-gold" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Se SCEGLI di specializzarti con la rete:</h3>
+                <h3 className="text-base md:text-xl font-bold text-foreground">Se SCEGLI di specializzarti con la rete:</h3>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3 md:space-y-4">
                 {doSpecialize.map((item, index) => (
                   <li 
                     key={index} 
@@ -102,14 +102,14 @@ const ReteComparisonSection = ({ onOpenContact }: ReteComparisonSectionProps) =>
           </div>
 
           {/* Final Statement */}
-          <div className={`bg-navy rounded-2xl p-8 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
-            <p className="text-xl text-white mb-4">La scelta è tua.</p>
-            <p className="text-lg text-white/70 mb-6">
+          <div className={`bg-navy rounded-2xl p-5 md:p-8 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
+            <p className="text-lg md:text-xl text-white mb-4">La scelta è tua.</p>
+            <p className="text-base md:text-lg text-white/70 mb-6">
               Ma tra 12 mesi la situazione sarà molto diversa.
             </p>
             <button 
               onClick={onOpenContact}
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-navy-dark font-semibold px-8 py-4 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-navy-dark font-semibold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-colors min-h-[48px] w-full md:w-auto justify-center"
             >
               Scegli di Crescere Ora
               <ArrowRight className="w-5 h-5" />

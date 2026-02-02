@@ -80,15 +80,15 @@ const ReteProcessSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Come Funziona Il <span className="text-gold">Processo Di Selezione</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground">
               Selezioniamo con cura i professionisti che entrano nella rete. Non cerchiamo numeri, cerchiamo colleghi con cui costruire qualcosa di solido.
             </p>
           </div>
@@ -99,7 +99,7 @@ const ReteProcessSection = () => {
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5 hidden md:block" />
 
             {/* Steps */}
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {steps.map((step, index) => (
                 <div 
                   key={index} 
@@ -109,10 +109,10 @@ const ReteProcessSection = () => {
                   <div className={`md:flex md:items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Content */}
                     <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                      <div className={`bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors ${index % 2 === 0 ? 'md:mr-6' : 'md:ml-6'}`}>
+                      <div className={`bg-card border border-border rounded-xl p-4 md:p-6 hover:border-primary/30 transition-colors ${index % 2 === 0 ? 'md:mr-6' : 'md:ml-6'}`}>
                         <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                          <span className={`text-sm font-semibold ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`}>{step.step}</span>
-                          <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
+                          <span className={`text-xs md:text-sm font-semibold ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`}>{step.step}</span>
+                          <h3 className="text-base md:text-lg font-bold text-foreground">{step.title}</h3>
                         </div>
                         
                         <p className="text-muted-foreground mb-4">{step.description}</p>

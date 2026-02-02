@@ -99,21 +99,21 @@ const ReteBenefitsSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Cosa Ottieni Entrando Nella Rete <span className="text-gold">RF Ristrutturazioni Debiti</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground">
               Clicca su ogni voce per vedere i dettagli completi
             </p>
           </div>
 
           {/* Benefits Grid */}
-          <div className="space-y-4 mb-12">
+          <div className="space-y-3 md:space-y-4 mb-10 md:mb-12">
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
@@ -122,15 +122,15 @@ const ReteBenefitsSection = () => {
               >
                 <button
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center justify-between p-4 md:p-6 text-left min-h-[48px]"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-primary/10' : 'bg-gold/10'}`}>
-                      <benefit.icon className={`w-6 h-6 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${index % 2 === 0 ? 'bg-primary/10' : 'bg-gold/10'}`}>
+                      <benefit.icon className={`w-5 h-5 md:w-6 md:h-6 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-foreground">{benefit.title}</h3>
-                      <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                      <h3 className="text-base md:text-lg font-bold text-foreground">{benefit.title}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground">{benefit.description}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -143,13 +143,13 @@ const ReteBenefitsSection = () => {
                 </button>
                 
                 {expandedIndex === index && (
-                  <div className="px-6 pb-6">
+                  <div className="px-4 md:px-6 pb-4 md:pb-6">
                     <div className="pt-4 border-t border-border">
                       <ul className="space-y-2">
                         {benefit.details.map((detail, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                            <span className="text-foreground">{detail}</span>
+                            <Check className="w-4 h-4 md:w-5 md:h-5 text-gold flex-shrink-0 mt-0.5" />
+                            <span className="text-sm md:text-base text-foreground">{detail}</span>
                           </li>
                         ))}
                       </ul>

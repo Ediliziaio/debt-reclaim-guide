@@ -43,27 +43,27 @@ const ReteFoundersSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="chi-siamo" className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} id="chi-siamo" className="py-16 md:py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               Chi Siamo E Perché La Nostra Esperienza <span className="text-gold">Fa La Differenza</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground">
               RF Ristrutturazioni Debiti è fondata e coordinata da:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16">
             {founders.map((founder, index) => (
               <div 
                 key={index} 
                 className={`bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-700 group ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
-                <div className="aspect-square overflow-hidden relative">
+                <div className="aspect-[4/3] md:aspect-square overflow-hidden relative">
                   <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
                   {/* Social Links on Hover */}
                   <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -87,18 +87,18 @@ const ReteFoundersSection = () => {
                     )}
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${index === 0 ? 'bg-primary/10' : 'bg-gold/10'}`}>
-                      <founder.icon className={`w-5 h-5 ${index === 0 ? 'text-primary' : 'text-gold'}`} />
+                    <div className={`w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center ${index === 0 ? 'bg-primary/10' : 'bg-gold/10'}`}>
+                      <founder.icon className={`w-4 h-4 md:w-5 md:h-5 ${index === 0 ? 'text-primary' : 'text-gold'}`} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-foreground">{founder.name}</h3>
-                      <p className={`text-sm ${index === 0 ? 'text-primary' : 'text-gold'}`}>{founder.role}</p>
+                      <h3 className="text-lg md:text-xl font-bold text-foreground">{founder.name}</h3>
+                      <p className={`text-xs md:text-sm ${index === 0 ? 'text-primary' : 'text-gold'}`}>{founder.role}</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">{founder.experience}</p>
-                  <p className="text-foreground font-medium bg-primary/5 border border-primary/20 rounded-lg p-3">
+                  <p className="text-sm md:text-base text-muted-foreground mb-4">{founder.experience}</p>
+                  <p className="text-sm md:text-base text-foreground font-medium bg-primary/5 border border-primary/20 rounded-lg p-3">
                     {founder.highlight}
                   </p>
                 </div>
@@ -107,44 +107,44 @@ const ReteFoundersSection = () => {
           </div>
 
           {/* Method Statement */}
-          <div className={`bg-navy rounded-2xl p-8 md:p-12 mb-12 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '500ms' }}>
-            <p className="text-xl text-white mb-8">
+          <div className={`bg-navy rounded-2xl p-5 md:p-12 mb-10 md:mb-12 text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '500ms' }}>
+            <p className="text-lg md:text-xl text-white mb-6 md:mb-8">
               Un Metodo Collaudato Su <strong className="text-gold">Risultati Reali</strong>
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {stats.map((stat, index) => (
                 <div 
                   key={index} 
                   className={`text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                   style={{ transitionDelay: `${600 + index * 100}ms` }}
                 >
-                  <stat.icon className="w-8 h-8 text-gold mx-auto mb-3" />
-                  <div className="text-3xl md:text-4xl font-bold text-white">
+                  <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-gold mx-auto mb-2 md:mb-3" />
+                  <div className="text-2xl md:text-4xl font-bold text-white">
                     {stat.prefix}{stat.value}{stat.suffix}
                   </div>
-                  <div className="text-sm text-white/60 mt-1">{stat.label}</div>
+                  <div className="text-xs md:text-sm text-white/60 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Di Cosa Si Occupa la Rete */}
-          <div className={`mt-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+          <div className={`mt-10 md:mt-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
+            <h3 className="text-xl md:text-3xl font-bold text-foreground text-center mb-4">
               Le Aree Di Specializzazione Della <span className="text-gold">Rete</span>
             </h3>
-            <p className="text-muted-foreground text-center mb-10 max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-muted-foreground text-center mb-8 md:mb-10 max-w-3xl mx-auto">
               L'associazione professionale tra l'Avvocato Armando Rossi e il Dott. Commercialista Roberto Fava è interamente dedicata alla gestione della crisi da debito delle Imprese e all'esdebitazione di consumatori, professionisti e piccoli imprenditori.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {/* Crisi d'Impresa */}
-              <div className={`bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1000ms' }}>
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Scale className="w-6 h-6 text-primary" />
+              <div className={`bg-card border border-border rounded-xl p-4 md:p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1000ms' }}>
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Scale className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">Crisi d'Impresa</h4>
-                <p className="text-sm text-muted-foreground mb-4">
+                <h4 className="text-base md:text-lg font-bold text-foreground mb-3">Crisi d'Impresa</h4>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4">
                   Interventi per aziende in difficoltà con approccio integrato legale-contabile, applicando rigorosamente gli strumenti del Codice della Crisi e dell'Insolvenza.
                 </p>
                 <ul className="text-xs text-muted-foreground space-y-1">
@@ -157,12 +157,12 @@ const ReteFoundersSection = () => {
               </div>
 
               {/* Esdebitazione */}
-              <div className={`bg-card border border-border rounded-xl p-6 hover:border-gold/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1100ms' }}>
-                <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                  <Calculator className="w-6 h-6 text-gold" />
+              <div className={`bg-card border border-border rounded-xl p-4 md:p-6 hover:border-gold/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1100ms' }}>
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                  <Calculator className="w-5 h-5 md:w-6 md:h-6 text-gold" />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">Esdebitazione</h4>
-                <p className="text-sm text-muted-foreground mb-4">
+                <h4 className="text-base md:text-lg font-bold text-foreground mb-3">Esdebitazione</h4>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4">
                   Supporto completo a consumatori, professionisti e piccoli imprenditori in tutte le fasi del percorso di liberazione dai debiti.
                 </p>
                 <ul className="text-xs text-muted-foreground space-y-1">
@@ -175,12 +175,12 @@ const ReteFoundersSection = () => {
               </div>
 
               {/* Metodo Integrato */}
-              <div className={`bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1200ms' }}>
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <TrendingUp className="w-6 h-6 text-primary" />
+              <div className={`bg-card border border-border rounded-xl p-4 md:p-6 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1200ms' }}>
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-3">Metodo Integrato</h4>
-                <p className="text-sm text-muted-foreground mb-4">
+                <h4 className="text-base md:text-lg font-bold text-foreground mb-3">Metodo Integrato</h4>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4">
                   Valutiamo la sostenibilità aziendale, dialoghiamo con creditori, fisco e banche per chiudere il passato debitorio con soluzioni ordinate e legali.
                 </p>
                 <ul className="text-xs text-muted-foreground space-y-1">

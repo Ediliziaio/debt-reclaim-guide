@@ -65,25 +65,38 @@ const ReteHeader = ({ onOpenContact }: ReteHeaderProps) => {
             </Button>
           </nav>
 
-          <button className="md:hidden p-2 text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {/* Animated Hamburger */}
+          <button 
+            className="md:hidden p-2 text-foreground relative w-11 h-11 flex items-center justify-center touch-target"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45' : '-translate-y-2'}`} />
+            <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45' : 'translate-y-2'}`} />
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-3">
-              {navItems.map(({ id, label }) => (
+          <nav className="md:hidden py-4 border-t border-border animate-menu-open overflow-hidden safe-bottom">
+            <div className="flex flex-col gap-1">
+              {navItems.map(({ id, label }, index) => (
                 <button 
                   key={id} 
                   onClick={() => scrollToSection(id)} 
-                  className="text-left py-2 text-muted-foreground hover:text-primary transition-colors"
+                  className="text-left py-3 px-2 min-h-[48px] text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all animate-menu-item"
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {label}
                 </button>
               ))}
-              <Button variant="cta" className="mt-2" onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}>
+              <Button 
+                variant="cta" 
+                className="mt-3 w-full min-h-[48px] animate-menu-item" 
+                style={{ animationDelay: `${navItems.length * 50}ms` }}
+                onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}
+              >
                 Richiedi Informazioni
               </Button>
             </div>

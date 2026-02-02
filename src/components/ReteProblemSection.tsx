@@ -30,11 +30,11 @@ const ReteProblemSection = () => {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-muted/50">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Opening Letter */}
-          <div className={`mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="text-lg text-muted-foreground mb-6">
               Caro Collega Avvocato, Caro Collega Dottore Commercialista,
             </p>
@@ -47,28 +47,28 @@ const ReteProblemSection = () => {
           </div>
 
           {/* Problem Checklist */}
-          <div className="space-y-4 mb-12">
+          <div className="space-y-3 md:space-y-4 mb-10 md:mb-12">
             {problems.map((problem, index) => (
               <div 
                 key={index} 
-                className={`flex items-start gap-4 bg-destructive/5 border border-destructive/20 rounded-lg p-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`flex items-start gap-3 md:gap-4 bg-destructive/5 border border-destructive/20 rounded-lg p-3 md:p-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${200 + index * 100}ms` }}
               >
-                <XCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" />
-                <p className="text-foreground">{problem}</p>
+                <XCircle className="w-5 h-5 md:w-6 md:h-6 text-destructive flex-shrink-0 mt-0.5" />
+                <p className="text-sm md:text-base text-foreground">{problem}</p>
               </div>
             ))}
           </div>
 
           {/* Second Hook */}
-          <div className={`bg-card border border-border rounded-xl p-8 mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '700ms' }}>
+          <div className={`bg-card border border-border rounded-xl p-5 md:p-8 mb-10 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '700ms' }}>
             <p className="text-lg text-foreground mb-4">
               E quante volte hai accettato il caso... ma poi ti sei trovato a <strong>studiare da zero</strong>, perdere tempo prezioso, improvvisare procedure, e chiederti se stavi davvero facendo la cosa giusta per il tuo cliente?
             </p>
           </div>
 
           {/* The Truth */}
-          <div className={`mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
+          <div className={`mb-10 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
             <div className="flex items-center gap-3 mb-6">
               <AlertTriangle className="w-8 h-8 text-amber-500" />
               <h3 className="text-2xl font-bold text-foreground">La Verità Che Nessuno Ti Dice</h3>
@@ -95,7 +95,7 @@ const ReteProblemSection = () => {
           </div>
 
           {/* The Problem Statement */}
-          <div className={`bg-navy rounded-2xl p-8 text-white transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1200ms' }}>
+          <div className={`bg-navy rounded-2xl p-5 md:p-8 text-white transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1200ms' }}>
             <h3 className="text-xl font-bold mb-4">E il problema?</h3>
             <p className="text-lg text-white/80 mb-6">
               Se lavori da solo nel tuo studio, probabilmente <strong className="text-gold">NON hai tutto questo</strong>.
