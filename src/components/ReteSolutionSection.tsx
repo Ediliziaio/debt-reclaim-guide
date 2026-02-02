@@ -1,6 +1,9 @@
 import { Check, Sparkles } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const ReteSolutionSection = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   const benefits = [
     "Formazione tecnica completa (legale + contabile)",
     "Coordinamento costante con professionisti esperti",
@@ -21,12 +24,12 @@ const ReteSolutionSection = () => {
   ];
 
   return (
-    <section id="vantaggi" className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} id="vantaggi" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <Sparkles className="w-4 h-4 text-gold" />
               <span className="text-sm font-medium text-gold">La Soluzione</span>
             </div>
@@ -36,7 +39,7 @@ const ReteSolutionSection = () => {
           </div>
 
           {/* Network Introduction */}
-          <div className="bg-gradient-to-br from-primary/10 via-gold/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 mb-12">
+          <div className={`bg-gradient-to-br from-primary/10 via-gold/5 to-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             <p className="text-xl text-foreground mb-6">
               <strong className="text-gold">RF Ristrutturazione Debiti</strong> è la <strong>PRIMA rete nazionale</strong> in Italia che unisce Avvocati e Commercialisti specializzati esclusivamente in:
             </p>
@@ -56,13 +59,17 @@ const ReteSolutionSection = () => {
           </div>
 
           {/* What You Get */}
-          <div className="mb-12">
+          <div className={`mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
               In parole semplici: Ti diamo <span className="text-gold">gli strumenti per diventare un vero specialista</span>
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-colors">
+                <div 
+                  key={index} 
+                  className={`flex items-start gap-3 bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${500 + index * 100}ms` }}
+                >
                   <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${index % 2 === 0 ? 'text-primary' : 'text-gold'}`} />
                   <span className="text-foreground">{benefit}</span>
                 </div>
@@ -71,13 +78,17 @@ const ReteSolutionSection = () => {
           </div>
 
           {/* Results */}
-          <div className="bg-navy rounded-2xl p-8 md:p-12">
+          <div className={`bg-navy rounded-2xl p-8 md:p-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Risultato per te?
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               {results.map((result, index) => (
-                <div key={index} className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-lg p-4">
+                <div 
+                  key={index} 
+                  className={`flex items-start gap-3 bg-white/5 border border-white/10 rounded-lg p-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${900 + index * 100}ms` }}
+                >
                   <div className="w-6 h-6 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                     <Check className="w-4 h-4 text-gold" />
                   </div>

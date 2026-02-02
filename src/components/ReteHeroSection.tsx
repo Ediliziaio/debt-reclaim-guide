@@ -18,28 +18,28 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-8">
+          <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-8 animate-fade-up">
             <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
             <span className="text-xs md:text-sm font-medium text-gold">Per Avvocati e Commercialisti</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 md:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 md:mb-6 animate-fade-up animation-delay-100">
             SMETTI Di Lavorare Da Solo Su Casi Complessi Di{" "}
             <span className="text-gradient-hero">Debito</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base md:text-xl lg:text-2xl text-white/90 mb-2 md:mb-4">
+          <p className="text-base md:text-xl lg:text-2xl text-white/90 mb-2 md:mb-4 animate-fade-up animation-delay-200">
             Entra Nella <strong className="text-gold">PRIMA Rete Nazionale</strong> Specializzata In Esdebitazione E Crisi D'Impresa
           </p>
 
-          <p className="text-sm md:text-lg text-white/70 mb-6 md:mb-8">
+          <p className="text-sm md:text-lg text-white/70 mb-6 md:mb-8 animate-fade-up animation-delay-300">
             (E Diventa Il Professionista Di Riferimento Nel Tuo Territorio)
           </p>
 
           {/* Hook Text */}
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 md:p-6 mb-6 md:mb-10">
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 md:p-6 mb-6 md:mb-10 animate-fade-up animation-delay-400">
             <p className="text-white/90 text-sm md:text-lg leading-relaxed">
               Se gestisci (o vorresti gestire) pratiche di esdebitazione e crisi d'impresa ma ti mancano 
               <strong className="text-gold"> know-how, coordinamento o un metodo collaudato</strong>... 
@@ -48,7 +48,7 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12 animate-fade-up animation-delay-500">
             <Button variant="cta" size="lg" onClick={onOpenContact} className="text-sm md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto">
               Richiedi Informazioni
               <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
@@ -64,7 +64,7 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
           </div>
 
           {/* Stats Row - Responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 animate-fade-up animation-delay-600">
             {[
               { icon: Users, value: "24", label: "Studi nella Rete" },
               { icon: MapPin, value: "14", label: "Regioni Coperte" },

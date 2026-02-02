@@ -1,6 +1,9 @@
 import { MapPin, Zap, Clock, AlertTriangle } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const ReteUrgencySection = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   const reasons = [
     {
       icon: MapPin,
@@ -36,12 +39,12 @@ const ReteUrgencySection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6">
+          <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-2 mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               <AlertTriangle className="w-4 h-4 text-amber-500" />
               <span className="text-sm font-medium text-amber-500">Urgente</span>
             </div>
@@ -58,7 +61,8 @@ const ReteUrgencySection = () => {
             {reasons.map((reason, index) => (
               <div 
                 key={index} 
-                className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-colors"
+                className={`bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   <div className="flex items-center gap-4 md:w-1/3">

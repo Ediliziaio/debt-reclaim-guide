@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Minus, Plus } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 interface ReteFinalCTASectionProps {
   onOpenContact: () => void;
 }
 
 const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
+
   const stayPath = [
     "Continua a lavorare come hai sempre fatto",
     "Rifiuta i casi complessi",
@@ -21,11 +24,11 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-navy via-navy to-navy-dark">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-24 bg-gradient-to-br from-navy via-navy to-navy-dark">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Il Momento Di Decidere È <span className="text-gold">Adesso</span>
             </h2>
@@ -35,7 +38,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
           {/* Two Paths */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Stay Path */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <div className={`bg-white/5 border border-white/10 rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '200ms' }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-destructive/20 flex items-center justify-center">
                   <Minus className="w-6 h-6 text-destructive" />
@@ -44,7 +47,11 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
               </div>
               <ul className="space-y-4">
                 {stayPath.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                  <li 
+                    key={index} 
+                    className={`flex items-start gap-3 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                    style={{ transitionDelay: `${300 + index * 80}ms` }}
+                  >
                     <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
                     <span className="text-white/70">{item}</span>
                   </li>
@@ -53,7 +60,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
             </div>
 
             {/* Grow Path */}
-            <div className="bg-gold/10 border border-gold/30 rounded-2xl p-8">
+            <div className={`bg-gold/10 border border-gold/30 rounded-2xl p-8 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '200ms' }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
                   <Plus className="w-6 h-6 text-gold" />
@@ -62,7 +69,11 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
               </div>
               <ul className="space-y-4">
                 {growPath.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                  <li 
+                    key={index} 
+                    className={`flex items-start gap-3 transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                    style={{ transitionDelay: `${300 + index * 80}ms` }}
+                  >
                     <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0" />
                     <span className="text-white/90">{item}</span>
                   </li>
@@ -72,7 +83,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
           </div>
 
           {/* Final Message */}
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
             <p className="text-lg text-white/80 mb-6">
               La differenza tra un professionista che cresce e uno che rimane fermo non è il talento.
             </p>
@@ -85,7 +96,7 @@ const ReteFinalCTASection = ({ onOpenContact }: ReteFinalCTASectionProps) => {
           </div>
 
           {/* CTA */}
-          <div className="text-center">
+          <div className={`text-center transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{ transitionDelay: '800ms' }}>
             <Button 
               variant="cta" 
               size="xxl" 

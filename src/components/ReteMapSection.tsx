@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useInView } from "@/hooks/useInView";
 import italyMapImage from "@/assets/italy-regions-map.png";
 
 interface RegionData {
@@ -53,6 +54,7 @@ const statusConfig = {
 };
 
 const ReteMapSection = () => {
+  const { ref, isInView } = useInView({ threshold: 0.2 });
   const [activeRegion, setActiveRegion] = useState<RegionData | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -85,11 +87,11 @@ const ReteMapSection = () => {
   const baseSize = isTouchDevice ? 24 : 16;
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 md:mb-12">
-            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6">
+          <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
               Copertura Nazionale
             </span>
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
@@ -102,7 +104,7 @@ const ReteMapSection = () => {
 
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Map Container */}
-            <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg select-none">
+            <div className={`relative w-full max-w-sm md:max-w-md lg:max-w-lg select-none transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '200ms' }}>
               {/* Italy Background Image */}
               <div className="relative w-full aspect-[2/3]">
                 <img 
@@ -191,28 +193,27 @@ const ReteMapSection = () => {
             </div>
 
             {/* Legend and Stats */}
-            <div className="flex-1 space-y-4 md:space-y-8 w-full lg:w-auto">
+            <div className={`flex-1 space-y-4 md:space-y-8 w-full lg:w-auto transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '400ms' }}>
               <div className="grid grid-cols-2 gap-3 md:gap-4">
-                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
-                  <p className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">24</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">Studi Attivi</p>
-                </div>
-                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-secondary/30 transition-colors">
-                  <p className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">14</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">Regioni Coperte</p>
-                </div>
-                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
-                  <p className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">50+</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">Posti Disponibili</p>
-                </div>
-                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-secondary/30 transition-colors">
-                  <p className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">96%</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">Tasso di Rinnovo</p>
-                </div>
+                {[
+                  { value: "24", label: "Studi Attivi", color: "primary" },
+                  { value: "14", label: "Regioni Coperte", color: "secondary" },
+                  { value: "50+", label: "Posti Disponibili", color: "primary" },
+                  { value: "96%", label: "Tasso di Rinnovo", color: "secondary" },
+                ].map((stat, index) => (
+                  <div 
+                    key={index}
+                    className={`p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-${stat.color}/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                    style={{ transitionDelay: `${500 + index * 100}ms` }}
+                  >
+                    <p className={`text-2xl md:text-4xl font-bold text-${stat.color} mb-1 md:mb-2`}>{stat.value}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+                  </div>
+                ))}
               </div>
 
               {/* Legend */}
-              <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border">
+              <div className={`p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
                 <h4 className="font-bold text-foreground mb-3 md:mb-4 text-sm md:text-base">Legenda</h4>
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center gap-3 md:gap-4">
