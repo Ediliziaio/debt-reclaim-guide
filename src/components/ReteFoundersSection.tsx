@@ -52,7 +52,7 @@ const ReteFoundersSection = () => {
               Chi Siamo E Perché La Nostra Esperienza <span className="text-gold">Fa La Differenza</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              RF Ristrutturazione Debiti è fondata e coordinata da:
+              RF Ristrutturazioni Debiti è fondata e coordinata da:
             </p>
           </div>
 

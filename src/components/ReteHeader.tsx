@@ -50,7 +50,7 @@ const ReteHeader = ({ onOpenContact }: ReteHeaderProps) => {
             </Link>
             <div className="h-5 sm:h-6 w-px bg-border hidden xs:block" />
             <a href="#" className="flex items-center" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-              <img src={rfLogo} alt="RF Ristrutturazione Debiti" className="h-8 sm:h-10 w-auto" />
+              <img src={rfLogo} alt="RF Ristrutturazioni Debiti" className="h-8 sm:h-10 w-auto" />
             </a>
           </div>
 

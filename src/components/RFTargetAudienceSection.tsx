@@ -37,7 +37,7 @@ const RFTargetAudienceSection = () => {
           
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Per Chi È{" "}
-            <span className="text-primary">RF Ristrutturazione Debiti</span>
+            <span className="text-primary">RF Ristrutturazioni Debiti</span>
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
