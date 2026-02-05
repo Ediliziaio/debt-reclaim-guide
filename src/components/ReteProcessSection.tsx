@@ -18,7 +18,7 @@ const ReteProcessSection = () => {
       title: "Richiesta Informazioni",
       description: "Compila il form di contatto con:",
       details: [
-        "Nome, cognome, qualifica (Avv./Dott. Comm.)",
+        "Nome, cognome, qualifica (Avv./Dott. Comm./Cons. Lavoro)",
         "Città/provincia di attività",
         "Breve descrizione del tuo studio",
         "Cosa ti interessa dell'opportunità di crescita",

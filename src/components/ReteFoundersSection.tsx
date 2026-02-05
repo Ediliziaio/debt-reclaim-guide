@@ -140,7 +140,7 @@ const ReteFoundersSection = () => {
               Le Aree Di Specializzazione Della <span className="text-gold">Rete</span>
             </h3>
             <p className="text-sm md:text-base text-muted-foreground text-center mb-8 md:mb-10 max-w-3xl mx-auto">
-              L'associazione professionale tra l'Avvocato Armando Rossi e il Dott. Commercialista Roberto Fava è interamente dedicata alla gestione della crisi da debito delle Imprese e all'esdebitazione di consumatori, professionisti e piccoli imprenditori.
+              L'associazione professionale tra l'Avvocato Armando Rossi e il Dott. Commercialista Roberto Fava, in collaborazione con Consulenti del Lavoro qualificati, è interamente dedicata alla gestione della crisi da debito delle Imprese e all'esdebitazione di consumatori, professionisti e piccoli imprenditori.
             </p>
             
             <div className="grid md:grid-cols-3 gap-4 md:gap-6">
