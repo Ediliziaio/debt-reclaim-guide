@@ -1,271 +1,238 @@
 
 
-## Piano Completo: Ottimizzazioni Mobile + Animazioni Menu
+## Piano: Modifiche Terminologia + Pagina Casi Risolti + Rimozione Garanzia
 
-### PARTE 1: Verifica Home Page Mobile
+### PARTE 1: Cambio Terminologia "Consulenza Gratuita" → "Colloquio Gratuito"
 
-Ho verificato la home page su simulazione mobile (390x844). Le ottimizzazioni precedenti sono state applicate correttamente:
-- Tipografia scalabile
-- Padding ridotti
-- Immagine hero mobile visibile
-- Touch targets adeguati
-- Cards compatte
+Modificherò tutti i riferimenti nelle seguenti posizioni della home page:
 
----
-
-### PARTE 2: Ottimizzazioni Pagina /rete
-
-Applicheremo le stesse ottimizzazioni mobile alla pagina professionisti. Ecco i file da modificare:
-
-#### 2.1 ReteHeader.tsx - Touch Targets e Animazioni Menu
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Icona hamburger | `w-6 h-6` | `w-7 h-7` |
-| Logo mobile | `h-8` | `h-9` |
-| Touch target menu items | `py-2` | `py-3 min-h-[48px]` |
-| Animazione menu | `animate-fade-in` | Transizione elaborata con slide + fade |
-
-#### 2.2 ReteHeroSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding superiore | `pt-16 md:pt-20` | `pt-12 md:pt-20` |
-| CTA buttons | `py-5 md:py-6` | `min-h-[48px] py-4 md:py-6` |
-| Stats row mobile | Cards separate | Layout più compatto con gap ridotto |
-
-#### 2.3 ReteProblemSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards problema | `p-4` | `p-3 md:p-4` |
-| Font testo | Default | `text-sm md:text-base` |
-| Margini header | `mb-16` | `mb-10 md:mb-16` |
-
-#### 2.4 ReteSolutionSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-4` | `p-3 md:p-4` |
-| Margini header | `mb-16` | `mb-10 md:mb-16` |
-
-#### 2.5 ReteFoundersSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Aspect ratio foto | `aspect-square` | `aspect-[4/3] md:aspect-square` |
-| Padding bio card | `p-6` | `p-4 md:p-6` |
-| Stats grid | `grid-cols-2 md:grid-cols-4 gap-8` | `gap-4 md:gap-8` |
-| Font stats | `text-3xl md:text-4xl` | `text-2xl md:text-4xl` |
-
-#### 2.6 ReteMarketStatsSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-8` | `p-5 md:p-8` |
-| Grid | `md:grid-cols-3` | `grid-cols-1 md:grid-cols-3` |
-| Margini header | `mb-16` | `mb-10 md:mb-16` |
-
-#### 2.7 ReteBenefitsSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding accordion button | `p-6` | `p-4 md:p-6` |
-| Icone | `w-12 h-12` | `w-10 h-10 md:w-12 md:h-12` |
-| Font titolo | Default | `text-base md:text-lg` |
-
-#### 2.8 ReteGrowthPathSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards timeline | `p-8` | `p-5 md:p-8` |
-| Icone | `w-12 h-12` | `w-10 h-10 md:w-12 md:h-12` |
-
-#### 2.9 ReteTestimonialsSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-6` | `p-4 md:p-6` |
-| Quote icon | `w-10 h-10` | `w-8 h-8 md:w-10 md:h-10` |
-| Grid testimonials | `md:grid-cols-2 lg:grid-cols-3` | Stesso ma con gap ridotto su mobile |
-
-#### 2.10 ReteComparisonSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-8` | `p-5 md:p-8` |
-| Icone | `w-12 h-12` | `w-10 h-10 md:w-12 md:h-12` |
-| CTA button | Default | `w-full md:w-auto min-h-[48px]` |
-
-#### 2.11 ReteUrgencySection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-8` | `p-5 md:p-8` |
-| Icone | `w-14 h-14` | `w-12 h-12 md:w-14 md:h-14` |
-| Layout flex | `flex-col md:flex-row` | Già ok, ottimizzare gap |
-
-#### 2.12 ReteProcessSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-6` | `p-4 md:p-6` |
-| Font step titles | Default | `text-base md:text-lg` |
-
-#### 2.13 ReteFAQSection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding accordion | `p-5` | `p-4 md:p-5` |
-| Font domande | Default | `text-sm md:text-base` |
-| Touch target | Default | `min-h-[48px]` |
-
-#### 2.14 ReteAvailabilitySection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Grid tabella | 3 colonne | Su mobile layout più compatto |
-| Padding celle | `p-4` | `p-3 md:p-4` |
-| Font | Default | `text-sm md:text-base` |
-
-#### 2.15 ReteFinalCTASection.tsx
-
-| Modifica | Prima | Dopo |
-|----------|-------|------|
-| Padding sezione | `py-24` | `py-16 md:py-24` |
-| Padding cards | `p-8` | `p-5 md:p-8` |
-| CTA button | `size="xxl"` | Full width su mobile |
+| File | Testo Attuale | Nuovo Testo |
+|------|---------------|-------------|
+| `RFHeroSection.tsx` | "Prenota Consulenza Gratuita" | "Prenota Colloquio Gratuito" |
+| `RFHeader.tsx` (desktop) | "Consulenza Gratuita" | "Colloquio Gratuito" |
+| `RFHeader.tsx` (mobile) | "Consulenza Gratuita" | "Colloquio Gratuito" |
+| `RFFAQSection.tsx` | "consulenza gratuita" | "colloquio gratuito" |
+| `RFFinalCTA.tsx` | "Prenota Una Consulenza Gratuita" | "Prenota Un Colloquio Gratuito" |
+| `StickyCTA.tsx` | "Consulenza Gratuita" | "Colloquio Gratuito" |
 
 ---
 
-### PARTE 3: Animazioni Menu Mobile Elaborate
+### PARTE 2: Rimozione Garanzia "Soddisfatti o Rimborsati"
 
-Modifiche a **ReteHeader.tsx** e **RFHeader.tsx**:
+**File: `RFGuaranteesSection.tsx`**
 
-**Nuove animazioni CSS da aggiungere a `index.css`:**
+Rimuoverò:
+1. La garanzia "Soddisfatti o Rimborsati" dall'array `guarantees` (righe 20-24)
+2. Il badge "Garanzia Soddisfatti o Rimborsati" in fondo alla sezione (righe 188-194)
+3. Cambierò il titolo da "4 Garanzie Concrete" a "3 Garanzie Concrete"
 
-```css
-/* Mobile Menu Animations */
-@keyframes menu-slide-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-    max-height: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 500px;
-  }
-}
+Le 3 garanzie rimanenti saranno:
+- Valutazione Documentata
+- Riferimenti Normativi Chiari
+- Percorso Chiaro
 
-@keyframes menu-item-slide {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+**File: `RFFAQSection.tsx`**
 
-.animate-menu-open {
-  animation: menu-slide-down 0.3s ease-out forwards;
-}
+Rimuoverò il riferimento alla garanzia "Soddisfatti o Rimborsati" nella risposta alla domanda "Cosa succede se la procedura non va a buon fine?" (riga 75)
 
-.animate-menu-item {
-  animation: menu-item-slide 0.3s ease-out forwards;
-}
+**File: `CrisiImpresaSection.tsx`**
+
+Rimuoverò la garanzia "Soddisfatti o rimborsati" dall'array `garanzie` (righe 49-53)
+
+---
+
+### PARTE 3: Nuova Pagina Casi Risolti Professionale
+
+Riscriverò completamente `src/pages/CasiStudio.tsx` con casi studio realistici dal punto di vista legale-giuridico.
+
+#### Struttura della Nuova Pagina
+
+```
+┌─────────────────────────────────────────┐
+│  Header con navigazione                 │
+├─────────────────────────────────────────┤
+│  HERO: "Casi Reali di Esdebitazione"    │
+│  Sottotitolo: spiegazione legale        │
+├─────────────────────────────────────────┤
+│  INTRODUZIONE GIURIDICA                 │
+│  Spiegazione del quadro normativo       │
+│  (L. 3/2012, Codice Crisi Insolvenza)   │
+├─────────────────────────────────────────┤
+│  STATISTICHE aggregate                  │
+│  (casi gestiti, riduzione media, ecc.)  │
+├─────────────────────────────────────────┤
+│  FILTRI per categoria                   │
+│  Privati | Imprese | Debito Fiscale     │
+├─────────────────────────────────────────┤
+│  CASI STUDIO DETTAGLIATI (10 casi)      │
+│  - Ogni caso con narrazione completa    │
+│  - Quadro normativo applicato           │
+│  - Procedura seguita step-by-step       │
+│  - Risultati documentati                │
+│  - Testimonianza cliente                │
+├─────────────────────────────────────────┤
+│  SEZIONE PROCEDURA LEGALE               │
+│  Come funziona il percorso giuridico    │
+├─────────────────────────────────────────┤
+│  CTA FINALE                             │
+│  "Richiedi un colloquio gratuito"       │
+├─────────────────────────────────────────┤
+│  Footer                                 │
+└─────────────────────────────────────────┘
 ```
 
-**Nuova struttura menu mobile:**
+#### Nuovi Casi Studio (10 casi realistici)
 
-```tsx
-{isMobileMenuOpen && (
-  <nav className="md:hidden py-4 border-t border-border animate-menu-open overflow-hidden">
-    <div className="flex flex-col gap-1">
-      {navItems.map(({ id, label }, index) => (
-        <button 
-          key={id} 
-          onClick={() => scrollToSection(id)} 
-          className="text-left py-3 px-2 text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-all min-h-[48px] animate-menu-item"
-          style={{ animationDelay: `${index * 50}ms` }}
-        >
-          {label}
-        </button>
-      ))}
-      <Button 
-        variant="cta" 
-        className="mt-3 w-full min-h-[48px] animate-menu-item"
-        style={{ animationDelay: `${navItems.length * 50}ms` }}
-        onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}
-      >
-        Richiedi Informazioni
-      </Button>
-    </div>
-  </nav>
-)}
-```
+**CATEGORIA PRIVATI (4 casi)**
 
----
+1. **Famiglia con Sovraindebitamento da Mutuo e Prestiti**
+   - Situazione: Coppia con mutuo ipotecario (€180.000 residuo), 4 prestiti personali (€45.000), carte revolving (€15.000). Reddito familiare sceso del 40% per cassa integrazione.
+   - Quadro normativo: Piano del Consumatore ex art. 67 e ss. Codice Crisi Insolvenza
+   - Procedura: Presentazione istanza al Tribunale, nomina OCC, redazione piano, udienza di omologa
+   - Risultato: Riduzione debito da €240.000 a €72.000 (70%), piano quinquennale €1.200/mese, blocco pignoramento stipendio, casa salvata
+   - Tempistica: 7 mesi dall'istanza all'omologa
 
-### PARTE 4: Animazione Icona Hamburger
+2. **Pensionato con Debiti da Cessione del Quinto**
+   - Situazione: Pensionato 68 anni, pensione €1.400/mese. Tre cessioni del quinto stratificate per aiutare i figli, debito complessivo €52.000.
+   - Quadro normativo: Procedura di Liquidazione Controllata ex art. 268 e ss. CCI
+   - Procedura: Liquidazione del patrimonio disponibile (auto vecchia, piccolo conto), esdebitazione del residuo
+   - Risultato: Pagamento €8.000, cancellazione €44.000 (85% riduzione), pensione integrale ripristinata
+   - Tempistica: 5 mesi
 
-Trasformare l'icona hamburger in una X animata:
+3. **Ex Imprenditore con Debiti Residui**
+   - Situazione: Ex titolare di SNC cessata, debiti verso banche (€95.000), fornitori (€35.000), INPS (€28.000). Ora dipendente con stipendio €1.600/mese.
+   - Quadro normativo: Concordato Minore ex art. 74 e ss. CCI
+   - Procedura: Accordo con maggioranza creditori qualificata, omologa tribunalare
+   - Risultato: Stralcio 65% del debito, rateizzazione residuo in 4 anni
+   - Tempistica: 9 mesi
 
-```tsx
-<button 
-  className="md:hidden p-2 text-foreground relative w-10 h-10 flex items-center justify-center touch-target"
-  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+4. **Garante/Fideiussore di Azienda Fallita**
+   - Situazione: Fideiussore per €150.000 di finanziamento bancario, azienda fallita, escussione garanzia personale. Nessun patrimonio, stipendio €1.800/mese.
+   - Quadro normativo: Esdebitazione del Sovraindebitato, Rito del Consumatore
+   - Procedura: Dimostrazione meritevolezza, assenza di colpa nel fallimento, piano sostenibile
+   - Risultato: Riduzione debito da €150.000 a €30.000, piano settennale €360/mese
+   - Tempistica: 8 mesi
+
+**CATEGORIA IMPRESE (3 casi)**
+
+5. **SRL Manifatturiera in Crisi di Liquidità**
+   - Situazione: SRL con 15 dipendenti, fatturato €2M/anno. Debiti bancari €480.000, fornitori €180.000, Erario €120.000. Crisi da perdita cliente principale (40% fatturato).
+   - Quadro normativo: Concordato Preventivo in Continuità ex art. 84 e ss. CCI
+   - Procedura: Attestazione veridicità dati, proposta creditori, votazione, omologa
+   - Risultato: Pagamento 45% ai chirografari in 4 anni, 100% privilegiati, continuità aziendale, tutti i dipendenti mantenuti
+   - Tempistica: 14 mesi
+
+6. **Ditta Individuale Settore Ristorazione**
+   - Situazione: Ristorante con debiti post-COVID. Fornitori €65.000, affitti arretrati €24.000, prestito bancario €45.000, contributi INPS €18.000.
+   - Quadro normativo: Accordo di Ristrutturazione dei Debiti ex art. 57 CCI
+   - Procedura: Negoziazione diretta con creditori, attestazione professionista indipendente, deposito accordo
+   - Risultato: Stralcio 50% debiti chirografari, dilazione 36 mesi, rinegoziazione affitto, attività rilanciata
+   - Tempistica: 6 mesi
+
+7. **SAS Commerciale con Soci Garanti**
+   - Situazione: SAS nel commercio all'ingrosso. Debiti bancari €320.000 (con garanzie personali soci), fornitori €95.000. Impossibilità di proseguire l'attività.
+   - Quadro normativo: Concordato Preventivo Liquidatorio ex art. 84 CCI + Esdebitazione soci
+   - Procedura: Cessione asset aziendali, pagamento creditori, esdebitazione soci persone fisiche
+   - Risultato: Liquidazione ordinata, pagamento 35% creditori, soci liberati da garanzie personali
+   - Tempistica: 18 mesi
+
+**CATEGORIA DEBITO FISCALE (3 casi)**
+
+8. **Imprenditore con Cartelle Esattoriali Multiple**
+   - Situazione: Imprenditore edile con cartelle AER per €380.000 (IVA, IRPEF, contributi). Conti pignorati, veicoli fermi, immobile con ipoteca.
+   - Quadro normativo: Transazione Fiscale ex art. 63 CCI nell'ambito del Concordato Preventivo
+   - Procedura: Presentazione proposta AE e INPS, parere favorevole Enti, omologa tribunale
+   - Risultato: Pagamento 30% del dovuto in 5 anni, sblocco conti e veicoli, cancellazione ipoteca post-pagamento
+   - Tempistica: 12 mesi
+
+9. **Ex Partita IVA con Debito INPS**
+   - Situazione: Ex commerciante con Gestione Separata INPS. Debito contributivo €78.000, cartelle dal 2015 al 2022. Ora dipendente, stipendio €1.500/mese.
+   - Quadro normativo: Piano del Consumatore (il debito previdenziale è trattabile come chirografario)
+   - Procedura: Presentazione piano con OCC, attestazione fattibilità, omologa
+   - Risultato: Riduzione debito del 75%, pagamento €19.500 in 5 anni (€325/mese)
+   - Tempistica: 6 mesi
+
+10. **Società con Avvisi di Accertamento Contestati**
+    - Situazione: SRL ricevente 3 avvisi di accertamento per €280.000 (IVA su operazioni contestate). Ricorsi pendenti, fermo amministrativo su veicoli.
+    - Quadro normativo: Accertamento con Adesione ex D.Lgs. 218/1997 + Transazione Fiscale
+    - Procedura: Negoziazione con Ufficio Accertatore, rideterminazione imponibile, accordo sulla pretesa ridotta
+    - Risultato: Riduzione pretesa del 55%, rateizzazione 4 anni, sblocco immediato veicoli
+    - Tempistica: 8 mesi
+
+#### Elementi per Ogni Caso Studio
+
+Ogni caso includerà:
+
+1. **Intestazione**
+   - Icona categoria
+   - Titolo descrittivo
+   - Location
+   - Importo debito iniziale
+   - Badge riduzione percentuale
+
+2. **Il Problema** (sezione espandibile)
+   - Descrizione narrativa della situazione iniziale
+   - Tipologie di debiti coinvolti
+   - Conseguenze già in atto (pignoramenti, fermi, ecc.)
+
+3. **Il Quadro Giuridico**
+   - Normativa di riferimento
+   - Procedura applicabile
+   - Requisiti verificati
+
+4. **Il Percorso** (timeline)
+   - Fase 1: Analisi documentale
+   - Fase 2: Strategia legale
+   - Fase 3: Presentazione istanza/proposta
+   - Fase 4: Negoziazione/Udienza
+   - Fase 5: Omologa/Accordo
+
+5. **I Risultati**
+   - Riduzione percentuale ottenuta
+   - Nuovo piano di pagamento
+   - Benefici collaterali (sblocchi, cancellazioni)
+
+6. **La Testimonianza**
+   - Quote del cliente (anonimizzata)
+   - Nome e città
+
+#### Sezione Introduttiva Giuridica
+
+Aggiungerò una sezione che spiega il quadro normativo:
+
+> **Il Quadro Normativo**
 >
-  <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45' : '-translate-y-2'}`} />
-  <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
-  <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45' : 'translate-y-2'}`} />
-</button>
-```
+> I casi presentati sono stati risolti applicando le procedure previste dal **Codice della Crisi d'Impresa e dell'Insolvenza** (D.Lgs. 14/2019) e dalla precedente **Legge 3/2012** sul sovraindebitamento.
+>
+> Questi strumenti legali permettono a privati e imprese in difficoltà di:
+> - Ottenere una **riduzione legale** del debito complessivo
+> - Accedere a **piani di pagamento sostenibili**
+> - Ottenere il **blocco delle azioni esecutive** (pignoramenti, fermi)
+> - Raggiungere l'**esdebitazione** (cancellazione definitiva dei debiti residui)
+>
+> Ogni procedura richiede specifici requisiti e viene valutata caso per caso dal Tribunale competente o dagli Organismi di Composizione della Crisi (OCC).
 
 ---
 
-### Riepilogo File da Modificare (16 file)
+### Riepilogo File da Modificare (8 file)
 
-1. `src/index.css` - Nuove animazioni menu
-2. `src/components/RFHeader.tsx` - Animazioni menu + hamburger
-3. `src/components/ReteHeader.tsx` - Animazioni menu + hamburger
-4. `src/components/ReteHeroSection.tsx` - Padding, CTA
-5. `src/components/ReteProblemSection.tsx` - Padding, font
-6. `src/components/ReteSolutionSection.tsx` - Padding, cards
-7. `src/components/ReteFoundersSection.tsx` - Foto, stats, padding
-8. `src/components/ReteMarketStatsSection.tsx` - Padding, grid
-9. `src/components/ReteBenefitsSection.tsx` - Accordion padding
-10. `src/components/ReteGrowthPathSection.tsx` - Timeline padding
-11. `src/components/ReteTestimonialsSection.tsx` - Cards padding
-12. `src/components/ReteComparisonSection.tsx` - Cards, CTA
-13. `src/components/ReteUrgencySection.tsx` - Cards, icone
-14. `src/components/ReteProcessSection.tsx` - Timeline padding
-15. `src/components/ReteFAQSection.tsx` - Accordion, touch targets
-16. `src/components/ReteFinalCTASection.tsx` - CTA, padding
+| File | Modifica |
+|------|----------|
+| `RFHeroSection.tsx` | "Consulenza" → "Colloquio" |
+| `RFHeader.tsx` | "Consulenza" → "Colloquio" (2 punti) |
+| `RFFAQSection.tsx` | Rimuovere riferimento garanzia + "consulenza" → "colloquio" |
+| `RFFinalCTA.tsx` | "Consulenza" → "Colloquio" |
+| `StickyCTA.tsx` | "Consulenza" → "Colloquio" |
+| `RFGuaranteesSection.tsx` | Rimuovere garanzia + badge + cambio titolo |
+| `CrisiImpresaSection.tsx` | Rimuovere garanzia "Soddisfatti o rimborsati" |
+| `CasiStudio.tsx` | Riscrittura completa con 10 casi professionali |
 
 ---
 
 ### Risultati Attesi
 
-1. **Consistenza**: Stessa esperienza mobile ottimizzata su entrambe le pagine
-2. **Touch Friendly**: Tutti i touch targets >= 48px
-3. **Leggibilità**: Font e padding ottimizzati per schermi piccoli
-4. **Animazioni**: Menu mobile fluido con slide-down + stagger items
-5. **Hamburger**: Trasformazione animata in X
-6. **Performance**: Animazioni CSS pure (no JS per le transizioni)
+1. **Terminologia coerente**: "Colloquio Gratuito" su tutta la home page
+2. **Garanzie realistiche**: Solo 3 garanzie concrete e verificabili
+3. **Pagina Casi Studio professionale**: Contenuti legalmente accurati, narrativa coinvolgente, casi realistici basati su procedure reali
+4. **Credibilità aumentata**: Quadro normativo esplicito, riferimenti a leggi e articoli specifici
 
