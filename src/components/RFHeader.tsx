@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Users } from "lucide-react";
+import { Menu, X, Users, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import rfLogo from "@/assets/rf-logo-new.png";
 
@@ -45,11 +45,18 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
           </a>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id) => (
+            {["chi-siamo", "metodo", "statistiche"].map((id) => (
               <button key={id} onClick={() => scrollToSection(id)} className={`text-sm ${mutedColor} hover:text-primary transition-colors capitalize`}>
                 {id.replace("-", " ")}
               </button>
             ))}
+            <Link 
+              to="/casi-studio" 
+              className={`flex items-center gap-1.5 text-sm ${mutedColor} hover:text-primary transition-colors`}
+            >
+              <FileText className="w-4 h-4" />
+              Casi Risolti
+            </Link>
             <Link 
               to="/rete" 
               className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/20 text-gold hover:bg-gold/30 transition-colors text-sm font-medium"
@@ -77,7 +84,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
         {isMobileMenuOpen && (
           <nav className="md:hidden py-4 border-t border-border animate-menu-open overflow-hidden bg-background safe-bottom">
             <div className="flex flex-col gap-1">
-              {["chi-siamo", "metodo", "casi-risolti", "statistiche"].map((id, index) => (
+              {["chi-siamo", "metodo", "statistiche"].map((id, index) => (
                 <button 
                   key={id} 
                   onClick={() => scrollToSection(id)} 
@@ -88,9 +95,18 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
                 </button>
               ))}
               <Link 
+                to="/casi-studio" 
+                className="flex items-center gap-2 py-3 px-2 min-h-[48px] text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors animate-menu-item"
+                style={{ animationDelay: '150ms' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <FileText className="w-5 h-5" />
+                Casi Risolti
+              </Link>
+              <Link 
                 to="/rete" 
                 className="flex items-center gap-2 py-3 px-2 min-h-[48px] text-gold font-medium hover:bg-gold/10 rounded-lg transition-colors animate-menu-item"
-                style={{ animationDelay: '200ms' }}
+                style={{ animationDelay: '250ms' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Users className="w-5 h-5" />
@@ -99,7 +115,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
               <Button 
                 variant="hero" 
                 className="mt-3 min-h-[48px] w-full animate-menu-item" 
-                style={{ animationDelay: '250ms' }}
+                style={{ animationDelay: '300ms' }}
                 onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}
               >
                 Colloquio Gratuito
