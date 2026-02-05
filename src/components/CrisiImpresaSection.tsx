@@ -1,5 +1,5 @@
 import { useInView } from "@/hooks/useInView";
-import { FileText, Scale, HandshakeIcon, CheckCircle2, Shield, BookOpen, Footprints, BadgeCheck } from "lucide-react";
+import { FileText, Scale, HandshakeIcon, CheckCircle2, Shield, BookOpen, Footprints } from "lucide-react";
 
 const strumentiGiuridici = [
   {
@@ -45,11 +45,6 @@ const garanzie = [
     icon: Footprints,
     title: "Percorso chiaro",
     description: "Ogni passaggio spiegato passo dopo passo"
-  },
-  {
-    icon: BadgeCheck,
-    title: "Soddisfatti o rimborsati",
-    description: "Formula applicata alla consulenza, nei limiti contrattuali"
   }
 ];
 

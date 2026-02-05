@@ -1,4 +1,4 @@
-import { Shield, FileCheck, BookOpen, Route, ThumbsUp, Check, X } from "lucide-react";
+import { Shield, FileCheck, BookOpen, Route, Check, X } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
 const guarantees = [
@@ -16,11 +16,6 @@ const guarantees = [
     icon: <Route className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Percorso Chiaro",
     description: "Ogni passaggio, tempi e costi spiegati fin dal primo giorno. Nessuna sorpresa."
-  },
-  {
-    icon: <ThumbsUp className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "Soddisfatti o Rimborsati",
-    description: "Se dopo la consulenza iniziale non possiamo aiutarti, ti rimborsiamo. Senza discussioni."
   }
 ];
 
@@ -57,7 +52,7 @@ const RFGuaranteesSection = () => {
             </div>
             
             <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-              4 Garanzie{" "}
+              3 Garanzie{" "}
               <span className="text-primary">Concrete</span>
             </h2>
             
@@ -185,13 +180,6 @@ const RFGuaranteesSection = () => {
             ))}
           </div>
 
-          {/* Satisfaction Badge */}
-          <div className={`text-center mt-8 md:mt-12 transition-all duration-700 delay-700 ${tableInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-            <div className="inline-flex items-center gap-2 md:gap-3 bg-primary text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg text-sm md:text-base">
-              <Shield className="w-4 h-4 md:w-5 md:h-5" />
-              <span className="font-semibold">Garanzia Soddisfatti o Rimborsati</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

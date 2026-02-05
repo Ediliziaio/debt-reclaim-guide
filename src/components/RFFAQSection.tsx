@@ -64,7 +64,7 @@ const faqCategories: FAQCategory[] = [
     questions: [
       {
         question: "Quanto costa affidarsi a RF Ristrutturazioni Debiti?",
-        answer: "La consulenza iniziale è GRATUITA e senza impegno. Durante questo incontro analizziamo la tua situazione e ti diciamo onestamente se possiamo aiutarti. Solo dopo, in caso di esito positivo, ti presentiamo un preventivo dettagliato con tutti i costi. Non ci sono sorprese: sai esattamente quanto spenderai dall'inizio alla fine."
+        answer: "Il primo colloquio conoscitivo è GRATUITO e senza impegno. Durante questo incontro analizziamo la tua situazione e ti diciamo onestamente se possiamo aiutarti. Solo dopo, in caso di esito positivo, ti presentiamo un preventivo dettagliato con tutti i costi. Non ci sono sorprese: sai esattamente quanto spenderai dall'inizio alla fine."
       },
       {
         question: "Come posso pagare i vostri onorari se sono già in difficoltà?",
@@ -72,7 +72,7 @@ const faqCategories: FAQCategory[] = [
       },
       {
         question: "Cosa succede se la procedura non va a buon fine?",
-        answer: "Prima di accettare un caso, valutiamo attentamente la fattibilità della procedura. Se riteniamo che non ci siano i presupposti per un esito positivo, te lo diciamo subito e non procediamo. Inoltre, offriamo una garanzia 'Soddisfatti o Rimborsati' sulla consulenza iniziale: se non possiamo aiutarti, ti rimborsiamo."
+        answer: "Prima di accettare un caso, valutiamo attentamente la fattibilità della procedura. Se riteniamo che non ci siano i presupposti per un esito positivo, te lo diciamo subito e non procediamo. Operiamo esclusivamente dove esistono reali margini giuridici di intervento, garantendo trasparenza totale fin dal primo colloquio."
       },
       {
         question: "Come si svolge il primo incontro?",
@@ -192,7 +192,7 @@ const RFFAQSection = () => {
           </p>
           <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm md:text-base">
             <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
-            <span>Contattaci per una consulenza gratuita</span>
+            <span>Contattaci per un colloquio gratuito</span>
           </div>
         </div>
       </div>
