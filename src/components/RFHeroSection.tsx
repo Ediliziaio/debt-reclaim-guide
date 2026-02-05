@@ -2,14 +2,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Shield, Clock } from "lucide-react";
 import OptimizedImage from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-hope.jpg";
-
 interface RFHeroSectionProps {
   onOpenContact: () => void;
 }
-
-const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted pt-12 md:pt-20">
+const RFHeroSection = ({
+  onOpenContact
+}: RFHeroSectionProps) => {
+  return <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-muted pt-12 md:pt-20">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-primary/5 rounded-full blur-[80px] md:blur-[120px] translate-x-1/3 -translate-y-1/3" />
@@ -19,13 +18,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
       {/* Hero Image - positioned right - Priority loading for above-fold */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
         <div className="absolute inset-0">
-          <OptimizedImage 
-            src={heroImage} 
-            alt="Libertà dai debiti" 
-            className="w-full h-full object-cover"
-            containerClassName="w-full h-full"
-            priority={true}
-          />
+          <OptimizedImage src={heroImage} alt="Libertà dai debiti" className="w-full h-full object-cover" containerClassName="w-full h-full" priority={true} />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
       </div>
@@ -36,7 +29,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           <div className="mb-4 md:mb-6 opacity-0 animate-fade-up">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-medium text-xs md:text-sm">
               <Shield className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              La prima rete nazionale di esperti in esdebitazione
+              La prima rete nazionale di esperti in esdebitazione e crisi d'impresa   
             </span>
           </div>
 
@@ -48,8 +41,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-navy-light font-medium mb-3 md:mb-4 opacity-0 animate-fade-up animation-delay-200">
-            Finalmente la <span className="text-primary font-bold">PRIMA Rete Nazionale</span> che unisce 
+          <p className="text-lg md:text-xl lg:text-2xl text-navy-light font-medium mb-3 md:mb-4 opacity-0 animate-fade-up animation-delay-200">Finalmente la PRIMA Rete Nazionale che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa<span className="text-primary font-bold">PRIMA Rete Nazionale</span> che unisce 
             Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa
           </p>
 
@@ -61,21 +53,11 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mb-6 md:mb-10 opacity-0 animate-fade-up animation-delay-400">
-            <Button 
-              variant="cta" 
-              size="xl" 
-              onClick={onOpenContact}
-              className="group w-full sm:w-auto text-sm md:text-base min-h-[48px]"
-            >
+            <Button variant="cta" size="xl" onClick={onOpenContact} className="group w-full sm:w-auto text-sm md:text-base min-h-[48px]">
               Prenota Colloquio Gratuito
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="xl" 
-              onClick={onOpenContact}
-              className="w-full sm:w-auto text-sm md:text-base min-h-[48px]"
-            >
+            <Button variant="outline" size="xl" onClick={onOpenContact} className="w-full sm:w-auto text-sm md:text-base min-h-[48px]">
               <Phone className="w-4 h-4 md:w-5 md:h-5" />
               Chiama Ora
             </Button>
@@ -106,12 +88,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           {/* Mobile/Tablet Hero Image */}
           <div className="mt-6 lg:hidden opacity-0 animate-fade-up animation-delay-600">
             <div className="relative rounded-xl overflow-hidden shadow-lg">
-              <OptimizedImage 
-                src={heroImage} 
-                alt="Libertà dai debiti" 
-                className="w-full h-[180px] sm:h-[220px] md:h-[280px] object-cover"
-                containerClassName="w-full h-[180px] sm:h-[220px] md:h-[280px]"
-              />
+              <OptimizedImage src={heroImage} alt="Libertà dai debiti" className="w-full h-[180px] sm:h-[220px] md:h-[280px] object-cover" containerClassName="w-full h-[180px] sm:h-[220px] md:h-[280px]" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
           </div>
@@ -124,8 +101,6 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
           <div className="w-1 h-2 md:w-1.5 md:h-3 bg-primary rounded-full animate-bounce-soft" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default RFHeroSection;
