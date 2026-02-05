@@ -11,6 +11,10 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
+import OptimizedImage from "@/components/ui/optimized-image";
+import rfLogo from "@/assets/rf-logo-new.png";
+import authorityImage from "@/assets/authority-legal.jpg";
+import ctaImage from "@/assets/cta-handshake.jpg";
 
 interface CaseStudy {
   id: number;
@@ -588,28 +592,42 @@ const CasiStudio = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-soft border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <div className="flex items-center gap-4">
-              <Link to="/" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <div className="flex items-center gap-2 sm:gap-4">
+              <Link to="/" className="flex items-center gap-1.5 sm:gap-2 text-muted-foreground hover:text-primary transition-colors">
                 <ArrowLeft className="w-4 h-4" />
-                <span className="text-sm hidden sm:inline">Torna al sito</span>
+                <span className="text-xs sm:text-sm hidden xs:inline">Torna al sito</span>
               </Link>
-              <div className="h-6 w-px bg-border hidden sm:block" />
-              <Link to="/" className="flex items-center gap-2">
-                <span className="text-xl md:text-2xl font-bold text-primary">RF</span>
-                <span className="text-base md:text-lg font-semibold text-foreground hidden sm:block">Casi Risolti</span>
+              <div className="h-5 sm:h-6 w-px bg-border hidden xs:block" />
+              <Link to="/" className="flex items-center">
+                <img src={rfLogo} alt="RF Ristrutturazioni Debiti" className="h-8 sm:h-10 w-auto" />
               </Link>
             </div>
-            <Button variant="hero" size="sm" onClick={() => setIsContactOpen(true)}>
-              Colloquio Gratuito
-            </Button>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-medium text-muted-foreground hidden md:inline">
+                Casi Risolti
+              </span>
+              <Button variant="hero" size="sm" onClick={() => setIsContactOpen(true)}>
+                Colloquio Gratuito
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
       <main className="pt-16 md:pt-20">
-        {/* Hero */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-background via-background to-muted/30">
-          <div className="container mx-auto px-4">
+        {/* Hero with Background Image */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-background via-background to-muted/30 relative overflow-hidden">
+          {/* Background Image (only on desktop) */}
+          <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
+            <OptimizedImage
+              src={authorityImage}
+              alt=""
+              className="w-full h-full object-cover opacity-20"
+              containerClassName="h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent" />
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6">
                 <Scale className="w-4 h-4" />
@@ -626,10 +644,11 @@ const CasiStudio = () => {
           </div>
         </section>
 
-        {/* Legal Framework Introduction */}
+        {/* Legal Framework Introduction with Image */}
         <section ref={introRef as React.RefObject<HTMLElement>} className="py-12 md:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className={`max-w-4xl mx-auto transition-all duration-700 ${introInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto transition-all duration-700 ${introInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {/* Left Column: Text */}
               <div className="bg-background border border-border rounded-2xl p-6 md:p-10">
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -668,6 +687,16 @@ const CasiStudio = () => {
                     o dagli Organismi di Composizione della Crisi (OCC).
                   </p>
                 </div>
+              </div>
+              
+              {/* Right Column: Image */}
+              <div className="hidden lg:block">
+                <OptimizedImage
+                  src={authorityImage}
+                  alt="Studio legale professionale"
+                  className="w-full h-80 object-cover rounded-2xl"
+                  containerClassName="shadow-lg rounded-2xl"
+                />
               </div>
             </div>
           </div>
@@ -914,9 +943,19 @@ const CasiStudio = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4">
+        {/* CTA Section with Background Image */}
+        <section className="py-16 md:py-24 bg-primary text-primary-foreground relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 opacity-10">
+            <OptimizedImage
+              src={ctaImage}
+              alt=""
+              className="w-full h-full object-cover"
+              containerClassName="h-full"
+            />
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <Shield className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
               <h2 className="text-2xl md:text-4xl font-bold mb-4">
