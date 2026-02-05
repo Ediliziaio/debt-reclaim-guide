@@ -27,7 +27,7 @@ const ReteHeroSection = ({ onOpenContact }: ReteHeroSectionProps) => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-8 animate-fade-up">
             <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
-            <span className="text-xs md:text-sm font-medium text-gold">Per Avvocati e Commercialisti</span>
+            <span className="text-xs md:text-sm font-medium text-gold">Per Avvocati, Commercialisti e Consulenti del Lavoro</span>
           </div>
 
           {/* Main Headline */}

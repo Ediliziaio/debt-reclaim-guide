@@ -36,7 +36,7 @@ const ReteProblemSection = () => {
           {/* Opening Letter */}
           <div className={`mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="text-lg text-muted-foreground mb-6">
-              Caro Collega Avvocato, Caro Collega Dottore Commercialista,
+              Caro Collega Avvocato, Caro Collega Dottore Commercialista, Caro Collega Consulente del Lavoro,
             </p>
             <p className="text-xl text-foreground font-medium mb-8">
               Lascia che ti faccia una domanda diretta:
