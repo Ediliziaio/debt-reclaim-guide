@@ -59,7 +59,7 @@ const ReteGrowthPathSection = () => {
               Il Percorso Di Crescita <span className="text-gold">Professionale</span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground">
-              Un piano chiaro per la tua evoluzione nel settore
+              Un piano chiaro per Avvocati, Commercialisti e Consulenti del Lavoro
             </p>
           </div>
 
