@@ -6,6 +6,7 @@ import ReteSolutionSection from "@/components/ReteSolutionSection";
 import ReteFoundersSection from "@/components/ReteFoundersSection";
 import ReteMarketStatsSection from "@/components/ReteMarketStatsSection";
 import ReteBenefitsSection from "@/components/ReteBenefitsSection";
+import ReteProfessionalBenefitsSection from "@/components/ReteProfessionalBenefitsSection";
 import ReteGrowthPathSection from "@/components/ReteGrowthPathSection";
 import ReteComparisonSection from "@/components/ReteComparisonSection";
 import ReteUrgencySection from "@/components/ReteUrgencySection";
@@ -36,6 +37,7 @@ const Rete = () => {
         <ReteFoundersSection />
         <ReteMarketStatsSection />
         <ReteBenefitsSection />
+        <ReteProfessionalBenefitsSection onOpenContact={scrollToContact} />
         <ReteGrowthPathSection />
         <ReteComparisonSection onOpenContact={scrollToContact} />
         <ReteUrgencySection />
