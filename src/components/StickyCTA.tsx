@@ -28,7 +28,7 @@ const StickyCTA = ({ onOpenContact }: StickyCTAProps) => {
         className="shadow-xl"
       >
         <Phone className="w-4 h-4" />
-        Consulenza Gratuita
+        Colloquio Gratuito
       </Button>
     </div>
   );

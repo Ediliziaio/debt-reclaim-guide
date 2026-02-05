@@ -58,7 +58,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
               Per Professionisti
             </Link>
             <Button variant="hero" size="sm" onClick={onOpenContact}>
-              Consulenza Gratuita
+              Colloquio Gratuito
             </Button>
           </nav>
 
@@ -102,7 +102,7 @@ const RFHeader = ({ onOpenContact }: RFHeaderProps) => {
                 style={{ animationDelay: '250ms' }}
                 onClick={() => { setIsMobileMenuOpen(false); onOpenContact(); }}
               >
-                Consulenza Gratuita
+                Colloquio Gratuito
               </Button>
             </div>
           </nav>

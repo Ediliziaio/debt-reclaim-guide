@@ -67,7 +67,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
               onClick={onOpenContact}
               className="group w-full sm:w-auto text-sm md:text-base min-h-[48px]"
             >
-              Prenota Consulenza Gratuita
+              Prenota Colloquio Gratuito
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button 
@@ -99,7 +99,7 @@ const RFHeroSection = ({ onOpenContact }: RFHeroSectionProps) => {
               <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-primary/10 flex items-center justify-center">
                 <span className="text-primary font-bold text-[10px] md:text-xs">€0</span>
               </div>
-              <span>Primo Colloquio Gratuito</span>
+              <span>Valutazione Gratuita</span>
             </div>
           </div>
 

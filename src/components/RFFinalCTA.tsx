@@ -24,7 +24,7 @@ const RFFinalCTA = ({ onOpenContact }: RFFinalCTAProps) => {
           </div>
           
           <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            Prenota Una Consulenza <span className="text-gold">Gratuita</span>
+            Prenota Un Colloquio <span className="text-gold">Gratuito</span>
           </h2>
           
           <p className={`text-sm md:text-lg opacity-90 mb-6 md:mb-10 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
