@@ -35,7 +35,6 @@ const ReteHeader = ({ onOpenContact }: ReteHeaderProps) => {
   const navItems = [
     { id: "vantaggi", label: "Vantaggi" },
     { id: "guadagni", label: "Guadagni" },
-    { id: "testimonianze", label: "Testimonianze" },
     { id: "faq", label: "FAQ" },
   ];
 
