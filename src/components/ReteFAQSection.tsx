@@ -24,8 +24,8 @@ const ReteFAQSection = () => {
       a: "Certamente. La maggior parte dei membri continua a gestire le proprie attività tradizionali e integra l'esdebitazione come area di specializzazione. Non devi abbandonare nulla, aggiungi competenze." 
     },
     { 
-      q: "Come funziona il coordinamento tra avvocati e commercialisti?", 
-      a: "È uno dei punti di forza della rete. Ogni pratica ha un team integrato avvocato-commercialista. La piattaforma gestionale coordina automaticamente le attività, ci sono protocolli chiari di collaborazione e referenti dedicati per ogni tipologia di caso." 
+      q: "Come funziona il coordinamento tra avvocati, commercialisti e consulenti del lavoro?", 
+      a: "È uno dei punti di forza della rete. Ogni pratica ha un team integrato composto da avvocato, commercialista e, quando necessario, consulente del lavoro per le questioni giuslavoristiche. La piattaforma gestionale coordina automaticamente le attività, ci sono protocolli chiari di collaborazione e referenti dedicati per ogni tipologia di caso." 
     },
     { 
       q: "Cosa succede se la mia zona è già coperta?", 

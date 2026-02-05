@@ -1,236 +1,271 @@
-import { useState, useEffect } from "react";
+import { MapPin, Users, Briefcase, RefreshCw, Compass, Building2, Sun, ArrowRight } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
-import italyMapImage from "@/assets/italy-regions-map.png";
+import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 interface RegionData {
   name: string;
   studi: number;
   posti: number;
   status: "disponibile" | "pochi" | "quasi-completo";
-  x: number;
-  y: number;
 }
 
-// Coordinate ricalibrate con precisione per la mappa con regioni
+interface ZoneData {
+  name: string;
+  icon: typeof Compass;
+  regions: string[];
+  studios: number;
+  spots: number;
+  status: "disponibile" | "pochi" | "quasi-completo";
+  gradient: string;
+}
+
 const regions: RegionData[] = [
-  { name: "Valle d'Aosta", studi: 0, posti: 2, status: "disponibile", x: 85, y: 105 },
-  { name: "Piemonte", studi: 1, posti: 3, status: "disponibile", x: 110, y: 145 },
-  { name: "Lombardia", studi: 3, posti: 3, status: "pochi", x: 175, y: 130 },
-  { name: "Trentino-Alto Adige", studi: 0, posti: 3, status: "disponibile", x: 245, y: 70 },
-  { name: "Veneto", studi: 2, posti: 2, status: "pochi", x: 280, y: 130 },
-  { name: "Friuli-Venezia Giulia", studi: 0, posti: 3, status: "disponibile", x: 335, y: 115 },
-  { name: "Liguria", studi: 1, posti: 2, status: "pochi", x: 130, y: 200 },
-  { name: "Emilia-Romagna", studi: 3, posti: 1, status: "quasi-completo", x: 235, y: 185 },
-  { name: "Toscana", studi: 2, posti: 2, status: "pochi", x: 195, y: 255 },
-  { name: "Umbria", studi: 1, posti: 2, status: "pochi", x: 255, y: 295 },
-  { name: "Marche", studi: 1, posti: 2, status: "pochi", x: 295, y: 270 },
-  { name: "Lazio", studi: 2, posti: 2, status: "pochi", x: 245, y: 345 },
-  { name: "Abruzzo", studi: 0, posti: 3, status: "disponibile", x: 300, y: 325 },
-  { name: "Molise", studi: 0, posti: 2, status: "disponibile", x: 325, y: 365 },
-  { name: "Campania", studi: 1, posti: 4, status: "disponibile", x: 295, y: 410 },
-  { name: "Puglia", studi: 2, posti: 2, status: "pochi", x: 365, y: 400 },
-  { name: "Basilicata", studi: 0, posti: 3, status: "disponibile", x: 335, y: 450 },
-  { name: "Calabria", studi: 0, posti: 6, status: "disponibile", x: 325, y: 530 },
-  { name: "Sicilia", studi: 1, posti: 5, status: "disponibile", x: 260, y: 650 },
-  { name: "Sardegna", studi: 0, posti: 5, status: "disponibile", x: 80, y: 400 },
+  { name: "Lombardia", studi: 3, posti: 3, status: "pochi" },
+  { name: "Veneto", studi: 2, posti: 2, status: "pochi" },
+  { name: "Piemonte", studi: 1, posti: 3, status: "disponibile" },
+  { name: "Emilia-Romagna", studi: 3, posti: 1, status: "quasi-completo" },
+  { name: "Liguria", studi: 1, posti: 2, status: "pochi" },
+  { name: "Friuli-Venezia Giulia", studi: 0, posti: 3, status: "disponibile" },
+  { name: "Trentino-Alto Adige", studi: 0, posti: 3, status: "disponibile" },
+  { name: "Valle d'Aosta", studi: 0, posti: 2, status: "disponibile" },
+  { name: "Toscana", studi: 2, posti: 2, status: "pochi" },
+  { name: "Lazio", studi: 2, posti: 2, status: "pochi" },
+  { name: "Umbria", studi: 1, posti: 2, status: "pochi" },
+  { name: "Marche", studi: 1, posti: 2, status: "pochi" },
+  { name: "Abruzzo", studi: 0, posti: 3, status: "disponibile" },
+  { name: "Molise", studi: 0, posti: 2, status: "disponibile" },
+  { name: "Campania", studi: 1, posti: 4, status: "disponibile" },
+  { name: "Puglia", studi: 2, posti: 2, status: "pochi" },
+  { name: "Basilicata", studi: 0, posti: 3, status: "disponibile" },
+  { name: "Calabria", studi: 0, posti: 6, status: "disponibile" },
+  { name: "Sicilia", studi: 1, posti: 5, status: "disponibile" },
+  { name: "Sardegna", studi: 0, posti: 5, status: "disponibile" },
+];
+
+const zones: ZoneData[] = [
+  {
+    name: "Nord Italia",
+    icon: Compass,
+    regions: ["Lombardia", "Veneto", "Piemonte", "Emilia-Romagna", "Liguria", "Friuli-VG", "Trentino-AA", "Valle d'Aosta"],
+    studios: 10,
+    spots: 19,
+    status: "pochi",
+    gradient: "from-primary/10 to-primary/5",
+  },
+  {
+    name: "Centro Italia",
+    icon: Building2,
+    regions: ["Toscana", "Lazio", "Umbria", "Marche", "Abruzzo", "Molise"],
+    studios: 6,
+    spots: 13,
+    status: "pochi",
+    gradient: "from-gold/10 to-gold/5",
+  },
+  {
+    name: "Sud e Isole",
+    icon: Sun,
+    regions: ["Campania", "Puglia", "Calabria", "Sicilia", "Sardegna", "Basilicata"],
+    studios: 4,
+    spots: 25,
+    status: "disponibile",
+    gradient: "from-primary/10 to-gold/5",
+  },
 ];
 
 const statusConfig = {
   "disponibile": {
-    color: "bg-primary",
-    shadow: "0 0 10px 4px hsl(142 71% 45% / 0.5)",
     label: "Disponibile",
+    badgeClass: "bg-primary/20 text-primary border-primary/30",
+    dotClass: "bg-primary",
   },
   "pochi": {
-    color: "bg-amber-500",
-    shadow: "0 0 8px 3px hsl(38 92% 50% / 0.4)",
     label: "Pochi posti",
+    badgeClass: "bg-amber-500/20 text-amber-600 border-amber-500/30",
+    dotClass: "bg-amber-500",
   },
   "quasi-completo": {
-    color: "bg-destructive",
-    shadow: "0 0 8px 3px hsl(0 84% 60% / 0.4)",
     label: "Quasi completo",
+    badgeClass: "bg-destructive/20 text-destructive border-destructive/30",
+    dotClass: "bg-destructive",
   },
 };
 
-const ReteMapSection = () => {
-  const { ref, isInView } = useInView({ threshold: 0.2 });
-  const [activeRegion, setActiveRegion] = useState<RegionData | null>(null);
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+interface ReteMapSectionProps {
+  onOpenContact?: () => void;
+}
 
-  useEffect(() => {
-    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-  }, []);
+const ReteMapSection = ({ onOpenContact }: ReteMapSectionProps) => {
+  const { ref, isInView } = useInView({ threshold: 0.1 });
+  
+  const studiCount = useAnimatedCounter({ end: 24, duration: 2000, isInView });
+  const regioniCount = useAnimatedCounter({ end: 14, duration: 2000, isInView });
+  const postiCount = useAnimatedCounter({ end: 57, duration: 2000, isInView });
+  const rinnovoCount = useAnimatedCounter({ end: 96, duration: 2000, isInView });
 
-  const handleInteraction = (region: RegionData, x: number, y: number) => {
-    if (isTouchDevice) {
-      if (activeRegion?.name === region.name) {
-        setActiveRegion(null);
-      } else {
-        setActiveRegion(region);
-        setTooltipPosition({ x, y: y - 80 });
-      }
+  const scrollToContact = () => {
+    if (onOpenContact) {
+      onOpenContact();
     } else {
-      setActiveRegion(region);
-      setTooltipPosition({ x, y: y - 80 });
+      document.getElementById('contatto')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const handleMouseLeave = () => {
-    if (!isTouchDevice) {
-      setActiveRegion(null);
-    }
-  };
-
-  // Marker size based on device
-  const baseSize = isTouchDevice ? 24 : 16;
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-16 md:py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="mappa" className="py-16 md:py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 text-primary font-semibold text-xs md:text-sm mb-4 md:mb-6 transition-all duration-700 ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+          {/* Header */}
+          <div className={`text-center mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <Badge variant="outline" className="mb-4 md:mb-6 bg-primary/10 text-primary border-primary/20">
+              <MapPin className="w-3.5 h-3.5 mr-1.5" />
               Copertura Nazionale
-            </span>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
-              La Rete in Italia
+            </Badge>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              La Rete in <span className="text-gold">Tutta Italia</span>
             </h2>
-            <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              {isTouchDevice ? "Tocca i punti" : "Passa il mouse sui punti"} per vedere i posti disponibili nella tua regione
+            <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Professionisti selezionati in ogni regione, con posti limitati per garantire esclusività territoriale
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            {/* Map Container */}
-            <div className={`relative w-full max-w-sm md:max-w-md lg:max-w-lg select-none transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`} style={{ transitionDelay: '200ms' }}>
-              {/* Italy Background Image */}
-              <div className="relative w-full aspect-[2/3]">
-                <img 
-                  src={italyMapImage} 
-                  alt="Mappa dell'Italia con regioni" 
-                  className="w-full h-full object-contain"
-                  loading="eager"
-                />
+          {/* Statistics */}
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
+            {[
+              { value: studiCount, suffix: "", label: "Studi Attivi", icon: Users, color: "text-primary" },
+              { value: regioniCount, suffix: "", label: "Regioni Coperte", icon: MapPin, color: "text-gold" },
+              { value: postiCount, suffix: "+", label: "Posti Disponibili", icon: Briefcase, color: "text-primary" },
+              { value: rinnovoCount, suffix: "%", label: "Tasso di Rinnovo", icon: RefreshCw, color: "text-gold" },
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className={`p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
+              >
+                <stat.icon className={`w-5 h-5 md:w-6 md:h-6 ${stat.color} mb-2 md:mb-3`} />
+                <p className={`text-2xl md:text-4xl font-bold ${stat.color} mb-1`}>
+                  {stat.value}{stat.suffix}
+                </p>
+                <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
               </div>
+            ))}
+          </div>
 
-              {/* Interactive Markers */}
-              <div className="absolute inset-0">
-                {regions.map((region, index) => {
-                  const config = statusConfig[region.status];
-                  const markerSize = region.posti >= 4 ? baseSize + 6 : region.posti >= 2 ? baseSize + 3 : baseSize;
-                  const isActive = activeRegion?.name === region.name;
-                  
-                  return (
-                    <div
-                      key={region.name}
-                      className={`absolute cursor-pointer rounded-full border-2 border-white transition-transform duration-200 ${config.color} ${isActive ? 'scale-150 z-20' : 'hover:scale-125 hover:z-10'}`}
-                      style={{
-                        left: `${(region.x / 500) * 100}%`,
-                        top: `${(region.y / 800) * 100}%`,
-                        width: `${markerSize}px`,
-                        height: `${markerSize}px`,
-                        transform: `translate(-50%, -50%)${isActive ? ' scale(1.5)' : ''}`,
-                        boxShadow: config.shadow,
-                      }}
-                      onMouseEnter={(e) => {
-                        if (!isTouchDevice) {
-                          const rect = e.currentTarget.parentElement?.getBoundingClientRect();
-                          if (rect) {
-                            handleInteraction(region, e.clientX - rect.left, e.clientY - rect.top);
-                          }
-                        }
-                      }}
-                      onMouseLeave={handleMouseLeave}
-                      onClick={(e) => {
-                        if (isTouchDevice) {
-                          const rect = e.currentTarget.parentElement?.getBoundingClientRect();
-                          if (rect) {
-                            handleInteraction(region, e.clientX - rect.left, e.clientY - rect.top);
-                          }
-                        }
-                      }}
-                    />
-                  );
-                })}
-              </div>
-
-              {/* Tooltip */}
-              {activeRegion && (
-                <div
-                  className="absolute pointer-events-none z-30 bg-card/95 backdrop-blur-sm border border-border rounded-xl shadow-2xl p-3 md:p-4 min-w-[180px] md:min-w-[220px] transform -translate-x-1/2 transition-all duration-200"
-                  style={{ 
-                    left: Math.min(Math.max(tooltipPosition.x, 100), 400), 
-                    top: Math.max(tooltipPosition.y, 20),
-                  }}
+          {/* Geographic Zones */}
+          <div className={`mb-10 md:mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
+            <h3 className="text-lg md:text-2xl font-bold text-foreground text-center mb-6 md:mb-8">
+              Zone Geografiche
+            </h3>
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+              {zones.map((zone, index) => (
+                <div 
+                  key={zone.name}
+                  className={`bg-gradient-to-br ${zone.gradient} border border-border rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${700 + index * 100}ms` }}
                 >
-                  <div className="flex items-center gap-2 mb-2 md:mb-3">
-                    <span className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full ${statusConfig[activeRegion.status].color}`} />
-                    <h4 className="font-bold text-foreground text-sm md:text-base">{activeRegion.name}</h4>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 rounded-lg bg-background border border-border">
+                      <zone.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h4 className="font-bold text-foreground text-lg">{zone.name}</h4>
                   </div>
-                  <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm">
-                    <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Studi attivi:</span>
-                      <span className="font-semibold text-foreground">{activeRegion.studi}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Posti disponibili:</span>
-                      <span className="font-bold text-primary text-base md:text-lg">{activeRegion.posti}</span>
-                    </div>
-                    <div className="pt-1.5 md:pt-2 border-t border-border">
-                      <span className={`inline-block px-2 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-medium ${
-                        activeRegion.status === 'disponibile' ? 'bg-primary/20 text-primary' :
-                        activeRegion.status === 'pochi' ? 'bg-amber-500/20 text-amber-600' :
-                        'bg-destructive/20 text-destructive'
-                      }`}>
-                        {statusConfig[activeRegion.status].label}
+                  
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {zone.regions.map((region) => (
+                      <span key={region} className="text-xs text-muted-foreground bg-background/50 px-2 py-1 rounded-md">
+                        {region}
                       </span>
+                    ))}
+                  </div>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                    <div className="flex gap-4">
+                      <div>
+                        <p className="text-2xl font-bold text-foreground">{zone.studios}</p>
+                        <p className="text-xs text-muted-foreground">Studi attivi</p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-primary">{zone.spots}</p>
+                        <p className="text-xs text-muted-foreground">Posti liberi</p>
+                      </div>
                     </div>
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${statusConfig[zone.status].badgeClass}`}>
+                      {statusConfig[zone.status].label}
+                    </span>
                   </div>
                 </div>
-              )}
+              ))}
+            </div>
+          </div>
+
+          {/* Regional Availability Table */}
+          <div className={`bg-card border border-border rounded-2xl overflow-hidden transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1000ms' }}>
+            <div className="p-4 md:p-6 border-b border-border bg-muted/30">
+              <h3 className="text-lg md:text-xl font-bold text-foreground">
+                Disponibilità Regionale
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                Aggiornamento: Febbraio 2026
+              </p>
+            </div>
+            
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-muted/50">
+                  <tr>
+                    <th className="text-left p-4 font-semibold text-foreground">Regione</th>
+                    <th className="text-center p-4 font-semibold text-foreground">Studi Attivi</th>
+                    <th className="text-center p-4 font-semibold text-foreground">Posti Disponibili</th>
+                    <th className="text-center p-4 font-semibold text-foreground">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {regions.map((region, index) => (
+                    <tr key={region.name} className={`border-t border-border hover:bg-muted/30 transition-colors ${index % 2 === 0 ? 'bg-background' : 'bg-muted/10'}`}>
+                      <td className="p-4 font-medium text-foreground">{region.name}</td>
+                      <td className="p-4 text-center text-muted-foreground">{region.studi}</td>
+                      <td className="p-4 text-center">
+                        <span className="font-bold text-primary text-lg">{region.posti}</span>
+                      </td>
+                      <td className="p-4 text-center">
+                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${statusConfig[region.status].badgeClass}`}>
+                          <span className={`w-1.5 h-1.5 rounded-full ${statusConfig[region.status].dotClass}`} />
+                          {statusConfig[region.status].label}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
-            {/* Legend and Stats */}
-            <div className={`flex-1 space-y-4 md:space-y-8 w-full lg:w-auto transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '400ms' }}>
-              <div className="grid grid-cols-2 gap-3 md:gap-4">
-                {[
-                  { value: "24", label: "Studi Attivi", color: "primary" },
-                  { value: "14", label: "Regioni Coperte", color: "secondary" },
-                  { value: "50+", label: "Posti Disponibili", color: "primary" },
-                  { value: "96%", label: "Tasso di Rinnovo", color: "secondary" },
-                ].map((stat, index) => (
-                  <div 
-                    key={index}
-                    className={`p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border hover:border-${stat.color}/30 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                    style={{ transitionDelay: `${500 + index * 100}ms` }}
-                  >
-                    <p className={`text-2xl md:text-4xl font-bold text-${stat.color} mb-1 md:mb-2`}>{stat.value}</p>
-                    <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
+            {/* Mobile Cards */}
+            <div className="md:hidden divide-y divide-border max-h-[400px] overflow-y-auto">
+              {regions.map((region) => (
+                <div key={region.name} className="p-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-foreground">{region.name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {region.studi} studi • <span className="text-primary font-semibold">{region.posti} posti</span>
+                    </p>
                   </div>
-                ))}
-              </div>
-
-              {/* Legend */}
-              <div className={`p-4 md:p-6 rounded-xl md:rounded-2xl bg-card border border-border transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '900ms' }}>
-                <h4 className="font-bold text-foreground mb-3 md:mb-4 text-sm md:text-base">Legenda</h4>
-                <div className="space-y-3 md:space-y-4">
-                  <div className="flex items-center gap-3 md:gap-4">
-                    <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary flex-shrink-0" style={{ boxShadow: statusConfig['disponibile'].shadow }} />
-                    <span className="text-foreground text-xs md:text-sm">Disponibile - Molti posti liberi</span>
-                  </div>
-                  <div className="flex items-center gap-3 md:gap-4">
-                    <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-amber-500 flex-shrink-0" style={{ boxShadow: statusConfig['pochi'].shadow }} />
-                    <span className="text-foreground text-xs md:text-sm">Pochi posti - Affrettati!</span>
-                  </div>
-                  <div className="flex items-center gap-3 md:gap-4">
-                    <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-destructive flex-shrink-0" style={{ boxShadow: statusConfig['quasi-completo'].shadow }} />
-                    <span className="text-foreground text-xs md:text-sm">Quasi completo - Ultimi posti</span>
-                  </div>
+                  <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium border ${statusConfig[region.status].badgeClass}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${statusConfig[region.status].dotClass}`} />
+                    {statusConfig[region.status].label}
+                  </span>
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className={`text-center mt-10 md:mt-12 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '1200ms' }}>
+            <Button variant="cta" size="lg" onClick={scrollToContact} className="px-8">
+              Verifica Disponibilità Nella Tua Zona
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
       </div>

@@ -7,13 +7,11 @@ import ReteFoundersSection from "@/components/ReteFoundersSection";
 import ReteMarketStatsSection from "@/components/ReteMarketStatsSection";
 import ReteBenefitsSection from "@/components/ReteBenefitsSection";
 import ReteGrowthPathSection from "@/components/ReteGrowthPathSection";
-import ReteTestimonialsSection from "@/components/ReteTestimonialsSection";
 import ReteComparisonSection from "@/components/ReteComparisonSection";
 import ReteUrgencySection from "@/components/ReteUrgencySection";
 import ReteProcessSection from "@/components/ReteProcessSection";
 import ReteFAQSection from "@/components/ReteFAQSection";
 import ReteMapSection from "@/components/ReteMapSection";
-import ReteAvailabilitySection from "@/components/ReteAvailabilitySection";
 import ReteContactFormSection from "@/components/ReteContactFormSection";
 import ReteFinalCTASection from "@/components/ReteFinalCTASection";
 import Footer from "@/components/Footer";
@@ -26,8 +24,8 @@ const Rete = () => {
   return (
     <>
       <Helmet>
-        <title>Rete Professionisti | RF Ristrutturazioni Debiti - Per Avvocati e Commercialisti</title>
-        <meta name="description" content="Entra nella prima rete nazionale specializzata in esdebitazione e crisi d'impresa. Formazione, lead qualificati e supporto costante per avvocati e commercialisti." />
+        <title>Rete Professionisti | RF Ristrutturazioni Debiti - Per Avvocati, Commercialisti e Consulenti del Lavoro</title>
+        <meta name="description" content="Entra nella prima rete nazionale specializzata in esdebitazione e crisi d'impresa. Formazione, lead qualificati e supporto costante per avvocati, commercialisti e consulenti del lavoro." />
       </Helmet>
       
       <ReteHeader onOpenContact={scrollToContact} />
@@ -39,13 +37,11 @@ const Rete = () => {
         <ReteMarketStatsSection />
         <ReteBenefitsSection />
         <ReteGrowthPathSection />
-        <ReteTestimonialsSection />
         <ReteComparisonSection onOpenContact={scrollToContact} />
         <ReteUrgencySection />
         <ReteProcessSection />
         <ReteFAQSection />
         <ReteMapSection />
-        <ReteAvailabilitySection />
         <ReteContactFormSection />
         <ReteFinalCTASection onOpenContact={scrollToContact} />
       </main>
