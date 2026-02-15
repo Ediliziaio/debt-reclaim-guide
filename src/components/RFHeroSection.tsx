@@ -35,9 +35,9 @@ const RFHeroSection = ({
 
           {/* Main headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] mb-4 md:mb-6 opacity-0 animate-fade-up animation-delay-100">
-            <span className="text-gold">BASTA</span> Notti Insonni{" "}
+            <span className="text-gold">BASTA</span> notti insonni{" "}
             <br className="hidden sm:block" />
-            Per I Debiti.
+            per i debiti.
           </h1>
 
           {/* Subheadline */}
