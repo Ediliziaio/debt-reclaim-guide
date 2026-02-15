@@ -1,23 +1,19 @@
 
-
-## Correzione Refuso nel Meta Tag Description
+## Correzione Refuso in RFHeroSection
 
 ### Problema
-Nel file `index.html`, il tag `<meta name="description">` contiene un testo duplicato/incollato male:
+Nel file `src/components/RFHeroSection.tsx` (riga 44-45), la subheadline contiene testo duplicato e attaccato:
 
-**Testo attuale (errato):**
-> "...Esdebitazione e Crisi D'ImpresaPRIMA Rete Nazionale che unisce Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa"
-
-La parte "PRIMA Rete Nazionale che unisce Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa" e' attaccata alla frase precedente senza spazio e ripete il concetto.
+**Attuale (errato):**
+> Finalmente la PRIMA Rete Nazionale che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa**PRIMA Rete Nazionale** che unisce Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa
 
 ### Correzione
+**File: `src/components/RFHeroSection.tsx`** (righe 44-46)
 
-**File: `index.html`**
+Sostituire con una frase pulita e unica:
 
-Sostituire il contenuto del meta description con una versione pulita e corretta:
+> Finalmente la **PRIMA Rete Nazionale** che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa
 
-> "La PRIMA Rete Nazionale che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa"
-
-- Rimuovere la parte duplicata
-- Mantenere il riferimento ai tre profili professionali (inclusi Consulenti del Lavoro)
-
+- Rimuovere la duplicazione
+- Mantenere lo `<span>` con stile bold/primary solo su "PRIMA Rete Nazionale"
+- Includere "Consulenti del Lavoro" nella versione corretta
