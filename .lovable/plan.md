@@ -1,19 +1,16 @@
 
-## Correzione Refuso in RFHeroSection
+
+## Correzione Maiuscole nel Titolo Hero
 
 ### Problema
-Nel file `src/components/RFHeroSection.tsx` (riga 44-45), la subheadline contiene testo duplicato e attaccato:
+Nel file `src/components/RFHeroSection.tsx` (righe 37-40), il titolo ha le iniziali maiuscole su ogni parola:
 
-**Attuale (errato):**
-> Finalmente la PRIMA Rete Nazionale che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa**PRIMA Rete Nazionale** che unisce Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa
+> **BASTA** Notti Insonni Per I Debiti.
 
 ### Correzione
-**File: `src/components/RFHeroSection.tsx`** (righe 44-46)
+Mettere in minuscolo le parole indicate:
 
-Sostituire con una frase pulita e unica:
+> **BASTA** notti insonni per i debiti.
 
-> Finalmente la **PRIMA Rete Nazionale** che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa
+**File: `src/components/RFHeroSection.tsx`** - Modificare il contenuto dell'h1 sostituendo "Notti Insonni" con "notti insonni" e "Per I Debiti" con "per i debiti".
 
-- Rimuovere la duplicazione
-- Mantenere lo `<span>` con stile bold/primary solo su "PRIMA Rete Nazionale"
-- Includere "Consulenti del Lavoro" nella versione corretta
