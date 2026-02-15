@@ -41,8 +41,8 @@ const RFHeroSection = ({
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-navy-light font-medium mb-3 md:mb-4 opacity-0 animate-fade-up animation-delay-200">Finalmente la PRIMA Rete Nazionale che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa<span className="text-primary font-bold">PRIMA Rete Nazionale</span> che unisce 
-            Avvocati e Commercialisti Specializzati in Esdebitazione e Crisi D'Impresa
+          <p className="text-lg md:text-xl lg:text-2xl text-navy-light font-medium mb-3 md:mb-4 opacity-0 animate-fade-up animation-delay-200">
+            Finalmente la <span className="text-primary font-bold">PRIMA Rete Nazionale</span> che unisce Avvocati, Commercialisti e Consulenti del Lavoro Specializzati in Esdebitazione e Crisi D'Impresa
           </p>
 
           {/* Hook question */}
