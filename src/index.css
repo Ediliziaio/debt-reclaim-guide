@@ -138,6 +138,44 @@
 }
 
 @layer components {
+  /* Legal pages typography */
+  .legal-content h2 {
+    @apply text-2xl md:text-3xl font-bold text-navy mt-10 mb-4 leading-tight;
+  }
+  .legal-content h3 {
+    @apply text-xl font-bold text-navy mt-7 mb-3 leading-tight;
+  }
+  .legal-content p {
+    @apply text-foreground/80 leading-relaxed mb-4;
+  }
+  .legal-content ul {
+    @apply mb-5 space-y-2 list-disc pl-6;
+  }
+  .legal-content ol {
+    @apply mb-5 space-y-2 list-decimal pl-6;
+  }
+  .legal-content li {
+    @apply text-foreground/80 leading-relaxed pl-1;
+  }
+  .legal-content strong {
+    @apply text-navy font-semibold;
+  }
+  .legal-content a {
+    @apply text-gold-dark underline hover:text-navy;
+  }
+  .legal-content table {
+    @apply w-full border-collapse my-6 text-sm;
+  }
+  .legal-content th, .legal-content td {
+    @apply border border-border px-3 py-2 text-left;
+  }
+  .legal-content th {
+    @apply bg-muted text-navy font-semibold;
+  }
+  .legal-content blockquote {
+    @apply border-l-4 border-gold pl-4 py-1 my-4 italic text-foreground/75 bg-muted/40 rounded-r-lg;
+  }
+
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(217 38% 27%) 0%, hsl(217 38% 40%) 100%);
@@ -264,6 +302,50 @@
     50% {
       box-shadow: 0 0 40px hsl(45 90% 61% / 0.6);
     }
+  }
+
+  /* Hero backdrop drift animations */
+  @keyframes drift-slow-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -30px) scale(1.1); }
+    66% { transform: translate(-30px, 20px) scale(0.95); }
+  }
+
+  @keyframes drift-slow-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+    50% { transform: translate(-50px, 40px) scale(1.15); opacity: 0.55; }
+  }
+
+  @keyframes drift-slow-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, 30px) scale(1.05); }
+  }
+
+  @keyframes hero-shine {
+    0% { transform: translateX(-100%) skewX(-20deg); opacity: 0; }
+    20% { opacity: 0.4; }
+    100% { transform: translateX(200%) skewX(-20deg); opacity: 0; }
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.55; }
+  }
+
+  .animate-drift-1 {
+    animation: drift-slow-1 22s ease-in-out infinite;
+  }
+  .animate-drift-2 {
+    animation: drift-slow-2 28s ease-in-out infinite;
+  }
+  .animate-drift-3 {
+    animation: drift-slow-3 18s ease-in-out infinite;
+  }
+  .animate-hero-shine {
+    animation: hero-shine 8s ease-in-out infinite;
+  }
+  .animate-pulse-gold {
+    animation: pulse-gold 4s ease-in-out infinite;
   }
 
   @keyframes float {
