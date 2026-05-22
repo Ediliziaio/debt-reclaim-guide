@@ -34,7 +34,55 @@ export type Article = {
   keywords?: string[];
 };
 
+// ============ NUOVI ARTICOLI SEO (22) — file individuali in ./articles/ ============
+import { article as liquidazioneControllataSovraindebitato } from "./articles/liquidazione-controllata-sovraindebitato";
+import { article as concordatoMinore } from "./articles/concordato-minore";
+import { article as sovraindebitamentoCose } from "./articles/sovraindebitamento-cos-e";
+import { article as occOrganismoComposizioneCrisi } from "./articles/occ-organismo-composizione-crisi";
+import { article as saldoEStralcioDebiti } from "./articles/saldo-e-stralcio-debiti";
+import { article as prescrizioneDebiti } from "./articles/prescrizione-debiti";
+import { article as mutuoNonPagatoCosaFare } from "./articles/mutuo-non-pagato-cosa-fare";
+import { article as cessioneDelQuintoProblemi } from "./articles/cessione-del-quinto-problemi";
+import { article as fideiussioneComeLiberarsi } from "./articles/fideiussione-come-liberarsi";
+import { article as debitiCondominiali } from "./articles/debiti-condominiali";
+import { article as debitiAgenziaEntrate } from "./articles/debiti-agenzia-entrate";
+import { article as debitiInps } from "./articles/debiti-inps";
+import { article as rateizzazioneCartelleEsattoriali } from "./articles/rateizzazione-cartelle-esattoriali";
+import { article as fermoAmministrativo } from "./articles/fermo-amministrativo";
+import { article as ipotecaEsattoriale } from "./articles/ipoteca-esattoriale";
+import { article as avvisoAccertamentoOpposizione } from "./articles/avviso-accertamento-opposizione";
+import { article as contenziosoTributarioRiforma } from "./articles/contenzioso-tributario-riforma";
+import { article as decretoIngiuntivoOpposizione } from "./articles/decreto-ingiuntivo-opposizione";
+import { article as pignoramentoImmobiliare } from "./articles/pignoramento-immobiliare";
+import { article as pignoramentoContoCorrente } from "./articles/pignoramento-conto-corrente";
+import { article as concordatoPreventivo } from "./articles/concordato-preventivo";
+import { article as liquidazioneGiudiziale } from "./articles/liquidazione-giudiziale";
+
 export const articles: Article[] = [
+  // === NUOVI ARTICOLI SEO ===
+  sovraindebitamentoCose,
+  liquidazioneControllataSovraindebitato,
+  concordatoMinore,
+  occOrganismoComposizioneCrisi,
+  saldoEStralcioDebiti,
+  prescrizioneDebiti,
+  mutuoNonPagatoCosaFare,
+  cessioneDelQuintoProblemi,
+  fideiussioneComeLiberarsi,
+  debitiCondominiali,
+  debitiAgenziaEntrate,
+  debitiInps,
+  rateizzazioneCartelleEsattoriali,
+  fermoAmministrativo,
+  ipotecaEsattoriale,
+  avvisoAccertamentoOpposizione,
+  contenziosoTributarioRiforma,
+  decretoIngiuntivoOpposizione,
+  pignoramentoImmobiliare,
+  pignoramentoContoCorrente,
+  concordatoPreventivo,
+  liquidazioneGiudiziale,
+  // === ARTICOLI ORIGINALI (8) ===
   // ============ ARTICLE 1 ============
   {
     slug: "esdebitazione-incapiente",
