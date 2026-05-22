@@ -2,96 +2,115 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tuteladebito.it/</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/chi-siamo</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/metodo</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/servizi</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/casi-risolti</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/esdebitazione-incapiente</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/cartella-esattoriale-cosa-fare</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/composizione-negoziata</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/pignoramento-stipendio-limiti</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/rottamazione-quater</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/piano-consumatore</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/debiti-banche-finanziarie</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/risorse/debiti-fornitori</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/contatti</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/quiz</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/privacy</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/cookie</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tuteladebito.it/note-legali</loc>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

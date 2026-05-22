@@ -57,6 +57,8 @@ const TDFinalCTA = ({ onOpenContact }: TDFinalCTAProps) => {
             <img
               src={handshakeImg}
               alt="Consulenza professionale"
+              loading="lazy"
+              decoding="async"
               className="rounded-2xl w-full aspect-[4/3] object-cover shadow-soft"
             />
           </div>

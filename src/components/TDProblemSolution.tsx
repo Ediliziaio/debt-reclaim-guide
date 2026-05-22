@@ -66,6 +66,8 @@ const TDProblemSolution = () => {
             <img
               src={authorityImg}
               alt="Analisi documentale"
+              loading="lazy"
+              decoding="async"
               className="rounded-2xl shadow-card w-full h-full object-cover"
             />
           </div>

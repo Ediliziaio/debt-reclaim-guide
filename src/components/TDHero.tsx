@@ -82,6 +82,9 @@ const TDHero = ({ onOpenContact }: TDHeroProps) => {
             <img
               src={heroImage}
               alt="Studio legale specializzato in esdebitazione"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="rounded-2xl shadow-soft w-full aspect-[4/5] lg:aspect-[5/6] object-cover"
             />
             <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-card border border-border max-w-[220px] hidden md:block">

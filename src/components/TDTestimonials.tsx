@@ -60,6 +60,10 @@ const TDTestimonials = () => {
                 <img
                   src={t.photo}
                   alt={t.name}
+                  loading="lazy"
+                  decoding="async"
+                  width="48"
+                  height="48"
                   className="w-12 h-12 rounded-full object-cover bg-muted"
                 />
                 <div>

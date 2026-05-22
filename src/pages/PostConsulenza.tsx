@@ -170,7 +170,7 @@ const PostConsulenza = () => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16 lg:h-20">
               <Link to="/" className="flex items-center shrink-0">
-                <img src={logoTD} alt="Tutela Debito" className="h-14 md:h-16 w-auto -my-2" />
+                <img src={logoTD} alt="Tutela Debito" loading="eager" decoding="async" fetchPriority="high" className="h-14 md:h-16 w-auto -my-2" />
               </Link>
               <div className="flex items-center gap-3">
                 <a href="tel:+390818671862" className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold-dark">
@@ -227,6 +227,9 @@ const PostConsulenza = () => {
                   <img
                     src={heroLawyerImg}
                     alt="Una scelta legale ha bisogno di criteri tecnici di valutazione"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="rounded-2xl w-full aspect-[4/5] object-cover shadow-soft border-2 border-white/10"
                   />
                   <div className="absolute -bottom-4 -left-4 bg-gold text-navy px-4 py-3 rounded-xl shadow-card max-w-[220px] hidden md:block">
@@ -258,6 +261,8 @@ const PostConsulenza = () => {
                     <img
                       src={authorityImg}
                       alt="Documenti legali e analisi della pratica"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-3 -left-3 bg-destructive/95 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider shadow-card">
@@ -313,6 +318,8 @@ const PostConsulenza = () => {
                     <img
                       src={ctaHandshakeImg}
                       alt="Verifica i criteri tecnici prima di firmare"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-4 -right-4 bg-navy text-white px-4 py-3 rounded-xl shadow-card max-w-[180px] hidden md:block">
@@ -680,6 +687,8 @@ const PostConsulenza = () => {
                   <img
                     src={teamImg}
                     alt="Il team Tutela Debito"
+                    loading="lazy"
+                    decoding="async"
                     className="rounded-2xl w-full aspect-[16/10] object-cover shadow-card"
                   />
                 </Reveal>
@@ -721,6 +730,8 @@ const PostConsulenza = () => {
                     <img
                       src={abstractHopeBgImg}
                       alt="Vantaggi misurabili di una scelta consapevole"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-4 -right-4 bg-gold text-navy px-4 py-3 rounded-xl shadow-card max-w-[200px] hidden md:block">
@@ -898,6 +909,8 @@ const PostConsulenza = () => {
                     <img
                       src={handshakeImg}
                       alt="Un percorso strutturato dalla prima chiamata alla firma dell'incarico"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-4 -left-4 bg-white border border-border px-4 py-3 rounded-xl shadow-card max-w-[200px] hidden md:block">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import TDHeader from "@/components/TDHeader";
@@ -7,8 +7,28 @@ import TDContactModal from "@/components/TDContactModal";
 import TDStickyCTA from "@/components/TDStickyCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Info, List } from "lucide-react";
-import { getArticle, getRelated, type Block, type Article } from "@/data/articles";
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  Info,
+  List,
+  Share2,
+  Linkedin,
+  MessageCircle,
+  Mail,
+  Link as LinkIcon,
+  Check,
+  Tag,
+  Phone,
+  Sparkles,
+  ChevronRight,
+  FileText,
+} from "lucide-react";
+import { articles, getArticle, getRelated, type Block, type Article } from "@/data/articles";
 
 const renderBlock = (block: Block, i: number) => {
   switch (block.type) {
@@ -113,6 +133,8 @@ const renderBlock = (block: Block, i: number) => {
           <img
             src={block.src}
             alt={block.alt}
+            loading="lazy"
+            decoding="async"
             className="w-full rounded-2xl shadow-card border border-border aspect-[16/9] object-cover"
           />
           {block.caption && (
@@ -125,52 +147,68 @@ const renderBlock = (block: Block, i: number) => {
   }
 };
 
-const TableOfContents = ({ article }: { article: Article }) => {
-  const headings = article.content.filter(
-    (b): b is { type: "h2"; text: string; id?: string } => b.type === "h2" && !!b.id
-  );
-  if (headings.length < 3) return null;
-
-  return (
-    <nav className="bg-muted/40 border border-border rounded-2xl p-6 mb-10">
-      <div className="flex items-center gap-2 mb-4">
-        <List className="w-5 h-5 text-gold-dark" />
-        <h3 className="font-bold text-navy">In questo articolo</h3>
-      </div>
-      <ol className="space-y-2 text-sm">
-        {headings.map((h, i) => (
-          <li key={h.id}>
-            <a
-              href={`#${h.id}`}
-              className="text-foreground/75 hover:text-gold-dark flex items-start gap-2"
-            >
-              <span className="text-gold-dark font-semibold tabular-nums">{String(i + 1).padStart(2, "0")}.</span>
-              <span>{h.text}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  );
-};
-
-// Generate JSON-LD schemas for SEO
 const buildSchemas = (article: Article) => {
+  const url = `https://tuteladebito.it/risorse/${article.slug}`;
+  const image = article.coverImage
+    ? (article.coverImage.startsWith("http")
+        ? article.coverImage
+        : `https://tuteladebito.it${article.coverImage}`)
+    : "https://tuteladebito.it/og-image.png";
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": article.title,
     "description": article.excerpt,
-    "author": { "@type": "Person", "name": article.author },
+    "image": [image],
+    "author": {
+      "@type": "Person",
+      "name": article.author,
+      "url": "https://tuteladebito.it/chi-siamo",
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Tutela Debito",
       "url": "https://tuteladebito.it",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tuteladebito.it/favicon.png",
+      },
     },
     "datePublished": article.date,
+    "dateModified": article.date,
     "keywords": article.keywords?.join(", "),
     "articleSection": article.category,
-    "mainEntityOfPage": `https://tuteladebito.it/risorse/${article.slug}`,
+    "inLanguage": "it-IT",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tuteladebito.it/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Risorse",
+        "item": "https://tuteladebito.it/risorse",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": url,
+      },
+    ],
   };
 
   const faqBlock = article.content.find((b) => b.type === "faq");
@@ -186,7 +224,280 @@ const buildSchemas = (article: Article) => {
       }
     : null;
 
-  return { articleSchema, faqSchema };
+  return { articleSchema, breadcrumbSchema, faqSchema };
+};
+
+interface SidebarProps {
+  article: Article;
+  related: Article[];
+  onOpenContact: () => void;
+}
+
+const Sidebar = ({ article, related, onOpenContact }: SidebarProps) => {
+  const [copied, setCopied] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  const headings = article.content.filter(
+    (b): b is { type: "h2"; text: string; id?: string } => b.type === "h2" && !!b.id
+  );
+
+  const articleUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  // Scrollspy: track active section
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-100px 0px -65% 0px", threshold: 0 }
+    );
+    headings.forEach((h) => {
+      const el = document.getElementById(h.id!);
+      if (el) observer.observe(el);
+    });
+    observers.push(observer);
+    return () => observers.forEach((o) => o.disconnect());
+  }, [headings]);
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(articleUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (_e) {
+      // ignore
+    }
+  };
+
+  // Category counts across all articles
+  const allCategories = Array.from(new Set(articles.map((a) => a.category)));
+
+  return (
+    <aside className="lg:sticky lg:top-24 space-y-5 self-start max-h-[calc(100vh-7rem)] overflow-y-auto pr-1">
+      {/* Primary CTA card */}
+      <div className="bg-gradient-to-br from-navy to-navy-light text-white rounded-2xl p-5 lg:p-6 shadow-card relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-gold/15 blur-2xl pointer-events-none" aria-hidden="true" />
+        <div className="relative">
+          <div className="inline-flex items-center gap-1.5 px-2 py-1 bg-gold/15 text-gold rounded-full text-[10px] font-bold uppercase tracking-wider mb-3 border border-gold/30">
+            <Sparkles className="w-3 h-3" />
+            Diagnosi gratuita
+          </div>
+          <h3 className="text-lg font-bold mb-2 leading-tight">Vuoi capire se si applica al tuo caso?</h3>
+          <p className="text-white/75 text-sm leading-relaxed mb-4">
+            Un colloquio di 30 minuti con un professionista. Senza costi, senza impegno.
+          </p>
+          <Button
+            onClick={onOpenContact}
+            className="w-full bg-gold hover:bg-gold-dark text-navy font-bold mb-2"
+          >
+            Richiedi diagnosi <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
+          <a href="tel:+390818671862" className="flex items-center justify-center gap-1.5 text-xs text-white/70 hover:text-gold mt-2">
+            <Phone className="w-3.5 h-3.5" />
+            081 18671862
+          </a>
+        </div>
+      </div>
+
+      {/* Author + meta card */}
+      <div className="bg-white rounded-2xl p-5 border border-border">
+        <div className="text-[10px] uppercase tracking-wider text-gold-dark font-bold mb-2">Autore</div>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-navy to-navy-light flex items-center justify-center text-gold font-bold text-sm">
+            {article.author.split(" ").slice(-2).map((s) => s[0]).join("")}
+          </div>
+          <div className="min-w-0">
+            <div className="font-bold text-navy text-sm leading-tight">{article.author}</div>
+            <div className="text-xs text-foreground/60">Studio Tutela Debito</div>
+          </div>
+        </div>
+        <div className="space-y-1.5 text-xs text-foreground/70 pt-3 border-t border-border">
+          <div className="flex items-center gap-2">
+            <Calendar className="w-3.5 h-3.5 text-gold-dark shrink-0" />
+            <span>Pubblicato: {article.date}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock className="w-3.5 h-3.5 text-gold-dark shrink-0" />
+            <span>Lettura: {article.readTime}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Tag className="w-3.5 h-3.5 text-gold-dark shrink-0" />
+            <span>Categoria: <strong className="text-navy">{article.category}</strong></span>
+          </div>
+        </div>
+      </div>
+
+      {/* Table of contents with scrollspy */}
+      {headings.length >= 3 && (
+        <div className="bg-muted/40 border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <List className="w-4 h-4 text-gold-dark" />
+            <h3 className="font-bold text-navy text-sm">In questo articolo</h3>
+          </div>
+          <ol className="space-y-1.5 text-sm">
+            {headings.map((h, i) => (
+              <li key={h.id}>
+                <a
+                  href={`#${h.id}`}
+                  className={`flex items-start gap-2 py-1 px-2 rounded-md transition-colors border-l-2 ${
+                    activeId === h.id
+                      ? "bg-gold/10 text-navy font-semibold border-gold"
+                      : "text-foreground/70 hover:text-navy hover:bg-white border-transparent"
+                  }`}
+                >
+                  <span className={`tabular-nums shrink-0 text-xs mt-0.5 ${activeId === h.id ? "text-gold-dark font-bold" : "text-gold-dark/60"}`}>
+                    {String(i + 1).padStart(2, "0")}.
+                  </span>
+                  <span className="leading-tight">{h.text}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {/* Share buttons */}
+      <div className="bg-white border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Share2 className="w-4 h-4 text-gold-dark" />
+          <h3 className="font-bold text-navy text-sm">Condividi l'articolo</h3>
+        </div>
+        <div className="grid grid-cols-4 gap-2">
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-muted hover:bg-trust hover:text-white text-foreground/70 transition-colors"
+            aria-label="Condividi su LinkedIn"
+          >
+            <Linkedin className="w-4 h-4" />
+            <span className="text-[10px] font-semibold">LinkedIn</span>
+          </a>
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(article.title + " — " + articleUrl)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-muted hover:bg-success hover:text-white text-foreground/70 transition-colors"
+            aria-label="Condividi su WhatsApp"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span className="text-[10px] font-semibold">WhatsApp</span>
+          </a>
+          <a
+            href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent("Ti segnalo questo articolo: " + articleUrl)}`}
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-muted hover:bg-navy hover:text-white text-foreground/70 transition-colors"
+            aria-label="Condividi via email"
+          >
+            <Mail className="w-4 h-4" />
+            <span className="text-[10px] font-semibold">Email</span>
+          </a>
+          <button
+            onClick={copyLink}
+            className="flex flex-col items-center gap-1 py-2 rounded-lg bg-muted hover:bg-gold hover:text-navy text-foreground/70 transition-colors"
+            aria-label="Copia link"
+          >
+            {copied ? <Check className="w-4 h-4 text-success" /> : <LinkIcon className="w-4 h-4" />}
+            <span className="text-[10px] font-semibold">{copied ? "Copiato" : "Copia"}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Related articles compact */}
+      {related.length > 0 && (
+        <div className="bg-white border border-border rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <BookOpen className="w-4 h-4 text-gold-dark" />
+            <h3 className="font-bold text-navy text-sm">Articoli correlati</h3>
+          </div>
+          <ul className="space-y-3">
+            {related.slice(0, 3).map((a) => (
+              <li key={a.slug}>
+                <Link
+                  to={`/risorse/${a.slug}`}
+                  className="group flex items-start gap-3 hover:bg-muted/60 -mx-2 px-2 py-1.5 rounded-lg transition-colors"
+                >
+                  <div className={`shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br ${a.cover} flex items-center justify-center relative overflow-hidden`}>
+                    {a.coverImage ? (
+                      <>
+                        <img src={a.coverImage} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${a.cover} mix-blend-multiply opacity-70`} />
+                      </>
+                    ) : (
+                      <BookOpen className="w-4 h-4 text-white relative" />
+                    )}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[10px] uppercase tracking-wider text-gold-dark font-bold leading-tight mb-0.5">
+                      {a.category}
+                    </div>
+                    <div className="text-sm font-semibold text-navy leading-snug group-hover:text-gold-dark line-clamp-2">
+                      {a.title}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/risorse"
+            className="mt-4 pt-3 border-t border-border flex items-center justify-between text-xs font-semibold text-navy hover:text-gold-dark"
+          >
+            Tutte le risorse <ChevronRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
+
+      {/* Categories navigation */}
+      <div className="bg-white border border-border rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Tag className="w-4 h-4 text-gold-dark" />
+          <h3 className="font-bold text-navy text-sm">Esplora per categoria</h3>
+        </div>
+        <ul className="space-y-1">
+          {allCategories.map((cat) => {
+            const count = articles.filter((a) => a.category === cat).length;
+            return (
+              <li key={cat}>
+                <Link
+                  to="/risorse"
+                  className="flex items-center justify-between py-1.5 px-2 rounded-md hover:bg-muted text-sm transition-colors group"
+                >
+                  <span className={`font-medium ${article.category === cat ? "text-gold-dark" : "text-foreground/75 group-hover:text-navy"}`}>
+                    {cat}
+                  </span>
+                  <span className="text-xs text-foreground/50 tabular-nums">{count}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      {/* Quiz mini-card */}
+      <div className="bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/40 rounded-2xl p-5">
+        <div className="flex items-center gap-2 mb-2">
+          <FileText className="w-4 h-4 text-gold-dark" />
+          <h3 className="font-bold text-navy text-sm">Test online</h3>
+        </div>
+        <p className="text-xs text-foreground/75 leading-relaxed mb-3">
+          Posso accedere a una procedura di esdebitazione? Scoprilo in 2 minuti.
+        </p>
+        <Link to="/quiz">
+          <Button
+            variant="outline"
+            className="w-full border-navy text-navy hover:bg-navy hover:text-white font-semibold text-xs h-9"
+          >
+            Fai il test <ArrowRight className="ml-1.5 w-3 h-3" />
+          </Button>
+        </Link>
+      </div>
+    </aside>
+  );
 };
 
 const Articolo = () => {
@@ -199,7 +510,12 @@ const Articolo = () => {
   if (!article) return <Navigate to="/risorse" replace />;
 
   const related = getRelated(slug, 3);
-  const { articleSchema, faqSchema } = buildSchemas(article);
+  const { articleSchema, breadcrumbSchema, faqSchema } = buildSchemas(article);
+  const ogImage = article.coverImage
+    ? (article.coverImage.startsWith("http")
+        ? article.coverImage
+        : `https://tuteladebito.it${article.coverImage}`)
+    : "https://tuteladebito.it/og-image.png";
 
   return (
     <>
@@ -207,14 +523,26 @@ const Articolo = () => {
         <title>{article.title} | Tutela Debito</title>
         <meta name="description" content={article.excerpt} />
         {article.keywords && <meta name="keywords" content={article.keywords.join(", ")} />}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <meta name="author" content={article.author} />
         <link rel="canonical" href={`https://tuteladebito.it/risorse/${article.slug}`} />
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Tutela Debito" />
+        <meta property="og:locale" content="it_IT" />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.excerpt} />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:url" content={`https://tuteladebito.it/risorse/${article.slug}`} />
         <meta property="article:author" content={article.author} />
         <meta property="article:section" content={article.category} />
+        <meta property="article:published_time" content={article.date} />
+        <meta property="article:modified_time" content={article.date} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.excerpt} />
+        <meta name="twitter:image" content={ogImage} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
       </Helmet>
 
@@ -230,6 +558,9 @@ const Articolo = () => {
                   <img
                     src={article.coverImage}
                     alt={article.title}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${article.cover} mix-blend-multiply opacity-70`} />
@@ -246,7 +577,7 @@ const Articolo = () => {
             </div>
 
             <div className="container mx-auto px-4 py-10 lg:py-14">
-              <div className="max-w-3xl">
+              <div className="max-w-4xl">
                 <div className="flex items-center gap-3 flex-wrap mb-5">
                   <span className="px-3 py-1 rounded-full bg-gold/15 text-navy text-xs font-bold uppercase tracking-wider">
                     {article.category}
@@ -265,48 +596,52 @@ const Articolo = () => {
             </div>
           </section>
 
-          {/* Body */}
+          {/* Body with sidebar */}
           <section className="py-12 lg:py-16 bg-white">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl">
-                <TableOfContents article={article} />
+              <div className="grid lg:grid-cols-[1fr_320px] gap-8 lg:gap-12 max-w-7xl mx-auto">
+                {/* Main content */}
+                <div className="min-w-0">
+                  <article>{article.content.map(renderBlock)}</article>
 
-                <article>{article.content.map(renderBlock)}</article>
-
-                {/* CTA box */}
-                <div className="mt-12 bg-navy text-white rounded-2xl p-7 lg:p-9">
-                  <h3 className="text-xl lg:text-2xl font-bold mb-3">Vuoi capire come si applica al tuo caso?</h3>
-                  <p className="text-white/80 mb-6 leading-relaxed">
-                    Gli articoli del blog hanno carattere informativo. Per una valutazione concreta della tua posizione è sempre necessario un colloquio individuale con esame della documentazione.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button
-                      onClick={openContact}
-                      className="bg-gold hover:bg-gold-dark text-navy font-semibold"
-                    >
-                      Richiedi diagnosi gratuita <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                    <Link to="/quiz">
-                      <Button variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white hover:text-navy font-semibold w-full sm:w-auto">
-                        Fai il test online
+                  {/* CTA box */}
+                  <div className="mt-12 bg-navy text-white rounded-2xl p-7 lg:p-9">
+                    <h3 className="text-xl lg:text-2xl font-bold mb-3">Vuoi capire come si applica al tuo caso?</h3>
+                    <p className="text-white/80 mb-6 leading-relaxed">
+                      Gli articoli del blog hanno carattere informativo. Per una valutazione concreta della tua posizione è sempre necessario un colloquio individuale con esame della documentazione.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button
+                        onClick={openContact}
+                        className="bg-gold hover:bg-gold-dark text-navy font-semibold"
+                      >
+                        Richiedi diagnosi gratuita <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
-                    </Link>
+                      <Link to="/quiz">
+                        <Button variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white hover:text-navy font-semibold w-full sm:w-auto">
+                          Fai il test online
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
+
+                  {/* Disclaimer */}
+                  <p className="text-xs text-foreground/50 mt-10 leading-relaxed">
+                    <strong>Disclaimer.</strong> Il presente articolo ha carattere meramente informativo. Non costituisce parere legale o fiscale né sostituisce in alcun modo una consulenza personalizzata. La normativa è in costante evoluzione: per applicazioni concrete è necessario rivolgersi a un professionista abilitato.
+                  </p>
                 </div>
 
-                {/* Disclaimer */}
-                <p className="text-xs text-foreground/50 mt-10 leading-relaxed">
-                  <strong>Disclaimer.</strong> Il presente articolo ha carattere meramente informativo. Non costituisce parere legale o fiscale né sostituisce in alcun modo una consulenza personalizzata. La normativa è in costante evoluzione: per applicazioni concrete è necessario rivolgersi a un professionista abilitato.
-                </p>
+                {/* Sidebar */}
+                <Sidebar article={article} related={related} onOpenContact={openContact} />
               </div>
             </div>
           </section>
 
-          {/* Related */}
+          {/* Related — full width grid below */}
           {related.length > 0 && (
             <section className="py-14 lg:py-20 bg-muted/40">
               <div className="container mx-auto px-4">
-                <div className="max-w-6xl">
+                <div className="max-w-7xl mx-auto">
                   <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8">Continua a leggere</h2>
                   <div className="grid md:grid-cols-3 gap-5">
                     {related.map((a) => (
@@ -318,7 +653,7 @@ const Articolo = () => {
                         <div className={`aspect-[16/9] relative overflow-hidden ${!a.coverImage ? `bg-gradient-to-br ${a.cover}` : ""}`}>
                           {a.coverImage ? (
                             <>
-                              <img src={a.coverImage} alt={a.title} className="absolute inset-0 w-full h-full object-cover" />
+                              <img src={a.coverImage} alt={a.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                               <div className={`absolute inset-0 bg-gradient-to-br ${a.cover} mix-blend-multiply opacity-70`} />
                             </>
                           ) : (

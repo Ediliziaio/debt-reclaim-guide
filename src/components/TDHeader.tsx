@@ -45,7 +45,7 @@ const TDHeader = ({ onOpenContact }: TDHeaderProps) => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20 lg:h-24">
             <Link to="/" className="flex items-center shrink-0" aria-label="Tutela Debito - Home">
-              <img src={logoTD} alt="Tutela Debito" className="h-20 md:h-28 w-auto -my-4" />
+              <img src={logoTD} alt="Tutela Debito" width="200" height="80" loading="eager" decoding="async" fetchPriority="high" className="h-20 md:h-28 w-auto -my-4" />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-1">

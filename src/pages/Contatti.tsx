@@ -34,9 +34,38 @@ const Contatti = () => {
   return (
     <>
       <Helmet>
-        <title>Contatti | Tutela Debito — Richiedi la tua diagnosi gratuita</title>
-        <meta name="description" content="Contatta Tutela Debito per la tua diagnosi gratuita. Telefono, email, WhatsApp o modulo di contatto. Risposta in 24 ore lavorative." />
+        <title>Contatti — Studio legale Tutela Debito | Napoli, Milano, Torino</title>
+        <meta name="description" content="Contatta Tutela Debito per una diagnosi riservata della tua posizione. Telefono, email, WhatsApp o modulo di contatto. Sedi a Napoli, Milano e Torino." />
+        <meta name="keywords" content="contatti studio legale debiti, avvocato esdebitazione contatti, Napoli Milano Torino" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://tuteladebito.it/contatti" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contatti | Tutela Debito" />
+        <meta property="og:description" content="Telefono, email, WhatsApp o modulo. Sedi a Napoli, Milano e Torino." />
+        <meta property="og:url" content="https://tuteladebito.it/contatti" />
+        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
+        <meta property="og:locale" content="it_IT" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "url": "https://tuteladebito.it/contatti",
+          "name": "Contatti Tutela Debito",
+          "mainEntity": {
+            "@type": "LegalService",
+            "name": "Tutela Debito",
+            "telephone": ["+39-081-18671862", "+39-338-6115394"],
+            "email": "info@studioavvocatorossi.it",
+            "url": "https://tuteladebito.it",
+          },
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+            { "@type": "ListItem", "position": 2, "name": "Contatti", "item": "https://tuteladebito.it/contatti" },
+          ],
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">

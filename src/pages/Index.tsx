@@ -30,9 +30,18 @@ const Index = () => {
         <title>Tutela Debito | Esdebitazione, Crisi d'Impresa, Contenzioso Tributario</title>
         <meta
           name="description"
-          content="Studio legale e fiscale per esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Prima diagnosi gratuita e riservata."
+          content="Studio legale e fiscale per esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
         />
+        <meta name="keywords" content="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, studio legale debiti, avvocato debiti, composizione negoziata, piano del consumatore, rottamazione" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://tuteladebito.it/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Tutela Debito | Esdebitazione e Crisi d'Impresa" />
+        <meta property="og:description" content="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino." />
+        <meta property="og:url" content="https://tuteladebito.it/" />
+        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
+        <meta property="og:locale" content="it_IT" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">

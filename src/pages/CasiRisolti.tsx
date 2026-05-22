@@ -161,9 +161,25 @@ const CasiRisolti = () => {
   return (
     <>
       <Helmet>
-        <title>Casi seguiti | Tutela Debito</title>
-        <meta name="description" content="Una selezione di procedure seguite dallo studio in materia di esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario." />
+        <title>Casi seguiti: esdebitazione, crisi d'impresa, tributario | Tutela Debito</title>
+        <meta name="description" content="Selezione di procedure seguite dallo studio in materia di esdebitazione, sovraindebitamento, crisi d'impresa, opposizione a pignoramenti e contenzioso tributario." />
+        <meta name="keywords" content="casi esdebitazione, esempi sovraindebitamento, casi reali crisi d'impresa, procedure concluse" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://tuteladebito.it/casi-risolti" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Casi seguiti | Tutela Debito" />
+        <meta property="og:description" content="Selezione di procedure seguite dallo studio." />
+        <meta property="og:url" content="https://tuteladebito.it/casi-risolti" />
+        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
+        <meta property="og:locale" content="it_IT" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+            { "@type": "ListItem", "position": 2, "name": "Casi seguiti", "item": "https://tuteladebito.it/casi-risolti" },
+          ],
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">

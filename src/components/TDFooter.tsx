@@ -30,7 +30,7 @@ const TDFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div className="space-y-4">
             <div className="bg-white inline-block rounded-lg p-2">
-              <img src={logoTD} alt="Tutela Debito" className="h-12 w-auto" />
+              <img src={logoTD} alt="Tutela Debito" width="120" height="48" loading="lazy" decoding="async" className="h-12 w-auto" />
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
               Studio legale e fiscale dedicato all'assistenza in materia di esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario.

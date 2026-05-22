@@ -53,9 +53,12 @@ const Header = ({ onOpenContact }: HeaderProps) => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img 
-              src={logoTutelaDebito} 
-              alt="Tutela Debito - Studio Legale" 
+            <img
+              src={logoTutelaDebito}
+              alt="Tutela Debito - Studio Legale"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="h-8 md:h-12 w-auto"
             />
           </a>

@@ -51,7 +51,7 @@ const PreDiagnosi = () => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16 lg:h-20">
               <Link to="/" className="flex items-center shrink-0">
-                <img src={logoTD} alt="Tutela Debito" className="h-14 md:h-16 w-auto -my-2" />
+                <img src={logoTD} alt="Tutela Debito" loading="eager" decoding="async" fetchPriority="high" className="h-14 md:h-16 w-auto -my-2" />
               </Link>
               <div className="flex items-center gap-3">
                 <a href="tel:+390818671862" className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold-dark">
@@ -108,6 +108,9 @@ const PreDiagnosi = () => {
                   <img
                     src={avvRossiImg}
                     alt="Avv. Armando Rossi — chi ti riceverà alla diagnosi"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="rounded-2xl w-full aspect-[4/5] object-cover shadow-soft border-2 border-white/10"
                   />
                   <div className="absolute -bottom-4 -left-4 bg-gold text-navy px-4 py-3 rounded-xl shadow-card max-w-[220px] hidden md:block">
@@ -294,6 +297,8 @@ const PreDiagnosi = () => {
                     <img
                       src={teamImg}
                       alt="Il team dello studio Tutela Debito"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-4 -right-4 bg-navy text-white px-4 py-3 rounded-xl shadow-card max-w-[200px] hidden md:block">
@@ -505,6 +510,8 @@ const PreDiagnosi = () => {
                   <img
                     src={avvRossiImg}
                     alt="Avv. Armando Rossi"
+                    loading="lazy"
+                    decoding="async"
                     className="rounded-2xl w-full max-w-[220px] aspect-[4/5] object-cover shadow-card"
                   />
                 </Reveal>
@@ -592,6 +599,8 @@ const PreDiagnosi = () => {
                     <img
                       src={authorityImg}
                       alt="Documenti da raccogliere per la diagnosi"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-4 -right-4 bg-gold text-navy px-4 py-3 rounded-xl shadow-card max-w-[200px] hidden md:block">
@@ -741,6 +750,8 @@ const PreDiagnosi = () => {
                     <img
                       src={heroHopeImg}
                       alt="Dopo la diagnosi sai esattamente dove sei e dove puoi arrivare"
+                      loading="lazy"
+                      decoding="async"
                       className="rounded-2xl w-full aspect-[4/3] object-cover shadow-card border border-border"
                     />
                     <div className="absolute -bottom-4 -left-4 bg-navy text-white px-4 py-3 rounded-xl shadow-card max-w-[200px] hidden md:block">

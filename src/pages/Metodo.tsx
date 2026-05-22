@@ -33,9 +33,25 @@ const Metodo = () => {
   return (
     <>
       <Helmet>
-        <title>Il nostro metodo | Tutela Debito</title>
-        <meta name="description" content="Il metodo Tutela Debito in 4 fasi: diagnosi, definizione della strategia, deposito della procedura, esecuzione e chiusura." />
+        <title>Il nostro metodo in 4 fasi | Tutela Debito</title>
+        <meta name="description" content="Il metodo Tutela Debito in 4 fasi operative: diagnosi della posizione debitoria, definizione della strategia legale, deposito della procedura, esecuzione e chiusura." />
+        <meta name="keywords" content="metodo esdebitazione, procedura sovraindebitamento, strategia legale debiti, diagnosi debiti" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
         <link rel="canonical" href="https://tuteladebito.it/metodo" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Il nostro metodo in 4 fasi | Tutela Debito" />
+        <meta property="og:description" content="Diagnosi, strategia, deposito ed esecuzione: il percorso operativo dello studio." />
+        <meta property="og:url" content="https://tuteladebito.it/metodo" />
+        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
+        <meta property="og:locale" content="it_IT" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+            { "@type": "ListItem", "position": 2, "name": "Metodo", "item": "https://tuteladebito.it/metodo" },
+          ],
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">
