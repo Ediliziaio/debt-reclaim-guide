@@ -5,42 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Favicon & touch icons -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <!-- Favicon & touch icons (Tutela Debito brand: navy square + gold TD) -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Primary SEO -->
-    <title>Tutela Debito | Studio Legale per Esdebitazione e Crisi d'Impresa</title>
-    <meta name="description" content="Tutela Debito: studio legale specializzato in esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Sedi a Napoli, Milano e Torino. Prima consulenza dedicata su appuntamento." />
-    <meta name="keywords" content="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, composizione negoziata, rottamazione, piano del consumatore, contenzioso tributario, studio legale debiti, avvocato debiti Napoli, avvocato debiti Milano, avvocato debiti Torino" />
-    <meta name="author" content="Tutela Debito - Studio Legale Avv. Armando Rossi" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <!-- Site-wide invariants only. Per-page metadata (title, description, canonical,
+         keywords, Open Graph, Twitter, JSON-LD) is injected per route by the
+         vite-react-ssg Head component (src/components/SEO.tsx) during prerender,
+         so it is intentionally not duplicated in this template. -->
     <meta name="googlebot" content="index, follow" />
     <meta name="language" content="Italian" />
     <meta name="geo.region" content="IT" />
     <meta name="geo.placename" content="Napoli, Milano, Torino" />
     <meta name="theme-color" content="#2a3f5f" />
-    <link rel="canonical" href="https://tuteladebito.it/" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Tutela Debito" />
-    <meta property="og:locale" content="it_IT" />
-    <meta property="og:title" content="Tutela Debito | Studio Legale per Esdebitazione e Crisi d'Impresa" />
-    <meta property="og:description" content="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Tre sedi: Napoli, Milano, Torino. Percorso legale guidato da avvocati e commercialisti." />
-    <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Tutela Debito - Studio Legale" />
-    <meta property="og:url" content="https://tuteladebito.it/" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tutela Debito | Studio Legale per Esdebitazione e Crisi d'Impresa" />
-    <meta name="twitter:description" content="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino." />
-    <meta name="twitter:image" content="https://tuteladebito.it/og-image.png" />
-    <meta name="twitter:image:alt" content="Tutela Debito - Studio Legale" />
 
     <!-- Resource hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,14 +41,34 @@
       "name": "Tutela Debito",
       "alternateName": "Studio Legale Avv. Armando Rossi",
       "url": "https://tuteladebito.it",
-      "logo": "https://tuteladebito.it/favicon.png",
+      "logo": "https://tuteladebito.it/logo-tutela-debito.png",
       "image": "https://tuteladebito.it/og-image.png",
       "description": "Studio legale specializzato in esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario.",
       "priceRange": "€€",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Italia"
+      "areaServed": [
+        { "@type": "City", "name": "Napoli" },
+        { "@type": "City", "name": "Milano" },
+        { "@type": "City", "name": "Torino" },
+        { "@type": "Country", "name": "Italia" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
       },
+      "founder": {
+        "@type": "Person",
+        "name": "Avv. Armando Rossi",
+        "jobTitle": "Avvocato",
+        "url": "https://tuteladebito.it/chi-siamo",
+        "sameAs": ["https://www.linkedin.com/in/armando-rossi-0378083b/"]
+      },
+      "department": [
+        { "@id": "https://tuteladebito.it/studio-legale-napoli#localbusiness" },
+        { "@id": "https://tuteladebito.it/studio-legale-milano#localbusiness" },
+        { "@id": "https://tuteladebito.it/studio-legale-torino#localbusiness" }
+      ],
       "telephone": ["+39-081-18671862", "+39-338-6115394"],
       "email": "info@studioavvocatorossi.it",
       "address": [
@@ -97,7 +97,12 @@
           "addressCountry": "IT"
         }
       ],
-      "sameAs": [],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=100083355054982",
+        "https://www.linkedin.com/in/armando-rossi-0378083b/",
+        "https://www.youtube.com/@TutelaDebitoTorino",
+        "https://share.google/ijClkBdvw3xSHS4w"
+      ],
       "knowsAbout": [
         "Esdebitazione",
         "Sovraindebitamento",

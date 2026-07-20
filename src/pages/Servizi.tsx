@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
@@ -129,39 +129,37 @@ const Servizi = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Servizi: esdebitazione, crisi d'impresa, contenzioso tributario | Tutela Debito</title>
-        <meta name="description" content="Aree di competenza dello studio: esdebitazione del privato (L. 3/2012 e CCII), composizione negoziata della crisi d'impresa, contenzioso tributario, opposizione esecuzioni e pignoramenti." />
-        <meta name="keywords" content="esdebitazione, crisi d'impresa, contenzioso tributario, opposizione pignoramento, composizione negoziata, piano del consumatore, liquidazione controllata" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tuteladebito.it/servizi" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Servizi | Tutela Debito" />
-        <meta property="og:description" content="Esdebitazione, crisi d'impresa, contenzioso tributario, opposizione esecuzioni." />
-        <meta property="og:url" content="https://tuteladebito.it/servizi" />
-        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
-        <meta property="og:locale" content="it_IT" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-            { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://tuteladebito.it/servizi" },
-          ],
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "provider": { "@type": "LegalService", "name": "Tutela Debito", "url": "https://tuteladebito.it" },
-          "areaServed": { "@type": "Country", "name": "Italia" },
-          "serviceType": [
-            "Esdebitazione del privato",
-            "Composizione negoziata della crisi d'impresa",
-            "Contenzioso tributario",
-            "Opposizione a esecuzioni e pignoramenti",
-          ],
-        })}</script>
-      </Helmet>
+      <SEO
+        title="Servizi: esdebitazione, crisi d'impresa, contenzioso tributario | Tutela Debito"
+        description="Aree di competenza dello studio: esdebitazione del privato (L. 3/2012 e CCII), composizione negoziata della crisi d'impresa, contenzioso tributario, opposizione esecuzioni e pignoramenti."
+        keywords="esdebitazione, crisi d'impresa, contenzioso tributario, opposizione pignoramento, composizione negoziata, piano del consumatore, liquidazione controllata"
+        robots="index, follow, max-image-preview:large"
+        canonical="https://tuteladebito.it/servizi"
+        ogTitle="Servizi | Tutela Debito"
+        ogDescription="Esdebitazione, crisi d'impresa, contenzioso tributario, opposizione esecuzioni."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://tuteladebito.it/servizi" },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "provider": { "@type": "LegalService", "name": "Tutela Debito", "url": "https://tuteladebito.it" },
+            "areaServed": { "@type": "Country", "name": "Italia" },
+            "serviceType": [
+              "Esdebitazione del privato",
+              "Composizione negoziata della crisi d'impresa",
+              "Contenzioso tributario",
+              "Opposizione a esecuzioni e pignoramenti",
+            ],
+          },
+        ]}
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={openContact} />

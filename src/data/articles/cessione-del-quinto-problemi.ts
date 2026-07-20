@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "cessione-del-quinto-problemi",
   title: "Cessione del quinto: i diritti del debitore in difficoltà",
   excerpt:
@@ -16,7 +16,7 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/cessione-del-quinto-problemi.png",
   keywords: [
     "cessione del quinto",
     "DPR 180/1950",
@@ -26,6 +26,10 @@ export const article: Article = {
   ],
   intro:
     "La cessione del quinto dello stipendio o della pensione è una delle forme più diffuse di credito al consumo in Italia, regolata da una disciplina speciale risalente al D.P.R. 5 gennaio 1950, n. 180, integrata da numerosi interventi normativi successivi e da una giurisprudenza europea che ha ridisegnato i diritti del consumatore. Conoscere il funzionamento del contratto, le garanzie obbligatorie, le clausole contrattuali ricorrenti e i diritti spettanti al debitore in caso di estinzione anticipata, di perdita del lavoro o di anomalie contrattuali è essenziale per valutare correttamente la propria posizione.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

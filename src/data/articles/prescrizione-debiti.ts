@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "prescrizione-debiti",
   title: "Prescrizione dei debiti: tempi, interruzione e come farla valere correttamente",
   excerpt:
@@ -13,7 +13,7 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroLawyer,
+  coverImage: "/covers/prescrizione-debiti.png",
   keywords: [
     "prescrizione debiti",
     "prescrizione decennale",
@@ -23,6 +23,10 @@ export const article: Article = {
   ],
   intro:
     "La prescrizione è un istituto civilistico essenziale nel diritto del credito: il decorso del tempo, in assenza di iniziative del titolare, estingue il diritto e impedisce al creditore di pretenderne l'adempimento. Conoscere i termini di prescrizione, i meccanismi di interruzione e di sospensione e i modi corretti per farla valere è strumento indispensabile per chi affronta posizioni debitorie risalenti. La materia è disciplinata dagli artt. 2934-2963 c.c., con discipline speciali per cartelle esattoriali, contributi previdenziali e specifici rapporti.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "La prescrizione: nozione e funzione", id: "nozione" },
     {

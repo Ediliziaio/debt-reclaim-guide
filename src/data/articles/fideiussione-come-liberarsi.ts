@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "fideiussione-come-liberarsi",
   title: "Fideiussione: come liberarsi dalla garanzia personale prestata a terzi",
   excerpt:
@@ -16,7 +16,7 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroLawyer,
+  coverImage: "/covers/fideiussione-come-liberarsi.png",
   keywords: [
     "fideiussione",
     "garante",
@@ -27,6 +27,10 @@ export const article: Article = {
   ],
   intro:
     "La fideiussione è una delle forme più diffuse e insidiose di garanzia personale: chi la presta si obbliga, accanto al debitore principale, ad adempiere alle obbligazioni di quest'ultimo. In ambito bancario, la cosiddetta fideiussione omnibus ha generato un contenzioso enorme, culminato nella sentenza delle Sezioni Unite della Cassazione n. 41994 del 30 dicembre 2021 che ha riconosciuto la nullità parziale delle clausole anticoncorrenziali del modello ABI 2003. Conoscere i diritti del garante, i meccanismi di liberazione previsti dagli artt. 1936-1957 c.c. e le tecniche difensive consente di affrontare una posizione di garanzia con strumenti adeguati.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

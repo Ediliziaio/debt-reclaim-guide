@@ -1,10 +1,10 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 import heroHope from "@/assets/hero-hope.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "liquidazione-giudiziale",
   title: "Liquidazione giudiziale (ex fallimento): cosa cambia con il Codice della Crisi",
   excerpt: "Guida operativa alla liquidazione giudiziale nel CCII: presupposti, sentenza di apertura, ruolo del curatore, stato passivo, liquidazione dell'attivo, riparti, esdebitazione ex art. 278.",
@@ -13,7 +13,7 @@ export const article: Article = {
   readTime: "21 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/liquidazione-giudiziale.png",
   keywords: [
     "liquidazione giudiziale",
     "fallimento",
@@ -24,6 +24,10 @@ export const article: Article = {
   ],
   intro:
     "La liquidazione giudiziale è la procedura che ha sostituito il fallimento con l'entrata in vigore del Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019). Pur essendo, nei tratti essenziali, la prosecuzione storica del fallimento disciplinato dalla L.F. del 1942, il nuovo istituto presenta differenze terminologiche, procedimentali e sostanziali significative, soprattutto in materia di organi della procedura, esdebitazione, revocatorie e reati. Questa guida ricostruisce in modo organico la liquidazione giudiziale: presupposti soggettivi e oggettivi, sentenza di apertura, spossessamento, ruolo del curatore, stato passivo, liquidazione dell'attivo, riparti, chiusura, esdebitazione di diritto e reati fallimentari.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

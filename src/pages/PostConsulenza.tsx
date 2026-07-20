@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -158,11 +158,7 @@ const PostConsulenza = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Hai fatto la consulenza? Ecco come scegliere bene | Tutela Debito</title>
-        <meta name="description" content="Guida onesta agli elementi da verificare prima di affidare la tua pratica di esdebitazione a uno studio legale. Per chi ha già fatto la consulenza e deve decidere." />
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO title="Hai fatto la consulenza? Ecco come scegliere bene | Tutela Debito" description="Guida onesta agli elementi da verificare prima di affidare la tua pratica di esdebitazione a uno studio legale. Per chi ha già fatto la consulenza e deve decidere." robots="noindex, nofollow" />
 
       <div className="min-h-screen bg-background flex flex-col">
         {/* Minimal header — no nav distractions */}

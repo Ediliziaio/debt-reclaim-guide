@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "pignoramento-immobiliare",
   title: "Pignoramento immobiliare: difese del debitore proprietario nelle diverse fasi della procedura",
   excerpt: "Guida tecnica all'esecuzione immobiliare ex art. 555 c.p.c.: notifica e trascrizione, custodia, perizia, asta, conversione, opposizioni e tutela della prima casa nel pignoramento esattoriale.",
@@ -15,7 +15,7 @@ export const article: Article = {
   readTime: "22 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroLawyer,
+  coverImage: "/covers/pignoramento-immobiliare.png",
   keywords: [
     "pignoramento immobiliare",
     "pignoramento casa",
@@ -25,6 +25,10 @@ export const article: Article = {
     "asta",
   ],
   intro: "Il pignoramento immobiliare è la procedura esecutiva con cui il creditore aggredisce un bene immobile del debitore per soddisfare il proprio credito mediante la vendita forzata. È disciplinato dagli artt. 555 e seguenti del codice di procedura civile e si svolge davanti al giudice dell'esecuzione del Tribunale del luogo in cui l'immobile è ubicato. Per il debitore proprietario la procedura ha conseguenze patrimoniali rilevanti, ma anche numerosi rimedi: dalla conversione alle opposizioni, fino alla composizione negoziata o al saldo a stralcio.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Cos'è il pignoramento immobiliare e quando si attiva", id: "definizione-presupposti" },
     { type: "p", text: "Il pignoramento immobiliare costituisce il primo atto dell'espropriazione forzata immobiliare. Presupposto necessario è l'esistenza di un titolo esecutivo (sentenza passata in giudicato, decreto ingiuntivo esecutivo, atto pubblico, scrittura privata autenticata, cambiale, assegno, cartella esattoriale) e la previa notifica al debitore del precetto, contenente l'invito ad adempiere entro dieci giorni ai sensi dell'art. 480 c.p.c. Decorso tale termine senza che il debitore abbia provveduto al pagamento o avviato trattative idonee a sospendere il procedimento, il creditore può procedere al pignoramento entro novanta giorni, pena l'inefficacia del precetto." },

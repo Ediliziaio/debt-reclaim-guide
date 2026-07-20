@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "debiti-condominiali",
   title:
     "Debiti condominiali: cosa rischia il condomino moroso e come gestire la morosità",
@@ -17,7 +17,7 @@ export const article: Article = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: abstractHopeBg,
+  coverImage: "/covers/debiti-condominiali.png",
   keywords: [
     "debiti condominio",
     "morosità condominiale",
@@ -27,6 +27,10 @@ export const article: Article = {
   ],
   intro:
     "La morosità condominiale è una delle controversie più diffuse del contenzioso civile italiano. Il legislatore ha previsto, in capo all'amministratore, strumenti di recupero estremamente rapidi: il decreto ingiuntivo provvisoriamente esecutivo ex art. 63 disp. att. c.c., la sospensione dei servizi comuni suscettibili di godimento separato, l'iscrizione di ipoteca giudiziale e il pignoramento. Conoscere il quadro normativo (artt. 1118, 1123 c.c.; 63-66 disp. att. c.c.), le tipologie di spesa, i rimedi del condomino moroso e i limiti dell'azione condominiale è essenziale per evitare aggravamenti del debito e per esercitare correttamente le facoltà di opposizione e di rinegoziazione.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

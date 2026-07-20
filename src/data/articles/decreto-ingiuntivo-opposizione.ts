@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "decreto-ingiuntivo-opposizione",
   title: "Decreto ingiuntivo: come opporsi entro i 40 giorni e con quali motivi",
   excerpt: "Opposizione a decreto ingiuntivo ex art. 645 c.p.c.: termine di 40 giorni, atto di citazione, motivi sostanziali e formali, sospensione esecutività, opposizione tardiva.",
@@ -12,9 +12,13 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroLawyer,
+  coverImage: "/covers/decreto-ingiuntivo-opposizione.png",
   keywords: ["decreto ingiuntivo", "opposizione decreto ingiuntivo", "art 645 cpc", "40 giorni", "atto di citazione"],
   intro: "Il decreto ingiuntivo è uno degli strumenti processuali più utilizzati per il recupero rapido di crediti documentati. Il debitore che lo riceve si trova davanti a una scelta dai tempi stretti: pagare, opporsi entro 40 giorni o subirne l'esecutività con tutti i rischi del pignoramento. L'opposizione è un giudizio a cognizione piena che si introduce con atto di citazione e che, se ben costruita, consente di far valere ogni eccezione di merito: dalla carenza dei requisiti probatori alla prescrizione, dalla nullità del contratto al pagamento già avvenuto. Conoscere tempi, forme e motivi è essenziale per una difesa efficace.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Cos'è il decreto ingiuntivo (art. 633 c.p.c.)", id: "cosa-e" },
     { type: "p", text: "Il decreto ingiuntivo è un provvedimento del giudice civile (Tribunale o Giudice di Pace, a seconda del valore) emesso a seguito di un procedimento sommario disciplinato dagli artt. 633 e seguenti c.p.c.. Su ricorso del creditore — che deduce un proprio credito di somma di danaro liquida ed esigibile, oppure di consegna di cosa mobile determinata, sulla base di prova scritta — il giudice ordina al debitore di adempiere entro 40 giorni, con avvertimento che in mancanza di opposizione il decreto diventa esecutivo." },

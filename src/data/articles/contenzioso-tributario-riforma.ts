@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "contenzioso-tributario-riforma",
   title: "Contenzioso tributario: la riforma del processo davanti alle Corti di Giustizia Tributaria",
   excerpt: "La riforma del processo tributario tra L. 130/2022 e D.lgs. 220/2023: magistrati professionali, giudice monocratico, prova testimoniale scritta, conciliazione, PTT, gradi di giudizio.",
@@ -12,9 +12,13 @@ export const article: Article = {
   readTime: "19 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/contenzioso-tributario-riforma.png",
   keywords: ["contenzioso tributario", "Corte Giustizia Tributaria", "riforma processo tributario", "L. 130/2022", "giudice tributario professionale"],
   intro: "Il processo tributario ha attraversato negli ultimi anni una stagione di riforme intense. La L. 130/2022 ha inciso sulla composizione, sull'istruttoria e sull'onere della prova; il D.lgs. 220/2023 ha eliminato il reclamo-mediazione obbligatorio e ridefinito il rapporto fra processo telematico e atti depositati. Le storiche Commissioni tributarie sono diventate Corti di Giustizia Tributaria di primo e secondo grado, organi giurisdizionali con magistrati professionali e regole più moderne. Per il contribuente che si trova ad affrontare una controversia con il Fisco, conoscere il nuovo quadro è indispensabile per impostare una difesa efficace.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Il quadro normativo: dal D.lgs. 546/1992 alle riforme recenti", id: "quadro-normativo" },
     { type: "p", text: "La spina dorsale del processo tributario resta il D.lgs. 31 dicembre 1992, n. 546, varato in attuazione della delega contenuta nella L. 413/1991. Su questo impianto si sono innestate, negli anni, modifiche puntuali (in particolare con il D.lgs. 156/2015) e, da ultimo, due interventi organici: la L. 31 agosto 2022, n. 130 e il D.lgs. 30 dicembre 2023, n. 220, attuativo della delega fiscale L. 111/2023." },

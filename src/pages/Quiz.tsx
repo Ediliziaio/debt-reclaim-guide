@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
@@ -174,27 +174,25 @@ const Quiz = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Test online di orientamento: posso esdebitarmi? | Tutela Debito</title>
-        <meta name="description" content="Test online gratuito di orientamento: poche domande per capire se la tua situazione può rientrare nei presupposti delle procedure di sovraindebitamento previste dalla legge italiana." />
-        <meta name="keywords" content="test esdebitazione, quiz sovraindebitamento, posso uscire dai debiti, orientamento legale" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tuteladebito.it/quiz" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Test online: posso esdebitarmi? | Tutela Debito" />
-        <meta property="og:description" content="Test online di orientamento in 2 minuti." />
-        <meta property="og:url" content="https://tuteladebito.it/quiz" />
-        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
-        <meta property="og:locale" content="it_IT" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-            { "@type": "ListItem", "position": 2, "name": "Test online", "item": "https://tuteladebito.it/quiz" },
-          ],
-        })}</script>
-      </Helmet>
+      <SEO
+        title="Test online di orientamento: posso esdebitarmi? | Tutela Debito"
+        description="Test online gratuito di orientamento: poche domande per capire se la tua situazione può rientrare nei presupposti delle procedure di sovraindebitamento previste dalla legge italiana."
+        keywords="test esdebitazione, quiz sovraindebitamento, posso uscire dai debiti, orientamento legale"
+        robots="index, follow, max-image-preview:large"
+        canonical="https://tuteladebito.it/quiz"
+        ogTitle="Test online: posso esdebitarmi? | Tutela Debito"
+        ogDescription="Test online di orientamento in 2 minuti."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Test online", "item": "https://tuteladebito.it/quiz" },
+            ],
+          },
+        ]}
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={openContact} />

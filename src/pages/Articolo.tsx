@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
@@ -28,7 +28,9 @@ import {
   ChevronRight,
   FileText,
 } from "lucide-react";
-import { articles, getArticle, getRelated, type Block, type Article } from "@/data/articles";
+import { articlesMeta, getRelated, toISODate, type Block, type Article, type ArticleMeta } from "@/data/articles";
+import { getArticleContent } from "@/data/articlesContent";
+import { getArticleSeo } from "@/data/articleSeo";
 
 const renderBlock = (block: Block, i: number) => {
   switch (block.type) {
@@ -147,13 +149,31 @@ const renderBlock = (block: Block, i: number) => {
   }
 };
 
-const buildSchemas = (article: Article) => {
+const wordCountOf = (blocks?: Block[]): number => {
+  if (!blocks) return 0;
+  const count = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
+  let n = 0;
+  for (const b of blocks) {
+    if ("text" in b && typeof b.text === "string") n += count(b.text);
+    if ("items" in b && Array.isArray(b.items)) {
+      for (const it of b.items) {
+        if (typeof it === "string") n += count(it);
+        else if (it && typeof it === "object") n += count(it.q) + count(it.a);
+      }
+    }
+  }
+  return n;
+};
+
+const buildSchemas = (article: ArticleMeta, content?: Block[]) => {
   const url = `https://tuteladebito.it/risorse/${article.slug}`;
   const image = article.coverImage
     ? (article.coverImage.startsWith("http")
         ? article.coverImage
         : `https://tuteladebito.it${article.coverImage}`)
     : "https://tuteladebito.it/og-image.png";
+  const minutes = parseInt(article.readTime, 10);
+  const isFounder = /armando rossi/i.test(article.author);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -165,21 +185,26 @@ const buildSchemas = (article: Article) => {
       "@type": "Person",
       "name": article.author,
       "url": "https://tuteladebito.it/chi-siamo",
+      ...(isFounder ? { "sameAs": ["https://www.linkedin.com/in/armando-rossi-0378083b/"] } : {}),
     },
     "publisher": {
       "@type": "Organization",
+      "@id": "https://tuteladebito.it/#organization",
       "name": "Tutela Debito",
       "url": "https://tuteladebito.it",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://tuteladebito.it/favicon.png",
+        "url": "https://tuteladebito.it/logo-tutela-debito.png",
       },
     },
-    "datePublished": article.date,
-    "dateModified": article.date,
+    "datePublished": toISODate(article.date) ?? article.date,
+    "dateModified": toISODate(article.date) ?? article.date,
     "keywords": article.keywords?.join(", "),
     "articleSection": article.category,
     "inLanguage": "it-IT",
+    "isAccessibleForFree": true,
+    ...(Number.isFinite(minutes) ? { "timeRequired": `PT${minutes}M` } : {}),
+    ...(content ? { "wordCount": wordCountOf(content) } : {}),
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": url,
@@ -211,7 +236,7 @@ const buildSchemas = (article: Article) => {
     ],
   };
 
-  const faqBlock = article.content.find((b) => b.type === "faq");
+  const faqBlock = content?.find((b) => b.type === "faq");
   const faqSchema = faqBlock?.type === "faq"
     ? {
         "@context": "https://schema.org",
@@ -229,7 +254,7 @@ const buildSchemas = (article: Article) => {
 
 interface SidebarProps {
   article: Article;
-  related: Article[];
+  related: ArticleMeta[];
   onOpenContact: () => void;
 }
 
@@ -275,7 +300,7 @@ const Sidebar = ({ article, related, onOpenContact }: SidebarProps) => {
   };
 
   // Category counts across all articles
-  const allCategories = Array.from(new Set(articles.map((a) => a.category)));
+  const allCategories = Array.from(new Set(articlesMeta.map((a) => a.category)));
 
   return (
     <aside className="lg:sticky lg:top-24 space-y-5 self-start max-h-[calc(100vh-7rem)] overflow-y-auto pr-1">
@@ -460,7 +485,7 @@ const Sidebar = ({ article, related, onOpenContact }: SidebarProps) => {
         </div>
         <ul className="space-y-1">
           {allCategories.map((cat) => {
-            const count = articles.filter((a) => a.category === cat).length;
+            const count = articlesMeta.filter((a) => a.category === cat).length;
             return (
               <li key={cat}>
                 <Link
@@ -506,11 +531,17 @@ const Articolo = () => {
   const openContact = () => setIsContactOpen(true);
 
   if (!slug) return <Navigate to="/risorse" replace />;
-  const article = getArticle(slug);
+  // Full content is available synchronously so the article body is present in the
+  // prerendered static HTML (SSG) — crawlers and AI engines read it without JS.
+  const article = getArticleContent(slug);
   if (!article) return <Navigate to="/risorse" replace />;
 
   const related = getRelated(slug, 3);
-  const { articleSchema, breadcrumbSchema, faqSchema } = buildSchemas(article);
+  const { articleSchema, breadcrumbSchema, faqSchema } = buildSchemas(article, article.content);
+  // SERP-length title/description (fallback to the long H1/excerpt if not tuned).
+  const seo = getArticleSeo(slug);
+  const seoTitle = seo?.seoTitle ?? `${article.title} | Tutela Debito`;
+  const seoDescription = seo?.metaDescription ?? article.excerpt;
   const ogImage = article.coverImage
     ? (article.coverImage.startsWith("http")
         ? article.coverImage
@@ -519,32 +550,25 @@ const Articolo = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{article.title} | Tutela Debito</title>
-        <meta name="description" content={article.excerpt} />
-        {article.keywords && <meta name="keywords" content={article.keywords.join(", ")} />}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <meta name="author" content={article.author} />
-        <link rel="canonical" href={`https://tuteladebito.it/risorse/${article.slug}`} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Tutela Debito" />
-        <meta property="og:locale" content="it_IT" />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.excerpt} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={`https://tuteladebito.it/risorse/${article.slug}`} />
-        <meta property="article:author" content={article.author} />
-        <meta property="article:section" content={article.category} />
-        <meta property="article:published_time" content={article.date} />
-        <meta property="article:modified_time" content={article.date} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={article.title} />
-        <meta name="twitter:description" content={article.excerpt} />
-        <meta name="twitter:image" content={ogImage} />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
-      </Helmet>
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        keywords={article.keywords?.join(", ")}
+        robots="index, follow, max-image-preview:large, max-snippet:-1"
+        canonical={`https://tuteladebito.it/risorse/${article.slug}`}
+        ogType="article"
+        ogTitle={article.title}
+        ogDescription={article.excerpt}
+        image={ogImage}
+        extraMeta={[
+          { name: "author", content: article.author },
+          { property: "article:author", content: article.author },
+          { property: "article:section", content: article.category },
+          { property: "article:published_time", content: toISODate(article.date) ?? article.date },
+          { property: "article:modified_time", content: toISODate(article.date) ?? article.date },
+        ]}
+        jsonLd={[articleSchema, breadcrumbSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={openContact} />

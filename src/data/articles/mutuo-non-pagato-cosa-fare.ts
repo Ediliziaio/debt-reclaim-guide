@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "mutuo-non-pagato-cosa-fare",
   title: "Mutuo non pagato: cosa fare prima del pignoramento immobiliare",
   excerpt:
@@ -16,7 +16,7 @@ export const article: Article = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: ctaHandshake,
+  coverImage: "/covers/mutuo-non-pagato-cosa-fare.png",
   keywords: [
     "mutuo non pagato",
     "rate mutuo arretrate",
@@ -26,6 +26,10 @@ export const article: Article = {
   ],
   intro:
     "Il mancato pagamento delle rate del mutuo fondiario rappresenta una delle situazioni più delicate del diritto bancario privato. Tra la prima rata insoluta e il pignoramento immobiliare esiste una sequenza di passaggi giuridici precisi, regolati dall'art. 40 del Testo Unico Bancario (D.lgs. 385/1993) e dalle norme del codice di procedura civile in tema di espropriazione forzata. Conoscere la cronologia degli eventi, gli strumenti di tutela disponibili (sospensione, rinegoziazione, surroga, accordo a stralcio) e i diritti del debitore consente di agire prima che la situazione precipiti.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

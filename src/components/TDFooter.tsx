@@ -1,23 +1,33 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Shield } from "lucide-react";
+import { Mail, Phone, MapPin, Shield, Youtube, Facebook, Linkedin } from "lucide-react";
 import logoTD from "@/assets/logo-tutela-debito.png";
+import { SOCIAL_YOUTUBE, SOCIAL_FACEBOOK, SOCIAL_LINKEDIN } from "@/data/cities";
 
 const sedi = [
   {
     city: "Napoli",
+    slug: "napoli",
     address: "Via M. Cervantes 55/5",
     cap: "80133 Napoli",
   },
   {
     city: "Milano",
+    slug: "milano",
     address: "Via R. Boscovich 14",
     cap: "20124 Milano",
   },
   {
     city: "Torino",
+    slug: "torino",
     address: "Corso Vittorio Emanuele II n. 168",
     cap: "10138 Torino",
   },
+];
+
+const socials = [
+  { href: SOCIAL_YOUTUBE, label: "YouTube", Icon: Youtube },
+  { href: SOCIAL_FACEBOOK, label: "Facebook", Icon: Facebook },
+  { href: SOCIAL_LINKEDIN, label: "LinkedIn", Icon: Linkedin },
 ];
 
 const TDFooter = () => {
@@ -35,6 +45,21 @@ const TDFooter = () => {
             <p className="text-white/70 text-sm leading-relaxed">
               Studio legale e fiscale dedicato all'assistenza in materia di esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario.
             </p>
+            <div className="flex items-center gap-3 pt-1">
+              {socials.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-navy text-white/80 flex items-center justify-center transition-colors"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
@@ -97,19 +122,21 @@ const TDFooter = () => {
           </h4>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {sedi.map((s) => (
-              <div
+              <Link
                 key={s.city}
-                className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 hover:border-gold/30 transition-colors"
+                to={`/studio-legale-${s.slug}`}
+                className="group bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 hover:border-gold/30 transition-colors block"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 rounded-full bg-gold" />
                   <span className="text-xs font-bold uppercase tracking-wider text-gold">
-                    Studio di {s.city}
+                    Studio legale {s.city}
                   </span>
                 </div>
                 <p className="text-sm text-white/85 leading-snug">{s.address}</p>
                 <p className="text-sm text-white/60 leading-snug">{s.cap}</p>
-              </div>
+                <span className="mt-2 inline-block text-xs text-white/50 group-hover:text-gold">Scopri la sede →</span>
+              </Link>
             ))}
           </div>
         </div>

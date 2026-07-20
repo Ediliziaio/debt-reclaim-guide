@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import ctaHandshake from "@/assets/cta-handshake.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "concordato-preventivo",
   title: "Concordato preventivo: la procedura per le imprese in crisi nel nuovo Codice della Crisi",
   excerpt: "Guida tecnica al concordato preventivo nel CCII (D.lgs. 14/2019): presupposti, concordato in continuità e liquidatorio, classi creditori, attestatore, voto, omologazione, transazione fiscale.",
@@ -12,7 +12,7 @@ export const article: Article = {
   readTime: "22 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: handshakeTrust,
+  coverImage: "/covers/concordato-preventivo.png",
   keywords: [
     "concordato preventivo",
     "CCII art 84",
@@ -22,6 +22,10 @@ export const article: Article = {
   ],
   intro:
     "Il concordato preventivo è la principale procedura di regolazione della crisi e dell'insolvenza prevista dal Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019). Consente all'imprenditore commerciale che si trovi in stato di crisi o di insolvenza reversibile di proporre ai creditori un piano di ristrutturazione del debito, in alternativa alla liquidazione giudiziale. La riforma ha rafforzato la centralità della continuità aziendale, ampliato gli strumenti di transazione fiscale e ridefinito i quorum di voto. Questa guida ne ricostruisce in modo organico presupposti, varianti, procedimento e profili operativi.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

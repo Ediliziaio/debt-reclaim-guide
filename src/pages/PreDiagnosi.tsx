@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -39,11 +39,7 @@ const PreDiagnosi = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Prima della tua diagnosi gratuita — Cosa aspettarti | Tutela Debito</title>
-        <meta name="description" content="Cosa aspettarti dalla prima diagnosi: come si svolge, cosa portare, cosa otterrai, cosa NON ti chiederemo mai. Pagina riservata a chi sta per prenotare il primo colloquio." />
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO title="Prima della tua diagnosi gratuita — Cosa aspettarti | Tutela Debito" description="Cosa aspettarti dalla prima diagnosi: come si svolge, cosa portare, cosa otterrai, cosa NON ti chiederemo mai. Pagina riservata a chi sta per prenotare il primo colloquio." robots="noindex, nofollow" />
 
       <div className="min-h-screen bg-background flex flex-col">
         {/* Minimal header */}

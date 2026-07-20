@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "occ-organismo-composizione-crisi",
   title: "OCC: il ruolo dell'Organismo di Composizione della Crisi nelle procedure di sovraindebitamento",
   excerpt:
@@ -13,7 +13,7 @@ export const article: Article = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/occ-organismo-composizione-crisi.png",
   keywords: [
     "OCC",
     "organismo composizione crisi",
@@ -23,6 +23,10 @@ export const article: Article = {
   ],
   intro:
     "L'Organismo di Composizione della Crisi, comunemente abbreviato in OCC, è il soggetto tecnico-istituzionale che il Codice della Crisi d'Impresa e dell'Insolvenza pone al centro delle procedure di sovraindebitamento dedicate al consumatore, al professionista e al piccolo imprenditore non fallibile. Senza l'intervento dell'OCC, gli strumenti di ristrutturazione del debito previsti dal CCII non possono concretamente attivarsi: l'OCC raccoglie la documentazione, attesta la fattibilità, dialoga con il giudice. Conoscerne struttura, funzioni e costi è il primo passo per chi valuta un percorso di esdebitazione.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Cos'è l'Organismo di Composizione della Crisi", id: "cos-e-occ" },
     {

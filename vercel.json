@@ -7,9 +7,7 @@
   "devCommand": "npm run dev",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  "_comment": "SSG (vite-react-ssg): every route is a prerendered .html served via cleanUrls. No SPA catch-all rewrite — that would serve the homepage HTML for every URL and break per-page SSG output.",
   "headers": [
     {
       "source": "/assets/:path*",
@@ -27,6 +25,12 @@
       "source": "/og-image.png",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/covers/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, must-revalidate" }
       ]
     },
     {

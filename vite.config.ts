@@ -26,14 +26,13 @@ export default defineConfig(({ mode }) => ({
         // Keep manual chunks minimal — splitting React/Radix/etc. into
         // separate chunks causes runtime circular-import errors
         // (React undefined → createContext crash). Let Vite handle the
-        // common splits automatically; we only carve out recharts because
-        // it is large (~300 kB) and only used on a couple of pages.
-        manualChunks: (id) => {
-          if (id.includes("node_modules/recharts") || id.includes("node_modules/d3-")) {
-            return "vendor-charts";
-          }
-          return undefined;
-        },
+        // common splits automatically.
+        //
+        // recharts/d3 (~500 kB) are intentionally NOT carved into a manual
+        // vendor chunk: doing so made Vite emit a <link rel="modulepreload">
+        // for it in index.html, eagerly downloading it on the homepage.
+        // Left to Vite, recharts folds into the lazy TDStatsChart chunk and
+        // is fetched only when the chart is actually rendered.
       },
     },
   },

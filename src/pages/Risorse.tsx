@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
@@ -9,7 +9,7 @@ import TDFinalCTA from "@/components/TDFinalCTA";
 import TDHeroBackdrop from "@/components/TDHeroBackdrop";
 import { Button } from "@/components/ui/button";
 import { FileText, Download, Clock, Calendar, User, ArrowRight, BookOpen, Users2, Scale, Building2, CheckCircle2, Sparkles, Phone, Mail, Tag, TrendingUp, Bookmark } from "lucide-react";
-import { articles } from "@/data/articles";
+import { articlesMeta as articles, toISODate } from "@/data/articles";
 
 const guides = [
   {
@@ -64,50 +64,47 @@ const Risorse = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Risorse, guide e blog su esdebitazione e crisi d'impresa | Tutela Debito</title>
-        <meta name="description" content="Approfondimenti, guide pratiche e articoli aggiornati su esdebitazione, sovraindebitamento, cartelle esattoriali, crisi d'impresa e contenzioso tributario. Redatti dallo studio." />
-        <meta name="keywords" content="blog esdebitazione, guide sovraindebitamento, articoli crisi d'impresa, cartella esattoriale, pignoramento, composizione negoziata, rottamazione" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tuteladebito.it/risorse" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Risorse, guide e blog | Tutela Debito" />
-        <meta property="og:description" content="Approfondimenti tecnici e guide pratiche su esdebitazione, sovraindebitamento e crisi d'impresa." />
-        <meta property="og:url" content="https://tuteladebito.it/risorse" />
-        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
-        <meta property="og:locale" content="it_IT" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Blog",
-          "@id": "https://tuteladebito.it/risorse#blog",
-          "name": "Risorse Tutela Debito",
-          "description": "Guide e approfondimenti su esdebitazione, sovraindebitamento e crisi d'impresa.",
-          "url": "https://tuteladebito.it/risorse",
-          "inLanguage": "it-IT",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Tutela Debito",
-            "url": "https://tuteladebito.it",
+      <SEO
+        title="Risorse, guide e blog su esdebitazione e crisi d'impresa | Tutela Debito"
+        description="Approfondimenti, guide pratiche e articoli aggiornati su esdebitazione, sovraindebitamento, cartelle esattoriali, crisi d'impresa e contenzioso tributario. Redatti dallo studio."
+        keywords="blog esdebitazione, guide sovraindebitamento, articoli crisi d'impresa, cartella esattoriale, pignoramento, composizione negoziata, rottamazione"
+        robots="index, follow, max-image-preview:large"
+        canonical="https://tuteladebito.it/risorse"
+        ogTitle="Risorse, guide e blog | Tutela Debito"
+        ogDescription="Approfondimenti tecnici e guide pratiche su esdebitazione, sovraindebitamento e crisi d'impresa."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "@id": "https://tuteladebito.it/risorse#blog",
+            "name": "Risorse Tutela Debito",
+            "description": "Guide e approfondimenti su esdebitazione, sovraindebitamento e crisi d'impresa.",
+            "url": "https://tuteladebito.it/risorse",
+            "inLanguage": "it-IT",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Tutela Debito",
+              "url": "https://tuteladebito.it",
+            },
+            "blogPost": articles.map((a) => ({
+              "@type": "BlogPosting",
+              "headline": a.title,
+              "url": `https://tuteladebito.it/risorse/${a.slug}`,
+              "datePublished": toISODate(a.date) ?? a.date,
+              "author": { "@type": "Person", "name": a.author },
+              "articleSection": a.category,
+            })),
           },
-          "blogPost": articles.map((a) => ({
-            "@type": "BlogPosting",
-            "headline": a.title,
-            "url": `https://tuteladebito.it/risorse/${a.slug}`,
-            "datePublished": a.date,
-            "author": { "@type": "Person", "name": a.author },
-            "articleSection": a.category,
-          })),
-        })}</script>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-            { "@type": "ListItem", "position": 2, "name": "Risorse", "item": "https://tuteladebito.it/risorse" },
-          ],
-        })}</script>
-      </Helmet>
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Risorse", "item": "https://tuteladebito.it/risorse" },
+            ],
+          },
+        ]}
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={openContact} />

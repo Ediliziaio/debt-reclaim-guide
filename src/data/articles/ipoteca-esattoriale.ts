@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "ipoteca-esattoriale",
   title: "Ipoteca esattoriale: limiti, opposizione e cancellazione",
   excerpt: "Disciplina dell'ipoteca esattoriale ex art. 77 DPR 602/73: soglia dei 20.000 euro, preavviso, prima casa, durata ventennale, opposizione giurisdizionale, autotutela, cancellazione e rinnovo.",
@@ -12,9 +12,13 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/ipoteca-esattoriale.png",
   keywords: ["ipoteca esattoriale", "ipoteca AdER", "soglia 20000", "art 77 DPR 602/73", "cancellazione ipoteca"],
   intro: "L'ipoteca esattoriale è la misura cautelare più incisiva tra quelle a disposizione dell'Agente della Riscossione per la conservazione della garanzia patrimoniale del credito iscritto a ruolo. Disciplinata dall'art. 77 del DPR 602/1973, comporta l'iscrizione di un vincolo reale sui beni immobili del debitore, opponibile ai terzi e suscettibile di durata ventennale. La presente trattazione esamina i presupposti, la soglia di 20.000 euro, il regime della prima casa, gli strumenti di opposizione, l'autotutela e le modalità di cancellazione dell'ipoteca esattoriale alla luce della giurisprudenza più recente di legittimità e costituzionale.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Natura giuridica dell'ipoteca esattoriale", id: "natura-giuridica" },
     { type: "p", text: "L'ipoteca esattoriale prevista dall'art. 77 del DPR 602/1973 costituisce una misura cautelare di garanzia del credito iscritto a ruolo. La giurisprudenza, sia di legittimità sia costituzionale, ha qualificato l'istituto come misura cautelare a contenuto reale, distinta dal pignoramento immobiliare e funzionale alla conservazione della garanzia patrimoniale del credito tributario. Le Sezioni Unite della Cassazione, con la sentenza n. 19667 del 2014, hanno definitivamente chiarito che l'ipoteca esattoriale non integra atto del processo esecutivo, ma misura cautelare avente connotati propri." },

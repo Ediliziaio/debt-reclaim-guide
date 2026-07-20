@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "avviso-accertamento-opposizione",
   title: "Avviso di accertamento: come opporsi nei termini e quali strumenti utilizzare",
   excerpt: "Avviso di accertamento: termini di notifica, obbligo di motivazione ex art. 7 Statuto del Contribuente, ricorso entro 60 giorni alle Corti di Giustizia Tributaria, strumenti deflattivi.",
@@ -12,9 +12,13 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroLawyer,
+  coverImage: "/covers/avviso-accertamento-opposizione.png",
   keywords: ["avviso accertamento", "ricorso tributario", "accertamento con adesione", "autotutela", "60 giorni"],
   intro: "L'avviso di accertamento è l'atto con cui l'Amministrazione finanziaria contesta al contribuente una maggiore imposta, sanzioni e interessi rispetto a quanto dichiarato. È un atto autoritativo, immediatamente impugnabile e, a determinate condizioni, anche immediatamente esecutivo. La sua ricezione apre una finestra temporale stretta — 60 giorni — entro la quale il contribuente deve scegliere se subirlo, definirlo in via deflattiva o impugnarlo davanti alla Corte di Giustizia Tributaria. Comprendere termini, motivazioni, strumenti di reazione e profili procedurali è essenziale per evitare la cristallizzazione di pretese spesso contestabili.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Natura giuridica dell'avviso di accertamento", id: "natura-giuridica" },
     { type: "p", text: "L'avviso di accertamento è un provvedimento amministrativo emesso dall'Agenzia delle Entrate (o, per i tributi locali, dall'ente impositore competente) con il quale viene rettificata la dichiarazione del contribuente o accertata in via induttiva una maggiore base imponibile. Si tratta di un atto autoritativo che, una volta divenuto definitivo per mancata impugnazione, costituisce titolo per la riscossione delle somme in esso indicate, con il connesso impatto sanzionatorio e di interessi." },

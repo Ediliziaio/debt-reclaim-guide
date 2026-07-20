@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "debiti-inps",
   title:
     "Debiti con INPS: contributi non versati, sanzioni e strumenti di definizione",
@@ -17,7 +17,7 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/debiti-inps.png",
   keywords: [
     "debiti INPS",
     "contributi non versati",
@@ -28,6 +28,10 @@ export const article: Article = {
   ],
   intro:
     "I debiti contributivi con l'INPS rappresentano una delle voci più gravose tra le passività imprenditoriali e professionali. La disciplina previdenziale ha sue specificità tecniche: il sistema delle sanzioni civili (art. 116 L. 388/2000), la distinzione tra omissione ed evasione contributiva, la prescrizione quinquennale (art. 3, c. 9 L. 335/95), il regime del DURC e le procedure di recupero affidate ad Agenzia delle Entrate-Riscossione. Conoscere il quadro normativo permette di intervenire tempestivamente con gli strumenti corretti: rateizzazione, ravvedimento contributivo, conciliazione, definizione agevolata e, nei casi più gravi, le procedure di sovraindebitamento.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

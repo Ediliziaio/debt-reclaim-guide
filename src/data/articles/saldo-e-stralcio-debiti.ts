@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 import heroHope from "@/assets/hero-hope.jpg";
 import ctaHandshake from "@/assets/cta-handshake.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "saldo-e-stralcio-debiti",
   title: "Saldo e stralcio: come negoziare la chiusura definitiva del debito a importo ridotto",
   excerpt:
@@ -13,7 +13,7 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: handshakeTrust,
+  coverImage: "/covers/saldo-e-stralcio-debiti.png",
   keywords: [
     "saldo e stralcio",
     "transazione debito",
@@ -23,6 +23,10 @@ export const article: Article = {
   ],
   intro:
     "Il saldo e stralcio è uno degli strumenti più utilizzati nella gestione stragiudiziale del debito civile. Consente al debitore di chiudere definitivamente la propria posizione versando una somma inferiore al credito vantato dal creditore, in cambio della rinuncia di quest'ultimo all'azione esecutiva e a ogni ulteriore pretesa. Sul piano giuridico è una transazione disciplinata dagli artt. 1965 e ss. del codice civile. Sul piano pratico richiede capacità di negoziazione, conoscenza del comportamento dei creditori e attenta gestione della formalizzazione scritta.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Definizione: cos'è il saldo e stralcio", id: "definizione" },
     {

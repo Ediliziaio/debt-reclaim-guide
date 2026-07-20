@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { useState, lazy, Suspense } from "react";
+import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
 import TDStickyCTA from "@/components/TDStickyCTA";
 import TDFinalCTA from "@/components/TDFinalCTA";
-import TDStatsChart from "@/components/TDStatsChart";
+// Lazy-loaded: recharts (~500 kB) loads only when this page needs the chart.
+const TDStatsChart = lazy(() => import("@/components/TDStatsChart"));
 import TDCoverage from "@/components/TDCoverage";
 import TDHeroBackdrop from "@/components/TDHeroBackdrop";
 import { TrendingDown, MapPin, Calendar, FileText } from "lucide-react";
@@ -160,27 +161,25 @@ const CasiRisolti = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Casi seguiti: esdebitazione, crisi d'impresa, tributario | Tutela Debito</title>
-        <meta name="description" content="Selezione di procedure seguite dallo studio in materia di esdebitazione, sovraindebitamento, crisi d'impresa, opposizione a pignoramenti e contenzioso tributario." />
-        <meta name="keywords" content="casi esdebitazione, esempi sovraindebitamento, casi reali crisi d'impresa, procedure concluse" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <link rel="canonical" href="https://tuteladebito.it/casi-risolti" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Casi seguiti | Tutela Debito" />
-        <meta property="og:description" content="Selezione di procedure seguite dallo studio." />
-        <meta property="og:url" content="https://tuteladebito.it/casi-risolti" />
-        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
-        <meta property="og:locale" content="it_IT" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-            { "@type": "ListItem", "position": 2, "name": "Casi seguiti", "item": "https://tuteladebito.it/casi-risolti" },
-          ],
-        })}</script>
-      </Helmet>
+      <SEO
+        title="Casi seguiti: esdebitazione, crisi d'impresa, tributario | Tutela Debito"
+        description="Selezione di procedure seguite dallo studio in materia di esdebitazione, sovraindebitamento, crisi d'impresa, opposizione a pignoramenti e contenzioso tributario."
+        keywords="casi esdebitazione, esempi sovraindebitamento, casi reali crisi d'impresa, procedure concluse"
+        robots="index, follow, max-image-preview:large"
+        canonical="https://tuteladebito.it/casi-risolti"
+        ogTitle="Casi seguiti | Tutela Debito"
+        ogDescription="Selezione di procedure seguite dallo studio."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Casi seguiti", "item": "https://tuteladebito.it/casi-risolti" },
+            ],
+          },
+        ]}
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={openContact} />
@@ -281,7 +280,9 @@ const CasiRisolti = () => {
             </div>
           </section>
 
-          <TDStatsChart />
+          <Suspense fallback={<div className="min-h-[400px]" aria-hidden="true" />}>
+            <TDStatsChart />
+          </Suspense>
           <TDCoverage />
           <TDFinalCTA onOpenContact={openContact} />
         </main>

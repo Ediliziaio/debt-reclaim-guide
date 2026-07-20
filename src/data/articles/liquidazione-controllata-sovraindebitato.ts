@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "liquidazione-controllata-sovraindebitato",
   title: "Liquidazione controllata del sovraindebitato (artt. 268-277 CCII): come funziona, durata, esdebitazione finale",
   excerpt: "Guida completa alla liquidazione controllata del sovraindebitato disciplinata dagli artt. 268-277 CCII: presupposti, ruolo dell'OCC e del liquidatore, durata triennale, beni esclusi ed esdebitazione finale.",
@@ -15,9 +15,13 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/liquidazione-controllata-sovraindebitato.png",
   keywords: ["liquidazione controllata", "sovraindebitamento", "artt 268 CCII", "liquidazione patrimoniale", "esdebitazione persona fisica"],
   intro: "La liquidazione controllata del sovraindebitato, disciplinata dagli artt. 268-277 del Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019), rappresenta la principale procedura concorsuale liquidatoria a disposizione del debitore civile, del consumatore, del professionista e del piccolo imprenditore non assoggettabile a liquidazione giudiziale. È lo strumento attraverso cui il patrimonio viene posto a disposizione dei creditori sotto il controllo del tribunale, con esiti che — in presenza dei presupposti di legge — possono condurre all'esdebitazione finale e alla restituzione al debitore della piena capacità economica.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Inquadramento generale della liquidazione controllata", id: "inquadramento-generale" },
     { type: "p", text: "La liquidazione controllata è la procedura che, all'interno della disciplina del sovraindebitamento del CCII, sostituisce e riforma la precedente liquidazione del patrimonio prevista dalla L. n. 3/2012. Si tratta di una procedura concorsuale liquidatoria, conformata alla logica della par condicio creditorum, che ha la funzione di destinare il patrimonio aggredibile del debitore alla soddisfazione, in tutto o in parte, dei crediti, secondo l'ordine delle cause di prelazione." },

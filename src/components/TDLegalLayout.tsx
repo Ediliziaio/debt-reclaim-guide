@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import TDHeader from "./TDHeader";
 import TDFooter from "./TDFooter";
@@ -25,12 +25,12 @@ const TDLegalLayout = ({ title, subtitle, lastUpdate, icon, metaDescription, can
 
   return (
     <>
-      <Helmet>
-        <title>{title} | Tutela Debito</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://tuteladebito.it${canonicalPath}`} />
-      </Helmet>
+      <SEO
+        title={`${title} | Tutela Debito`}
+        description={metaDescription}
+        robots="index, follow"
+        canonical={`https://tuteladebito.it${canonicalPath}`}
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={() => setIsContactOpen(true)} />

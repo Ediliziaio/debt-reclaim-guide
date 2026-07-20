@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "concordato-minore",
   title: "Concordato minore: la procedura di sovraindebitamento per piccoli imprenditori e professionisti",
   excerpt: "Il concordato minore (artt. 74-83 CCII) è la procedura ristrutturativa dedicata a imprenditori minori, professionisti e agricoltori sovraindebitati. Guida completa a presupposti, piano, voto dei creditori e omologazione.",
@@ -15,9 +15,13 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: handshakeTrust,
+  coverImage: "/covers/concordato-minore.png",
   keywords: ["concordato minore", "piccolo imprenditore", "professionista sovraindebitato", "artt 74-83 CCII", "ristrutturazione debiti"],
   intro: "Il concordato minore, disciplinato dagli artt. 74-83 del Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019), è la principale procedura ristrutturativa concorsuale a disposizione dei debitori non consumatori che non possano accedere alla liquidazione giudiziale né al concordato preventivo. Si rivolge a imprenditori minori, professionisti, agricoltori e — in determinati casi — al consumatore con attività cessata, consentendo loro di proporre ai creditori un piano di ristrutturazione, anche solo parzialmente satisfattivo, alternativo alla liquidazione del patrimonio.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Cos'è il concordato minore", id: "cos-e-concordato-minore" },
     { type: "p", text: "Il concordato minore è una procedura concorsuale ristrutturativa che consente al debitore sovraindebitato non assoggettabile alle procedure maggiori di proporre ai creditori un accordo finalizzato a regolare in modo organico la propria esposizione debitoria. È stato introdotto nell'ordinamento dal Codice della Crisi d'Impresa e dell'Insolvenza con l'obiettivo di razionalizzare e rinnovare gli strumenti già previsti dalla L. n. 3/2012 (in particolare l'accordo di composizione della crisi), offrendo al piccolo imprenditore e al professionista uno strumento moderno e più snello." },

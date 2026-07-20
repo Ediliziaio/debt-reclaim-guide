@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "pignoramento-conto-corrente",
   title: "Pignoramento del conto corrente: limiti, impignorabilità e come difendersi",
   excerpt: "Guida operativa al pignoramento presso terzi sul conto: limiti ex art. 545 c.p.c., soglia del triplo dell'assegno sociale, regole AdER, dichiarazione del terzo, opposizioni e conversione.",
@@ -15,7 +15,7 @@ export const article: Article = {
   readTime: "20 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/pignoramento-conto-corrente.png",
   keywords: [
     "pignoramento conto corrente",
     "art 545 cpc",
@@ -24,6 +24,10 @@ export const article: Article = {
     "pignoramento pensione",
   ],
   intro: "Il pignoramento del conto corrente è una delle forme più diffuse di esecuzione forzata: rapida, efficace, capace di bloccare le disponibilità del debitore con effetto immediato. Si tratta tecnicamente di un pignoramento presso terzi, disciplinato dall'art. 543 c.p.c., con la banca nel ruolo di terzo pignorato. Per il debitore conoscere i limiti di impignorabilità ex art. 545 c.p.c., le soglie applicabili a stipendi, pensioni e somme accreditate, le regole speciali per l'Agente della Riscossione e gli strumenti di difesa è essenziale per non subire conseguenze ingiuste o evitabili.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Inquadramento normativo del pignoramento presso terzi", id: "inquadramento" },
     { type: "p", text: "Il pignoramento presso terzi è la forma di esecuzione forzata in cui il creditore aggredisce crediti o somme che il debitore vanta nei confronti di un terzo. La disciplina di riferimento è contenuta negli artt. 543 e seguenti del codice di procedura civile. Nel caso del conto corrente, il terzo pignorato è la banca o l'intermediario finanziario presso cui il debitore intrattiene il rapporto: il credito aggredito è il saldo disponibile (o, più precisamente, il diritto del correntista alla restituzione delle somme depositate)." },

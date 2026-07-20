@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "sovraindebitamento-cos-e",
   title: "Sovraindebitamento: cos'è e quali sono tutte le procedure previste dal Codice della Crisi",
   excerpt: "Il sovraindebitamento è lo stato di crisi del debitore non assoggettabile alle procedure maggiori. Panoramica completa delle quattro procedure previste dal CCII: ristrutturazione consumatore, concordato minore, liquidazione controllata, esdebitazione incapiente.",
@@ -15,9 +15,13 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroHope,
+  coverImage: "/covers/sovraindebitamento-cos-e.png",
   keywords: ["sovraindebitamento", "procedure sovraindebitamento", "CCII", "L. 3/2012", "panoramica esdebitazione"],
   intro: "Il sovraindebitamento è la condizione di crisi del debitore civile o del piccolo imprenditore che, esposto a debiti insostenibili, non può accedere alle procedure concorsuali maggiori riservate agli imprenditori commerciali sopra soglia. Disciplinato originariamente dalla L. n. 3/2012 e oggi riformato organicamente dal Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019), il sistema offre quattro distinte procedure, ciascuna calibrata su specifici presupposti soggettivi e oggettivi. Comprenderne la struttura è essenziale per orientarsi e scegliere lo strumento più adatto.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "La nozione di sovraindebitamento", id: "nozione-sovraindebitamento" },
     { type: "p", text: "L'art. 2, comma 1, lett. c) del Codice della Crisi d'Impresa e dell'Insolvenza definisce il sovraindebitamento come 'lo stato di crisi o di insolvenza del consumatore, del professionista, dell'imprenditore minore, dell'imprenditore agricolo, delle start-up innovative di cui al decreto-legge 18 ottobre 2012, n. 179, convertito, con modificazioni, dalla legge 17 dicembre 2012, n. 221, e di ogni altro debitore non assoggettabile alla liquidazione giudiziale ovvero a liquidazione coatta amministrativa o ad altre procedure liquidatorie previste dal codice civile o da leggi speciali per il caso di crisi o insolvenza'." },

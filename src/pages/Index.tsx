@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { useState, lazy, Suspense } from "react";
+import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDHero from "@/components/TDHero";
 import TDTrustStrip from "@/components/TDTrustStrip";
@@ -9,7 +9,8 @@ import TDProblemSolution from "@/components/TDProblemSolution";
 import TDProcessFlow from "@/components/TDProcessFlow";
 import TDServicesCards from "@/components/TDServicesCards";
 import TDCases from "@/components/TDCases";
-import TDStatsChart from "@/components/TDStatsChart";
+// Lazy-loaded: recharts (~500 kB) stays out of the homepage's initial bundle.
+const TDStatsChart = lazy(() => import("@/components/TDStatsChart"));
 import TDTestimonials from "@/components/TDTestimonials";
 import TDWhyUs from "@/components/TDWhyUs";
 import TDFAQ from "@/components/TDFAQ";
@@ -26,23 +27,15 @@ const Index = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Tutela Debito | Esdebitazione, Crisi d'Impresa, Contenzioso Tributario</title>
-        <meta
-          name="description"
-          content="Studio legale e fiscale per esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
-        />
-        <meta name="keywords" content="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, studio legale debiti, avvocato debiti, composizione negoziata, piano del consumatore, rottamazione" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href="https://tuteladebito.it/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Tutela Debito | Esdebitazione e Crisi d'Impresa" />
-        <meta property="og:description" content="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino." />
-        <meta property="og:url" content="https://tuteladebito.it/" />
-        <meta property="og:image" content="https://tuteladebito.it/og-image.png" />
-        <meta property="og:locale" content="it_IT" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+      <SEO
+        title="Tutela Debito | Esdebitazione, Crisi d'Impresa, Contenzioso Tributario"
+        description="Studio legale e fiscale per esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
+        keywords="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, studio legale debiti, avvocato debiti, composizione negoziata, piano del consumatore, rottamazione"
+        robots="index, follow, max-image-preview:large, max-snippet:-1"
+        canonical="https://tuteladebito.it/"
+        ogTitle="Tutela Debito | Esdebitazione e Crisi d'Impresa"
+        ogDescription="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino."
+      />
 
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={openContact} />
@@ -56,7 +49,9 @@ const Index = () => {
           <TDServicesCards />
           <TDProcessFlow />
           <TDCases />
-          <TDStatsChart />
+          <Suspense fallback={<div className="min-h-[400px]" aria-hidden="true" />}>
+            <TDStatsChart />
+          </Suspense>
           <TDTestimonials />
           <TDWhyUs />
           <TDFAQ />

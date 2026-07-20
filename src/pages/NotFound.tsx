@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import { useState } from "react";
@@ -18,10 +18,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Pagina non trovata | Tutela Debito</title>
-        <meta name="robots" content="noindex" />
-      </Helmet>
+      <SEO title="Pagina non trovata | Tutela Debito" robots="noindex" />
       <div className="min-h-screen bg-background flex flex-col">
         <TDHeader onOpenContact={() => setIsContactOpen(true)} />
         <main className="flex-1 flex items-center justify-center py-20 bg-gradient-to-br from-white via-muted/40 to-white">

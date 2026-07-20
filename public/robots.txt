@@ -6,13 +6,51 @@ Disallow: /api/
 Disallow: /post-consulenza
 Disallow: /pre-diagnosi
 
-# Block common AI scrapers that don't add SEO value
+# AI assistants are welcome to crawl and cite the site (GEO strategy)
 User-agent: GPTBot
-Disallow: /
-User-agent: CCBot
-Disallow: /
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: Claude-User
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+User-agent: CCBot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
 
 # Friendly to mainstream search engines
 User-agent: Googlebot

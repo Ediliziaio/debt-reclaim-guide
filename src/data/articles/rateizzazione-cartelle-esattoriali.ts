@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import ctaHandshake from "@/assets/cta-handshake.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "rateizzazione-cartelle-esattoriali",
   title: "Rateizzazione delle cartelle esattoriali: come ottenerla e mantenerla nel 2026",
   excerpt: "Guida operativa alla rateizzazione delle cartelle esattoriali ex art. 19 DPR 602/73: soglie, procedura semplificata e documentata, decadenza, riammissione e novità del D.Lgs. 110/2024.",
@@ -12,9 +12,13 @@ export const article: Article = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: handshakeTrust,
+  coverImage: "/covers/rateizzazione-cartelle-esattoriali.png",
   keywords: ["rateizzazione cartelle", "dilazione cartelle", "rate AdER", "piano rateale", "art 19 DPR 602/73"],
   intro: "La rateizzazione delle cartelle esattoriali rappresenta lo strumento ordinario di gestione del debito tributario per il contribuente in temporanea difficoltà economica. Disciplinata dall'art. 19 del DPR 29 settembre 1973 n. 602 e profondamente innovata dal D.Lgs. 29 luglio 2024 n. 110 (in attuazione della delega di riforma fiscale di cui alla L. 111/2023), consente al debitore di diluire fino a 120 mensilità il pagamento degli importi iscritti a ruolo, sospendendo le azioni esecutive e cautelari dell'Agente della Riscossione. La presente guida illustra i presupposti, le procedure e le conseguenze della decadenza secondo la disciplina vigente nel 2026.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Il quadro normativo della rateizzazione nel 2026", id: "quadro-normativo" },
     { type: "p", text: "L'art. 19 del DPR 602/1973 costituisce la norma cardine in materia di dilazione di pagamento delle somme iscritte a ruolo. Il testo attualmente vigente è il risultato di una stratificazione di interventi normativi che ha conosciuto, da ultimo, una revisione organica con il D.Lgs. 110/2024, le cui disposizioni hanno trovato compiuta attuazione attraverso il decreto del Ministero dell'Economia e delle Finanze del 27 dicembre 2024, pubblicato in Gazzetta Ufficiale ed efficace per le domande presentate a decorrere dal 1° gennaio 2025." },

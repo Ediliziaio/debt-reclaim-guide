@@ -1,4 +1,4 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroHope from "@/assets/hero-hope.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
@@ -6,7 +6,7 @@ import ctaHandshake from "@/assets/cta-handshake.jpg";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import abstractHopeBg from "@/assets/abstract-hope-bg.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "debiti-agenzia-entrate",
   title:
     "Debiti con l'Agenzia delle Entrate: tutti gli strumenti per gestirli legalmente",
@@ -17,7 +17,7 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: authorityLegal,
+  coverImage: "/covers/debiti-agenzia-entrate.png",
   keywords: [
     "debiti Agenzia Entrate",
     "fisco",
@@ -28,6 +28,10 @@ export const article: Article = {
   ],
   intro:
     "I debiti con l'Agenzia delle Entrate rappresentano una delle voci più rilevanti del contenzioso tributario italiano. Il quadro normativo offre un'articolata gamma di strumenti per gestirli legalmente: dal ravvedimento operoso (art. 13 D.lgs. 472/97) all'accertamento con adesione (D.lgs. 218/97), dalla conciliazione giudiziale alla definizione agevolata delle cartelle, dalla rateizzazione fino alle procedure di sovraindebitamento. Conoscere differenze, presupposti e tempi di ciascuno strumento consente di scegliere la strategia più adatta alla propria situazione e di ridurre sensibilmente l'importo dovuto.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     {
       type: "h2",

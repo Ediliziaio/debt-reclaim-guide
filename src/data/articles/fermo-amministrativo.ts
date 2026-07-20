@@ -1,9 +1,9 @@
-import type { Article } from "../articles";
+import type { Article, ArticleMeta } from "../articles";
 import heroLawyer from "@/assets/hero-lawyer.jpg";
 import authorityLegal from "@/assets/authority-legal.jpg";
 import handshakeTrust from "@/assets/handshake-trust.jpg";
 
-export const article: Article = {
+export const meta: ArticleMeta = {
   slug: "fermo-amministrativo",
   title: "Fermo amministrativo del veicolo: cos'è, come opporsi e come ottenerne la cancellazione",
   excerpt: "Disciplina del fermo amministrativo ex art. 86 DPR 602/73: preavviso, opposizione davanti al giudice competente, beni esclusi, autotutela, cancellazione dal PRA e profili giurisprudenziali.",
@@ -12,9 +12,13 @@ export const article: Article = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: heroLawyer,
+  coverImage: "/covers/fermo-amministrativo.png",
   keywords: ["fermo amministrativo", "fermo veicolo", "opposizione fermo", "PRA", "art 86 DPR 602/73"],
   intro: "Il fermo amministrativo del veicolo è una misura cautelare con cui l'Agente della Riscossione assicura la garanzia del credito iscritto a ruolo attraverso l'iscrizione di un vincolo sul Pubblico Registro Automobilistico (PRA). Disciplinato dall'art. 86 del DPR 602/1973, costituisce uno degli strumenti più diffusi e percepiti come gravosi dal contribuente, poiché impedisce la regolare circolazione del veicolo e ne paralizza ogni atto di disposizione. La presente trattazione illustra il procedimento di iscrizione, le ipotesi di esclusione, gli strumenti di opposizione giurisdizionale e amministrativa e le modalità di cancellazione.",
+};
+
+export const article: Article = {
+  ...meta,
   content: [
     { type: "h2", text: "Natura giuridica e funzione del fermo amministrativo", id: "natura-giuridica" },
     { type: "p", text: "Il fermo amministrativo dei beni mobili registrati è disciplinato dall'art. 86 del DPR 602/1973, norma collocata nel Titolo II del decreto dedicato alla riscossione coattiva mediante ruolo. La natura giuridica dell'istituto è quella di misura cautelare di carattere amministrativo a contenuto patrimoniale, volta ad assicurare la conservazione della garanzia patrimoniale del credito iscritto a ruolo, mediante l'apposizione di un vincolo sul bene del debitore che ne impedisce la circolazione e la disposizione." },
