@@ -450,7 +450,6 @@ const Sidebar = ({ article, related, onOpenContact }: SidebarProps) => {
                     {a.coverImage ? (
                       <>
                         <img src={a.coverImage} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-                        <div className={`absolute inset-0 bg-gradient-to-br ${a.cover} mix-blend-multiply opacity-70`} />
                       </>
                     ) : (
                       <BookOpen className="w-4 h-4 text-white relative" />
@@ -576,7 +575,7 @@ const Articolo = () => {
         <main className="flex-1">
           {/* Article Hero */}
           <section className="bg-white border-b border-border">
-            <div className={`relative aspect-[16/6] md:aspect-[16/5] overflow-hidden ${!article.coverImage ? `bg-gradient-to-br ${article.cover}` : ""}`}>
+            <div className={`relative aspect-[40/21] overflow-hidden ${!article.coverImage ? `bg-gradient-to-br ${article.cover}` : ""}`}>
               {article.coverImage && (
                 <>
                   <img
@@ -587,7 +586,6 @@ const Articolo = () => {
                     fetchPriority="high"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${article.cover} mix-blend-multiply opacity-70`} />
                 </>
               )}
               {!article.coverImage && (
@@ -678,7 +676,6 @@ const Articolo = () => {
                           {a.coverImage ? (
                             <>
                               <img src={a.coverImage} alt={a.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-                              <div className={`absolute inset-0 bg-gradient-to-br ${a.cover} mix-blend-multiply opacity-70`} />
                             </>
                           ) : (
                             <BookOpen className="w-10 h-10 text-white/70 absolute inset-0 m-auto" />

@@ -233,7 +233,6 @@ const Risorse = () => {
                           {filtered[0].coverImage ? (
                             <>
                               <img src={filtered[0].coverImage} alt={filtered[0].title} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover" />
-                              <div className={`absolute inset-0 bg-gradient-to-br ${filtered[0].cover} mix-blend-multiply opacity-70`} />
                             </>
                           ) : (
                             <BookOpen className="w-12 h-12 text-white/70 absolute inset-0 m-auto" />
@@ -272,7 +271,6 @@ const Risorse = () => {
                           {a.coverImage ? (
                             <>
                               <img src={a.coverImage} alt={a.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
-                              <div className={`absolute inset-0 bg-gradient-to-br ${a.cover} mix-blend-multiply opacity-70`} />
                             </>
                           ) : (
                             <BookOpen className="w-12 h-12 text-white/70 absolute inset-0 m-auto" />
