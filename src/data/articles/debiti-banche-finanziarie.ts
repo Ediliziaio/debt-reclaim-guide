@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "Mutuo, prestito personale, fido revocato, finanziamento auto, carta revolving: i debiti bancari hanno regole e tempi specifici. Cosa succede in caso di insolvenza, segnalazione in Centrale Rischi, cessione a NPL, strumenti di difesa e di rinegoziazione.",
   category: "Privati",
   date: "Maggio 2026",
-  readTime: "15 min",
+  readTime: "19 min",
   author: "Avv. Armando Rossi",
   cover: "from-trust to-navy",
   coverImage: "/covers/debiti-banche-finanziarie.webp",
@@ -70,6 +70,16 @@ export const article: Article = {
     { type: "h3", text: "7. Esecuzione" },
     { type: "p", text: "Trascorso il termine senza pagamento né opposizione, la banca può procedere all'esecuzione: pignoramento dello stipendio, del conto, dei beni mobili, espropriazione immobiliare nei casi di mutuo." },
 
+    { type: "h2", text: "Come la banca classifica la tua posizione", id: "classificazione" },
+    { type: "p", text: "Prima ancora del recupero c'è la classificazione, ed è quella a determinare il comportamento della banca. Le categorie non sono scelte dal gestore della filiale: derivano dalle regole di vigilanza e producono effetti automatici sugli accantonamenti dell'istituto, che è il motivo per cui a un certo punto l'atteggiamento cambia da un giorno all'altro." },
+    { type: "table", headers: ["Classificazione", "Quando scatta", "Cosa comporta per il debitore"], rows: [
+      ["Esposizione in bonis", "Rapporto regolare", "Nessuna limitazione"],
+      ["Scaduto deteriorato (past due)", "Arretrato continuativo oltre 90 giorni, superate le soglie di rilevanza", "Solleciti formali, blocco di nuove erogazioni"],
+      ["Inadempienza probabile (UTP)", "La banca ritiene improbabile il rimborso integrale senza escussione delle garanzie, anche senza arretrati", "È la fase in cui la rinegoziazione è ancora possibile e conveniente per entrambi"],
+      ["Sofferenza", "Stato di insolvenza, anche non accertato giudizialmente", "Revoca degli affidamenti, segnalazione, avvio del recupero, spesso cessione a terzi"],
+    ]},
+    { type: "p", text: "Due precisazioni utili. La prima: dal 2021 il default scatta al superamento congiunto di novanta giorni di arretrato continuativo e di soglie di rilevanza dell'importo scaduto, in valore assoluto e in percentuale sull'esposizione complessiva — non basta più compensare l'arretrato con la disponibilità su un altro conto. La seconda: l'inadempienza probabile non richiede rate impagate, si fonda su una valutazione prospettica. È la finestra in cui conviene muoversi, perché la banca ha ancora interesse a una soluzione negoziata." },
+
     { type: "h2", text: "La segnalazione in Centrale dei Rischi e nei SIC", id: "centrale-rischi" },
     { type: "p", text: "Esistono diversi archivi che registrano la posizione creditizia di un soggetto:" },
     { type: "ul", items: [
@@ -81,6 +91,17 @@ export const article: Article = {
 
     { type: "note", text: "Le segnalazioni non veritiere o non rispettose delle norme procedurali (mancato preavviso di segnalazione, errori nelle date, errata classificazione) possono essere oggetto di reclamo all'ente segnalante e — in caso di mancato accoglimento — di ricorso all'Arbitro Bancario Finanziario (ABF) o al giudice ordinario per cancellazione." },
 
+    { type: "h3", text: "Per quanto tempo resta la segnalazione" },
+    { type: "p", text: "È la domanda che arriva sempre, di solito quando il debito è già stato chiuso e la banca nega comunque il finanziamento. I tempi di conservazione non dipendono dalla volontà dell'istituto: sono fissati dalla disciplina dei sistemi di informazione creditizia e decorrono da momenti diversi a seconda di come si è chiusa la posizione." },
+    { type: "table", headers: ["Situazione", "Permanenza nei SIC"], rows: [
+      ["Ritardo di una o due rate, poi regolarizzato", "12 mesi dalla regolarizzazione"],
+      ["Ritardo di tre o più rate, poi regolarizzato", "24 mesi dalla regolarizzazione"],
+      ["Morosità grave o sofferenza non regolarizzata", "36 mesi dalla scadenza contrattuale o dall'ultimo aggiornamento"],
+      ["Richiesta di finanziamento non accolta o rinunciata", "Pochi mesi dalla richiesta"],
+      ["Centrale dei Rischi della Banca d'Italia", "36 mesi di storico consultabile dagli intermediari"],
+    ]},
+    { type: "note", text: "Pagare non cancella la segnalazione: fa partire il conteggio. È l'aspettativa sbagliata più diffusa e va messa in conto quando si pianifica, ad esempio, l'acquisto di una casa dopo aver chiuso una posizione a stralcio. Diverso è il caso della segnalazione illegittima — mancato preavviso, importo errato, classificazione sbagliata — che si contesta e si fa rettificare." },
+
     { type: "h2", text: "La cessione del credito a società di recupero (NPL)", id: "npl" },
     { type: "p", text: "Le banche, soprattutto negli ultimi anni, hanno ceduto ingenti portafogli di crediti deteriorati (NPL, Non-Performing Loans) a società specializzate nel recupero. Quando un debito viene ceduto:" },
     { type: "ul", items: [
@@ -90,6 +111,29 @@ export const article: Article = {
       "I tempi di prescrizione decorrono dalla data di esigibilità, non dalla cessione",
     ]},
     { type: "p", text: "Una caratteristica rilevante: le società che acquistano NPL hanno spesso pagato il credito a un valore molto inferiore al nominale (il 5-15% non è raro). Questo apre uno spazio di negoziazione: un saldo a stralcio al 20-30% del nominale può essere economicamente conveniente per la società cessionaria, e accettato." },
+
+    { type: "h2", text: "Chiedere la prova di chi è davvero il creditore", id: "prova-titolarita" },
+    { type: "p", text: "Dopo una cessione la richiesta di pagamento arriva da un soggetto con cui non si è mai contrattato. Il debitore non deve accettarlo sulla fiducia: ha diritto di verificare che chi scrive sia effettivamente titolare del credito." },
+    { type: "p", text: "Le cessioni bancarie avvengono di norma in blocco ai sensi dell'art. 58 del Testo Unico Bancario, con pubblicazione dell'avviso in Gazzetta Ufficiale che sostituisce la notifica individuale al singolo debitore. La pubblicazione, però, prova che è avvenuta una cessione di un insieme di crediti, non che quel preciso rapporto vi fosse incluso." },
+    { type: "ul", items: [
+      "Chiedere per iscritto l'indicazione degli estremi di pubblicazione dell'avviso di cessione e la prova dell'inclusione della propria posizione nel perimetro ceduto.",
+      "Chiedere l'estratto conto completo e il conteggio analitico di capitale, interessi e spese alla data della richiesta.",
+      "Verificare che chi scrive sia il cessionario o un mandatario munito di procura, distinguendo il titolare del credito dalla società di recupero che agisce per suo conto.",
+      "Controllare che gli interessi applicati dopo la cessione siano quelli contrattuali e non ricalcolati.",
+      "Verificare la prescrizione: la cessione non interrompe né sospende il termine, che continua a decorrere come prima.",
+    ]},
+    { type: "p", text: "Questa verifica non è ostruzionismo: è il presupposto di qualunque trattativa seria, perché nessun accordo a stralcio ha valore se sottoscritto con un soggetto che non può liberare il debitore. Sui termini di estinzione del credito si veda la guida sulla [prescrizione dei debiti](/risorse/prescrizione-debiti)." },
+
+    { type: "h2", text: "Come si costruisce una proposta a stralcio credibile", id: "proposta-stralcio" },
+    { type: "p", text: "Chi ha comprato un portafoglio deteriorato l'ha pagato una frazione del valore nominale e ragiona su tempi di recupero e costi legali, non su principi. Una proposta che tiene conto di questa logica ottiene molto più di una richiesta generica di sconto." },
+    { type: "ol", items: [
+      "Documentare la situazione: reddito, carichi familiari, altre esposizioni. Una proposta non supportata da documenti viene letta come una tattica dilatoria.",
+      "Indicare la provvista e la sua provenienza: liquidità immediata, aiuto familiare, cessione di un bene. Chi acquista NPL preferisce un incasso certo e vicino a uno teorico e lontano.",
+      "Proporre una somma unica o poche rate ravvicinate: più il piano si allunga, più la percentuale richiesta sale.",
+      "Mettere per iscritto tutto prima di pagare, con la formula della liberazione integrale del debitore e della rinuncia a ogni ulteriore pretesa e azione esecutiva.",
+      "Farsi rilasciare la quietanza a saldo e stralcio e la dichiarazione di aggiornamento delle segnalazioni nei sistemi di informazione creditizia.",
+    ]},
+    { type: "note", text: "Un versamento eseguito senza accordo scritto vale come acconto: riduce il debito dell'importo pagato, non lo chiude, e interrompe la prescrizione. È l'errore che vanifica più trattative. Il metodo è approfondito nella guida sul [saldo e stralcio](/risorse/saldo-e-stralcio-debiti)." },
 
     { type: "h2", text: "Strumenti di gestione del debito bancario", id: "strumenti" },
 
@@ -124,6 +168,22 @@ export const article: Article = {
 
     { type: "h2", text: "Domande frequenti sui debiti bancari", id: "faq" },
     { type: "faq", items: [
+      {
+        q: "Ho pagato il debito: quando sparisce la segnalazione?",
+        a: "Il pagamento non cancella la segnalazione, fa partire il conteggio. Nei sistemi di informazione creditizia un ritardo di una o due rate poi regolarizzato resta 12 mesi dalla regolarizzazione, un ritardo di tre o più rate 24 mesi, mentre una sofferenza o una morosità grave non regolarizzata resta 36 mesi. La Centrale dei Rischi della Banca d'Italia conserva 36 mesi di storico consultabile."
+      },
+      {
+        q: "Come faccio a sapere se chi mi scrive è davvero il proprietario del credito?",
+        a: "Chiedendolo per iscritto. Le cessioni bancarie avvengono in blocco ai sensi dell'art. 58 del Testo Unico Bancario, con avviso pubblicato in Gazzetta Ufficiale al posto della notifica individuale: la pubblicazione prova che una cessione c'è stata, non che la tua posizione fosse inclusa. Chiedi gli estremi dell'avviso, la prova dell'inclusione del tuo rapporto e il conteggio analitico, e verifica se chi scrive è il cessionario o un mandatario."
+      },
+      {
+        q: "Che differenza c'è tra inadempienza probabile e sofferenza?",
+        a: "L'inadempienza probabile (UTP) è una valutazione prospettica: la banca ritiene improbabile il rimborso integrale senza escutere le garanzie, anche in assenza di rate impagate. La sofferenza presuppone invece uno stato di insolvenza, anche non accertato dal giudice, e porta alla revoca degli affidamenti e all'avvio del recupero. La fase UTP è quella in cui la rinegoziazione è ancora nell'interesse di entrambe le parti."
+      },
+      {
+        q: "Conviene di più trattare con la banca o con la società che ha comprato il credito?",
+        a: "Di regola con il cessionario. Chi acquista un portafoglio deteriorato lo paga una frazione del nominale e valuta la proposta sui tempi di recupero e sui costi legali, non sul valore contabile: i margini di trattativa sono più ampi. La condizione resta la stessa in entrambi i casi: accordo scritto con liberazione integrale prima di qualunque versamento."
+      },
       {
         q: "Mi hanno revocato il fido: cosa posso fare nei prossimi giorni?",
         a: "Prima cosa: verifica il preavviso di revoca (è regolare? è motivato? rispetta i tempi contrattuali?). Seconda cosa: contatta la banca e prova a negoziare un piano di rientro. Terza cosa: valuta la posizione complessiva. Se il fido era essenziale per la gestione di un'impresa, la revoca può portare rapidamente a una situazione di crisi: in quel caso conviene attivarsi subito su strumenti più strutturati (composizione negoziata)."

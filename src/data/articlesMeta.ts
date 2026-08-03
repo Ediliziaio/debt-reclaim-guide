@@ -501,7 +501,7 @@ export const articlesMeta: ArticleMeta[] = [
     excerpt: "Mutuo, prestito personale, fido revocato, finanziamento auto, carta revolving: i debiti bancari hanno regole e tempi specifici. Cosa succede in caso di insolvenza, segnalazione in Centrale Rischi, cessione a NPL, strumenti di difesa e di rinegoziazione.",
     category: "Privati",
     date: "Maggio 2026",
-    readTime: "15 min",
+    readTime: "19 min",
     author: "Avv. Armando Rossi",
     cover: "from-trust to-navy",
     coverImage: "/covers/debiti-banche-finanziarie.webp",
