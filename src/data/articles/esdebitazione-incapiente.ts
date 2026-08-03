@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "L'esdebitazione del debitore incapiente è uno strumento del Codice della Crisi che consente la cancellazione integrale dei debiti anche in assenza di patrimonio. Guida ai requisiti, alla procedura e ai limiti previsti dall'art. 283 CCII.",
   category: "Privati",
   date: "Aprile 2026",
-  readTime: "12 min",
+  readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
   coverImage: "/covers/esdebitazione-incapiente.webp",
@@ -62,7 +62,8 @@ export const article: Article = {
       "Miglioramenti sensibili della situazione reddituale (nuovo lavoro stabile con reddito elevato)",
       "Acquisizione di patrimonio per causa diversa dal lavoro",
     ]},
-    { type: "p", text: "Se nel quadriennio si verificano sopravvenienze che consentirebbero di soddisfare almeno il 10% dei debiti, il giudice può revocare l'esdebitazione. La logica è chiara: il beneficio è concesso a chi non ha nulla, e se la situazione cambia significativamente l'equilibrio iniziale viene meno." },
+    { type: "p", text: "L'effetto previsto dalla legge non è la revoca automatica del beneficio, ma la nascita di un obbligo di pagamento: se entro quattro anni dal decreto sopravvengono utilità rilevanti che consentono di soddisfare i creditori in misura non inferiore al dieci per cento, il debitore è tenuto a pagare in quella misura. La revoca vera e propria resta riservata ai casi di frode o di atti compiuti in danno dei creditori." },
+    { type: "p", text: "La legge precisa anche cosa non conta come utilità rilevante: non lo sono i finanziamenti ottenuti in qualunque forma, né ciò che serve al mantenimento del debitore e della sua famiglia. Un aumento di reddito che si limita a riportare il nucleo a una soglia di dignità non fa scattare l'obbligo; un'eredità o una vincita, sì." },
 
     { type: "h2", text: "Come si svolge la procedura", id: "procedura" },
     { type: "p", text: "L'iter dell'esdebitazione del debitore incapiente è articolato e prevede l'intervento di più soggetti: l'OCC (Organismo di Composizione della Crisi), il debitore stesso, eventualmente l'esperto e infine il Tribunale che pronuncia sul beneficio." },
@@ -114,12 +115,87 @@ export const article: Article = {
       "Lavoratori con reddito molto basso e nucleo familiare numeroso a carico",
     ]},
 
+    { type: "h2", text: "La meritevolezza: come il tribunale la valuta davvero", id: "meritevolezza" },
+    { type: "p", text: "L'esdebitazione dell'incapiente non è un diritto che discende dalla sola assenza di patrimonio: è un beneficio riservato al debitore meritevole. È il punto su cui si decide la maggior parte delle domande, e quello su cui i creditori concentrano le opposizioni. La meritevolezza non si autocertifica: emerge dalla relazione dell'OCC, che ricostruisce le cause dell'indebitamento una per una." },
+    { type: "p", text: "Non basta non aver commesso illeciti. Il giudice valuta se il debitore abbia assunto obbligazioni senza una ragionevole prospettiva di poterle adempiere, se abbia aggravato la propria posizione dopo la manifestazione della crisi, se abbia compiuto atti che hanno sottratto valore ai creditori. È una valutazione di comportamento, non di risultato: perdere il lavoro o subire una malattia non pregiudica nulla, moltiplicare i finanziamenti per pagarne altri sì." },
+    { type: "table", headers: ["Circostanza", "Effetto tipico sulla valutazione"], rows: [
+      ["Perdita del lavoro, malattia, separazione, calo dell'attività", "Neutra o favorevole: il sovraindebitamento è incolpevole"],
+      ["Ricorso al credito sproporzionato rispetto al reddito documentabile", "Sfavorevole: indebitamento colposo"],
+      ["Nuovi finanziamenti contratti per pagare rate di finanziamenti precedenti", "Sfavorevole, soprattutto se ravvicinati alla domanda"],
+      ["Cessione o donazione di beni a familiari negli anni precedenti", "Fortemente sfavorevole: potenziale atto in frode"],
+      ["Omessa collaborazione con l'OCC o documentazione incompleta", "Sfavorevole: incide sulla stessa ammissibilità"],
+      ["Debiti da garanzie prestate per un'attività d'impresa poi fallita", "Di regola neutra, se la garanzia era proporzionata al momento in cui fu prestata"],
+    ]},
+
+    { type: "h2", text: "Come si dimostra l'incapienza", id: "prova-incapienza" },
+    { type: "p", text: "L'incapienza va provata, non affermata. L'OCC costruisce un quadro documentale che deve reggere all'esame del giudice e all'eventuale contestazione dei creditori: è la parte più lunga del lavoro e quella che determina i tempi della procedura." },
+    { type: "ul", items: [
+      "Dichiarazioni dei redditi e certificazioni uniche degli ultimi anni, per fotografare la capacità reddituale effettiva.",
+      "ISEE del nucleo familiare e composizione dello stato di famiglia.",
+      "Visure immobiliari e catastali, visura al PRA, visura camerale: servono a dimostrare l'assenza di beni aggredibili, non solo a elencarli.",
+      "Estratti conto bancari e postali del periodo rilevante, per ricostruire i flussi e le cause dell'indebitamento.",
+      "Elenco completo dei creditori con gli importi, comprese le posizioni cedute a società di recupero.",
+      "Estratto di ruolo aggiornato per la posizione con l'Agente della Riscossione.",
+      "Documentazione degli eventi che hanno determinato la crisi: licenziamento, cartelle cliniche, provvedimenti di separazione, cessazione dell'attività.",
+    ]},
+    { type: "note", text: "Omettere un creditore o un bene non è un dettaglio: l'incompletezza dei dati è una delle cause più frequenti di rigetto e, nei casi più gravi, integra un atto in frode che preclude il beneficio. Conviene dichiarare anche ciò che sembra irrilevante e lasciare che sia l'OCC a valutarne il peso." },
+
+    { type: "h2", text: "Il decreto, l'opposizione dei creditori e gli effetti", id: "decreto-opposizione" },
+    { type: "p", text: "La procedura si chiude con un decreto del giudice che dichiara inesigibili i crediti anteriori. Il decreto viene comunicato ai creditori, che possono proporre reclamo nel termine di trenta giorni: è la sede in cui possono contestare la meritevolezza o l'effettiva incapienza, non l'ammontare del proprio credito." },
+    { type: "p", text: "Dal momento in cui il provvedimento diventa definitivo i creditori anteriori non possono più agire: cessano i pignoramenti in corso, non se ne possono avviare di nuovi, e le posizioni non sono più esigibili nemmeno in via stragiudiziale. Il debito non viene «cancellato» nel senso di estinto per pagamento: diventa inesigibile, il che sul piano pratico produce lo stesso risultato per il debitore." },
+
+    { type: "h2", text: "Cosa cambia nella vita quotidiana dopo il decreto", id: "dopo-il-decreto" },
+    { type: "p", text: "È la domanda che i clienti fanno più spesso e su cui circolano più aspettative sbagliate. L'esdebitazione libera dai debiti, non riscrive automaticamente la storia creditizia." },
+    { type: "ul", items: [
+      "Le segnalazioni nei sistemi di informazione creditizia seguono i propri tempi di conservazione e non si azzerano con il decreto: l'accesso al credito resta difficile per un periodo.",
+      "Il conto corrente resta operativo e i nuovi redditi sono pienamente disponibili: non c'è più alcuna trattenuta per i debiti anteriori.",
+      "Le posizioni sorte dopo il decreto sono normali obbligazioni: l'esdebitazione non protegge dai debiti futuri.",
+      "Per quattro anni resta l'obbligo di dichiarare le utilità rilevanti sopravvenute, con la soglia del dieci per cento vista sopra.",
+      "Il beneficio è irripetibile: chi lo ha già ottenuto non potrà chiederlo una seconda volta.",
+    ]},
+
+    { type: "h2", text: "Quale procedura scegliere: il confronto", id: "confronto-procedure" },
+    { type: "p", text: "L'esdebitazione dell'incapiente è la procedura giusta solo in una situazione precisa: nessun patrimonio, nessun reddito aggredibile, nessuna prospettiva di pagamento nemmeno parziale. Quando qualcosa c'è, la strada è un'altra." },
+    { type: "table", headers: ["Situazione del debitore", "Procedura di riferimento"], rows: [
+      ["Nessun bene e nessun reddito aggredibile, debitore meritevole", "Esdebitazione del debitore incapiente (art. 283 CCII)"],
+      ["Reddito che consente un pagamento parziale, debiti contratti per scopi personali", "[Piano di ristrutturazione dei debiti del consumatore](/risorse/piano-consumatore)"],
+      ["Patrimonio da liquidare, anche modesto", "[Liquidazione controllata del sovraindebitato](/risorse/liquidazione-controllata-sovraindebitato)"],
+      ["Debitore non consumatore: professionista, imprenditore minore, agricoltore", "[Concordato minore](/risorse/concordato-minore)"],
+      ["Impresa sopra le soglie, in crisi ma con attività in corso", "[Composizione negoziata](/risorse/composizione-negoziata) o [concordato preventivo](/risorse/concordato-preventivo)"],
+    ]},
+    { type: "p", text: "La scelta non è libera: dipende dai presupposti oggettivi e soggettivi, verificati dall'OCC prima del deposito. Presentare la domanda sbagliata significa perdere mesi e i costi già sostenuti. Il quadro d'insieme delle quattro procedure è nella guida sul [sovraindebitamento](/risorse/sovraindebitamento-cos-e)." },
+
+    { type: "h2", text: "Gli errori che fanno rigettare la domanda", id: "errori" },
+    { type: "ol", items: [
+      "Presentare la domanda dopo aver compiuto atti dispositivi sul poco patrimonio residuo: la cessione a un familiare pochi mesi prima è il caso di scuola.",
+      "Dichiarare un'incapienza che l'istruttoria smentisce, ad esempio omettendo un immobile in comproprietà o un'attività ancora aperta.",
+      "Chiedere l'esdebitazione dell'incapiente quando esiste una capacità di rimborso, sia pure minima: la procedura corretta sarebbe un'altra e il rigetto è quasi certo.",
+      "Contrarre nuovi finanziamenti mentre la domanda è in preparazione.",
+      "Sottovalutare la ricostruzione delle cause dell'indebitamento: senza una narrazione documentata, la meritevolezza resta indimostrata.",
+    ]},
+
     { type: "h2", text: "Costi e tempi della procedura", id: "costi-tempi" },
     { type: "p", text: "Le procedure di sovraindebitamento, e quindi anche l'esdebitazione dell'incapiente, prevedono costi articolati: compenso dell'OCC, spese vive del Tribunale (contributo unificato, marche da bollo), eventuali oneri di pubblicazione. I compensi dell'OCC sono regolati da apposito decreto ministeriale e variano a seconda dell'entità del debito e della complessità." },
     { type: "p", text: "I tempi medi, dalla raccolta documentale al decreto finale, sono variabili: dipendono dal Tribunale competente, dalla completezza della documentazione e dall'eventuale opposizione di creditori. In via indicativa, da alcuni mesi a oltre un anno." },
 
     { type: "h2", text: "Domande frequenti sull'esdebitazione dell'incapiente", id: "faq" },
     { type: "faq", items: [
+      {
+        q: "Se trovo lavoro dopo l'esdebitazione devo restituire i soldi?",
+        a: "Non per il solo fatto di lavorare. L'obbligo di pagamento sorge se entro quattro anni dal decreto sopravvengono utilità rilevanti che consentano di soddisfare i creditori in misura non inferiore al dieci per cento. La legge esclude espressamente dalle utilità rilevanti i finanziamenti e quanto serve al mantenimento del debitore e della famiglia: uno stipendio che copre le necessità del nucleo non fa scattare l'obbligo."
+      },
+      {
+        q: "I creditori possono opporsi all'esdebitazione dell'incapiente?",
+        a: "Sì. Il decreto viene comunicato ai creditori, che possono proporre reclamo entro trenta giorni. In quella sede contestano tipicamente la meritevolezza del debitore o l'effettiva assenza di beni e redditi aggredibili, non l'ammontare del proprio credito, che non è oggetto del giudizio."
+      },
+      {
+        q: "L'esdebitazione cancella anche le segnalazioni in Centrale Rischi e CRIF?",
+        a: "No. Il decreto rende inesigibili i debiti, ma le segnalazioni nei sistemi di informazione creditizia seguono i propri tempi di conservazione e si estinguono con quelli. Nell'immediato l'accesso al credito resta difficile: è un effetto da mettere in conto quando si pianifica il dopo procedura."
+      },
+      {
+        q: "Che differenza c'è tra esdebitazione dell'incapiente e liquidazione controllata?",
+        a: "La liquidazione controllata presuppone un patrimonio da liquidare e destinare ai creditori, con esdebitazione che opera di diritto dopo tre anni. L'esdebitazione dell'incapiente si applica quando non c'è nulla da liquidare né redditi aggredibili: non c'è alcun pagamento ai creditori, il beneficio si ottiene una sola volta nella vita e resta l'obbligo di dichiarare le sopravvenienze per quattro anni."
+      },
       {
         q: "Posso accedere all'esdebitazione se ho la casa di proprietà?",
         a: "L'esdebitazione del debitore incapiente presuppone l'assenza di patrimonio aggredibile. Se hai una casa di proprietà, normalmente la procedura applicabile è la liquidazione controllata (che prevede la cessione dei beni) seguita eventualmente da esdebitazione. La presenza di una prima casa con specifiche caratteristiche può richiedere valutazioni puntuali."

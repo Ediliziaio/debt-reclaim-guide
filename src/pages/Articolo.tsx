@@ -159,7 +159,7 @@ const renderBlock = (block: Block, i: number) => {
               {block.rows.map((row, j) => (
                 <tr key={j} className="border-t border-border">
                   {row.map((cell, k) => (
-                    <td key={k} className="px-4 py-3 text-foreground/80">{cell}</td>
+                    <td key={k} className="px-4 py-3 text-foreground/80">{renderText(cell)}</td>
                   ))}
                 </tr>
               ))}

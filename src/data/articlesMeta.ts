@@ -402,7 +402,7 @@ export const articlesMeta: ArticleMeta[] = [
     excerpt: "L'esdebitazione del debitore incapiente è uno strumento del Codice della Crisi che consente la cancellazione integrale dei debiti anche in assenza di patrimonio. Guida ai requisiti, alla procedura e ai limiti previsti dall'art. 283 CCII.",
     category: "Privati",
     date: "Aprile 2026",
-    readTime: "12 min",
+    readTime: "17 min",
     author: "Avv. Armando Rossi",
     cover: "from-navy to-navy-light",
     coverImage: "/covers/esdebitazione-incapiente.webp",
