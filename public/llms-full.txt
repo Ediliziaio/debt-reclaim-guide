@@ -6296,23 +6296,12 @@ Prima di prendere una decisione, è essenziale fare alcuni controlli che possono
 
 ### 1. Verifica della regolarità della notifica
 
-La notifica della cartella deve avvenire nelle forme previste dalla legge (artt. 137 e ss. c.p.c. richiamati dall'art. 26 D.P.R. 602/1973). I vizi più frequenti sono: notifica a persona non legittimata a riceverla, notifica per compiuta giacenza con omessa raccomandata informativa, notifica a domicilio non più attuale, errori formali nell'avviso di ricevimento. Una notifica invalida è motivo di ricorso con elevate probabilità di accoglimento.
+La notifica deve avvenire nelle forme previste dall'art. 26 del DPR 602/1973 e dalle norme del codice di procedura civile richiamate. È il primo controllo perché è quello che, se dà esito positivo, travolge l'atto per intero: le forme ammesse e i vizi ricorrenti sono elencati più avanti, nella sezione dedicata alla notifica.
 
 
 ### 2. Verifica della prescrizione
 
-Ogni tributo ha un proprio termine di prescrizione, decorrente dalla data in cui il diritto poteva essere esercitato. I termini sono:
-
-| Tipologia | Prescrizione |
-| --- | --- |
-| IRPEF, IRES, IVA (imposte erariali) | 10 anni |
-| IMU, TASI, TARI, tributi locali | 5 anni |
-| Contributi INPS, INAIL | 5 anni |
-| Sanzioni amministrative (es. Codice della Strada) | 5 anni |
-| Bollo auto | 3 anni |
-| Interessi | 5 anni |
-
-La prescrizione si interrompe con la notifica della cartella e con altri atti formali. Tuttavia, lunghe inerzie dell'AdER tra cartella e successivi atti possono determinare la prescrizione del credito. Verificare le date è una delle prime cose da fare.
+Ogni credito ha un proprio termine di prescrizione, che continua a correre anche dopo la notifica della cartella e riparte da zero a ogni atto interruttivo. Lunghe inerzie dell'Agente della Riscossione fra un atto e il successivo possono averlo fatto maturare: la tabella dei termini per tipo di credito è più avanti, nella sezione sulla prescrizione.
 
 
 ### 3. Verifica della correttezza degli importi
@@ -6371,6 +6360,101 @@ Per orientarsi nella scelta, può essere utile schematizzare:
 NOTA: La scelta dipende dalla singola situazione: una cartella di 5.000€ in un quadro altrimenti sano si gestisce diversamente da una cartella di 80.000€ che si aggiunge a finanziamenti, mutui, altre cartelle. Per questo conviene affrontare la valutazione con uno sguardo complessivo, non limitato alla singola pretesa.
 
 
+## Come si legge una cartella esattoriale
+
+Prima di decidere qualsiasi cosa occorre capire che cosa si ha in mano. La cartella non è un atto unitario: è il contenitore di uno o più carichi, ciascuno con un ente creditore, un anno d'imposta e una causale propri. Due carichi nella stessa cartella possono avere sorti completamente diverse — uno prescritto, l'altro pienamente dovuto.
+
+Gli elementi da individuare sono sempre gli stessi. Il numero della cartella, che identifica il documento nei rapporti con l'Agente della Riscossione. L'ente creditore, che dice chi ha formato il ruolo: Agenzia delle Entrate, INPS, Comune, Regione, Prefettura. L'anno di riferimento e la causale, che dicono da dove nasce la pretesa. La data di consegna del ruolo, che è la data di affidamento rilevante per stabilire se un carico rientri in una definizione agevolata.
+
+| Voce del dettaglio degli addebiti | Che cos'è | Si può contestare separatamente? |
+| --- | --- | --- |
+| Capitale (imposta o contributo) | La somma dovuta all'ente creditore | Sì, contestando il merito della pretesa |
+| Sanzioni | La penalità per l'omesso o tardivo versamento | Sì, anche in via autonoma (es. cause non imputabili) |
+| Interessi | Maturati dalla scadenza originaria | Sì, se calcolati su un capitale non dovuto o su periodi errati |
+| Interessi di mora | Decorrono dalla notifica della cartella se non si paga nei 60 giorni | Sì, sono azzerati dalle definizioni agevolate |
+| Oneri di riscossione | Il compenso dell'Agente della Riscossione | Sì, in misura ridotta se si paga entro 60 giorni |
+| Spese di notifica | Il costo materiale della notifica | Raramente contestabili in modo autonomo |
+
+NOTA: Nelle cartelle risalenti la somma di sanzioni, interessi e interessi di mora può superare il capitale originario. È la ragione per cui una definizione agevolata, quando aperta, produce effetti così rilevanti: non sconta l'imposta, ma cancella tutto ciò che le si è accumulato attorno.
+
+
+## La notifica: quando è valida e quali sono i vizi più frequenti
+
+La notifica non è una formalità: è il fatto giuridico che fa decorrere i termini e rende la pretesa opponibile. Una cartella non notificata validamente non produce effetti, e questo vale anche quando il contribuente ne è venuto a conoscenza per altra via — ad esempio consultando l'estratto di ruolo.
+
+Le forme ammesse dall'art. 26 del DPR 602/1973 sono la posta elettronica certificata verso gli indirizzi risultanti dai pubblici elenchi, per imprese e professionisti, la notifica a mezzo posta con raccomandata con avviso di ricevimento e la notifica tramite messo notificatore o ufficiale della riscossione. Ogni forma ha requisiti propri, e in ciascuna si annidano vizi ricorrenti.
+
+- Notifica a un indirizzo PEC diverso da quello risultante dai pubblici elenchi, o a una PEC revocata o scaduta.
+- Irreperibilità relativa gestita senza la raccomandata informativa che dà notizia del deposito: la notifica non si perfeziona.
+- Notifica eseguita a un indirizzo non più attuale, quando la variazione di residenza era già opponibile all'ente.
+- Consegna a persona diversa dal destinatario senza l'indicazione della qualità del ricevente nella relata.
+- Relata di notifica mancante, incompleta o priva della sottoscrizione del soggetto notificatore.
+- Cartella intestata a società estinta o a persona deceduta, notificata come se il destinatario esistesse ancora.
+
+Il vizio di notifica non si deduce a parole: si prova con i documenti. Prima di qualunque contestazione servono l'estratto di ruolo aggiornato, la copia integrale della cartella con la relata e, per le notifiche telematiche, le ricevute di accettazione e di consegna. È la parte del lavoro che decide l'esito, molto più della formulazione del ricorso.
+
+
+## La prescrizione: termini per tipo di credito
+
+Dopo la notifica della cartella il credito non diventa imprescrittibile. Le Sezioni Unite della Cassazione (sent. n. 23397/2016) hanno chiarito che la cartella non impugnata non si trasforma in un titolo soggetto al termine decennale proprio delle sentenze: il credito conserva il proprio termine di prescrizione, che varia secondo la natura della somma iscritta a ruolo.
+
+| Tipo di credito | Termine di prescrizione | Riferimento |
+| --- | --- | --- |
+| Imposte erariali (IRPEF, IVA, IRES) | 10 anni secondo l'orientamento prevalente | Art. 2946 c.c. |
+| Tributi locali (IMU, TARI, TASI) | 5 anni | Art. 2948 n. 4 c.c. |
+| Contributi previdenziali INPS e INAIL | 5 anni | Art. 3, c. 9, L. 335/1995 |
+| Sanzioni amministrative, incluse quelle del Codice della Strada | 5 anni | Art. 28 L. 689/1981 |
+| Tassa automobilistica (bollo auto) | 3 anni | Art. 5 D.L. 953/1982 |
+| Interessi e accessori | 5 anni | Art. 2948 n. 4 c.c. |
+
+Il termine decorre dall'ultimo atto interruttivo validamente notificato e riparte da capo a ogni nuova interruzione: una intimazione di pagamento, un preavviso di fermo, un pignoramento. Anche il comportamento del debitore conta — una domanda di rateizzazione o il pagamento di un acconto valgono come riconoscimento del debito e azzerano il tempo trascorso. È il motivo per cui la verifica della prescrizione va fatta prima di qualsiasi mossa, non dopo. La materia è trattata in dettaglio nella guida sulla [prescrizione dei debiti](/risorse/prescrizione-debiti).
+
+
+## Chi decide: il giudice competente cambia con il credito
+
+Sbagliare giudice significa perdere tempo e, spesso, il termine. La competenza non dipende dall'atto — la cartella — ma dalla natura della somma che vi è iscritta.
+
+| Natura del credito | Giudice competente | Termine |
+| --- | --- | --- |
+| Tributi erariali e locali | Corte di Giustizia Tributaria di primo grado | 60 giorni dalla notifica |
+| Contributi previdenziali e assistenziali | Tribunale, sezione lavoro | 40 giorni dalla notifica |
+| Sanzioni amministrative (es. Codice della Strada) | Giudice di pace o Tribunale, secondo la materia | 30 giorni dalla notifica |
+| Vizi propri dell'atto di riscossione o dell'esecuzione | Giudice ordinario dell'esecuzione | Termini dell'opposizione esperita |
+
+NOTA: Quando una sola cartella contiene carichi di natura diversa — per esempio IRPEF e contributi INPS — le contestazioni vanno proposte davanti a giudici diversi, ciascuna nel proprio termine. È una delle ragioni per cui l'analisi va fatta carico per carico e non sulla cartella nel suo insieme.
+
+
+## Cosa succede dopo i 60 giorni
+
+Scaduto il termine senza pagamento, rateizzazione o impugnazione, la cartella diventa titolo per l'esecuzione forzata. L'Agente della Riscossione non deve chiedere autorizzazioni a un giudice: procede in via amministrativa, secondo una sequenza che il DPR 602/1973 scandisce con soglie e preavvisi.
+
+1. Intimazione di pagamento: se l'espropriazione non è iniziata entro un anno dalla notifica della cartella, deve essere preceduta da un'intimazione ad adempiere entro cinque giorni (art. 50 DPR 602/1973).
+2. Fermo amministrativo del veicolo: preceduto da un preavviso che assegna 30 giorni per pagare, rateizzare o dimostrare che il mezzo è strumentale all'attività (art. 86 DPR 602/1973).
+3. Ipoteca sugli immobili: ammessa solo per debiti complessivi superiori a 20.000 euro, preceduta da una comunicazione con 30 giorni di termine (art. 77 DPR 602/1973).
+4. Pignoramento presso terzi su conto corrente, stipendio o pensione, con i limiti di impignorabilità previsti dalla legge.
+5. Espropriazione immobiliare, esclusa sull'unico immobile di residenza non di lusso e comunque subordinata a soglie di debito e all'ipoteca già iscritta (art. 76 DPR 602/1973).
+
+Ogni passaggio apre una nuova finestra difensiva, ma su un terreno più stretto: dopo la definitività della cartella non si discute più del merito della pretesa, si contestano i vizi dell'atto esecutivo o si eccepisce la prescrizione maturata dopo. Le difese specifiche sono trattate nelle guide su [fermo amministrativo](/risorse/fermo-amministrativo), [ipoteca esattoriale](/risorse/ipoteca-esattoriale) e [pignoramento del conto corrente](/risorse/pignoramento-conto-corrente).
+
+
+## Casi particolari che cambiano la risposta
+
+
+### Cartella intestata a una società cessata
+
+La cancellazione della società dal registro delle imprese ne determina l'estinzione. L'Agente della Riscossione può agire verso i soci nei limiti di quanto riscosso in sede di liquidazione e verso i liquidatori secondo le regole di responsabilità proprie. Una cartella notificata alla società estinta come se fosse ancora esistente è aggredibile per difetto di legittimazione passiva.
+
+
+### Cartella a carico di un erede
+
+L'erede che accetta puramente e semplicemente risponde dei debiti tributari del defunto. L'accettazione con beneficio d'inventario limita la responsabilità al valore dei beni ereditati. Le sanzioni tributarie, avendo natura personale, non si trasmettono agli eredi: è una delle verifiche da fare subito su una cartella ricevuta a seguito di successione.
+
+
+### Coobbligati e coniuge
+
+La solidarietà nel debito tributario non è automatica: dipende dalla norma che la prevede. Il coniuge non risponde dei debiti fiscali dell'altro per il solo fatto del matrimonio; ne risponde quando è coobbligato per legge o per atto, oppure quando si tratta di beni in comunione aggredibili nei limiti previsti dal codice civile.
+
+
 ## Cosa NON fare
 
 - Ignorare la cartella sperando che il problema sparisca: i termini scorrono e ogni giorno conta
@@ -6396,6 +6480,18 @@ R: Il contributo unificato varia a scaglioni in base al valore della causa: da c
 
 D: Cosa succede se perdo il ricorso?
 R: Se perdi, oltre a dover pagare la cartella con interessi e aggi, sei condannato alle spese di giudizio (variabili). Esiste la possibilità di compensazione delle spese in casi specifici. Per questo è importante valutare con realismo le probabilità di accoglimento prima di promuovere il giudizio.
+
+D: Ho scoperto la cartella dall'estratto di ruolo: posso impugnarla?
+R: L'estratto di ruolo di per sé non è impugnabile. Se però la cartella non è mai stata notificata validamente, se ne può far valere l'invalidità nei casi previsti dalla legge — in particolare quando il debito pregiudica la partecipazione a gare pubbliche, il pagamento da parte della pubblica amministrazione o l'accesso al credito. Fuori da questi casi la contestazione si propone quando arriva il primo atto successivo.
+
+D: Quanto tempo ha l'Agente della Riscossione per notificare la cartella?
+R: Dipende dall'origine del carico. Per le somme derivanti da controllo automatizzato della dichiarazione la cartella va notificata entro il 31 dicembre del terzo anno successivo a quello di presentazione; per il controllo formale entro il quarto anno; per gli accertamenti divenuti definitivi entro il secondo anno successivo alla definitività. Superati questi termini si eccepisce la decadenza, che è cosa diversa dalla prescrizione.
+
+D: La cartella è intestata a una società che ho chiuso: devo pagarla?
+R: L'estinzione della società cancella il soggetto passivo. I soci rispondono nei limiti di quanto riscosso in sede di liquidazione e i liquidatori secondo le regole di responsabilità loro proprie. Una cartella notificata alla società come se esistesse ancora è contestabile per difetto di legittimazione passiva: va però verificato se l'atto sia stato indirizzato ai soci in proprio.
+
+D: Rispondo dei debiti fiscali di mio marito o di mia moglie?
+R: No, non per il solo fatto del matrimonio. La responsabilità sorge quando si è coobbligati per legge o per atto — ad esempio in una dichiarazione congiunta o in una garanzia prestata — oppure sui beni in comunione, nei limiti previsti dal codice civile. È una verifica da fare prima di qualunque pagamento.
 
 D: Posso impugnare una cartella vecchia di più anni?
 R: Il ricorso entro 60 giorni dalla notifica è la via ordinaria. Tuttavia, anche cartelle vecchie possono essere oggetto di altre azioni: opposizione all'esecuzione se interviene un pignoramento (con specifici limiti), eccezione di prescrizione se sono trascorsi i termini. La valutazione va fatta sulla singola situazione.
@@ -6610,7 +6706,7 @@ RISPOSTA RAPIDA: Lo stipendio può essere pignorato di regola nel limite di un q
 
 IN SINTESI:
 - Il quinto si calcola sulla retribuzione netta, non sul lordo.
-- Le pensioni sono impignorabili fino all'importo del minimo vitale, pari al doppio dell'assegno sociale; sull'eccedenza si applica il quinto.
+- Sulla pensione è impignorabile una quota pari all'assegno sociale aumentato della metà; solo l'eccedenza è aggredibile nei limiti ordinari (art. 545, comma 7, c.p.c.).
 - Il datore di lavoro, come terzo pignorato, è obbligato a trattenere e versare la quota: non ha discrezionalità.
 - Il debitore può chiedere la conversione del pignoramento o proporre opposizione se i limiti non sono rispettati.
 Il pignoramento dello stipendio (o della pensione) è una delle azioni esecutive più diffuse: il creditore, in possesso di un titolo esecutivo, può chiedere al giudice di sottrarre una quota della retribuzione direttamente dalla busta paga, attraverso il datore di lavoro. La legge italiana stabilisce limiti precisi e definisce i casi in cui il pignoramento può essere più o meno ampio. Conoscere queste regole è essenziale sia per difendersi, sia per programmare la propria capacità economica residua.
@@ -6680,6 +6776,52 @@ Il datore di lavoro (il 'terzo') deve fare una dichiarazione formale al giudice 
 ### 4. Trattenute mensili
 
 A partire dalla data stabilita dal giudice (in genere immediatamente), ogni mese il datore di lavoro trattiene la quota pignorata e la versa al creditore. Il debitore riceve in busta paga lo stipendio decurtato della quota.
+
+
+## Su quale importo si calcola il quinto
+
+Il quinto non si calcola sul lordo né sull'imponibile fiscale, ma sulla retribuzione netta: la somma che il lavoratore percepirebbe in busta paga dedotte le ritenute fiscali e previdenziali obbligatorie. Le trattenute facoltative — quote associative, rimborsi di prestiti aziendali, buoni pasto convertiti — non riducono la base di calcolo, perché altrimenti sarebbe il debitore a decidere quanto rendere aggredibile il proprio stipendio.
+
+| Voce | Rientra nella base di calcolo? |
+| --- | --- |
+| Retribuzione mensile netta | Sì |
+| Tredicesima e quattordicesima | Sì, la trattenuta si applica anche su queste mensilità |
+| Straordinari, premi e provvigioni | Sì, in quanto elementi della retribuzione |
+| Rimborsi spese documentati | No, non hanno natura retributiva |
+| Assegno per il nucleo familiare | No, ha natura assistenziale |
+| Trattamento di fine rapporto | Sì, come retribuzione differita, con le regole proprie del TFR |
+
+Sul trattamento di fine rapporto occorre un chiarimento: essendo corrisposto in un'unica soluzione alla cessazione del rapporto, viene aggredito secondo le regole della retribuzione differita e non con la trattenuta mensile. È una delle voci su cui si concentrano i creditori quando il rapporto di lavoro si avvicina alla conclusione.
+
+
+## Le pensioni: il minimo impignorabile
+
+La pensione gode di una tutela più forte dello stipendio, perché la legge presume che sia l'unica fonte di sostentamento del percettore. L'art. 545, comma 7, del codice di procedura civile rende impignorabile una quota corrispondente alla misura massima mensile dell'assegno sociale aumentato della metà. Solo la parte eccedente questa soglia può essere aggredita, e comunque nei limiti ordinari del quinto o delle fasce previste per i crediti tributari.
+
+Il meccanismo è quindi a due passaggi: prima si mette da parte la quota intangibile, poi si applica la percentuale sull'eccedenza. Su pensioni di importo contenuto il risultato pratico è che il pignoramento non trova capienza. L'importo dell'assegno sociale viene rivalutato annualmente, quindi la soglia va verificata sull'anno in corso e non su un valore appreso in passato.
+
+NOTA: Se la pensione viene accreditata su un conto corrente, le somme già presenti sul conto seguono una regola diversa: è impignorabile l'importo eccedente il triplo dell'assegno sociale per gli accrediti anteriori al pignoramento. Sono due tutele distinte che si applicano a due momenti diversi, come spiegato nella guida sul [pignoramento del conto corrente](/risorse/pignoramento-conto-corrente).
+
+
+## Lavoratori autonomi, professionisti e collaboratori
+
+I limiti dell'art. 545 c.p.c. sono costruiti sul rapporto di lavoro dipendente. Per il lavoratore autonomo e il professionista i compensi non maturati in forza di un rapporto di impiego non godono della stessa protezione: il credito verso il committente può essere pignorato presso terzi secondo le regole ordinarie, e l'Agente della Riscossione dispone inoltre dello strumento dell'ordine diretto di pagamento al terzo previsto dall'art. 72-bis del DPR 602/1973.
+
+Per le collaborazioni coordinate e continuative e per i rapporti che, pur non essendo formalmente subordinati, hanno carattere continuativo e costituiscono la fonte primaria di sostentamento, la giurisprudenza ha in più occasioni esteso la logica di tutela della retribuzione. È una valutazione che dipende dalla qualificazione concreta del rapporto: va posta al giudice dell'esecuzione, non data per acquisita.
+
+
+## Quando il pignoramento è illegittimo: la lista dei controlli
+
+Un pignoramento può essere formalmente in corso e sostanzialmente eccedente. Questi sono i controlli che conviene fare sulla prima busta paga successiva alla notifica, confrontandola con l'atto ricevuto.
+
+1. La percentuale applicata corrisponde alla natura del credito? Un creditore ordinario non può ottenere più di un quinto; solo i crediti alimentari possono superarlo su decisione del giudice.
+2. La base di calcolo è il netto e non il lordo? È l'errore più frequente e produce trattenute sensibilmente superiori al dovuto.
+3. In caso di più pignoramenti, la somma delle trattenute supera la metà dello stipendio? Il limite cumulativo dell'art. 545, comma 5, c.p.c. è inderogabile.
+4. Il titolo esecutivo è valido e il precetto è stato notificato regolarmente? Un titolo viziato travolge l'intera esecuzione.
+5. Il credito è ancora esigibile o è nel frattempo maturata la prescrizione? Va verificata la data dell'ultimo atto interruttivo valido.
+6. Il datore di lavoro ha reso la dichiarazione di terzo e sta versando le somme al creditore corretto?
+
+Se anche uno solo di questi controlli dà esito negativo, lo strumento è l'opposizione: all'esecuzione quando si contesta il diritto del creditore di procedere, agli atti esecutivi quando il vizio è formale — in quest'ultimo caso entro il termine di venti giorni. Restare fermi perché «tanto la trattenuta è partita» significa consolidare un prelievo che poteva essere ridotto o annullato.
 
 
 ## Gli strumenti di difesa

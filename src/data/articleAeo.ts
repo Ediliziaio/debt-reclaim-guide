@@ -411,7 +411,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
       "Lo stipendio può essere pignorato di regola nel limite di un quinto del netto (art. 545 c.p.c.). Per i crediti alimentari la quota è stabilita dal giudice, mentre per i crediti tributari valgono soglie graduate in base all'importo della retribuzione. In caso di concorso di più pignoramenti di natura diversa il prelievo complessivo non può comunque superare la metà dello stipendio.",
     takeaways: [
       "Il quinto si calcola sulla retribuzione netta, non sul lordo.",
-      "Le pensioni sono impignorabili fino all'importo del minimo vitale, pari al doppio dell'assegno sociale; sull'eccedenza si applica il quinto.",
+      "Sulla pensione è impignorabile una quota pari all'assegno sociale aumentato della metà; solo l'eccedenza è aggredibile nei limiti ordinari (art. 545, comma 7, c.p.c.).",
       "Il datore di lavoro, come terzo pignorato, è obbligato a trattenere e versare la quota: non ha discrezionalità.",
       "Il debitore può chiedere la conversione del pignoramento o proporre opposizione se i limiti non sono rispettati.",
     ],

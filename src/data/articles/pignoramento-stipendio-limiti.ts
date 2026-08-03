@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "Quanto può essere pignorato dello stipendio? Limiti per crediti ordinari, alimentari e tributari, cumulo di più pignoramenti, opposizione e conversione. Guida completa per chi subisce o teme un pignoramento sul reddito da lavoro.",
   category: "Privati",
   date: "Marzo 2026",
-  readTime: "11 min",
+  readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-destructive to-navy",
   coverImage: "/covers/pignoramento-stipendio-limiti.webp",
@@ -65,6 +65,39 @@ export const article: Article = {
 
     { type: "h3", text: "4. Trattenute mensili" },
     { type: "p", text: "A partire dalla data stabilita dal giudice (in genere immediatamente), ogni mese il datore di lavoro trattiene la quota pignorata e la versa al creditore. Il debitore riceve in busta paga lo stipendio decurtato della quota." },
+
+    { type: "h2", text: "Su quale importo si calcola il quinto", id: "base-di-calcolo" },
+    { type: "p", text: "Il quinto non si calcola sul lordo né sull'imponibile fiscale, ma sulla retribuzione netta: la somma che il lavoratore percepirebbe in busta paga dedotte le ritenute fiscali e previdenziali obbligatorie. Le trattenute facoltative — quote associative, rimborsi di prestiti aziendali, buoni pasto convertiti — non riducono la base di calcolo, perché altrimenti sarebbe il debitore a decidere quanto rendere aggredibile il proprio stipendio." },
+    { type: "table", headers: ["Voce", "Rientra nella base di calcolo?"], rows: [
+      ["Retribuzione mensile netta", "Sì"],
+      ["Tredicesima e quattordicesima", "Sì, la trattenuta si applica anche su queste mensilità"],
+      ["Straordinari, premi e provvigioni", "Sì, in quanto elementi della retribuzione"],
+      ["Rimborsi spese documentati", "No, non hanno natura retributiva"],
+      ["Assegno per il nucleo familiare", "No, ha natura assistenziale"],
+      ["Trattamento di fine rapporto", "Sì, come retribuzione differita, con le regole proprie del TFR"],
+    ]},
+    { type: "p", text: "Sul trattamento di fine rapporto occorre un chiarimento: essendo corrisposto in un'unica soluzione alla cessazione del rapporto, viene aggredito secondo le regole della retribuzione differita e non con la trattenuta mensile. È una delle voci su cui si concentrano i creditori quando il rapporto di lavoro si avvicina alla conclusione." },
+
+    { type: "h2", text: "Le pensioni: il minimo impignorabile", id: "pensioni" },
+    { type: "p", text: "La pensione gode di una tutela più forte dello stipendio, perché la legge presume che sia l'unica fonte di sostentamento del percettore. L'art. 545, comma 7, del codice di procedura civile rende impignorabile una quota corrispondente alla misura massima mensile dell'assegno sociale aumentato della metà. Solo la parte eccedente questa soglia può essere aggredita, e comunque nei limiti ordinari del quinto o delle fasce previste per i crediti tributari." },
+    { type: "p", text: "Il meccanismo è quindi a due passaggi: prima si mette da parte la quota intangibile, poi si applica la percentuale sull'eccedenza. Su pensioni di importo contenuto il risultato pratico è che il pignoramento non trova capienza. L'importo dell'assegno sociale viene rivalutato annualmente, quindi la soglia va verificata sull'anno in corso e non su un valore appreso in passato." },
+    { type: "note", text: "Se la pensione viene accreditata su un conto corrente, le somme già presenti sul conto seguono una regola diversa: è impignorabile l'importo eccedente il triplo dell'assegno sociale per gli accrediti anteriori al pignoramento. Sono due tutele distinte che si applicano a due momenti diversi, come spiegato nella guida sul [pignoramento del conto corrente](/risorse/pignoramento-conto-corrente)." },
+
+    { type: "h2", text: "Lavoratori autonomi, professionisti e collaboratori", id: "autonomi" },
+    { type: "p", text: "I limiti dell'art. 545 c.p.c. sono costruiti sul rapporto di lavoro dipendente. Per il lavoratore autonomo e il professionista i compensi non maturati in forza di un rapporto di impiego non godono della stessa protezione: il credito verso il committente può essere pignorato presso terzi secondo le regole ordinarie, e l'Agente della Riscossione dispone inoltre dello strumento dell'ordine diretto di pagamento al terzo previsto dall'art. 72-bis del DPR 602/1973." },
+    { type: "p", text: "Per le collaborazioni coordinate e continuative e per i rapporti che, pur non essendo formalmente subordinati, hanno carattere continuativo e costituiscono la fonte primaria di sostentamento, la giurisprudenza ha in più occasioni esteso la logica di tutela della retribuzione. È una valutazione che dipende dalla qualificazione concreta del rapporto: va posta al giudice dell'esecuzione, non data per acquisita." },
+
+    { type: "h2", text: "Quando il pignoramento è illegittimo: la lista dei controlli", id: "controlli" },
+    { type: "p", text: "Un pignoramento può essere formalmente in corso e sostanzialmente eccedente. Questi sono i controlli che conviene fare sulla prima busta paga successiva alla notifica, confrontandola con l'atto ricevuto." },
+    { type: "ol", items: [
+      "La percentuale applicata corrisponde alla natura del credito? Un creditore ordinario non può ottenere più di un quinto; solo i crediti alimentari possono superarlo su decisione del giudice.",
+      "La base di calcolo è il netto e non il lordo? È l'errore più frequente e produce trattenute sensibilmente superiori al dovuto.",
+      "In caso di più pignoramenti, la somma delle trattenute supera la metà dello stipendio? Il limite cumulativo dell'art. 545, comma 5, c.p.c. è inderogabile.",
+      "Il titolo esecutivo è valido e il precetto è stato notificato regolarmente? Un titolo viziato travolge l'intera esecuzione.",
+      "Il credito è ancora esigibile o è nel frattempo maturata la prescrizione? Va verificata la data dell'ultimo atto interruttivo valido.",
+      "Il datore di lavoro ha reso la dichiarazione di terzo e sta versando le somme al creditore corretto?",
+    ]},
+    { type: "p", text: "Se anche uno solo di questi controlli dà esito negativo, lo strumento è l'opposizione: all'esecuzione quando si contesta il diritto del creditore di procedere, agli atti esecutivi quando il vizio è formale — in quest'ultimo caso entro il termine di venti giorni. Restare fermi perché «tanto la trattenuta è partita» significa consolidare un prelievo che poteva essere ridotto o annullato." },
 
     { type: "h2", text: "Gli strumenti di difesa", id: "difesa" },
 

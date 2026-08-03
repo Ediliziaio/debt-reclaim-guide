@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "Hai ricevuto una cartella esattoriale dall'Agenzia Entrate Riscossione? I primi 60 giorni sono cruciali: ricorso, sospensione, rateizzazione, definizione agevolata, prescrizione. Una guida completa alle scelte da fare entro il termine.",
   category: "Tributario",
   date: "Aprile 2026",
-  readTime: "14 min",
+  readTime: "15 min",
   author: "Studio Tutela Debito",
   cover: "from-gold to-gold-dark",
   coverImage: "/covers/cartella-esattoriale-cosa-fare.webp",
@@ -44,19 +44,10 @@ export const article: Article = {
     { type: "p", text: "Prima di prendere una decisione, è essenziale fare alcuni controlli che possono cambiare radicalmente lo scenario. Una cartella apparentemente dovuta può rivelarsi viziata; un'azione 'naturale' come la rateizzazione può non essere la scelta migliore." },
 
     { type: "h3", text: "1. Verifica della regolarità della notifica" },
-    { type: "p", text: "La notifica della cartella deve avvenire nelle forme previste dalla legge (artt. 137 e ss. c.p.c. richiamati dall'art. 26 D.P.R. 602/1973). I vizi più frequenti sono: notifica a persona non legittimata a riceverla, notifica per compiuta giacenza con omessa raccomandata informativa, notifica a domicilio non più attuale, errori formali nell'avviso di ricevimento. Una notifica invalida è motivo di ricorso con elevate probabilità di accoglimento." },
+    { type: "p", text: "La notifica deve avvenire nelle forme previste dall'art. 26 del DPR 602/1973 e dalle norme del codice di procedura civile richiamate. È il primo controllo perché è quello che, se dà esito positivo, travolge l'atto per intero: le forme ammesse e i vizi ricorrenti sono elencati più avanti, nella sezione dedicata alla notifica." },
 
     { type: "h3", text: "2. Verifica della prescrizione" },
-    { type: "p", text: "Ogni tributo ha un proprio termine di prescrizione, decorrente dalla data in cui il diritto poteva essere esercitato. I termini sono:" },
-    { type: "table", headers: ["Tipologia", "Prescrizione"], rows: [
-      ["IRPEF, IRES, IVA (imposte erariali)", "10 anni"],
-      ["IMU, TASI, TARI, tributi locali", "5 anni"],
-      ["Contributi INPS, INAIL", "5 anni"],
-      ["Sanzioni amministrative (es. Codice della Strada)", "5 anni"],
-      ["Bollo auto", "3 anni"],
-      ["Interessi", "5 anni"],
-    ]},
-    { type: "p", text: "La prescrizione si interrompe con la notifica della cartella e con altri atti formali. Tuttavia, lunghe inerzie dell'AdER tra cartella e successivi atti possono determinare la prescrizione del credito. Verificare le date è una delle prime cose da fare." },
+    { type: "p", text: "Ogni credito ha un proprio termine di prescrizione, che continua a correre anche dopo la notifica della cartella e riparte da zero a ogni atto interruttivo. Lunghe inerzie dell'Agente della Riscossione fra un atto e il successivo possono averlo fatto maturare: la tabella dei termini per tipo di credito è più avanti, nella sezione sulla prescrizione." },
 
     { type: "h3", text: "3. Verifica della correttezza degli importi" },
     { type: "p", text: "Cartelle con interessi calcolati erroneamente, sanzioni non dovute, voci duplicate non sono rare. Un controllo analitico — voce per voce, anno per anno — è sempre opportuno. Se si trovano errori, il primo strumento è l'istanza di sgravio in autotutela, che però non sospende automaticamente i termini di ricorso." },
@@ -94,6 +85,73 @@ export const article: Article = {
 
     { type: "note", text: "La scelta dipende dalla singola situazione: una cartella di 5.000€ in un quadro altrimenti sano si gestisce diversamente da una cartella di 80.000€ che si aggiunge a finanziamenti, mutui, altre cartelle. Per questo conviene affrontare la valutazione con uno sguardo complessivo, non limitato alla singola pretesa." },
 
+    { type: "h2", text: "Come si legge una cartella esattoriale", id: "come-leggerla" },
+    { type: "p", text: "Prima di decidere qualsiasi cosa occorre capire che cosa si ha in mano. La cartella non è un atto unitario: è il contenitore di uno o più carichi, ciascuno con un ente creditore, un anno d'imposta e una causale propri. Due carichi nella stessa cartella possono avere sorti completamente diverse — uno prescritto, l'altro pienamente dovuto." },
+    { type: "p", text: "Gli elementi da individuare sono sempre gli stessi. Il numero della cartella, che identifica il documento nei rapporti con l'Agente della Riscossione. L'ente creditore, che dice chi ha formato il ruolo: Agenzia delle Entrate, INPS, Comune, Regione, Prefettura. L'anno di riferimento e la causale, che dicono da dove nasce la pretesa. La data di consegna del ruolo, che è la data di affidamento rilevante per stabilire se un carico rientri in una definizione agevolata." },
+    { type: "table", headers: ["Voce del dettaglio degli addebiti", "Che cos'è", "Si può contestare separatamente?"], rows: [
+      ["Capitale (imposta o contributo)", "La somma dovuta all'ente creditore", "Sì, contestando il merito della pretesa"],
+      ["Sanzioni", "La penalità per l'omesso o tardivo versamento", "Sì, anche in via autonoma (es. cause non imputabili)"],
+      ["Interessi", "Maturati dalla scadenza originaria", "Sì, se calcolati su un capitale non dovuto o su periodi errati"],
+      ["Interessi di mora", "Decorrono dalla notifica della cartella se non si paga nei 60 giorni", "Sì, sono azzerati dalle definizioni agevolate"],
+      ["Oneri di riscossione", "Il compenso dell'Agente della Riscossione", "Sì, in misura ridotta se si paga entro 60 giorni"],
+      ["Spese di notifica", "Il costo materiale della notifica", "Raramente contestabili in modo autonomo"],
+    ]},
+    { type: "note", text: "Nelle cartelle risalenti la somma di sanzioni, interessi e interessi di mora può superare il capitale originario. È la ragione per cui una definizione agevolata, quando aperta, produce effetti così rilevanti: non sconta l'imposta, ma cancella tutto ciò che le si è accumulato attorno." },
+
+    { type: "h2", text: "La notifica: quando è valida e quali sono i vizi più frequenti", id: "notifica" },
+    { type: "p", text: "La notifica non è una formalità: è il fatto giuridico che fa decorrere i termini e rende la pretesa opponibile. Una cartella non notificata validamente non produce effetti, e questo vale anche quando il contribuente ne è venuto a conoscenza per altra via — ad esempio consultando l'estratto di ruolo." },
+    { type: "p", text: "Le forme ammesse dall'art. 26 del DPR 602/1973 sono la posta elettronica certificata verso gli indirizzi risultanti dai pubblici elenchi, per imprese e professionisti, la notifica a mezzo posta con raccomandata con avviso di ricevimento e la notifica tramite messo notificatore o ufficiale della riscossione. Ogni forma ha requisiti propri, e in ciascuna si annidano vizi ricorrenti." },
+    { type: "ul", items: [
+      "Notifica a un indirizzo PEC diverso da quello risultante dai pubblici elenchi, o a una PEC revocata o scaduta.",
+      "Irreperibilità relativa gestita senza la raccomandata informativa che dà notizia del deposito: la notifica non si perfeziona.",
+      "Notifica eseguita a un indirizzo non più attuale, quando la variazione di residenza era già opponibile all'ente.",
+      "Consegna a persona diversa dal destinatario senza l'indicazione della qualità del ricevente nella relata.",
+      "Relata di notifica mancante, incompleta o priva della sottoscrizione del soggetto notificatore.",
+      "Cartella intestata a società estinta o a persona deceduta, notificata come se il destinatario esistesse ancora.",
+    ]},
+    { type: "p", text: "Il vizio di notifica non si deduce a parole: si prova con i documenti. Prima di qualunque contestazione servono l'estratto di ruolo aggiornato, la copia integrale della cartella con la relata e, per le notifiche telematiche, le ricevute di accettazione e di consegna. È la parte del lavoro che decide l'esito, molto più della formulazione del ricorso." },
+
+    { type: "h2", text: "La prescrizione: termini per tipo di credito", id: "prescrizione" },
+    { type: "p", text: "Dopo la notifica della cartella il credito non diventa imprescrittibile. Le Sezioni Unite della Cassazione (sent. n. 23397/2016) hanno chiarito che la cartella non impugnata non si trasforma in un titolo soggetto al termine decennale proprio delle sentenze: il credito conserva il proprio termine di prescrizione, che varia secondo la natura della somma iscritta a ruolo." },
+    { type: "table", headers: ["Tipo di credito", "Termine di prescrizione", "Riferimento"], rows: [
+      ["Imposte erariali (IRPEF, IVA, IRES)", "10 anni secondo l'orientamento prevalente", "Art. 2946 c.c."],
+      ["Tributi locali (IMU, TARI, TASI)", "5 anni", "Art. 2948 n. 4 c.c."],
+      ["Contributi previdenziali INPS e INAIL", "5 anni", "Art. 3, c. 9, L. 335/1995"],
+      ["Sanzioni amministrative, incluse quelle del Codice della Strada", "5 anni", "Art. 28 L. 689/1981"],
+      ["Tassa automobilistica (bollo auto)", "3 anni", "Art. 5 D.L. 953/1982"],
+      ["Interessi e accessori", "5 anni", "Art. 2948 n. 4 c.c."],
+    ]},
+    { type: "p", text: "Il termine decorre dall'ultimo atto interruttivo validamente notificato e riparte da capo a ogni nuova interruzione: una intimazione di pagamento, un preavviso di fermo, un pignoramento. Anche il comportamento del debitore conta — una domanda di rateizzazione o il pagamento di un acconto valgono come riconoscimento del debito e azzerano il tempo trascorso. È il motivo per cui la verifica della prescrizione va fatta prima di qualsiasi mossa, non dopo. La materia è trattata in dettaglio nella guida sulla [prescrizione dei debiti](/risorse/prescrizione-debiti)." },
+
+    { type: "h2", text: "Chi decide: il giudice competente cambia con il credito", id: "giudice-competente" },
+    { type: "p", text: "Sbagliare giudice significa perdere tempo e, spesso, il termine. La competenza non dipende dall'atto — la cartella — ma dalla natura della somma che vi è iscritta." },
+    { type: "table", headers: ["Natura del credito", "Giudice competente", "Termine"], rows: [
+      ["Tributi erariali e locali", "Corte di Giustizia Tributaria di primo grado", "60 giorni dalla notifica"],
+      ["Contributi previdenziali e assistenziali", "Tribunale, sezione lavoro", "40 giorni dalla notifica"],
+      ["Sanzioni amministrative (es. Codice della Strada)", "Giudice di pace o Tribunale, secondo la materia", "30 giorni dalla notifica"],
+      ["Vizi propri dell'atto di riscossione o dell'esecuzione", "Giudice ordinario dell'esecuzione", "Termini dell'opposizione esperita"],
+    ]},
+    { type: "note", text: "Quando una sola cartella contiene carichi di natura diversa — per esempio IRPEF e contributi INPS — le contestazioni vanno proposte davanti a giudici diversi, ciascuna nel proprio termine. È una delle ragioni per cui l'analisi va fatta carico per carico e non sulla cartella nel suo insieme." },
+
+    { type: "h2", text: "Cosa succede dopo i 60 giorni", id: "dopo-60-giorni" },
+    { type: "p", text: "Scaduto il termine senza pagamento, rateizzazione o impugnazione, la cartella diventa titolo per l'esecuzione forzata. L'Agente della Riscossione non deve chiedere autorizzazioni a un giudice: procede in via amministrativa, secondo una sequenza che il DPR 602/1973 scandisce con soglie e preavvisi." },
+    { type: "ol", items: [
+      "Intimazione di pagamento: se l'espropriazione non è iniziata entro un anno dalla notifica della cartella, deve essere preceduta da un'intimazione ad adempiere entro cinque giorni (art. 50 DPR 602/1973).",
+      "Fermo amministrativo del veicolo: preceduto da un preavviso che assegna 30 giorni per pagare, rateizzare o dimostrare che il mezzo è strumentale all'attività (art. 86 DPR 602/1973).",
+      "Ipoteca sugli immobili: ammessa solo per debiti complessivi superiori a 20.000 euro, preceduta da una comunicazione con 30 giorni di termine (art. 77 DPR 602/1973).",
+      "Pignoramento presso terzi su conto corrente, stipendio o pensione, con i limiti di impignorabilità previsti dalla legge.",
+      "Espropriazione immobiliare, esclusa sull'unico immobile di residenza non di lusso e comunque subordinata a soglie di debito e all'ipoteca già iscritta (art. 76 DPR 602/1973).",
+    ]},
+    { type: "p", text: "Ogni passaggio apre una nuova finestra difensiva, ma su un terreno più stretto: dopo la definitività della cartella non si discute più del merito della pretesa, si contestano i vizi dell'atto esecutivo o si eccepisce la prescrizione maturata dopo. Le difese specifiche sono trattate nelle guide su [fermo amministrativo](/risorse/fermo-amministrativo), [ipoteca esattoriale](/risorse/ipoteca-esattoriale) e [pignoramento del conto corrente](/risorse/pignoramento-conto-corrente)." },
+
+    { type: "h2", text: "Casi particolari che cambiano la risposta", id: "casi-particolari" },
+    { type: "h3", text: "Cartella intestata a una società cessata" },
+    { type: "p", text: "La cancellazione della società dal registro delle imprese ne determina l'estinzione. L'Agente della Riscossione può agire verso i soci nei limiti di quanto riscosso in sede di liquidazione e verso i liquidatori secondo le regole di responsabilità proprie. Una cartella notificata alla società estinta come se fosse ancora esistente è aggredibile per difetto di legittimazione passiva." },
+    { type: "h3", text: "Cartella a carico di un erede" },
+    { type: "p", text: "L'erede che accetta puramente e semplicemente risponde dei debiti tributari del defunto. L'accettazione con beneficio d'inventario limita la responsabilità al valore dei beni ereditati. Le sanzioni tributarie, avendo natura personale, non si trasmettono agli eredi: è una delle verifiche da fare subito su una cartella ricevuta a seguito di successione." },
+    { type: "h3", text: "Coobbligati e coniuge" },
+    { type: "p", text: "La solidarietà nel debito tributario non è automatica: dipende dalla norma che la prevede. Il coniuge non risponde dei debiti fiscali dell'altro per il solo fatto del matrimonio; ne risponde quando è coobbligato per legge o per atto, oppure quando si tratta di beni in comunione aggredibili nei limiti previsti dal codice civile." },
+
     { type: "h2", text: "Cosa NON fare", id: "errori-comuni" },
     { type: "ul", items: [
       "Ignorare la cartella sperando che il problema sparisca: i termini scorrono e ogni giorno conta",
@@ -124,6 +182,22 @@ export const article: Article = {
       {
         q: "Cosa succede se perdo il ricorso?",
         a: "Se perdi, oltre a dover pagare la cartella con interessi e aggi, sei condannato alle spese di giudizio (variabili). Esiste la possibilità di compensazione delle spese in casi specifici. Per questo è importante valutare con realismo le probabilità di accoglimento prima di promuovere il giudizio."
+      },
+      {
+        q: "Ho scoperto la cartella dall'estratto di ruolo: posso impugnarla?",
+        a: "L'estratto di ruolo di per sé non è impugnabile. Se però la cartella non è mai stata notificata validamente, se ne può far valere l'invalidità nei casi previsti dalla legge — in particolare quando il debito pregiudica la partecipazione a gare pubbliche, il pagamento da parte della pubblica amministrazione o l'accesso al credito. Fuori da questi casi la contestazione si propone quando arriva il primo atto successivo."
+      },
+      {
+        q: "Quanto tempo ha l'Agente della Riscossione per notificare la cartella?",
+        a: "Dipende dall'origine del carico. Per le somme derivanti da controllo automatizzato della dichiarazione la cartella va notificata entro il 31 dicembre del terzo anno successivo a quello di presentazione; per il controllo formale entro il quarto anno; per gli accertamenti divenuti definitivi entro il secondo anno successivo alla definitività. Superati questi termini si eccepisce la decadenza, che è cosa diversa dalla prescrizione."
+      },
+      {
+        q: "La cartella è intestata a una società che ho chiuso: devo pagarla?",
+        a: "L'estinzione della società cancella il soggetto passivo. I soci rispondono nei limiti di quanto riscosso in sede di liquidazione e i liquidatori secondo le regole di responsabilità loro proprie. Una cartella notificata alla società come se esistesse ancora è contestabile per difetto di legittimazione passiva: va però verificato se l'atto sia stato indirizzato ai soci in proprio."
+      },
+      {
+        q: "Rispondo dei debiti fiscali di mio marito o di mia moglie?",
+        a: "No, non per il solo fatto del matrimonio. La responsabilità sorge quando si è coobbligati per legge o per atto — ad esempio in una dichiarazione congiunta o in una garanzia prestata — oppure sui beni in comunione, nei limiti previsti dal codice civile. È una verifica da fare prima di qualunque pagamento."
       },
       {
         q: "Posso impugnare una cartella vecchia di più anni?",
