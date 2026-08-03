@@ -1,267 +1,397 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://tuteladebito.it/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/studio-legale-napoli</loc>
+    <loc>https://www.tuteladebito.it/studio-legale-napoli</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/studio-legale-milano</loc>
+    <loc>https://www.tuteladebito.it/studio-legale-milano</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/studio-legale-torino</loc>
+    <loc>https://www.tuteladebito.it/studio-legale-torino</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/servizi</loc>
+    <loc>https://www.tuteladebito.it/servizi</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/metodo</loc>
+    <loc>https://www.tuteladebito.it/metodo</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/casi-risolti</loc>
+    <loc>https://www.tuteladebito.it/casi-risolti</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/chi-siamo</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/chi-siamo</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/contatti</loc>
+    <loc>https://www.tuteladebito.it/contatti</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/quiz</loc>
+    <loc>https://www.tuteladebito.it/quiz</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/privacy</loc>
+    <loc>https://www.tuteladebito.it/privacy</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/cookie</loc>
+    <loc>https://www.tuteladebito.it/cookie</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/note-legali</loc>
+    <loc>https://www.tuteladebito.it/note-legali</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/avviso-accertamento-opposizione</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/avviso-accertamento-opposizione</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/avviso-accertamento-opposizione.png</image:loc>
+      <image:title>Avviso di accertamento: come opporsi nei termini e quali strumenti utilizzare</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/cartella-esattoriale-cosa-fare</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/cartella-esattoriale-cosa-fare</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/cartella-esattoriale-cosa-fare.png</image:loc>
+      <image:title>Cartella esattoriale: cosa fare nei primi 60 giorni dalla notifica</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/cessione-del-quinto-problemi</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/cessione-del-quinto-problemi</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/cessione-del-quinto-problemi.png</image:loc>
+      <image:title>Cessione del quinto: i diritti del debitore in difficoltà</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/composizione-negoziata</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/composizione-negoziata</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/composizione-negoziata.png</image:loc>
+      <image:title>Composizione negoziata della crisi d'impresa: guida completa allo strumento del CCII</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/concordato-minore</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/concordato-minore</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/concordato-minore.png</image:loc>
+      <image:title>Concordato minore: la procedura di sovraindebitamento per piccoli imprenditori e professionisti</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/concordato-preventivo</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/concordato-preventivo</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/concordato-preventivo.png</image:loc>
+      <image:title>Concordato preventivo: la procedura per le imprese in crisi nel nuovo Codice della Crisi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/contenzioso-tributario-riforma</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/contenzioso-tributario-riforma</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/contenzioso-tributario-riforma.png</image:loc>
+      <image:title>Contenzioso tributario: la riforma del processo davanti alle Corti di Giustizia Tributaria</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/debiti-agenzia-entrate</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/debiti-agenzia-entrate</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/debiti-agenzia-entrate.png</image:loc>
+      <image:title>Debiti con l'Agenzia delle Entrate: tutti gli strumenti per gestirli legalmente</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/debiti-banche-finanziarie</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/debiti-banche-finanziarie</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/debiti-banche-finanziarie.png</image:loc>
+      <image:title>Debiti con banche e finanziarie: cosa fare quando non si riesce più a pagare</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/debiti-condominiali</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/debiti-condominiali</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/debiti-condominiali.png</image:loc>
+      <image:title>Debiti condominiali: cosa rischia il condomino moroso e come gestire la morosità</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/debiti-fornitori</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/debiti-fornitori</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/debiti-fornitori.png</image:loc>
+      <image:title>Debiti commerciali con fornitori: gestire la difficoltà e tutelare l'attività</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/debiti-inps</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/debiti-inps</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/debiti-inps.png</image:loc>
+      <image:title>Debiti con INPS: contributi non versati, sanzioni e strumenti di definizione</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/decreto-ingiuntivo-opposizione</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/decreto-ingiuntivo-opposizione</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/decreto-ingiuntivo-opposizione.png</image:loc>
+      <image:title>Decreto ingiuntivo: come opporsi entro i 40 giorni e con quali motivi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/esdebitazione-incapiente</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/esdebitazione-incapiente</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/esdebitazione-incapiente.png</image:loc>
+      <image:title>Esdebitazione del debitore incapiente: cosa significa, requisiti e procedura (art. 283 CCII)</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/fermo-amministrativo</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/fermo-amministrativo</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/fermo-amministrativo.png</image:loc>
+      <image:title>Fermo amministrativo del veicolo: cos'è, come opporsi e come ottenerne la cancellazione</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/fideiussione-come-liberarsi</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/fideiussione-come-liberarsi</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/fideiussione-come-liberarsi.png</image:loc>
+      <image:title>Fideiussione: come liberarsi dalla garanzia personale prestata a terzi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/ipoteca-esattoriale</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/ipoteca-esattoriale</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/ipoteca-esattoriale.png</image:loc>
+      <image:title>Ipoteca esattoriale: limiti, opposizione e cancellazione</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/liquidazione-controllata-sovraindebitato</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/liquidazione-controllata-sovraindebitato</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/liquidazione-controllata-sovraindebitato.png</image:loc>
+      <image:title>Liquidazione controllata del sovraindebitato (artt. 268-277 CCII): come funziona, durata, esdebitazione finale</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/liquidazione-giudiziale</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/liquidazione-giudiziale</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/liquidazione-giudiziale.png</image:loc>
+      <image:title>Liquidazione giudiziale (ex fallimento): cosa cambia con il Codice della Crisi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/mutuo-non-pagato-cosa-fare</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/mutuo-non-pagato-cosa-fare</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/mutuo-non-pagato-cosa-fare.png</image:loc>
+      <image:title>Mutuo non pagato: cosa fare prima del pignoramento immobiliare</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/occ-organismo-composizione-crisi</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/occ-organismo-composizione-crisi</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/occ-organismo-composizione-crisi.png</image:loc>
+      <image:title>OCC: il ruolo dell'Organismo di Composizione della Crisi nelle procedure di sovraindebitamento</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/piano-consumatore</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/piano-consumatore</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/piano-consumatore.png</image:loc>
+      <image:title>Piano di ristrutturazione dei debiti del consumatore: guida completa al CCII (artt. 67-73)</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/pignoramento-conto-corrente</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/pignoramento-conto-corrente</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/pignoramento-conto-corrente.png</image:loc>
+      <image:title>Pignoramento del conto corrente: limiti, impignorabilità e come difendersi</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/pignoramento-immobiliare</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/pignoramento-immobiliare</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/pignoramento-immobiliare.png</image:loc>
+      <image:title>Pignoramento immobiliare: difese del debitore proprietario nelle diverse fasi della procedura</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/pignoramento-stipendio-limiti</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/pignoramento-stipendio-limiti</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/pignoramento-stipendio-limiti.png</image:loc>
+      <image:title>Pignoramento dello stipendio: limiti, regola del quinto e strumenti di difesa</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/prescrizione-debiti</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/prescrizione-debiti</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/prescrizione-debiti.png</image:loc>
+      <image:title>Prescrizione dei debiti: tempi, interruzione e come farla valere correttamente</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/rateizzazione-cartelle-esattoriali</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/rateizzazione-cartelle-esattoriali</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/rateizzazione-cartelle-esattoriali.png</image:loc>
+      <image:title>Rateizzazione delle cartelle esattoriali: come ottenerla e mantenerla nel 2026</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/rottamazione-quater</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/rottamazione-quater</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/rottamazione-quater.png</image:loc>
+      <image:title>Rottamazione quater: come funziona, a chi conviene e quali alternative valutare</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/saldo-e-stralcio-debiti</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/rottamazione-quinquies</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/rottamazione-quinquies.png</image:loc>
+      <image:title>Rottamazione quinquies 2026: quali debiti rientrano, come si paga e cosa succede se si salta una rata</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tuteladebito.it/risorse/sovraindebitamento-cos-e</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://www.tuteladebito.it/risorse/saldo-e-stralcio-debiti</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/saldo-e-stralcio-debiti.png</image:loc>
+      <image:title>Saldo e stralcio: come negoziare la chiusura definitiva del debito a importo ridotto</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.tuteladebito.it/risorse/sovraindebitamento-cos-e</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/sovraindebitamento-cos-e.png</image:loc>
+      <image:title>Sovraindebitamento: cos'è e quali sono tutte le procedure previste dal Codice della Crisi</image:title>
+    </image:image>
   </url>
 </urlset>

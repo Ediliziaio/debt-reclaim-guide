@@ -69,27 +69,27 @@ const Risorse = () => {
         description="Approfondimenti, guide pratiche e articoli aggiornati su esdebitazione, sovraindebitamento, cartelle esattoriali, crisi d'impresa e contenzioso tributario. Redatti dallo studio."
         keywords="blog esdebitazione, guide sovraindebitamento, articoli crisi d'impresa, cartella esattoriale, pignoramento, composizione negoziata, rottamazione"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/risorse"
+        canonical="https://www.tuteladebito.it/risorse"
         ogTitle="Risorse, guide e blog | Tutela Debito"
         ogDescription="Approfondimenti tecnici e guide pratiche su esdebitazione, sovraindebitamento e crisi d'impresa."
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Blog",
-            "@id": "https://tuteladebito.it/risorse#blog",
+            "@id": "https://www.tuteladebito.it/risorse#blog",
             "name": "Risorse Tutela Debito",
             "description": "Guide e approfondimenti su esdebitazione, sovraindebitamento e crisi d'impresa.",
-            "url": "https://tuteladebito.it/risorse",
+            "url": "https://www.tuteladebito.it/risorse",
             "inLanguage": "it-IT",
             "publisher": {
               "@type": "Organization",
               "name": "Tutela Debito",
-              "url": "https://tuteladebito.it",
+              "url": "https://www.tuteladebito.it",
             },
             "blogPost": articles.map((a) => ({
               "@type": "BlogPosting",
               "headline": a.title,
-              "url": `https://tuteladebito.it/risorse/${a.slug}`,
+              "url": `https://www.tuteladebito.it/risorse/${a.slug}`,
               "datePublished": toISODate(a.date) ?? a.date,
               "author": { "@type": "Person", "name": a.author },
               "articleSection": a.category,
@@ -99,8 +99,8 @@ const Risorse = () => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Risorse", "item": "https://tuteladebito.it/risorse" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Risorse", "item": "https://www.tuteladebito.it/risorse" },
             ],
           },
         ]}

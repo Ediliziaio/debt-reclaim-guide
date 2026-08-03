@@ -1,6 +1,7 @@
 import { Search, FileText, ShieldCheck, Sparkles } from "lucide-react";
 
-const steps = [
+/** Esportate: le stesse fasi alimentano lo schema HowTo della pagina /metodo. */
+export const steps = [
   {
     n: "01",
     icon: Search,
@@ -50,10 +51,13 @@ const TDMethod = () => {
         </div>
 
         <div className="space-y-5">
-          {steps.map((s) => (
+          {steps.map((s, i) => (
             <div
               key={s.n}
-              className="bg-white rounded-2xl p-6 lg:p-8 border border-border shadow-card"
+              // Ancora stabile: è l'URL con cui lo schema HowTo indirizza il
+              // singolo passo, e ci si può linkare dall'esterno.
+              id={`fase-${i + 1}`}
+              className="bg-white rounded-2xl p-6 lg:p-8 border border-border shadow-card scroll-mt-24"
             >
               <div className="grid lg:grid-cols-[auto_1fr] gap-6 items-start">
                 <div className="flex items-center gap-4">

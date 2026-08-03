@@ -29,7 +29,7 @@ const TDLegalLayout = ({ title, subtitle, lastUpdate, icon, metaDescription, can
         title={`${title} | Tutela Debito`}
         description={metaDescription}
         robots="index, follow"
-        canonical={`https://tuteladebito.it${canonicalPath}`}
+        canonical={`https://www.tuteladebito.it${canonicalPath}`}
       />
 
       <div className="min-h-screen bg-background flex flex-col">

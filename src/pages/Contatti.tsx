@@ -38,29 +38,29 @@ const Contatti = () => {
         description="Contatta Tutela Debito per una diagnosi riservata della tua posizione. Telefono, email, WhatsApp o modulo di contatto. Sedi a Napoli, Milano e Torino."
         keywords="contatti studio legale debiti, avvocato esdebitazione contatti, Napoli Milano Torino"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/contatti"
+        canonical="https://www.tuteladebito.it/contatti"
         ogTitle="Contatti | Tutela Debito"
         ogDescription="Telefono, email, WhatsApp o modulo. Sedi a Napoli, Milano e Torino."
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "url": "https://tuteladebito.it/contatti",
+            "url": "https://www.tuteladebito.it/contatti",
             "name": "Contatti Tutela Debito",
             "mainEntity": {
               "@type": "LegalService",
               "name": "Tutela Debito",
               "telephone": ["+39-081-18671862", "+39-338-6115394"],
               "email": "info@studioavvocatorossi.it",
-              "url": "https://tuteladebito.it",
+              "url": "https://www.tuteladebito.it",
             },
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Contatti", "item": "https://tuteladebito.it/contatti" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Contatti", "item": "https://www.tuteladebito.it/contatti" },
             ],
           },
         ]}

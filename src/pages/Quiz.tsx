@@ -179,7 +179,7 @@ const Quiz = () => {
         description="Test online gratuito di orientamento: poche domande per capire se la tua situazione può rientrare nei presupposti delle procedure di sovraindebitamento previste dalla legge italiana."
         keywords="test esdebitazione, quiz sovraindebitamento, posso uscire dai debiti, orientamento legale"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/quiz"
+        canonical="https://www.tuteladebito.it/quiz"
         ogTitle="Test online: posso esdebitarmi? | Tutela Debito"
         ogDescription="Test online di orientamento in 2 minuti."
         jsonLd={[
@@ -187,8 +187,8 @@ const Quiz = () => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Test online", "item": "https://tuteladebito.it/quiz" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Test online", "item": "https://www.tuteladebito.it/quiz" },
             ],
           },
         ]}

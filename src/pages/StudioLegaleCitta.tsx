@@ -5,7 +5,6 @@ import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
 import TDStickyCTA from "@/components/TDStickyCTA";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   MapPin,
@@ -31,7 +30,7 @@ import {
   type City,
 } from "@/data/cities";
 
-const SITE = "https://tuteladebito.it";
+const SITE = "https://www.tuteladebito.it";
 
 const SERVICES = [
   { title: "Esdebitazione e sovraindebitamento", desc: "Cancellazione dei debiti per privati e famiglie ex L. 3/2012 e Codice della Crisi.", to: "/servizi" },
@@ -230,14 +229,17 @@ const StudioLegaleCitta = () => {
                 {/* FAQ */}
                 <section>
                   <h2 className="text-2xl font-bold text-navy mb-5">Domande frequenti — {city.name}</h2>
-                  <Accordion type="single" collapsible className="space-y-3">
+                  {/* Q&A sempre nel DOM: un accordion terrebbe le risposte
+                      fuori dall'HTML statico e quindi fuori dalla portata dei
+                      crawler AI, che è esattamente il testo da far citare. */}
+                  <div className="space-y-3">
                     {city.faq.map((f, i) => (
-                      <AccordionItem key={i} value={`faq-${i}`} className="bg-white rounded-xl border border-border px-5">
-                        <AccordionTrigger className="text-left font-semibold text-navy hover:text-gold-dark py-4">{f.q}</AccordionTrigger>
-                        <AccordionContent className="text-foreground/75 leading-relaxed pb-4">{f.a}</AccordionContent>
-                      </AccordionItem>
+                      <div key={i} className="bg-white rounded-xl border border-border px-5 py-4">
+                        <h3 className="font-semibold text-navy mb-2 leading-snug">{f.q}</h3>
+                        <p className="text-foreground/75 leading-relaxed">{f.a}</p>
+                      </div>
                     ))}
-                  </Accordion>
+                  </div>
                 </section>
               </div>
 

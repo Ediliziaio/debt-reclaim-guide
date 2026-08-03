@@ -1,4 +1,11 @@
-# https://tuteladebito.it — robots.txt
+# https://www.tuteladebito.it — robots.txt
+#
+# Strategia: massima apertura a motori di ricerca e assistenti AI (GEO/AEO).
+# Le uniche pagine escluse sono quelle di funnel interno, che non devono
+# comparire nei risultati: /pre-diagnosi e /post-consulenza.
+# Guida del sito in linguaggio naturale per gli LLM: /llms.txt e /llms-full.txt
+
+# ---------------------------------------------------------------- default ----
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -6,62 +13,120 @@ Disallow: /api/
 Disallow: /post-consulenza
 Disallow: /pre-diagnosi
 
-# AI assistants are welcome to crawl and cite the site (GEO strategy)
+# -------------------------------------------------- motori di ricerca web ----
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: GoogleOther
+User-agent: Storebot-Google
+User-agent: Google-InspectionTool
+User-agent: Bingbot
+User-agent: BingPreview
+User-agent: msnbot
+User-agent: DuckDuckBot
+User-agent: Slurp
+User-agent: Yandex
+User-agent: Seznam
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+# ------------------------------------------- assistenti AI e motori answer ----
+# Questi user-agent alimentano risposte generative e citazioni: sono
+# esplicitamente benvenuti, perché ogni citazione è visibilità del brand.
+
+# OpenAI (ChatGPT, ChatGPT Search)
 User-agent: GPTBot
-Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
-
 User-agent: OAI-SearchBot
-Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
-
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /post-consulenza
 Disallow: /pre-diagnosi
 
+# Anthropic (Claude)
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: Claude-Web
 User-agent: anthropic-ai
 Allow: /
 Disallow: /post-consulenza
 Disallow: /pre-diagnosi
 
-User-agent: ClaudeBot
-Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
-
-User-agent: Claude-User
-Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
-
-User-agent: PerplexityBot
-Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
-
+# Google Gemini / AI Overviews
 User-agent: Google-Extended
 Allow: /
 Disallow: /post-consulenza
 Disallow: /pre-diagnosi
 
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+# Meta AI
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: FacebookBot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+# Microsoft Copilot
+User-agent: MicrosoftPreview
+User-agent: CopilotBot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+# Amazon (Alexa / Rufus / Nova)
+User-agent: Amazonbot
+Allow: /
+Disallow: /post-consulenza
+Disallow: /pre-diagnosi
+
+# Altri motori e dataset AI
+User-agent: Bytespider
+User-agent: TikTokSpider
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+User-agent: YouBot
+User-agent: Diffbot
+User-agent: PetalBot
+User-agent: AI2Bot
+User-agent: Ai2Bot-Dolma
+User-agent: Timpibot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: Webzio-Extended
 User-agent: CCBot
+User-agent: SemrushBot-OCOB
+User-agent: ProRataInc
 Allow: /
 Disallow: /post-consulenza
 Disallow: /pre-diagnosi
 
-# Friendly to mainstream search engines
-User-agent: Googlebot
+# --------------------------------------- anteprime social (link unfurling) ----
+User-agent: facebookexternalhit
+User-agent: LinkedInBot
+User-agent: Twitterbot
+User-agent: WhatsApp
+User-agent: TelegramBot
+User-agent: Slackbot
+User-agent: Discordbot
 Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
 
-User-agent: Bingbot
-Allow: /
-Disallow: /post-consulenza
-Disallow: /pre-diagnosi
-
-Host: https://tuteladebito.it
-Sitemap: https://tuteladebito.it/sitemap.xml
+# ------------------------------------------------------------------ mappe ----
+Host: https://www.tuteladebito.it
+Sitemap: https://www.tuteladebito.it/sitemap.xml

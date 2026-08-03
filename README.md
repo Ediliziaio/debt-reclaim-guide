@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# Tutela Debito — tuteladebito.it
 
-## Project info
+Sito dello **Studio Legale Avv. Armando Rossi** (brand *Tutela Debito*): esdebitazione,
+sovraindebitamento, crisi d'impresa e contenzioso tributario. Sedi a Napoli, Milano e Torino.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Produzione: <https://www.tuteladebito.it> — deploy automatico su Vercel dal branch `main`.
 
-## How can I edit this code?
+## Stack
 
-There are several ways of editing your application.
+| | |
+|---|---|
+| Build | Vite 5 + [`vite-react-ssg`](https://github.com/Daydreamer-riri/vite-react-ssg) (prerendering statico) |
+| UI | React 18 · TypeScript · Tailwind CSS · shadcn-ui (Radix) |
+| Routing | react-router-dom 6 (route table in `src/App.tsx`) |
+| Head / SEO | `src/components/SEO.tsx` (react-helmet-async via `<Head>` di vite-react-ssg) |
 
-**Use Lovable**
+## Comandi
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm install        # dipendenze
+npm run dev        # dev server su http://localhost:8080
+npm run build      # prebuild (sitemap + llms-full) + build statico in dist/
+npm run preview    # serve dist/ in locale
+npm run lint       # eslint
+npx tsc -p tsconfig.app.json --noEmit   # typecheck
 ```
 
-**Edit a file directly in GitHub**
+## Perché SSG e non SPA
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Il sito vive di ricerca organica e di citazioni negli assistenti AI (ChatGPT, Claude,
+Perplexity, Google AI Overviews). Molti di questi crawler **non eseguono JavaScript**: con una
+SPA vedrebbero una pagina vuota. `npm run build` prerenderizza ogni rotta in HTML completo —
+testo dell'articolo, `<title>`/meta/canonical per pagina e JSON-LD — quindi ogni URL è leggibile
+e citabile senza JS. Le rotte degli articoli sono generate da `getStaticPaths` in `src/App.tsx`.
 
-**Use GitHub Codespaces**
+## Struttura
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+  App.tsx                 route table (fonte di verità delle rotte prerenderizzate)
+  main.tsx                entry SSG + client
+  components/
+    SEO.tsx               <title>, meta, canonical, OG/Twitter, JSON-LD per pagina
+    TD*.tsx               sezioni di pagina (hero, metodo, FAQ, footer…)
+    ui/                   shadcn-ui
+  data/
+    articles.ts           tipi Article/Block + loader e helper
+    articlesMeta.ts       metadati di tutti gli articoli (titolo, excerpt, keywords, intro…)
+    articlesContent.ts    contenuto completo, sincrono, per il prerender
+    articleSeo.ts         <title> e meta description in lunghezza SERP
+    articles/<slug>.ts    corpo dell'articolo come array di Block tipizzati
+    cities.ts             dati delle landing locali /studio-legale-<città>
+  pages/                  una per rotta
+scripts/
+  generate-sitemap.mjs    sitemap.xml dalle rotte reali (gira nel prebuild)
+public/                   robots.txt, llms.txt, sitemap.xml, favicon, cover articoli
+```
 
-## What technologies are used for this project?
+## Aggiungere un articolo
 
-This project is built with:
+1. Crea `src/data/articles/<slug>.ts` che esporta `meta` (`ArticleMeta`) e `article` (`Article`,
+   con `content: Block[]`).
+2. Aggiungi la stessa `meta` in `src/data/articlesMeta.ts` (alimenta liste, correlati, categorie).
+3. Aggiungi `<slug>` in `src/data/articleSeo.ts` con `seoTitle` (≤ ~60 caratteri) e
+   `metaDescription` (~155 caratteri).
+4. Metti la cover 1200×630 in `public/covers/<slug>.png` (il titolo è già impresso
+   sull'immagine: niente overlay scuro sopra).
+5. `npm run build` — sitemap, rotta statica e `llms-full.txt` si aggiornano da soli.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+I blocchi disponibili sono in `src/data/articles.ts`: `p`, `h2`, `h3`, `ul`, `ol`, `quote`,
+`note`, `table`, `faq`, `image`. Il primo blocco `faq` di ogni articolo diventa automaticamente
+schema `FAQPage`; gli `h2` con `id` alimentano l'indice laterale.
 
-## How can I deploy this project?
+## SEO / GEO / AEO
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Il posizionamento è l'obiettivo primario del progetto, sui motori classici e sugli assistenti AI:
 
-## Can I connect a custom domain to my Lovable project?
+- **robots.txt** — accesso esplicito a tutti i crawler AI rilevanti; `/pre-diagnosi` e
+  `/post-consulenza` esclusi (pagine di funnel, non indicizzabili).
+- **llms.txt** — mappa del sito in linguaggio naturale per gli assistenti AI.
+- **JSON-LD** — `LegalService` + `WebSite` site-wide in `index.html`; per pagina `Article`,
+  `FAQPage`, `BreadcrumbList` e schema locali dai componenti.
+- **Contenuto** — ogni articolo apre con una risposta diretta autoconsistente, cita la norma
+  (CCII, DPR 602/73…) ed espone tabelle e FAQ: è il formato che gli engine generativi estraggono.
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Quando aggiungi rotte, ricordati che la **fonte di verità** è `src/App.tsx`: sitemap e prerender
+partono da lì e da `src/data/articles/`.

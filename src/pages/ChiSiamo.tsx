@@ -77,7 +77,7 @@ const ChiSiamo = () => {
         description="Tutela Debito è uno studio legale e fiscale strutturato come azienda professionale, specializzato in esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Sedi a Napoli, Milano e Torino."
         keywords="studio legale debiti, avvocato esdebitazione, azienda legale, Napoli, Milano, Torino, crisi d'impresa"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/chi-siamo"
+        canonical="https://www.tuteladebito.it/chi-siamo"
         ogTitle="Chi siamo | Tutela Debito"
         ogDescription="Studio legale e fiscale strutturato come azienda professionale. Esdebitazione, crisi d'impresa, contenzioso tributario."
         jsonLd={[
@@ -85,9 +85,52 @@ const ChiSiamo = () => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Chi siamo", "item": "https://tuteladebito.it/chi-siamo" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Chi siamo", "item": "https://www.tuteladebito.it/chi-siamo" },
             ],
+          },
+          // L'entità autore, dichiarata una volta qui e richiamata per @id da
+          // ogni articolo firmato. Su materia YMYL come i debiti, un autore
+          // identificabile e qualificato è metà del giudizio di affidabilità:
+          // senza, gli articoli restano "di un sito", non "di un avvocato".
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://www.tuteladebito.it/chi-siamo#avv-armando-rossi",
+            "name": "Avv. Armando Rossi",
+            "jobTitle": "Avvocato",
+            "url": "https://www.tuteladebito.it/chi-siamo",
+            "worksFor": { "@id": "https://www.tuteladebito.it/#organization" },
+            "memberOf": {
+              "@type": "Organization",
+              "name": "Ordine degli Avvocati di Napoli",
+            },
+            "hasCredential": credentials.map((c) => ({
+              "@type": "EducationalOccupationalCredential",
+              "name": c,
+            })),
+            "knowsAbout": [
+              "Esdebitazione",
+              "Sovraindebitamento",
+              "Codice della Crisi d'Impresa e dell'Insolvenza",
+              "Crisi d'impresa",
+              "Contenzioso tributario",
+              "Esecuzioni immobiliari",
+              "Diritto bancario",
+            ],
+            "knowsLanguage": "it",
+            "sameAs": ["https://www.linkedin.com/in/armando-rossi-0378083b/"],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "@id": "https://www.tuteladebito.it/chi-siamo",
+            "url": "https://www.tuteladebito.it/chi-siamo",
+            "name": "Chi siamo | Tutela Debito",
+            "inLanguage": "it-IT",
+            "isPartOf": { "@id": "https://www.tuteladebito.it/#website" },
+            "about": { "@id": "https://www.tuteladebito.it/#organization" },
+            "mainEntity": { "@id": "https://www.tuteladebito.it/chi-siamo#avv-armando-rossi" },
           },
         ]}
       />

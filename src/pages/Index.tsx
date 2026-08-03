@@ -13,7 +13,7 @@ import TDCases from "@/components/TDCases";
 const TDStatsChart = lazy(() => import("@/components/TDStatsChart"));
 import TDTestimonials from "@/components/TDTestimonials";
 import TDWhyUs from "@/components/TDWhyUs";
-import TDFAQ from "@/components/TDFAQ";
+import TDFAQ, { faqs } from "@/components/TDFAQ";
 import TDCoverage from "@/components/TDCoverage";
 import TDFinalCTA from "@/components/TDFinalCTA";
 import TDFooter from "@/components/TDFooter";
@@ -32,9 +32,40 @@ const Index = () => {
         description="Studio legale e fiscale per esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
         keywords="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, studio legale debiti, avvocato debiti, composizione negoziata, piano del consumatore, rottamazione"
         robots="index, follow, max-image-preview:large, max-snippet:-1"
-        canonical="https://tuteladebito.it/"
+        canonical="https://www.tuteladebito.it/"
         ogTitle="Tutela Debito | Esdebitazione e Crisi d'Impresa"
         ogDescription="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino."
+        jsonLd={[
+          // Le stesse domande visibili in pagina, così come le legge l'utente:
+          // è la sezione che i motori di risposta citano per le query "cos'è
+          // l'esdebitazione", "quanto dura una procedura", "posso accedere se…".
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": "https://www.tuteladebito.it/#faq",
+            "inLanguage": "it-IT",
+            "mainEntity": faqs.map((f) => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a },
+            })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://www.tuteladebito.it/",
+            "url": "https://www.tuteladebito.it/",
+            "name": "Tutela Debito | Esdebitazione, Crisi d'Impresa, Contenzioso Tributario",
+            "inLanguage": "it-IT",
+            "isPartOf": { "@id": "https://www.tuteladebito.it/#website" },
+            "about": { "@id": "https://www.tuteladebito.it/#organization" },
+            "publisher": { "@id": "https://www.tuteladebito.it/#organization" },
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1"],
+            },
+          },
+        ]}
       />
 
       <div className="min-h-screen bg-background flex flex-col">

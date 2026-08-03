@@ -12,7 +12,7 @@ import { Head } from "vite-react-ssg";
  * previous imperative version so page components did not need to change.
  */
 
-const SITE = "https://tuteladebito.it";
+const SITE = "https://www.tuteladebito.it";
 const DEFAULT_IMAGE = `${SITE}/og-image.png`;
 
 export interface SEOProps {

@@ -166,7 +166,7 @@ const CasiRisolti = () => {
         description="Selezione di procedure seguite dallo studio in materia di esdebitazione, sovraindebitamento, crisi d'impresa, opposizione a pignoramenti e contenzioso tributario."
         keywords="casi esdebitazione, esempi sovraindebitamento, casi reali crisi d'impresa, procedure concluse"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/casi-risolti"
+        canonical="https://www.tuteladebito.it/casi-risolti"
         ogTitle="Casi seguiti | Tutela Debito"
         ogDescription="Selezione di procedure seguite dallo studio."
         jsonLd={[
@@ -174,8 +174,8 @@ const CasiRisolti = () => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Casi seguiti", "item": "https://tuteladebito.it/casi-risolti" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Casi seguiti", "item": "https://www.tuteladebito.it/casi-risolti" },
             ],
           },
         ]}

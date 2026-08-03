@@ -1,6 +1,11 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-const faqs = [
+/**
+ * Domande frequenti della home.
+ *
+ * Esportate perché la stessa lista alimenta lo schema FAQPage in Index.tsx:
+ * testo visibile e dati strutturati devono coincidere parola per parola,
+ * altrimenti il rich result viene scartato.
+ */
+export const faqs = [
   {
     q: "Cosa si intende per esdebitazione?",
     a: "L'esdebitazione è il beneficio della liberazione dai debiti residui dopo l'esecuzione di una procedura di sovraindebitamento o concorsuale. È disciplinata dal Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019) e, per i casi anteriori, dalla L. 3/2012. Non si applica automaticamente: occorre verificare i presupposti soggettivi e oggettivi previsti dalla normativa.",
@@ -50,22 +55,20 @@ const TDFAQ = () => {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-3">
+          {/* Nessun accordion: il contenuto chiuso di un accordion non finisce
+              nell'HTML statico, quindi le risposte sarebbero invisibili ai
+              crawler che non eseguono JS — cioè quasi tutti i crawler AI. */}
+          <div className="space-y-3">
             {faqs.map((f, i) => (
-              <AccordionItem
+              <div
                 key={i}
-                value={`item-${i}`}
-                className="bg-muted/40 rounded-xl border border-border px-5 lg:px-6"
+                className="bg-muted/40 rounded-xl border border-border px-5 lg:px-6 py-5"
               >
-                <AccordionTrigger className="text-left font-semibold text-navy hover:text-gold-dark py-5 text-base">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-foreground/75 leading-relaxed pb-5">
-                  {f.a}
-                </AccordionContent>
-              </AccordionItem>
+                <h3 className="font-semibold text-navy text-base mb-2 leading-snug">{f.q}</h3>
+                <p className="text-foreground/75 leading-relaxed">{f.a}</p>
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </div>
     </section>

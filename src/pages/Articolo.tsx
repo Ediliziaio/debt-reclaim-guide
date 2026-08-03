@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
 import TDStickyCTA from "@/components/TDStickyCTA";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Calendar,
@@ -27,10 +26,66 @@ import {
   Sparkles,
   ChevronRight,
   FileText,
+  RefreshCw,
+  Zap,
 } from "lucide-react";
-import { articlesMeta, getRelated, toISODate, type Block, type Article, type ArticleMeta } from "@/data/articles";
+import {
+  articlesMeta,
+  getArticleMeta,
+  getRelated,
+  toISODate,
+  lastModifiedISO,
+  formatISODateIT,
+  type Block,
+  type Article,
+  type ArticleMeta,
+} from "@/data/articles";
 import { getArticleContent } from "@/data/articlesContent";
 import { getArticleSeo } from "@/data/articleSeo";
+
+/**
+ * Link interni scritti nel testo degli articoli come `[testo](/risorse/slug)`.
+ * I link contestuali dentro il corpo valgono molto più dei correlati a fondo
+ * pagina: sono il modo in cui motori e crawler AI capiscono che il sito copre
+ * un tema in profondità e non un articolo isolato.
+ */
+const LINK_RE = /\[([^\]]+)\]\((\/[^)\s]+|https?:\/\/[^)\s]+)\)/g;
+
+const renderText = (text: string): React.ReactNode => {
+  if (!text.includes("](")) return text;
+  const nodes: React.ReactNode[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  LINK_RE.lastIndex = 0;
+  while ((m = LINK_RE.exec(text)) !== null) {
+    if (m.index > last) nodes.push(text.slice(last, m.index));
+    const [, label, href] = m;
+    nodes.push(
+      href.startsWith("/") ? (
+        <Link
+          key={`${m.index}-${href}`}
+          to={href}
+          className="text-navy underline decoration-gold decoration-2 underline-offset-2 hover:text-gold-dark font-medium"
+        >
+          {label}
+        </Link>
+      ) : (
+        <a
+          key={`${m.index}-${href}`}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-navy underline decoration-gold decoration-2 underline-offset-2 hover:text-gold-dark font-medium"
+        >
+          {label}
+        </a>
+      ),
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+};
 
 const renderBlock = (block: Block, i: number) => {
   switch (block.type) {
@@ -49,7 +104,7 @@ const renderBlock = (block: Block, i: number) => {
     case "p":
       return (
         <p key={i} className="text-foreground/80 leading-relaxed mb-5 text-lg">
-          {block.text}
+          {renderText(block.text)}
         </p>
       );
     case "ul":
@@ -58,7 +113,7 @@ const renderBlock = (block: Block, i: number) => {
           {block.items.map((it, j) => (
             <li key={j} className="flex items-start gap-3 text-foreground/80 text-lg">
               <span className="text-gold-dark mt-2 text-xs">●</span>
-              <span>{it}</span>
+              <span>{renderText(it)}</span>
             </li>
           ))}
         </ul>
@@ -68,7 +123,7 @@ const renderBlock = (block: Block, i: number) => {
         <ol key={i} className="mb-6 space-y-2.5 list-decimal pl-6 marker:text-gold-dark marker:font-bold">
           {block.items.map((it, j) => (
             <li key={j} className="text-foreground/80 text-lg pl-2 leading-relaxed">
-              {it}
+              {renderText(it)}
             </li>
           ))}
         </ol>
@@ -84,7 +139,7 @@ const renderBlock = (block: Block, i: number) => {
       return (
         <div key={i} className="bg-gold/10 border-l-4 border-gold rounded-r-xl p-5 my-7 flex items-start gap-3">
           <Info className="w-5 h-5 text-gold-dark mt-0.5 shrink-0" />
-          <p className="text-navy leading-relaxed">{block.text}</p>
+          <p className="text-navy leading-relaxed">{renderText(block.text)}</p>
         </div>
       );
     case "table":
@@ -111,23 +166,31 @@ const renderBlock = (block: Block, i: number) => {
         </div>
       );
     case "faq":
+      // Domanda e risposta sempre visibili, mai dentro un accordion: un
+      // accordion smonta il testo chiuso dal DOM, quindi la risposta sparisce
+      // dall'HTML statico ed è invisibile ai crawler che non eseguono JS —
+      // proprio il testo che gli engine di risposta dovrebbero citare.
       return (
-        <Accordion key={i} type="single" collapsible className="my-7 space-y-3">
+        <div key={i} className="my-7 space-y-4">
           {block.items.map((f, j) => (
-            <AccordionItem
+            <div
               key={j}
-              value={`faq-${i}-${j}`}
-              className="bg-muted/40 rounded-xl border border-border px-5"
+              className="bg-muted/40 rounded-xl border border-border p-5"
+              itemScope
+              itemProp="mainEntity"
+              itemType="https://schema.org/Question"
             >
-              <AccordionTrigger className="text-left font-semibold text-navy hover:text-gold-dark py-4 text-base">
+              <h3 className="font-bold text-navy text-base mb-2 leading-snug" itemProp="name">
                 {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-foreground/75 leading-relaxed pb-4 text-base">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
+              </h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-foreground/75 leading-relaxed text-base" itemProp="text">
+                  {renderText(f.a)}
+                </p>
+              </div>
+            </div>
           ))}
-        </Accordion>
+        </div>
       );
     case "image":
       return (
@@ -165,83 +228,158 @@ const wordCountOf = (blocks?: Block[]): number => {
   return n;
 };
 
+/**
+ * Rimando ad articoli correlati inserito dentro il corpo, non a fondo pagina:
+ * un link contestuale nel testo passa molto più segnale di uno nel footer, e
+ * tiene il lettore dentro il cluster tematico invece di rimandarlo a Google.
+ */
+const InlineRelated = ({ items }: { items: ArticleMeta[] }) => {
+  if (!items.length) return null;
+  return (
+    <aside className="my-9 rounded-2xl border border-border bg-muted/40 p-5 lg:p-6">
+      <div className="flex items-center gap-2 mb-3">
+        <BookOpen className="w-4 h-4 text-gold-dark" />
+        <h3 className="text-sm font-bold uppercase tracking-wider text-navy m-0">Leggi anche</h3>
+      </div>
+      <ul className="space-y-2">
+        {items.map((a) => (
+          <li key={a.slug} className="flex items-start gap-2.5">
+            <ChevronRight className="w-4 h-4 text-gold-dark mt-1 shrink-0" />
+            <Link
+              to={`/risorse/${a.slug}`}
+              className="text-navy hover:text-gold-dark font-medium leading-snug underline decoration-gold/50 decoration-2 underline-offset-2"
+            >
+              {a.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+};
+
+const SITE = "https://www.tuteladebito.it";
+/** Identità stabile dell'autore: la stessa @id è dichiarata in /chi-siamo. */
+const AUTHOR_ID = `${SITE}/chi-siamo#avv-armando-rossi`;
+const ORG_ID = `${SITE}/#organization`;
+const WEBSITE_ID = `${SITE}/#website`;
+
 const buildSchemas = (article: ArticleMeta, content?: Block[]) => {
-  const url = `https://tuteladebito.it/risorse/${article.slug}`;
+  const url = `${SITE}/risorse/${article.slug}`;
   const image = article.coverImage
-    ? (article.coverImage.startsWith("http")
-        ? article.coverImage
-        : `https://tuteladebito.it${article.coverImage}`)
-    : "https://tuteladebito.it/og-image.png";
+    ? (article.coverImage.startsWith("http") ? article.coverImage : `${SITE}${article.coverImage}`)
+    : `${SITE}/og-image.png`;
   const minutes = parseInt(article.readTime, 10);
   const isFounder = /armando rossi/i.test(article.author);
+  const published = toISODate(article.date) ?? article.date;
+  const modified = lastModifiedISO(article) ?? published;
+
+  // Autore reale: persona quando l'articolo è firmato dall'avvocato, altrimenti
+  // lo studio come organizzazione. Nessuna attribuzione inventata: per un tema
+  // YMYL come i debiti, l'attendibilità dell'autore è metà del punteggio E-E-A-T.
+  const author = isFounder
+    ? {
+        "@type": "Person",
+        "@id": AUTHOR_ID,
+        "name": article.author,
+        "url": `${SITE}/chi-siamo`,
+        "jobTitle": "Avvocato",
+        "worksFor": { "@id": ORG_ID },
+        "knowsAbout": [
+          "Esdebitazione",
+          "Sovraindebitamento",
+          "Codice della Crisi d'Impresa e dell'Insolvenza",
+          "Contenzioso tributario",
+          "Esecuzioni immobiliari",
+        ],
+        "sameAs": ["https://www.linkedin.com/in/armando-rossi-0378083b/"],
+      }
+    : {
+        "@type": "Organization",
+        "@id": ORG_ID,
+        "name": article.author,
+        "url": SITE,
+      };
+
+  // Il box "Risposta rapida" è il passaggio che un engine generativo deve
+  // leggere per primo: lo si segnala esplicitamente con speakable.
+  const speakable = {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".td-answer", "h1"],
+  };
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     "headline": article.title,
     "description": article.excerpt,
-    "image": [image],
-    "author": {
-      "@type": "Person",
-      "name": article.author,
-      "url": "https://tuteladebito.it/chi-siamo",
-      ...(isFounder ? { "sameAs": ["https://www.linkedin.com/in/armando-rossi-0378083b/"] } : {}),
+    ...(article.answer ? { "abstract": article.answer } : {}),
+    "image": {
+      "@type": "ImageObject",
+      "url": image,
+      "width": 1200,
+      "height": 630,
     },
+    "author": author,
     "publisher": {
       "@type": "Organization",
-      "@id": "https://tuteladebito.it/#organization",
+      "@id": ORG_ID,
       "name": "Tutela Debito",
-      "url": "https://tuteladebito.it",
+      "url": SITE,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://tuteladebito.it/logo-tutela-debito.png",
+        "url": `${SITE}/logo-tutela-debito.png`,
       },
     },
-    "datePublished": toISODate(article.date) ?? article.date,
-    "dateModified": toISODate(article.date) ?? article.date,
+    "datePublished": published,
+    "dateModified": modified,
     "keywords": article.keywords?.join(", "),
     "articleSection": article.category,
     "inLanguage": "it-IT",
     "isAccessibleForFree": true,
+    "isPartOf": { "@id": WEBSITE_ID },
+    "speakable": speakable,
+    // `about` dichiara di cosa parla la pagina in termini di entità, non di
+    // parole chiave: è così che un motore generativo collega l'articolo al
+    // concetto giuridico giusto invece che a una stringa di testo.
+    ...(article.entities?.length
+      ? { "about": article.entities.map((name) => ({ "@type": "Thing", name })) }
+      : {}),
+    ...(article.laws?.length
+      ? {
+          "citation": article.laws.map((name) => ({
+            "@type": "Legislation",
+            "name": name,
+            "legislationJurisdiction": "IT",
+          })),
+        }
+      : {}),
     ...(Number.isFinite(minutes) ? { "timeRequired": `PT${minutes}M` } : {}),
     ...(content ? { "wordCount": wordCountOf(content) } : {}),
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": url,
-    },
+    "mainEntityOfPage": { "@id": url },
   };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://tuteladebito.it/",
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Risorse",
-        "item": "https://tuteladebito.it/risorse",
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": article.title,
-        "item": url,
-      },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "Risorse", "item": `${SITE}/risorse` },
+      { "@type": "ListItem", "position": 3, "name": article.title, "item": url },
     ],
   };
 
-  const faqBlock = content?.find((b) => b.type === "faq");
-  const faqSchema = faqBlock?.type === "faq"
+  // Tutti i blocchi FAQ dell'articolo, non solo il primo.
+  const faqItems = (content ?? []).flatMap((b) => (b.type === "faq" ? b.items : []));
+  const faqSchema = faqItems.length
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": faqBlock.items.map((f) => ({
+        "@id": `${url}#faq`,
+        "inLanguage": "it-IT",
+        "mainEntity": faqItems.map((f) => ({
           "@type": "Question",
           "name": f.q,
           "acceptedAnswer": { "@type": "Answer", "text": f.a },
@@ -249,7 +387,27 @@ const buildSchemas = (article: ArticleMeta, content?: Block[]) => {
       }
     : null;
 
-  return { articleSchema, breadcrumbSchema, faqSchema };
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": url,
+    "url": url,
+    "name": article.title,
+    "description": article.excerpt,
+    "inLanguage": "it-IT",
+    "isPartOf": { "@id": WEBSITE_ID },
+    "primaryImageOfPage": { "@type": "ImageObject", "url": image },
+    "breadcrumb": { "@id": `${url}#breadcrumb` },
+    "mainEntity": { "@id": `${url}#article` },
+    "datePublished": published,
+    "dateModified": modified,
+    // Volutamente niente `lastReviewed`: dichiarerebbe una revisione legale
+    // formale dei contenuti. Va aggiunto solo quando lo studio la esegue davvero.
+    "speakable": speakable,
+    "publisher": { "@id": ORG_ID },
+  };
+
+  return { articleSchema, breadcrumbSchema, faqSchema, webPageSchema };
 };
 
 interface SidebarProps {
@@ -532,11 +690,29 @@ const Articolo = () => {
   if (!slug) return <Navigate to="/risorse" replace />;
   // Full content is available synchronously so the article body is present in the
   // prerendered static HTML (SSG) — crawlers and AI engines read it without JS.
-  const article = getArticleContent(slug);
-  if (!article) return <Navigate to="/risorse" replace />;
+  const content = getArticleContent(slug);
+  if (!content) return <Navigate to="/risorse" replace />;
+  // I metadati canonici sono quelli di articlesMeta (la stessa fonte che
+  // alimenta liste e correlati): sovrascrivono la copia dentro il file
+  // dell'articolo, così i campi AEO si scrivono in un posto solo.
+  const article: Article = { ...content, ...(getArticleMeta(slug) ?? {}) };
 
   const related = getRelated(slug, 3);
-  const { articleSchema, breadcrumbSchema, faqSchema } = buildSchemas(article, article.content);
+  const { articleSchema, breadcrumbSchema, faqSchema, webPageSchema } = buildSchemas(
+    article,
+    article.content,
+  );
+  // I correlati vanno inseriti dopo le prime due sezioni: abbastanza in alto da
+  // essere letti, abbastanza in basso da non interrompere la risposta iniziale.
+  const h2Positions = article.content.reduce<number[]>((acc, b, i) => {
+    if (b.type === "h2") acc.push(i);
+    return acc;
+  }, []);
+  const inlineRelatedAt = h2Positions.length >= 4 ? h2Positions[2] : -1;
+
+  const publishedISO = toISODate(article.date) ?? article.date;
+  const modifiedISO = lastModifiedISO(article) ?? publishedISO;
+  const updatedLabel = formatISODateIT(article.updatedISO);
   // SERP-length title/description (fallback to the long H1/excerpt if not tuned).
   const seo = getArticleSeo(slug);
   const seoTitle = seo?.seoTitle ?? `${article.title} | Tutela Debito`;
@@ -544,8 +720,8 @@ const Articolo = () => {
   const ogImage = article.coverImage
     ? (article.coverImage.startsWith("http")
         ? article.coverImage
-        : `https://tuteladebito.it${article.coverImage}`)
-    : "https://tuteladebito.it/og-image.png";
+        : `https://www.tuteladebito.it${article.coverImage}`)
+    : "https://www.tuteladebito.it/og-image.png";
 
   return (
     <>
@@ -554,7 +730,7 @@ const Articolo = () => {
         description={seoDescription}
         keywords={article.keywords?.join(", ")}
         robots="index, follow, max-image-preview:large, max-snippet:-1"
-        canonical={`https://tuteladebito.it/risorse/${article.slug}`}
+        canonical={`https://www.tuteladebito.it/risorse/${article.slug}`}
         ogType="article"
         ogTitle={article.title}
         ogDescription={article.excerpt}
@@ -563,10 +739,10 @@ const Articolo = () => {
           { name: "author", content: article.author },
           { property: "article:author", content: article.author },
           { property: "article:section", content: article.category },
-          { property: "article:published_time", content: toISODate(article.date) ?? article.date },
-          { property: "article:modified_time", content: toISODate(article.date) ?? article.date },
+          { property: "article:published_time", content: publishedISO },
+          { property: "article:modified_time", content: modifiedISO },
         ]}
-        jsonLd={[articleSchema, breadcrumbSchema, faqSchema]}
+        jsonLd={[webPageSchema, articleSchema, breadcrumbSchema, faqSchema]}
       />
 
       <div className="min-h-screen bg-background flex flex-col">
@@ -607,6 +783,15 @@ const Articolo = () => {
                   <span className="text-sm text-foreground/60 flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {article.date}</span>
                   <span className="text-sm text-foreground/60 flex items-center gap-1.5"><Clock className="w-4 h-4" /> {article.readTime}</span>
                   <span className="text-sm text-foreground/60 flex items-center gap-1.5"><User className="w-4 h-4" /> {article.author}</span>
+                  {updatedLabel && (
+                    // Freschezza dichiarata in chiaro: su materia giuridica in
+                    // continua evoluzione è un criterio di selezione sia per
+                    // Google sia per gli assistenti AI.
+                    <span className="text-sm text-gold-dark font-semibold flex items-center gap-1.5">
+                      <RefreshCw className="w-4 h-4" /> Aggiornato al{" "}
+                      <time dateTime={article.updatedISO}>{updatedLabel}</time>
+                    </span>
+                  )}
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-5">
                   {article.title}
@@ -624,7 +809,48 @@ const Articolo = () => {
               <div className="grid lg:grid-cols-[1fr_320px] gap-8 lg:gap-12 max-w-7xl mx-auto">
                 {/* Main content */}
                 <div className="min-w-0">
-                  <article>{article.content.map(renderBlock)}</article>
+                  <article>
+                    {/* Blocco risposta: 40-70 parole autoconsistenti in cima al
+                        corpo. È il passaggio che ChatGPT, Claude, Perplexity e
+                        AI Overviews estraggono e citano; senza, l'engine deve
+                        riassumere 5.000 parole e quasi sempre cita altri. */}
+                    {article.answer && (
+                      <div className="mb-9 rounded-2xl border border-gold/40 bg-gold/[0.07] p-6 lg:p-7">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Zap className="w-4 h-4 text-gold-dark" />
+                          <h2 className="text-sm font-bold uppercase tracking-wider text-gold-dark m-0">
+                            Risposta rapida
+                          </h2>
+                        </div>
+                        <p className="td-answer text-lg lg:text-xl text-navy leading-relaxed font-medium">
+                          {renderText(article.answer)}
+                        </p>
+
+                        {!!article.takeaways?.length && (
+                          <>
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-navy/60 mt-6 mb-3">
+                              In sintesi
+                            </h3>
+                            <ul className="space-y-2">
+                              {article.takeaways.map((t, j) => (
+                                <li key={j} className="flex items-start gap-2.5 text-foreground/85 leading-relaxed">
+                                  <Check className="w-4 h-4 text-gold-dark mt-1 shrink-0" />
+                                  <span>{renderText(t)}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
+                      </div>
+                    )}
+
+                    {article.content.map((b, i) => (
+                      <Fragment key={i}>
+                        {i === inlineRelatedAt && <InlineRelated items={related} />}
+                        {renderBlock(b, i)}
+                      </Fragment>
+                    ))}
+                  </article>
 
                   {/* CTA box */}
                   <div className="mt-12 bg-navy text-white rounded-2xl p-7 lg:p-9">

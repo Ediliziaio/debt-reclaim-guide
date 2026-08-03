@@ -134,7 +134,7 @@ const Servizi = () => {
         description="Aree di competenza dello studio: esdebitazione del privato (L. 3/2012 e CCII), composizione negoziata della crisi d'impresa, contenzioso tributario, opposizione esecuzioni e pignoramenti."
         keywords="esdebitazione, crisi d'impresa, contenzioso tributario, opposizione pignoramento, composizione negoziata, piano del consumatore, liquidazione controllata"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/servizi"
+        canonical="https://www.tuteladebito.it/servizi"
         ogTitle="Servizi | Tutela Debito"
         ogDescription="Esdebitazione, crisi d'impresa, contenzioso tributario, opposizione esecuzioni."
         jsonLd={[
@@ -142,14 +142,14 @@ const Servizi = () => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://tuteladebito.it/servizi" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://www.tuteladebito.it/servizi" },
             ],
           },
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            "provider": { "@type": "LegalService", "name": "Tutela Debito", "url": "https://tuteladebito.it" },
+            "provider": { "@type": "LegalService", "name": "Tutela Debito", "url": "https://www.tuteladebito.it" },
             "areaServed": { "@type": "Country", "name": "Italia" },
             "serviceType": [
               "Esdebitazione del privato",

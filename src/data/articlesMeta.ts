@@ -449,6 +449,27 @@ export const articlesMeta: ArticleMeta[] = [
     intro: "Il pignoramento dello stipendio (o della pensione) è una delle azioni esecutive più diffuse: il creditore, in possesso di un titolo esecutivo, può chiedere al giudice di sottrarre una quota della retribuzione direttamente dalla busta paga, attraverso il datore di lavoro. La legge italiana stabilisce limiti precisi e definisce i casi in cui il pignoramento può essere più o meno ampio. Conoscere queste regole è essenziale sia per difendersi, sia per programmare la propria capacità economica residua.",
   },
   {
+    slug: "rottamazione-quinquies",
+    title: "Rottamazione quinquies 2026: quali debiti rientrano, come si paga e cosa succede se si salta una rata",
+    excerpt:
+      "La rottamazione quinquies (Legge di Bilancio 2026) azzera sanzioni, interessi di mora e aggio sui carichi affidati dal 2000 al 2023 da omesso versamento. Piano fino a 54 rate bimestrali, calendario 2026, regole di decadenza e alternative per chi non ha aderito entro il 30 aprile 2026.",
+    category: "Tributario",
+    date: "Agosto 2026",
+    readTime: "16 min",
+    author: "Avv. Armando Rossi",
+    cover: "from-gold-dark to-gold",
+    coverImage: "/covers/rottamazione-quinquies.png",
+    keywords: [
+      "rottamazione quinquies",
+      "definizione agevolata 2026",
+      "rottamazione cartelle 2026",
+      "54 rate bimestrali",
+      "decadenza rottamazione",
+    ],
+    intro:
+      "La rottamazione quinquies è la definizione agevolata dei carichi affidati all'Agente della Riscossione introdotta dalla Legge di Bilancio 2026. Consente di pagare il solo capitale, azzerando sanzioni, interessi di mora e aggio, con una dilazione che può arrivare a nove anni. Rispetto alle edizioni precedenti ha un perimetro più stretto — riguarda i debiti da omesso versamento, non quelli da accertamento — e un calendario di pagamento che è già entrato nel vivo. Questa guida ricostruisce ambito applicativo, importi, scadenze, cause di decadenza e le alternative per chi non ha presentato domanda nei termini.",
+  },
+  {
     slug: "rottamazione-quater",
     title: "Rottamazione quater: come funziona, a chi conviene e quali alternative valutare",
     excerpt: "La rottamazione quater consente di pagare le cartelle senza sanzioni né interessi di mora. Vantaggi reali, limiti operativi, casi in cui conviene davvero e alternative percorribili (ricorso, prescrizione, sovraindebitamento).",
@@ -459,7 +480,7 @@ export const articlesMeta: ArticleMeta[] = [
     cover: "from-gold-dark to-gold",
     coverImage: "/covers/rottamazione-quater.png",
     keywords: ["rottamazione quater", "definizione agevolata cartelle", "rottamazione cartelle", "condono cartelle", "AdER pagamento agevolato"],
-    intro: "La cosiddetta 'rottamazione quater' è l'ultima delle definizioni agevolate dei carichi affidati all'Agente della Riscossione introdotte nel nostro ordinamento. Consente, in sostanza, di pagare il solo capitale dovuto senza sanzioni e senza interessi di mora, con una rateizzazione su più anni. È uno strumento potenzialmente vantaggioso, ma non automaticamente conveniente: aderire significa rinunciare al contenzioso, e in molti casi una verifica preventiva della legittimità delle cartelle può rivelare alternative più favorevoli.",
+    intro: "La cosiddetta 'rottamazione quater' è la definizione agevolata dei carichi affidati all'Agente della Riscossione introdotta dalla Legge 197/2022. Consente di pagare il solo capitale dovuto senza sanzioni e senza interessi di mora, con una rateizzazione su più anni. I termini di adesione sono chiusi e la misura riguarda oggi i piani già in corso: per i carichi affidati fino al 31 dicembre 2023 la definizione di riferimento è la rottamazione quinquies. Aderire a una definizione agevolata significa comunque rinunciare al contenzioso, e in molti casi una verifica preventiva della legittimità delle cartelle rivela alternative più favorevoli.",
   },
   {
     slug: "piano-consumatore",

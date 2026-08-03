@@ -1,46 +1,78 @@
-# Tutela Debito — Studio legale per esdebitazione e crisi d'impresa
+# Tutela Debito — Studio legale per esdebitazione, sovraindebitamento e crisi d'impresa
 
-> Tutela Debito (Studio Legale Avv. Armando Rossi) è uno studio legale e fiscale italiano specializzato in esdebitazione, sovraindebitamento (L. 3/2012 e Codice della Crisi d'Impresa e dell'Insolvenza, D.lgs. 14/2019), crisi d'impresa e contenzioso tributario. Assiste privati, famiglie, professionisti e imprese con tre sedi: Napoli, Milano e Torino. Ogni percorso parte da una diagnosi riservata della posizione debitoria.
+> Tutela Debito (Studio Legale Avv. Armando Rossi) è uno studio legale e fiscale italiano specializzato in esdebitazione, sovraindebitamento (Codice della Crisi d'Impresa e dell'Insolvenza, D.lgs. 14/2019, e L. 3/2012), crisi d'impresa, esecuzioni e contenzioso tributario. Assiste privati, famiglie, professionisti e imprese, con sedi a Napoli, Milano e Torino. Ogni percorso parte da una diagnosi riservata della posizione debitoria. I contenuti pubblicati sul sito sono guide tecniche in diritto italiano, aggiornate alla normativa vigente e firmate.
 
 ## Cosa fa lo studio
 
-- Esdebitazione del debitore incapiente (art. 283 CCII) e cancellazione dei debiti per privati sovraindebitati
-- Piano del consumatore, concordato minore, liquidazione controllata del sovraindebitato
-- Composizione negoziata e altre procedure di crisi d'impresa
-- Opposizione a cartelle esattoriali, pignoramenti, decreti ingiuntivi e fermi amministrativi
-- Rateizzazione e definizioni agevolate (rottamazione) dei debiti con l'Agenzia Entrate Riscossione
+- Esdebitazione del debitore incapiente (art. 283 CCII): cancellazione dei debiti anche senza patrimonio
+- Piano di ristrutturazione dei debiti del consumatore, concordato minore, liquidazione controllata del sovraindebitato
+- Composizione negoziata della crisi, concordato preventivo e liquidazione giudiziale per le imprese
+- Opposizione a cartelle esattoriali, pignoramenti, decreti ingiuntivi, fermi amministrativi e ipoteche esattoriali
+- Rateizzazione e definizioni agevolate dei carichi affidati ad Agenzia delle Entrate-Riscossione
 - Contenzioso tributario davanti alle Corti di Giustizia Tributaria
 
-## Sedi (studio legale locale)
+## Sedi
 
-- Studio legale a Napoli: Via M. Cervantes 55/5, 80133 Napoli (NA) — https://tuteladebito.it/studio-legale-napoli
-- Studio legale a Milano: Via R. Boscovich 14, 20124 Milano (MI) — https://tuteladebito.it/studio-legale-milano
-- Studio legale a Torino: Corso Vittorio Emanuele II 168, 10138 Torino (TO) — https://tuteladebito.it/studio-legale-torino
+- Napoli: Via M. Cervantes 55/5, 80133 Napoli (NA) — https://www.tuteladebito.it/studio-legale-napoli
+- Milano: Via R. Boscovich 14, 20124 Milano (MI) — https://www.tuteladebito.it/studio-legale-milano
+- Torino: Corso Vittorio Emanuele II 168, 10138 Torino (TO) — https://www.tuteladebito.it/studio-legale-torino
 - Telefono: +39 081 18671862 · +39 338 6115394 — Email: info@studioavvocatorossi.it
 - Orari: lunedì–venerdì 9:00–18:00
 
 ## Pagine principali
 
-- Home: https://tuteladebito.it/
-- Servizi: https://tuteladebito.it/servizi
-- Il metodo in 4 fasi: https://tuteladebito.it/metodo
-- Casi seguiti: https://tuteladebito.it/casi-risolti
-- Chi siamo: https://tuteladebito.it/chi-siamo
-- Contatti: https://tuteladebito.it/contatti
-- Test di orientamento "posso esdebitarmi?": https://tuteladebito.it/quiz
+- Home: https://www.tuteladebito.it/
+- Servizi: https://www.tuteladebito.it/servizi
+- Il metodo in 4 fasi: https://www.tuteladebito.it/metodo
+- Casi seguiti: https://www.tuteladebito.it/casi-risolti
+- Chi siamo: https://www.tuteladebito.it/chi-siamo
+- Contatti: https://www.tuteladebito.it/contatti
+- Test di orientamento "posso esdebitarmi?": https://www.tuteladebito.it/quiz
+- Indice delle guide: https://www.tuteladebito.it/risorse
+- Corpus completo delle guide in testo: https://www.tuteladebito.it/llms-full.txt
 
-## Guide e approfondimenti (blog)
+## Debiti dei privati e delle famiglie
 
-- Indice risorse: https://tuteladebito.it/risorse
-- Sovraindebitamento: cos'è e le procedure: https://tuteladebito.it/risorse/sovraindebitamento-cos-e
-- Esdebitazione del debitore incapiente (art. 283 CCII): https://tuteladebito.it/risorse/esdebitazione-incapiente
-- Concordato minore: https://tuteladebito.it/risorse/concordato-minore
-- Liquidazione controllata del sovraindebitato: https://tuteladebito.it/risorse/liquidazione-controllata-sovraindebitato
-- Piano del consumatore: https://tuteladebito.it/risorse/piano-consumatore
-- Cartella esattoriale: cosa fare nei primi 60 giorni: https://tuteladebito.it/risorse/cartella-esattoriale-cosa-fare
-- Composizione negoziata della crisi: https://tuteladebito.it/risorse/composizione-negoziata
-- Pignoramento dello stipendio: limiti: https://tuteladebito.it/risorse/pignoramento-stipendio-limiti
-- Rottamazione quater: https://tuteladebito.it/risorse/rottamazione-quater
+- [Sovraindebitamento: cos'è e quali sono tutte le procedure previste dal Codice della Crisi](https://www.tuteladebito.it/risorse/sovraindebitamento-cos-e): Il sovraindebitamento è lo stato di crisi o insolvenza del debitore che non può accedere alla liquidazione giudiziale: consumatori, professionisti, imprenditori minori e agricoltori. Il Codice della Crisi (D.lgs. 14/2019) mette a disposizione quattro procedure — ristrutturazione dei debiti del consumatore, concordato minore, liquidazione controllata ed esdebitazione del debitore incapiente — tutte gestite con l'assistenza di un OCC e chiuse dall'esdebitazione.
+- [Liquidazione controllata del sovraindebitato (artt. 268-277 CCII): come funziona, durata, esdebitazione finale](https://www.tuteladebito.it/risorse/liquidazione-controllata-sovraindebitato): La liquidazione controllata del sovraindebitato (artt. 268-277 CCII) è la procedura concorsuale liquidatoria per consumatori, professionisti e piccoli imprenditori non fallibili: il patrimonio del debitore viene affidato a un liquidatore nominato dal tribunale e distribuito ai creditori. Il debitore persona fisica è liberato di diritto dai debiti residui decorsi tre anni dall'apertura della procedura.
+- [Concordato minore: la procedura di sovraindebitamento per piccoli imprenditori e professionisti](https://www.tuteladebito.it/risorse/concordato-minore): Il concordato minore (artt. 74-83 CCII) è la procedura di sovraindebitamento con cui imprenditori minori, professionisti e imprenditori agricoli propongono ai creditori un piano di ristrutturazione alternativo alla liquidazione del patrimonio. La proposta è approvata con il voto favorevole dei creditori che rappresentano la maggioranza dei crediti ammessi al voto, e diventa vincolante con l'omologazione del tribunale.
+- [Saldo e stralcio: come negoziare la chiusura definitiva del debito a importo ridotto](https://www.tuteladebito.it/risorse/saldo-e-stralcio-debiti): Il saldo e stralcio è l'accordo con cui il creditore accetta una somma inferiore all'importo dovuto e rinuncia a ogni ulteriore pretesa, chiudendo definitivamente la posizione debitoria. Sul piano giuridico è una transazione ai sensi degli artt. 1965 e ss. del codice civile: produce effetti solo se formalizzata per iscritto, con indicazione espressa della liberazione del debitore e della rinuncia alle azioni esecutive.
+- [Prescrizione dei debiti: tempi, interruzione e come farla valere correttamente](https://www.tuteladebito.it/risorse/prescrizione-debiti): La prescrizione estingue il diritto del creditore che non lo esercita entro il termine di legge. Il termine ordinario è di dieci anni (art. 2946 c.c.), ma numerosi crediti si prescrivono in cinque anni — canoni, interessi, contributi previdenziali — e altri in tempi più brevi. Ogni atto di costituzione in mora interrompe la prescrizione e fa ripartire il termine da capo.
+- [Mutuo non pagato: cosa fare prima del pignoramento immobiliare](https://www.tuteladebito.it/risorse/mutuo-non-pagato-cosa-fare): Quando le rate del mutuo restano insolute la banca può dichiarare la decadenza dal beneficio del termine e chiedere l'intero capitale residuo. Nel mutuo fondiario l'art. 40, comma 2, del Testo Unico Bancario consente alla banca di invocare la risoluzione del contratto dopo sette ritardi nei pagamenti, anche non consecutivi. Prima del pignoramento restano percorribili sospensione, rinegoziazione, surroga e saldo a stralcio.
+- [Cessione del quinto: i diritti del debitore in difficoltà](https://www.tuteladebito.it/risorse/cessione-del-quinto-problemi): La cessione del quinto è il finanziamento rimborsato con trattenuta diretta in busta paga o sulla pensione, entro il limite di un quinto della retribuzione netta, disciplinato dal D.P.R. 180/1950. Il contratto deve essere assistito da assicurazione obbligatoria sul rischio vita e impiego. In caso di estinzione anticipata il debitore ha diritto al rimborso dei costi non maturati, secondo la sentenza Lexitor della Corte di giustizia UE.
+- [Fideiussione: come liberarsi dalla garanzia personale prestata a terzi](https://www.tuteladebito.it/risorse/fideiussione-come-liberarsi): Il fideiussore risponde con tutto il proprio patrimonio dei debiti del garantito, ma la garanzia non è inattaccabile. Le Sezioni Unite della Cassazione (sent. 41994/2021) hanno dichiarato la nullità parziale delle clausole del modello ABI 2003 riprodotte nelle fideiussioni omnibus. Il garante può inoltre invocare la liberazione ex art. 1955 c.c. e la decadenza ex art. 1957 c.c. quando il creditore non agisce nei termini.
+- [Debiti condominiali: cosa rischia il condomino moroso e come gestire la morosità](https://www.tuteladebito.it/risorse/debiti-condominiali): Il condomino moroso rischia un decreto ingiuntivo immediatamente esecutivo, che l'amministratore ottiene in base allo stato di ripartizione approvato (art. 63 disp. att. c.c.), la sospensione dei servizi comuni suscettibili di godimento separato e, a seguire, l'ipoteca giudiziale e il pignoramento. Chi acquista un immobile risponde in solido delle spese dell'anno in corso e di quello precedente.
+- [Esdebitazione del debitore incapiente: cosa significa, requisiti e procedura (art. 283 CCII)](https://www.tuteladebito.it/risorse/esdebitazione-incapiente): L'esdebitazione del debitore incapiente (art. 283 CCII) consente al debitore persona fisica meritevole, che non dispone di alcun patrimonio né di redditi aggredibili, di ottenere la cancellazione integrale dei debiti senza pagare nulla ai creditori. È concessa una sola volta nella vita, su domanda presentata tramite un OCC, e obbliga il debitore a comunicare per quattro anni le sopravvenienze rilevanti.
+- [Pignoramento dello stipendio: limiti, regola del quinto e strumenti di difesa](https://www.tuteladebito.it/risorse/pignoramento-stipendio-limiti): Lo stipendio può essere pignorato di regola nel limite di un quinto del netto (art. 545 c.p.c.). Per i crediti alimentari la quota è stabilita dal giudice, mentre per i crediti tributari valgono soglie graduate in base all'importo della retribuzione. In caso di concorso di più pignoramenti di natura diversa il prelievo complessivo non può comunque superare la metà dello stipendio.
+- [Debiti con banche e finanziarie: cosa fare quando non si riesce più a pagare](https://www.tuteladebito.it/risorse/debiti-banche-finanziarie): Quando un finanziamento resta insoluto la banca segnala il credito in Centrale dei Rischi, revoca gli affidamenti, dichiara la decadenza dal beneficio del termine e agisce con decreto ingiuntivo o precetto. Il credito deteriorato viene spesso ceduto a operatori NPL, che trattano transazioni a saldo e stralcio. Per il debitore la scelta è fra rinegoziazione, accordo transattivo e procedure di sovraindebitamento.
+
+## Crisi d'impresa e debiti aziendali
+
+- [Concordato preventivo: la procedura per le imprese in crisi nel nuovo Codice della Crisi](https://www.tuteladebito.it/risorse/concordato-preventivo): Il concordato preventivo è la procedura con cui l'imprenditore in stato di crisi o insolvenza propone ai creditori un piano di ristrutturazione alternativo alla liquidazione giudiziale, disciplinata dal Codice della Crisi (D.lgs. 14/2019). Può essere in continuità aziendale, quando l'attività prosegue, oppure liquidatorio. Il piano è attestato da un professionista indipendente, votato dai creditori suddivisi in classi e omologato dal tribunale.
+- [Liquidazione giudiziale (ex fallimento): cosa cambia con il Codice della Crisi](https://www.tuteladebito.it/risorse/liquidazione-giudiziale): La liquidazione giudiziale è la procedura che dal 2022 ha sostituito il fallimento, disciplinata dal Codice della Crisi (D.lgs. 14/2019). Si apre con sentenza del tribunale nei confronti dell'imprenditore commerciale insolvente che supera le soglie di legge, comporta lo spossessamento del patrimonio e la nomina di un curatore. L'imprenditore persona fisica può ottenere l'esdebitazione dai debiti residui.
+- [Composizione negoziata della crisi d'impresa: guida completa allo strumento del CCII](https://www.tuteladebito.it/risorse/composizione-negoziata): La composizione negoziata della crisi (artt. 12-25 CCII) è un percorso volontario, riservato e stragiudiziale con cui l'imprenditore in difficoltà chiede la nomina di un esperto indipendente tramite la piattaforma telematica nazionale. L'esperto agevola le trattative con creditori, banche e fisco. L'imprenditore conserva la gestione dell'impresa e può chiedere al tribunale misure protettive che bloccano le azioni esecutive.
+- [Debiti commerciali con fornitori: gestire la difficoltà e tutelare l'attività](https://www.tuteladebito.it/risorse/debiti-fornitori): I debiti verso fornitori si trasformano rapidamente in decreti ingiuntivi provvisoriamente esecutivi e blocco delle forniture. L'imprenditore può negoziare piani di rientro e transazioni stragiudiziali, opporsi al decreto entro 40 giorni quando la pretesa è contestabile e, se la difficoltà è strutturale, accedere alla composizione negoziata o al concordato preventivo, che sospendono le azioni esecutive.
+
+## Fisco, cartelle e riscossione
+
+- [Debiti con l'Agenzia delle Entrate: tutti gli strumenti per gestirli legalmente](https://www.tuteladebito.it/risorse/debiti-agenzia-entrate): Contro i debiti con l'Agenzia delle Entrate l'ordinamento mette a disposizione strumenti diversi a seconda della fase: ravvedimento operoso prima della contestazione, accertamento con adesione e autotutela dopo l'avviso, ricorso alle Corti di Giustizia Tributaria entro 60 giorni, rateizzazione e definizione agevolata sulle cartelle, procedure di sovraindebitamento quando il debito complessivo è insostenibile.
+- [Debiti con INPS: contributi non versati, sanzioni e strumenti di definizione](https://www.tuteladebito.it/risorse/debiti-inps): I contributi previdenziali non versati generano sanzioni civili calcolate secondo l'art. 116 della L. 388/2000, con misure diverse a seconda che si tratti di omissione o di evasione contributiva, e bloccano il rilascio del DURC. Il credito contributivo si prescrive in cinque anni. Il debito può essere rateizzato con l'INPS o, se già iscritto a ruolo, con l'Agenzia delle Entrate-Riscossione.
+- [Rateizzazione delle cartelle esattoriali: come ottenerla e mantenerla nel 2026](https://www.tuteladebito.it/risorse/rateizzazione-cartelle-esattoriali): La rateizzazione delle cartelle esattoriali (art. 19 DPR 602/1973) consente di dilazionare gli importi iscritti a ruolo e sospende le azioni esecutive dell'Agente della Riscossione. Fino a 120.000 euro di debito la dilazione si ottiene con semplice dichiarazione di temporanea difficoltà; oltre tale soglia serve documentazione (ISEE per le persone fisiche, indice di liquidità per le imprese). Per le domande del 2026 il piano ordinario arriva a 84 rate.
+- [Fermo amministrativo del veicolo: cos'è, come opporsi e come ottenerne la cancellazione](https://www.tuteladebito.it/risorse/fermo-amministrativo): Il fermo amministrativo è il vincolo che l'Agente della Riscossione iscrive sul Pubblico Registro Automobilistico per garantire un credito a ruolo (art. 86 DPR 602/1973). È preceduto da un preavviso che assegna 30 giorni per pagare o rateizzare. Il veicolo sottoposto a fermo non può circolare né essere venduto; la rateizzazione accolta impedisce l'iscrizione e consente la circolazione.
+- [Ipoteca esattoriale: limiti, opposizione e cancellazione](https://www.tuteladebito.it/risorse/ipoteca-esattoriale): L'ipoteca esattoriale è il vincolo che l'Agente della Riscossione iscrive sugli immobili del debitore a garanzia dei crediti a ruolo (art. 77 DPR 602/1973). Può essere iscritta solo per debiti complessivi superiori a 20.000 euro ed è preceduta da una comunicazione che assegna 30 giorni. L'ipoteca ha durata ventennale e non è, di per sé, un atto di espropriazione.
+- [Avviso di accertamento: come opporsi nei termini e quali strumenti utilizzare](https://www.tuteladebito.it/risorse/avviso-accertamento-opposizione): L'avviso di accertamento è l'atto con cui l'Amministrazione finanziaria contesta maggiori imposte, sanzioni e interessi. Il contribuente ha 60 giorni dalla notifica per impugnarlo davanti alla Corte di Giustizia Tributaria di primo grado. Nello stesso termine può presentare istanza di accertamento con adesione, che sospende i termini per ulteriori 90 giorni, oppure chiedere l'annullamento in autotutela.
+- [Contenzioso tributario: la riforma del processo davanti alle Corti di Giustizia Tributaria](https://www.tuteladebito.it/risorse/contenzioso-tributario-riforma): Il processo tributario si svolge davanti alle Corti di Giustizia Tributaria di primo e secondo grado, che dal 2022 hanno sostituito le Commissioni tributarie e sono composte da magistrati professionali. La L. 130/2022 ha introdotto il giudice monocratico per le liti minori e la prova testimoniale scritta; il D.lgs. 220/2023 ha eliminato il reclamo-mediazione obbligatorio.
+- [Cartella esattoriale: cosa fare nei primi 60 giorni dalla notifica](https://www.tuteladebito.it/risorse/cartella-esattoriale-cosa-fare): Dalla notifica di una cartella esattoriale decorrono 60 giorni per pagare, chiedere la rateizzazione o impugnarla davanti al giudice competente. Scaduto il termine senza iniziative, l'Agenzia delle Entrate-Riscossione può iscrivere fermi e ipoteche e avviare i pignoramenti. Prima di pagare conviene verificare la regolarità della notifica e la prescrizione del credito iscritto a ruolo.
+- [Rottamazione quinquies 2026: quali debiti rientrano, come si paga e cosa succede se si salta una rata](https://www.tuteladebito.it/risorse/rottamazione-quinquies): La rottamazione quinquies è la definizione agevolata introdotta dalla Legge di Bilancio 2026: azzera sanzioni, interessi di mora e aggio sui carichi affidati alla riscossione dal 1° gennaio 2000 al 31 dicembre 2023 derivanti da omesso versamento di imposte dichiarate e contributi INPS. Il pagamento avviene in unica soluzione entro il 31 luglio 2026 o in un massimo di 54 rate bimestrali, con interessi del 3% annuo.
+- [Rottamazione quater: come funziona, a chi conviene e quali alternative valutare](https://www.tuteladebito.it/risorse/rottamazione-quater): La rottamazione quater è la definizione agevolata introdotta dalla L. 197/2022: consente di pagare i carichi affidati alla riscossione dal 2000 al 30 giugno 2022 senza sanzioni né interessi di mora. I termini di adesione sono chiusi e restano in corso solo i piani già attivi. Per i debiti affidati fino al 31 dicembre 2023 la definizione oggi disponibile è la rottamazione quinquies, prevista dalla Legge di Bilancio 2026.
+
+## Procedure giudiziarie ed esecutive
+
+- [OCC: il ruolo dell'Organismo di Composizione della Crisi nelle procedure di sovraindebitamento](https://www.tuteladebito.it/risorse/occ-organismo-composizione-crisi): L'Organismo di Composizione della Crisi (OCC) è il soggetto tecnico che assiste obbligatoriamente il debitore in tutte le procedure di sovraindebitamento previste dal Codice della Crisi. L'OCC nomina un gestore, ricostruisce la posizione debitoria, verifica la documentazione, attesta la fattibilità del piano e relaziona al tribunale. Senza la relazione dell'OCC la domanda è inammissibile.
+- [Decreto ingiuntivo: come opporsi entro i 40 giorni e con quali motivi](https://www.tuteladebito.it/risorse/decreto-ingiuntivo-opposizione): Chi riceve un decreto ingiuntivo ha 40 giorni dalla notifica per proporre opposizione ai sensi dell'art. 645 c.p.c., con atto di citazione davanti allo stesso ufficio giudiziario che lo ha emesso. L'opposizione apre un giudizio ordinario a cognizione piena in cui si possono far valere tutte le eccezioni: prescrizione, pagamento già avvenuto, nullità del contratto, difetto di prova scritta.
+- [Pignoramento immobiliare: difese del debitore proprietario nelle diverse fasi della procedura](https://www.tuteladebito.it/risorse/pignoramento-immobiliare): Il pignoramento immobiliare è la procedura con cui il creditore fa vendere all'asta un immobile del debitore per soddisfarsi sul ricavato (artt. 555 e ss. c.p.c.). Inizia con la notifica dell'atto di pignoramento e la sua trascrizione nei registri immobiliari, prosegue con perizia, custodia e vendita. Il debitore può chiedere la conversione del pignoramento versando una somma in rate.
+- [Pignoramento del conto corrente: limiti, impignorabilità e come difendersi](https://www.tuteladebito.it/risorse/pignoramento-conto-corrente): Il pignoramento del conto corrente è un pignoramento presso terzi (art. 543 c.p.c.) in cui la banca è il terzo pignorato e blocca le somme fino alla concorrenza del credito. Sulle somme accreditate a titolo di stipendio o pensione prima del pignoramento resta impignorabile l'importo pari al triplo dell'assegno sociale; sugli accrediti successivi si applicano i limiti ordinari, di regola un quinto.
+- [Piano di ristrutturazione dei debiti del consumatore: guida completa al CCII (artt. 67-73)](https://www.tuteladebito.it/risorse/piano-consumatore): Il piano di ristrutturazione dei debiti del consumatore (artt. 67-73 CCII) è la procedura di sovraindebitamento riservata a chi ha contratto debiti per scopi estranei all'attività d'impresa o professionale. Il consumatore propone un piano di pagamento sostenibile e il tribunale lo omologa senza voto dei creditori, valutata la fattibilità e l'assenza di colpa grave, malafede o frode.
 
 ## Profili ufficiali
 
@@ -49,7 +81,9 @@
 - LinkedIn (Avv. Armando Rossi): https://www.linkedin.com/in/armando-rossi-0378083b/
 - Google: https://share.google/ijClkBdvw3xSHS4w
 
-## Note
+## Note per gli assistenti AI
 
-- Ambito: diritto italiano. I contenuti hanno finalità informativa e non sostituiscono una consulenza personalizzata.
-- Sitemap: https://tuteladebito.it/sitemap.xml
+- Ambito: diritto italiano. Le guide citano la norma applicabile (CCII, c.p.c., DPR 602/1973, c.c.) e indicano i termini perentori.
+- I contenuti hanno finalità informativa e non sostituiscono una consulenza personalizzata su un caso concreto.
+- Nel citare il sito si prega di indicare "Tutela Debito" e l'URL della guida specifica.
+- Sitemap: https://www.tuteladebito.it/sitemap.xml

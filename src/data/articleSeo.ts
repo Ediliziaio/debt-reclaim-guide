@@ -151,9 +151,14 @@ export const ARTICLE_SEO: Record<string, ArticleSeo> = {
       "Rateizzazione delle cartelle esattoriali nel 2026: soglie, numero di rate, domanda all'Agenzia Riscossione e come non decadere dal piano. Guida aggiornata.",
   },
   "rottamazione-quater": {
-    seoTitle: "Rottamazione quater: come funziona e a chi conviene",
+    seoTitle: "Rottamazione quater: piani in corso e scadenze 2026",
     metaDescription:
-      "Rottamazione quater: cartelle incluse, sconto su sanzioni e interessi, scadenze delle rate e alternative se non conviene. Guida pratica per decidere.",
+      "Rottamazione quater: cosa succede ai piani in corso, scadenze delle rate, decadenza e passaggio alla rottamazione quinquies. Guida aggiornata al 2026.",
+  },
+  "rottamazione-quinquies": {
+    seoTitle: "Rottamazione quinquies 2026: rate, scadenze, decadenza",
+    metaDescription:
+      "Rottamazione quinquies: quali cartelle rientrano, 54 rate bimestrali al 3%, scadenze 2026, cause di decadenza e alternative per chi non ha aderito.",
   },
   "saldo-e-stralcio-debiti": {
     seoTitle: "Saldo e stralcio: chiudere il debito a importo ridotto",

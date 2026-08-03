@@ -4,7 +4,7 @@ import TDHeader from "@/components/TDHeader";
 import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
 import TDStickyCTA from "@/components/TDStickyCTA";
-import TDMethod from "@/components/TDMethod";
+import TDMethod, { steps } from "@/components/TDMethod";
 import TDProcessFlow from "@/components/TDProcessFlow";
 import TDWhyUs from "@/components/TDWhyUs";
 import TDGuarantee from "@/components/TDGuarantee";
@@ -37,16 +37,36 @@ const Metodo = () => {
         description="Il metodo Tutela Debito in 4 fasi operative: diagnosi della posizione debitoria, definizione della strategia legale, deposito della procedura, esecuzione e chiusura."
         keywords="metodo esdebitazione, procedura sovraindebitamento, strategia legale debiti, diagnosi debiti"
         robots="index, follow, max-image-preview:large"
-        canonical="https://tuteladebito.it/metodo"
+        canonical="https://www.tuteladebito.it/metodo"
         ogDescription="Diagnosi, strategia, deposito ed esecuzione: il percorso operativo dello studio."
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tuteladebito.it/" },
-              { "@type": "ListItem", "position": 2, "name": "Metodo", "item": "https://tuteladebito.it/metodo" },
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tuteladebito.it/" },
+              { "@type": "ListItem", "position": 2, "name": "Metodo", "item": "https://www.tuteladebito.it/metodo" },
             ],
+          },
+          // HowTo: "come funziona una procedura di esdebitazione" è una domanda
+          // procedurale, e le risposte procedurali sono quelle che gli engine
+          // generativi restituiscono più volentieri sotto forma di passi.
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "@id": "https://www.tuteladebito.it/metodo#howto",
+            "name": "Come si affronta una posizione debitoria: il metodo in 4 fasi",
+            "description":
+              "Il percorso operativo dello Studio Tutela Debito per gestire una posizione debitoria: diagnosi documentale, definizione della strategia, deposito della procedura, esecuzione fino all'esdebitazione.",
+            "inLanguage": "it-IT",
+            "totalTime": "P1Y",
+            "step": steps.map((s, i) => ({
+              "@type": "HowToStep",
+              "position": i + 1,
+              "name": s.title,
+              "text": s.desc,
+              "url": `https://www.tuteladebito.it/metodo#fase-${i + 1}`,
+            })),
           },
         ]}
       />

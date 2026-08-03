@@ -44,6 +44,14 @@
       ]
     },
     {
+      "source": "/llms(-full)?.txt",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" },
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
