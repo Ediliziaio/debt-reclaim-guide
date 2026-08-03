@@ -17,7 +17,7 @@ export const meta: ArticleMeta = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/debiti-condominiali.png",
+  coverImage: "/covers/debiti-condominiali.webp",
   keywords: [
     "debiti condominio",
     "morosità condominiale",

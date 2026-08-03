@@ -16,7 +16,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/fideiussione-come-liberarsi.png",
+  coverImage: "/covers/fideiussione-come-liberarsi.webp",
   keywords: [
     "fideiussione",
     "garante",

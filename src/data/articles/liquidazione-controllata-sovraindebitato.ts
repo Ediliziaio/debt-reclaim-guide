@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/liquidazione-controllata-sovraindebitato.png",
+  coverImage: "/covers/liquidazione-controllata-sovraindebitato.webp",
   keywords: ["liquidazione controllata", "sovraindebitamento", "artt 268 CCII", "liquidazione patrimoniale", "esdebitazione persona fisica"],
   intro: "La liquidazione controllata del sovraindebitato, disciplinata dagli artt. 268-277 del Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019), rappresenta la principale procedura concorsuale liquidatoria a disposizione del debitore civile, del consumatore, del professionista e del piccolo imprenditore non assoggettabile a liquidazione giudiziale. È lo strumento attraverso cui il patrimonio viene posto a disposizione dei creditori sotto il controllo del tribunale, con esiti che — in presenza dei presupposti di legge — possono condurre all'esdebitazione finale e alla restituzione al debitore della piena capacità economica.",
 };

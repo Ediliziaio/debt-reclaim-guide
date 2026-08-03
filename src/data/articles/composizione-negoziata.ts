@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-trust to-trust-dark",
-  coverImage: "/covers/composizione-negoziata.png",
+  coverImage: "/covers/composizione-negoziata.webp",
   keywords: ["composizione negoziata", "crisi d'impresa", "CCII", "codice della crisi", "ristrutturazione debito impresa", "esperto indipendente"],
   intro: "La composizione negoziata della crisi d'impresa è una delle innovazioni più rilevanti introdotte nel nostro ordinamento. Nata nel 2021 con il D.L. 118 come risposta alla crisi pandemica e oggi pienamente integrata nel Codice della Crisi d'Impresa e dell'Insolvenza (artt. 12-25 CCII), si caratterizza per essere riservata, stragiudiziale e attivabile in via volontaria dall'imprenditore. È pensata per affrontare la difficoltà aziendale prima che si trasformi in insolvenza, quando ancora è possibile salvare il valore dell'impresa.",
 };

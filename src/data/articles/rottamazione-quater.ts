@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "13 min",
   author: "Studio Tutela Debito",
   cover: "from-gold-dark to-gold",
-  coverImage: "/covers/rottamazione-quater.png",
+  coverImage: "/covers/rottamazione-quater.webp",
   keywords: ["rottamazione quater", "definizione agevolata cartelle", "rottamazione cartelle", "condono cartelle", "AdER pagamento agevolato"],
   intro: "La cosiddetta 'rottamazione quater' è la definizione agevolata dei carichi affidati all'Agente della Riscossione introdotta dalla Legge 197/2022. Consente di pagare il solo capitale dovuto senza sanzioni e senza interessi di mora, con una rateizzazione su più anni. I termini di adesione sono chiusi e la misura riguarda oggi i piani già in corso: per i carichi affidati fino al 31 dicembre 2023 la definizione di riferimento è la rottamazione quinquies. Aderire a una definizione agevolata significa comunque rinunciare al contenzioso, e in molti casi una verifica preventiva della legittimità delle cartelle rivela alternative più favorevoli.",
 };

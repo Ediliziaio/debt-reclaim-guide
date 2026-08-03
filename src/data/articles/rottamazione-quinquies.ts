@@ -10,7 +10,7 @@ export const meta: ArticleMeta = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-gold-dark to-gold",
-  coverImage: "/covers/rottamazione-quinquies.png",
+  coverImage: "/covers/rottamazione-quinquies.webp",
   keywords: [
     "rottamazione quinquies",
     "definizione agevolata 2026",

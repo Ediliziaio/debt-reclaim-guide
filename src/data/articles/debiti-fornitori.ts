@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "14 min",
   author: "Avv. Armando Rossi",
   cover: "from-gold-dark to-navy",
-  coverImage: "/covers/debiti-fornitori.png",
+  coverImage: "/covers/debiti-fornitori.webp",
   keywords: ["debiti fornitori", "debiti commerciali", "decreto ingiuntivo fornitore", "transazione stragiudiziale", "saldo a stralcio fornitori", "composizione negoziata fornitori"],
   intro: "I debiti commerciali con i fornitori sono spesso il primo segnale visibile di una difficoltà aziendale. A differenza dei debiti bancari, gestiti in modo strutturato e con archivi creditizi formali, i debiti verso fornitori si manifestano per via diretta: solleciti, telefonate, mancate consegne, blocco delle forniture. Conoscere come gestirli — dal punto di vista legale, contabile e relazionale — è essenziale per evitare che una difficoltà temporanea si trasformi in una crisi conclamata.",
 };

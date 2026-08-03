@@ -178,6 +178,30 @@ export const toISODate = (display: string): string | undefined => {
 export const lastModifiedISO = (a: Pick<ArticleMeta, "date" | "updatedISO">): string | undefined =>
   a.updatedISO ?? toISODate(a.date);
 
+/**
+ * Varianti di una cover.
+ *
+ * L'immagine di copertina è l'elemento LCP della pagina articolo: è la prima
+ * cosa che il browser scarica e ciò che determina il momento in cui la pagina
+ * "appare". Da qui il WebP con srcset (la card in elenco non ha motivo di
+ * scaricare la versione da 1200px) e il JPEG separato per og:image, perché
+ * alcuni scraper social non leggono ancora WebP.
+ */
+export const coverSources = (coverImage?: string) => {
+  if (!coverImage) return undefined;
+  if (coverImage.startsWith("http") || !coverImage.endsWith(".webp")) {
+    return { src: coverImage, srcSet: undefined, card: coverImage, og: coverImage };
+  }
+  const base = coverImage.slice(0, -".webp".length);
+  return {
+    src: coverImage,
+    srcSet: `${base}-600.webp 600w, ${coverImage} 1200w`,
+    /** Versione da 600px per le card in elenco e nei correlati. */
+    card: `${base}-600.webp`,
+    og: `${base}.jpg`,
+  };
+};
+
 /** Data di revisione leggibile ("3 agosto 2026") per il testo "Aggiornato al…". */
 const IT_MONTH_NAMES = [
   "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",

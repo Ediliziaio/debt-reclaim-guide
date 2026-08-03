@@ -16,7 +16,7 @@ export const meta: ArticleMeta = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/mutuo-non-pagato-cosa-fare.png",
+  coverImage: "/covers/mutuo-non-pagato-cosa-fare.webp",
   keywords: [
     "mutuo non pagato",
     "rate mutuo arretrate",

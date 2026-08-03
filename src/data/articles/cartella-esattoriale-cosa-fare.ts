@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "14 min",
   author: "Studio Tutela Debito",
   cover: "from-gold to-gold-dark",
-  coverImage: "/covers/cartella-esattoriale-cosa-fare.png",
+  coverImage: "/covers/cartella-esattoriale-cosa-fare.webp",
   keywords: ["cartella esattoriale", "ricorso cartella", "agenzia entrate riscossione", "AdER", "prescrizione cartella", "rateizzazione cartelle"],
   intro: "Una cartella esattoriale notificata dall'Agenzia Entrate Riscossione apre una finestra temporale precisa entro cui prendere decisioni rilevanti. I 60 giorni successivi alla notifica sono il momento in cui si può scegliere se contestare la pretesa, aderire a una rateizzazione, valutare una definizione agevolata o, nei casi più gravi, valutare l'accesso a una procedura di sovraindebitamento. Una scelta inconsapevole, o peggio l'inazione, può precludere strade che a posteriori sarebbero state preferibili.",
 };

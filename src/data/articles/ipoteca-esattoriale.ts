@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/ipoteca-esattoriale.png",
+  coverImage: "/covers/ipoteca-esattoriale.webp",
   keywords: ["ipoteca esattoriale", "ipoteca AdER", "soglia 20000", "art 77 DPR 602/73", "cancellazione ipoteca"],
   intro: "L'ipoteca esattoriale è la misura cautelare più incisiva tra quelle a disposizione dell'Agente della Riscossione per la conservazione della garanzia patrimoniale del credito iscritto a ruolo. Disciplinata dall'art. 77 del DPR 602/1973, comporta l'iscrizione di un vincolo reale sui beni immobili del debitore, opponibile ai terzi e suscettibile di durata ventennale. La presente trattazione esamina i presupposti, la soglia di 20.000 euro, il regime della prima casa, gli strumenti di opposizione, l'autotutela e le modalità di cancellazione dell'ipoteca esattoriale alla luce della giurisprudenza più recente di legittimità e costituzionale.",
 };

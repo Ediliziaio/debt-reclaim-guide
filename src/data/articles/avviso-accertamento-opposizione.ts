@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/avviso-accertamento-opposizione.png",
+  coverImage: "/covers/avviso-accertamento-opposizione.webp",
   keywords: ["avviso accertamento", "ricorso tributario", "accertamento con adesione", "autotutela", "60 giorni"],
   intro: "L'avviso di accertamento è l'atto con cui l'Amministrazione finanziaria contesta al contribuente una maggiore imposta, sanzioni e interessi rispetto a quanto dichiarato. È un atto autoritativo, immediatamente impugnabile e, a determinate condizioni, anche immediatamente esecutivo. La sua ricezione apre una finestra temporale stretta — 60 giorni — entro la quale il contribuente deve scegliere se subirlo, definirlo in via deflattiva o impugnarlo davanti alla Corte di Giustizia Tributaria. Comprendere termini, motivazioni, strumenti di reazione e profili procedurali è essenziale per evitare la cristallizzazione di pretese spesso contestabili.",
 };

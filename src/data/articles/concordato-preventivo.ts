@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "22 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/concordato-preventivo.png",
+  coverImage: "/covers/concordato-preventivo.webp",
   keywords: [
     "concordato preventivo",
     "CCII art 84",

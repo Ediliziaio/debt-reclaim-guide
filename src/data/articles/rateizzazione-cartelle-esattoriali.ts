@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/rateizzazione-cartelle-esattoriali.png",
+  coverImage: "/covers/rateizzazione-cartelle-esattoriali.webp",
   keywords: ["rateizzazione cartelle", "dilazione cartelle", "rate AdER", "piano rateale", "art 19 DPR 602/73"],
   intro: "La rateizzazione delle cartelle esattoriali rappresenta lo strumento ordinario di gestione del debito tributario per il contribuente in temporanea difficoltà economica. Disciplinata dall'art. 19 del DPR 29 settembre 1973 n. 602 e profondamente innovata dal D.Lgs. 29 luglio 2024 n. 110 (in attuazione della delega di riforma fiscale di cui alla L. 111/2023), consente al debitore di diluire fino a 120 mensilità il pagamento degli importi iscritti a ruolo, sospendendo le azioni esecutive e cautelari dell'Agente della Riscossione. La presente guida illustra i presupposti, le procedure e le conseguenze della decadenza secondo la disciplina vigente nel 2026.",
 };

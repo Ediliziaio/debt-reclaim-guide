@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "15 min",
   author: "Avv. Armando Rossi",
   cover: "from-trust to-navy",
-  coverImage: "/covers/debiti-banche-finanziarie.png",
+  coverImage: "/covers/debiti-banche-finanziarie.webp",
   keywords: ["debiti banche", "prestiti banche", "mutuo non pagato", "fido revocato", "centrale dei rischi", "NPL", "cessione del credito", "saldo a stralcio banche", "debiti finanziarie"],
   intro: "I debiti con banche e finanziarie hanno caratteristiche peculiari rispetto agli altri tipi di esposizione: spesso sono garantiti da pegni, ipoteche o cessioni; sono registrati in archivi creditizi che incidono sulla reputazione finanziaria; possono essere ceduti a società di recupero specializzate (NPL); danno luogo a procedure esecutive con tempistiche tipiche. Capire come funziona il mondo dei debiti bancari è essenziale per affrontarli con consapevolezza, sia in fase di difficoltà sia nel momento in cui si decide la strategia di uscita.",
 };

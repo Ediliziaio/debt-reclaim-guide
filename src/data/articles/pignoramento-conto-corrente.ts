@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "20 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/pignoramento-conto-corrente.png",
+  coverImage: "/covers/pignoramento-conto-corrente.webp",
   keywords: [
     "pignoramento conto corrente",
     "art 545 cpc",

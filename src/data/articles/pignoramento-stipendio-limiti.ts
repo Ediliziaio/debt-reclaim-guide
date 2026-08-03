@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "11 min",
   author: "Avv. Armando Rossi",
   cover: "from-destructive to-navy",
-  coverImage: "/covers/pignoramento-stipendio-limiti.png",
+  coverImage: "/covers/pignoramento-stipendio-limiti.webp",
   keywords: ["pignoramento stipendio", "limiti pignoramento", "regola del quinto", "art 545 cpc", "opposizione pignoramento", "stipendio pignorabile"],
   intro: "Il pignoramento dello stipendio (o della pensione) è una delle azioni esecutive più diffuse: il creditore, in possesso di un titolo esecutivo, può chiedere al giudice di sottrarre una quota della retribuzione direttamente dalla busta paga, attraverso il datore di lavoro. La legge italiana stabilisce limiti precisi e definisce i casi in cui il pignoramento può essere più o meno ampio. Conoscere queste regole è essenziale sia per difendersi, sia per programmare la propria capacità economica residua.",
 };

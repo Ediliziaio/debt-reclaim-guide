@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "22 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/pignoramento-immobiliare.png",
+  coverImage: "/covers/pignoramento-immobiliare.webp",
   keywords: [
     "pignoramento immobiliare",
     "pignoramento casa",

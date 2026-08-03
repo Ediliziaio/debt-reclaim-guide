@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/concordato-minore.png",
+  coverImage: "/covers/concordato-minore.webp",
   keywords: ["concordato minore", "piccolo imprenditore", "professionista sovraindebitato", "artt 74-83 CCII", "ristrutturazione debiti"],
   intro: "Il concordato minore, disciplinato dagli artt. 74-83 del Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019), è la principale procedura ristrutturativa concorsuale a disposizione dei debitori non consumatori che non possano accedere alla liquidazione giudiziale né al concordato preventivo. Si rivolge a imprenditori minori, professionisti, agricoltori e — in determinati casi — al consumatore con attività cessata, consentendo loro di proporre ai creditori un piano di ristrutturazione, anche solo parzialmente satisfattivo, alternativo alla liquidazione del patrimonio.",
 };

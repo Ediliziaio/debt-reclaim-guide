@@ -9,7 +9,7 @@ import TDFinalCTA from "@/components/TDFinalCTA";
 import TDHeroBackdrop from "@/components/TDHeroBackdrop";
 import { Button } from "@/components/ui/button";
 import { FileText, Download, Clock, Calendar, User, ArrowRight, BookOpen, Users2, Scale, Building2, CheckCircle2, Sparkles, Phone, Mail, Tag, TrendingUp, Bookmark } from "lucide-react";
-import { articlesMeta as articles, toISODate } from "@/data/articles";
+import { articlesMeta as articles, coverSources, toISODate } from "@/data/articles";
 
 const guides = [
   {
@@ -232,7 +232,7 @@ const Risorse = () => {
                         <div className={`aspect-video sm:aspect-[3/4] relative overflow-hidden ${!filtered[0].coverImage ? `bg-gradient-to-br ${filtered[0].cover}` : ""}`}>
                           {filtered[0].coverImage ? (
                             <>
-                              <img src={filtered[0].coverImage} alt={filtered[0].title} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover" />
+                              <img src={coverSources(filtered[0].coverImage)?.src} srcSet={coverSources(filtered[0].coverImage)?.srcSet} sizes="(max-width: 640px) 100vw, 640px" alt={filtered[0].title} loading="eager" decoding="async" fetchPriority="high" width={1200} height={630} className="absolute inset-0 w-full h-full object-cover" />
                             </>
                           ) : (
                             <BookOpen className="w-12 h-12 text-white/70 absolute inset-0 m-auto" />
@@ -270,7 +270,7 @@ const Risorse = () => {
                         <div className={`aspect-[16/9] relative overflow-hidden ${!a.coverImage ? `bg-gradient-to-br ${a.cover}` : ""}`}>
                           {a.coverImage ? (
                             <>
-                              <img src={a.coverImage} alt={a.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+                              <img src={coverSources(a.coverImage)?.card} alt={a.title} loading="lazy" decoding="async" width={600} height={315} className="absolute inset-0 w-full h-full object-cover" />
                             </>
                           ) : (
                             <BookOpen className="w-12 h-12 text-white/70 absolute inset-0 m-auto" />

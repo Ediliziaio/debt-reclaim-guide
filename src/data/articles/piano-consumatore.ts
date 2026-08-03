@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "15 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy-light to-trust",
-  coverImage: "/covers/piano-consumatore.png",
+  coverImage: "/covers/piano-consumatore.webp",
   keywords: ["piano del consumatore", "ristrutturazione debiti consumatore", "art 67 CCII", "sovraindebitamento consumatore", "OCC", "esdebitazione"],
   intro: "Il piano di ristrutturazione dei debiti del consumatore (artt. 67-73 CCII) è una delle procedure di sovraindebitamento più utilizzate dai privati. Si rivolge a chi ha contratto debiti per scopi estranei all'attività professionale o imprenditoriale e si trova in difficoltà a farvi fronte. È uno strumento potente perché non richiede l'approvazione dei creditori: è il giudice che, verificati i presupposti, omologa il piano. Per molte famiglie in difficoltà rappresenta la via più realistica per uscire da una spirale di indebitamento.",
 };

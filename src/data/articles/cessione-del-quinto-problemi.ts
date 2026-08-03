@@ -16,7 +16,7 @@ export const meta: ArticleMeta = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/cessione-del-quinto-problemi.png",
+  coverImage: "/covers/cessione-del-quinto-problemi.webp",
   keywords: [
     "cessione del quinto",
     "DPR 180/1950",

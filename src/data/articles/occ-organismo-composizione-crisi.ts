@@ -13,7 +13,7 @@ export const meta: ArticleMeta = {
   readTime: "16 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/occ-organismo-composizione-crisi.png",
+  coverImage: "/covers/occ-organismo-composizione-crisi.webp",
   keywords: [
     "OCC",
     "organismo composizione crisi",

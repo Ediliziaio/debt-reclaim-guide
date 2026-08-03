@@ -1,3 +1,7 @@
+/* Font self-hosted: nessuna connessione a fonts.googleapis.com sul percorso
+   critico del rendering. Rigenerare con `npm run fonts`. */
+@import "./styles/fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

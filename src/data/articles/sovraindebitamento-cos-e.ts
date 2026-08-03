@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/sovraindebitamento-cos-e.png",
+  coverImage: "/covers/sovraindebitamento-cos-e.webp",
   keywords: ["sovraindebitamento", "procedure sovraindebitamento", "CCII", "L. 3/2012", "panoramica esdebitazione"],
   intro: "Il sovraindebitamento è la condizione di crisi del debitore civile o del piccolo imprenditore che, esposto a debiti insostenibili, non può accedere alle procedure concorsuali maggiori riservate agli imprenditori commerciali sopra soglia. Disciplinato originariamente dalla L. n. 3/2012 e oggi riformato organicamente dal Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019), il sistema offre quattro distinte procedure, ciascuna calibrata su specifici presupposti soggettivi e oggettivi. Comprenderne la struttura è essenziale per orientarsi e scegliere lo strumento più adatto.",
 };

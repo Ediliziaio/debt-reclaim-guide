@@ -12,7 +12,10 @@ import Metodo from "./pages/Metodo";
 import Servizi from "./pages/Servizi";
 import CasiRisolti from "./pages/CasiRisolti";
 import Risorse from "./pages/Risorse";
-import Articolo from "./pages/Articolo";
+// Articolo NON è importato staticamente: il suo modulo tira dentro il testo
+// integrale di tutti gli articoli (serve sincrono al prerender), e con un
+// import statico quel megabyte finisce nel bundle di ogni pagina, home
+// compresa. Caricato con `lazy` resta nel chunk della sola rotta articolo.
 import Contatti from "./pages/Contatti";
 import Quiz from "./pages/Quiz";
 import PostConsulenza from "./pages/PostConsulenza";
@@ -67,7 +70,8 @@ export const routes: RouteRecord[] = [
       { path: "risorse", element: <Risorse /> },
       {
         path: "risorse/:slug",
-        element: <Articolo />,
+        lazy: async () => ({ Component: (await import("./pages/Articolo")).default }),
+        entry: "src/pages/Articolo.tsx",
         getStaticPaths: () => articlesMeta.map((a) => `/risorse/${a.slug}`),
       },
       { path: "contatti", element: <Contatti /> },
@@ -81,6 +85,11 @@ export const routes: RouteRecord[] = [
       { path: "studio-legale-napoli", element: <StudioLegaleCitta /> },
       { path: "studio-legale-milano", element: <StudioLegaleCitta /> },
       { path: "studio-legale-torino", element: <StudioLegaleCitta /> },
+      // Rotta esplicita: serve solo a far generare dist/404.html, che Vercel
+      // usa come pagina di errore del sito. Senza, un URL inesistente mostra
+      // la schermata di default della piattaforma — visitatore perso e
+      // nessun rimando al resto del sito.
+      { path: "404", element: <NotFound /> },
       { path: "*", element: <NotFound /> },
     ],
   },

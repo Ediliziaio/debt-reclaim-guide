@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "19 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/contenzioso-tributario-riforma.png",
+  coverImage: "/covers/contenzioso-tributario-riforma.webp",
   keywords: ["contenzioso tributario", "Corte Giustizia Tributaria", "riforma processo tributario", "L. 130/2022", "giudice tributario professionale"],
   intro: "Il processo tributario ha attraversato negli ultimi anni una stagione di riforme intense. La L. 130/2022 ha inciso sulla composizione, sull'istruttoria e sull'onere della prova; il D.lgs. 220/2023 ha eliminato il reclamo-mediazione obbligatorio e ridefinito il rapporto fra processo telematico e atti depositati. Le storiche Commissioni tributarie sono diventate Corti di Giustizia Tributaria di primo e secondo grado, organi giurisdizionali con magistrati professionali e regole più moderne. Per il contribuente che si trova ad affrontare una controversia con il Fisco, conoscere il nuovo quadro è indispensabile per impostare una difesa efficace.",
 };

@@ -13,7 +13,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/prescrizione-debiti.png",
+  coverImage: "/covers/prescrizione-debiti.webp",
   keywords: [
     "prescrizione debiti",
     "prescrizione decennale",

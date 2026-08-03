@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/fermo-amministrativo.png",
+  coverImage: "/covers/fermo-amministrativo.webp",
   keywords: ["fermo amministrativo", "fermo veicolo", "opposizione fermo", "PRA", "art 86 DPR 602/73"],
   intro: "Il fermo amministrativo del veicolo è una misura cautelare con cui l'Agente della Riscossione assicura la garanzia del credito iscritto a ruolo attraverso l'iscrizione di un vincolo sul Pubblico Registro Automobilistico (PRA). Disciplinato dall'art. 86 del DPR 602/1973, costituisce uno degli strumenti più diffusi e percepiti come gravosi dal contribuente, poiché impedisce la regolare circolazione del veicolo e ne paralizza ogni atto di disposizione. La presente trattazione illustra il procedimento di iscrizione, le ipotesi di esclusione, gli strumenti di opposizione giurisdizionale e amministrativa e le modalità di cancellazione.",
 };

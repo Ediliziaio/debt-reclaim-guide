@@ -33,6 +33,7 @@ import {
   articlesMeta,
   getArticleMeta,
   getRelated,
+  coverSources,
   toISODate,
   lastModifiedISO,
   formatISODateIT,
@@ -266,9 +267,12 @@ const WEBSITE_ID = `${SITE}/#website`;
 
 const buildSchemas = (article: ArticleMeta, content?: Block[]) => {
   const url = `${SITE}/risorse/${article.slug}`;
-  const image = article.coverImage
-    ? (article.coverImage.startsWith("http") ? article.coverImage : `${SITE}${article.coverImage}`)
-    : `${SITE}/og-image.png`;
+  // Nello schema va il JPEG: è il formato che ogni consumatore di dati
+  // strutturati (Google Discover incluso) sa leggere senza sorprese.
+  const coverForSchema = coverSources(article.coverImage);
+  const image = coverForSchema
+    ? (coverForSchema.og.startsWith("http") ? coverForSchema.og : `${SITE}${coverForSchema.og}`)
+    : `${SITE}/og-image.jpg`;
   const minutes = parseInt(article.readTime, 10);
   const isFounder = /armando rossi/i.test(article.author);
   const published = toISODate(article.date) ?? article.date;
@@ -607,7 +611,7 @@ const Sidebar = ({ article, related, onOpenContact }: SidebarProps) => {
                   <div className={`shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br ${a.cover} flex items-center justify-center relative overflow-hidden`}>
                     {a.coverImage ? (
                       <>
-                        <img src={a.coverImage} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+                        <img src={coverSources(a.coverImage)?.card} alt="" loading="lazy" decoding="async" width={600} height={315} className="absolute inset-0 w-full h-full object-cover" />
                       </>
                     ) : (
                       <BookOpen className="w-4 h-4 text-white relative" />
@@ -717,11 +721,10 @@ const Articolo = () => {
   const seo = getArticleSeo(slug);
   const seoTitle = seo?.seoTitle ?? `${article.title} | Tutela Debito`;
   const seoDescription = seo?.metaDescription ?? article.excerpt;
-  const ogImage = article.coverImage
-    ? (article.coverImage.startsWith("http")
-        ? article.coverImage
-        : `https://www.tuteladebito.it${article.coverImage}`)
-    : "https://www.tuteladebito.it/og-image.png";
+  const cover = coverSources(article.coverImage);
+  const ogImage = cover
+    ? (cover.og.startsWith("http") ? cover.og : `https://www.tuteladebito.it${cover.og}`)
+    : "https://www.tuteladebito.it/og-image.jpg";
 
   return (
     <>
@@ -752,17 +755,19 @@ const Articolo = () => {
           {/* Article Hero */}
           <section className="bg-white border-b border-border">
             <div className={`relative aspect-[40/21] overflow-hidden ${!article.coverImage ? `bg-gradient-to-br ${article.cover}` : ""}`}>
-              {article.coverImage && (
-                <>
-                  <img
-                    src={article.coverImage}
-                    alt={article.title}
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </>
+              {cover && (
+                <img
+                  src={cover.src}
+                  srcSet={cover.srcSet}
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  width={1200}
+                  height={630}
+                  alt={article.title}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               )}
               {!article.coverImage && (
                 <BookOpen className="w-20 h-20 text-white/40 absolute inset-0 m-auto" />
@@ -776,6 +781,25 @@ const Articolo = () => {
 
             <div className="container mx-auto px-4 py-10 lg:py-14">
               <div className="max-w-4xl">
+                {/* Percorso visibile, con gli stessi passi dello schema
+                    BreadcrumbList: Google chiede che il dato strutturato
+                    corrisponda a qualcosa che l'utente vede, e il percorso
+                    alimenta i sitelink sotto il risultato in SERP. */}
+                <nav aria-label="Percorso di navigazione" className="mb-4">
+                  <ol className="flex items-center gap-1.5 flex-wrap text-sm text-foreground/55">
+                    <li>
+                      <Link to="/" className="hover:text-gold-dark">Home</Link>
+                    </li>
+                    <li aria-hidden="true">›</li>
+                    <li>
+                      <Link to="/risorse" className="hover:text-gold-dark">Risorse</Link>
+                    </li>
+                    <li aria-hidden="true">›</li>
+                    <li className="text-foreground/75 font-medium" aria-current="page">
+                      {article.category}
+                    </li>
+                  </ol>
+                </nav>
                 <div className="flex items-center gap-3 flex-wrap mb-5">
                   <span className="px-3 py-1 rounded-full bg-gold/15 text-navy text-xs font-bold uppercase tracking-wider">
                     {article.category}
@@ -901,7 +925,7 @@ const Articolo = () => {
                         <div className={`aspect-[16/9] relative overflow-hidden ${!a.coverImage ? `bg-gradient-to-br ${a.cover}` : ""}`}>
                           {a.coverImage ? (
                             <>
-                              <img src={a.coverImage} alt={a.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
+                              <img src={coverSources(a.coverImage)?.card} alt={a.title} loading="lazy" decoding="async" width={600} height={315} className="absolute inset-0 w-full h-full object-cover" />
                             </>
                           ) : (
                             <BookOpen className="w-10 h-10 text-white/70 absolute inset-0 m-auto" />

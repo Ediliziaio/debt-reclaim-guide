@@ -15,7 +15,7 @@ export const meta: ArticleMeta = {
   readTime: "12 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/esdebitazione-incapiente.png",
+  coverImage: "/covers/esdebitazione-incapiente.webp",
   keywords: ["esdebitazione incapiente", "art 283 CCII", "cancellazione debiti", "debitore incapiente", "sovraindebitamento"],
   intro: "L'esdebitazione del debitore incapiente è uno degli istituti più innovativi introdotti dal Codice della Crisi d'Impresa e dell'Insolvenza (D.lgs. 14/2019). Disciplinata dall'art. 283 CCII, consente — in presenza di precisi presupposti — la cancellazione integrale dei debiti anche quando il debitore non dispone di alcun patrimonio aggredibile né di redditi sufficienti a soddisfare i creditori. È uno strumento riservato alle situazioni in cui ogni altra procedura sarebbe priva di utilità concreta.",
 };

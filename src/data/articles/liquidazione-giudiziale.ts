@@ -13,7 +13,7 @@ export const meta: ArticleMeta = {
   readTime: "21 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/liquidazione-giudiziale.png",
+  coverImage: "/covers/liquidazione-giudiziale.webp",
   keywords: [
     "liquidazione giudiziale",
     "fallimento",

@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/decreto-ingiuntivo-opposizione.png",
+  coverImage: "/covers/decreto-ingiuntivo-opposizione.webp",
   keywords: ["decreto ingiuntivo", "opposizione decreto ingiuntivo", "art 645 cpc", "40 giorni", "atto di citazione"],
   intro: "Il decreto ingiuntivo è uno degli strumenti processuali più utilizzati per il recupero rapido di crediti documentati. Il debitore che lo riceve si trova davanti a una scelta dai tempi stretti: pagare, opporsi entro 40 giorni o subirne l'esecutività con tutti i rischi del pignoramento. L'opposizione è un giudizio a cognizione piena che si introduce con atto di citazione e che, se ben costruita, consente di far valere ogni eccezione di merito: dalla carenza dei requisiti probatori alla prescrizione, dalla nullità del contratto al pagamento già avvenuto. Conoscere tempi, forme e motivi è essenziale per una difesa efficace.",
 };

@@ -17,7 +17,7 @@ export const meta: ArticleMeta = {
   readTime: "17 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy to-navy-light",
-  coverImage: "/covers/debiti-inps.png",
+  coverImage: "/covers/debiti-inps.webp",
   keywords: [
     "debiti INPS",
     "contributi non versati",
