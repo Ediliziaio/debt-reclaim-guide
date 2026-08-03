@@ -8,8 +8,9 @@ import TDStickyCTA from "@/components/TDStickyCTA";
 import TDFinalCTA from "@/components/TDFinalCTA";
 import TDHeroBackdrop from "@/components/TDHeroBackdrop";
 import { Button } from "@/components/ui/button";
-import { FileText, Download, Clock, Calendar, User, ArrowRight, BookOpen, Users2, Scale, Building2, CheckCircle2, Sparkles, Phone, Mail, Tag, TrendingUp, Bookmark } from "lucide-react";
+import { FileText, Download, Clock, Calendar, User, ArrowRight, BookOpen, Users2, Scale, Building2, CheckCircle2, Sparkles, Phone, Mail, Tag, TrendingUp, Bookmark, ChevronRight } from "lucide-react";
 import { articlesMeta as articles, coverSources, toISODate } from "@/data/articles";
+import { CATEGORY_HUBS } from "@/data/categories";
 
 const guides = [
   {
@@ -405,6 +406,28 @@ const Risorse = () => {
                         );
                       })}
                     </ul>
+
+                    {/* I filtri qui sopra sono bottoni: comodi per l'utente,
+                        invisibili a un crawler. Gli hub tematici hanno un URL
+                        proprio e vanno raggiunti con veri link. */}
+                    <div className="mt-4 pt-3 border-t border-border">
+                      <div className="text-[10px] uppercase tracking-wider text-foreground/50 font-bold mb-2">
+                        Sezioni tematiche
+                      </div>
+                      <ul className="space-y-1">
+                        {CATEGORY_HUBS.map((hub) => (
+                          <li key={hub.slug}>
+                            <Link
+                              to={`/risorse/categoria/${hub.slug}`}
+                              className="flex items-center gap-1.5 py-1 text-sm text-foreground/75 hover:text-gold-dark font-medium"
+                            >
+                              <ChevronRight className="w-3.5 h-3.5 text-gold-dark shrink-0" />
+                              {hub.heading}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
                   {/* Newsletter / contact card */}

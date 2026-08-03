@@ -7642,3 +7642,282 @@ R: Può convenire, soprattutto se ci sono crediti incagliati che il fornitore �
 ## Conclusione
 
 I debiti verso fornitori sono spesso il termometro più sensibile di una difficoltà aziendale. Si manifestano prima dei debiti bancari, sono più 'visibili' nella vita operativa quotidiana, hanno effetti che si propagano rapidamente nella filiera. Affrontarli con metodo — distinguendo tra difficoltà temporanee e crisi più strutturali, scegliendo lo strumento giusto per ogni situazione, evitando l'inerzia — è uno dei compiti più importanti dell'imprenditore in fase di tensione finanziaria. Quando il quadro diventa complesso, gli strumenti del CCII (composizione negoziata in primis) offrono un percorso strutturato per gestire i debiti verso fornitori insieme a quelli verso banche e fisco, in un'unica trattativa coordinata.
+
+
+---
+
+# Glossario del debito, della riscossione e delle procedure
+URL: https://www.tuteladebito.it/glossario — ogni voce è raggiungibile all'ancora https://www.tuteladebito.it/glossario#<slug>.
+## Sovraindebitamento
+Il sovraindebitamento è lo stato di crisi o insolvenza del debitore che non può accedere alla liquidazione giudiziale: consumatore, professionista, imprenditore minore, imprenditore agricolo e start-up innovativa. È il presupposto per accedere alle procedure dedicate del Codice della Crisi.
+Riferimento normativo: Art. 2, lett. c) CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/sovraindebitamento-cos-e
+
+## Esdebitazione
+L'esdebitazione è la liberazione del debitore persona fisica dai debiti non soddisfatti al termine di una procedura concorsuale o di sovraindebitamento. I creditori rimasti insoddisfatti non possono più pretendere il pagamento della parte residua.
+Riferimento normativo: Artt. 278-283 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/sovraindebitamento-cos-e
+
+## Esdebitazione del debitore incapiente
+L'esdebitazione del debitore incapiente cancella integralmente i debiti del debitore persona fisica meritevole che non ha alcun patrimonio né reddito aggredibile, senza pagare nulla ai creditori. È concessa una sola volta nella vita e obbliga a dichiarare per quattro anni le sopravvenienze rilevanti.
+Riferimento normativo: Art. 283 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/esdebitazione-incapiente
+
+## Piano del consumatore
+Il piano di ristrutturazione dei debiti del consumatore è la procedura di sovraindebitamento riservata a chi ha contratto debiti per scopi estranei all'attività d'impresa o professionale. È l'unica in cui i creditori non votano: il tribunale omologa valutando fattibilità e assenza di colpa grave.
+Riferimento normativo: Artt. 67-73 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/piano-consumatore
+
+## Concordato minore
+Il concordato minore è la procedura di sovraindebitamento con cui imprenditori minori, professionisti e imprenditori agricoli propongono ai creditori un piano di ristrutturazione alternativo alla liquidazione. Richiede il voto favorevole della maggioranza dei crediti ammessi e l'omologazione del tribunale.
+Riferimento normativo: Artt. 74-83 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/concordato-minore
+
+## Liquidazione controllata
+La liquidazione controllata del sovraindebitato è la procedura liquidatoria per chi non è assoggettabile a liquidazione giudiziale: un liquidatore nominato dal tribunale realizza il patrimonio a favore dei creditori. Il debitore persona fisica è liberato di diritto dai debiti residui dopo tre anni.
+Riferimento normativo: Artt. 268-277 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/liquidazione-controllata-sovraindebitato
+
+## OCC (Organismo di Composizione della Crisi)
+L'OCC è l'organismo che assiste obbligatoriamente il debitore in tutte le procedure di sovraindebitamento: nomina un gestore, ricostruisce la posizione debitoria, verifica la documentazione, attesta la fattibilità del piano e relaziona al tribunale. Senza la sua relazione la domanda è inammissibile.
+Riferimento normativo: D.lgs. 14/2019 e DM 202/2014.
+Approfondimento: https://www.tuteladebito.it/risorse/occ-organismo-composizione-crisi
+
+## Gestore della crisi
+Il gestore della crisi è il professionista che l'OCC designa per seguire il singolo caso di sovraindebitamento. È terzo e indipendente rispetto al debitore: redige la relazione particolareggiata sulle cause dell'indebitamento e attesta la fattibilità del piano.
+Riferimento normativo: DM 202/2014.
+Approfondimento: https://www.tuteladebito.it/risorse/occ-organismo-composizione-crisi
+
+## Meritevolezza
+La meritevolezza è la valutazione della condotta del debitore che condiziona l'accesso ai benefici delle procedure di sovraindebitamento. Escludono il beneficio gli atti in frode ai creditori e l'indebitamento assunto con colpa grave o malafede, non la semplice imprudenza economica.
+Approfondimento: https://www.tuteladebito.it/risorse/esdebitazione-incapiente
+
+## Composizione negoziata della crisi
+La composizione negoziata è un percorso volontario, riservato e stragiudiziale in cui l'imprenditore in difficoltà chiede la nomina di un esperto indipendente che agevola le trattative con i creditori. L'imprenditore conserva la gestione dell'impresa e può ottenere misure protettive dal tribunale.
+Riferimento normativo: Artt. 12-25 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/composizione-negoziata
+
+## Esperto indipendente
+L'esperto indipendente è il professionista nominato da una commissione nella composizione negoziata della crisi. Non decide e non gestisce: facilita le trattative fra imprenditore e creditori e valuta se esistono concrete prospettive di risanamento.
+Riferimento normativo: Art. 13 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/composizione-negoziata
+
+## Misure protettive
+Le misure protettive sono i provvedimenti con cui il tribunale blocca le azioni esecutive e cautelari dei creditori sul patrimonio dell'impresa durante un percorso di regolazione della crisi. Vanno richieste espressamente e pubblicate nel registro delle imprese per essere efficaci.
+Riferimento normativo: Artt. 18-19 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/composizione-negoziata
+
+## Concordato preventivo
+Il concordato preventivo è la procedura con cui l'imprenditore in crisi o insolvenza propone ai creditori un piano di ristrutturazione alternativo alla liquidazione giudiziale. Può essere in continuità aziendale o liquidatorio, è votato dai creditori suddivisi in classi e omologato dal tribunale.
+Riferimento normativo: Artt. 84 e ss. CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/concordato-preventivo
+
+## Continuità aziendale
+La continuità aziendale è la prosecuzione dell'attività d'impresa durante e dopo la procedura di regolazione della crisi, diretta quando prosegue lo stesso imprenditore o indiretta quando l'azienda passa a un terzo. Il Codice della Crisi la favorisce rispetto alla mera liquidazione.
+Riferimento normativo: Art. 84 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/concordato-preventivo
+
+## Attestatore
+L'attestatore è il professionista indipendente che certifica la veridicità dei dati aziendali e la fattibilità del piano di risanamento o di concordato. La sua relazione è il documento su cui creditori e tribunale misurano l'attendibilità della proposta.
+Riferimento normativo: Art. 87 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/concordato-preventivo
+
+## Transazione fiscale
+La transazione fiscale è lo strumento che consente, all'interno degli strumenti di regolazione della crisi, di proporre il pagamento parziale o dilazionato di tributi e contributi previdenziali. È la via con cui il debito fiscale entra in un piano di ristrutturazione.
+Riferimento normativo: Art. 63 e art. 88 CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/concordato-preventivo
+
+## Liquidazione giudiziale
+La liquidazione giudiziale è la procedura che dal 2022 ha sostituito il fallimento: si apre con sentenza del tribunale verso l'imprenditore commerciale insolvente sopra le soglie di legge, comporta lo spossessamento del patrimonio e la nomina di un curatore.
+Riferimento normativo: Artt. 121 e ss. CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/liquidazione-giudiziale
+
+## Curatore
+Il curatore è l'organo nominato dal tribunale nella liquidazione giudiziale: amministra il patrimonio del debitore, forma lo stato passivo, liquida l'attivo e ripartisce il ricavato fra i creditori sotto la vigilanza del giudice delegato.
+Riferimento normativo: Artt. 125 e ss. CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/liquidazione-giudiziale
+
+## Stato passivo
+Lo stato passivo è l'elenco dei crediti ammessi alla procedura concorsuale, con il rispettivo grado di privilegio, formato dal curatore ed esecutivo dopo il decreto del giudice delegato. Chi non vi è ammesso non partecipa ai riparti.
+Riferimento normativo: Artt. 200 e ss. CCII.
+Approfondimento: https://www.tuteladebito.it/risorse/liquidazione-giudiziale
+
+## Assetti adeguati
+Gli assetti adeguati sono l'organizzazione amministrativa e contabile che l'imprenditore ha l'obbligo di adottare per rilevare tempestivamente la crisi e la perdita di continuità aziendale. Non è una buona pratica: è un dovere dell'organo amministrativo.
+Riferimento normativo: Art. 2086 c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-fornitori
+
+## Cartella esattoriale
+La cartella esattoriale è l'atto con cui l'Agente della Riscossione intima il pagamento delle somme iscritte a ruolo. Dalla notifica decorrono 60 giorni per pagare, chiedere la rateizzazione o impugnarla davanti al giudice competente per la natura del credito.
+Riferimento normativo: DPR 602/1973.
+Approfondimento: https://www.tuteladebito.it/risorse/cartella-esattoriale-cosa-fare
+
+## Ruolo
+Il ruolo è l'elenco dei debitori e delle somme dovute che l'ente creditore forma e affida all'Agente della Riscossione. È il titolo in forza del quale la riscossione può procedere: la cartella ne è la comunicazione al contribuente.
+Riferimento normativo: Art. 10 DPR 602/1973.
+Approfondimento: https://www.tuteladebito.it/risorse/cartella-esattoriale-cosa-fare
+
+## Estratto di ruolo
+L'estratto di ruolo è il documento che riepiloga tutti i carichi affidati all'Agente della Riscossione a nome di un contribuente, con date di affidamento, importi e stato. È il primo documento da acquisire per sapere che cosa è realmente dovuto ed esigibile.
+Approfondimento: https://www.tuteladebito.it/risorse/cartella-esattoriale-cosa-fare
+
+## Agente della Riscossione (AdER)
+L'Agenzia delle Entrate-Riscossione è l'ente pubblico che riscuote per conto dello Stato e di altri enti le somme iscritte a ruolo. Notifica cartelle e intimazioni, concede rateizzazioni e adotta misure cautelari ed esecutive come fermo, ipoteca e pignoramento.
+Approfondimento: https://www.tuteladebito.it/risorse/cartella-esattoriale-cosa-fare
+
+## Definizione agevolata (rottamazione)
+La definizione agevolata, comunemente detta rottamazione, consente di estinguere i carichi affidati alla riscossione pagando il capitale senza sanzioni, interessi di mora e aggio. È una misura temporanea: si applica ai carichi e ai termini indicati dalla legge che la introduce.
+Riferimento normativo: Legge di Bilancio 2026 (rottamazione quinquies).
+Approfondimento: https://www.tuteladebito.it/risorse/rottamazione-quinquies
+
+## Rateizzazione delle cartelle
+La rateizzazione consente di dilazionare gli importi iscritti a ruolo e sospende le azioni esecutive e cautelari dell'Agente della Riscossione. Fino a 120.000 euro si ottiene con semplice dichiarazione di temporanea difficoltà; oltre tale soglia serve documentazione.
+Riferimento normativo: Art. 19 DPR 602/1973.
+Approfondimento: https://www.tuteladebito.it/risorse/rateizzazione-cartelle-esattoriali
+
+## Fermo amministrativo
+Il fermo amministrativo è il vincolo che l'Agente della Riscossione iscrive sul Pubblico Registro Automobilistico a garanzia di un credito a ruolo. Il veicolo sottoposto a fermo non può circolare né essere venduto; l'iscrizione è preceduta da un preavviso con 30 giorni di tempo.
+Riferimento normativo: Art. 86 DPR 602/1973.
+Approfondimento: https://www.tuteladebito.it/risorse/fermo-amministrativo
+
+## Ipoteca esattoriale
+L'ipoteca esattoriale è il vincolo che l'Agente della Riscossione iscrive sugli immobili del debitore a garanzia dei crediti a ruolo, solo per debiti complessivi superiori a 20.000 euro. Ha durata ventennale ed è un atto conservativo, non di espropriazione.
+Riferimento normativo: Art. 77 DPR 602/1973.
+Approfondimento: https://www.tuteladebito.it/risorse/ipoteca-esattoriale
+
+## Avviso di accertamento
+L'avviso di accertamento è l'atto con cui l'Amministrazione finanziaria contesta al contribuente maggiori imposte, sanzioni e interessi rispetto al dichiarato. Va impugnato entro 60 giorni dalla notifica davanti alla Corte di Giustizia Tributaria, pena la definitività della pretesa.
+Riferimento normativo: D.lgs. 546/1992.
+Approfondimento: https://www.tuteladebito.it/risorse/avviso-accertamento-opposizione
+
+## Autotutela
+L'autotutela è il potere dell'Amministrazione finanziaria di annullare o correggere d'ufficio un proprio atto illegittimo, anche su istanza del contribuente. È gratuita ma non sospende i termini di impugnazione: va usata insieme al ricorso, non al suo posto.
+Riferimento normativo: L. 212/2000.
+Approfondimento: https://www.tuteladebito.it/risorse/avviso-accertamento-opposizione
+
+## Accertamento con adesione
+L'accertamento con adesione è il procedimento in contraddittorio con cui contribuente e Amministrazione finanziaria definiscono la pretesa evitando il giudizio, con riduzione delle sanzioni. L'istanza sospende per 90 giorni il termine per proporre ricorso.
+Riferimento normativo: D.lgs. 218/1997.
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-agenzia-entrate
+
+## Ravvedimento operoso
+Il ravvedimento operoso consente al contribuente di regolarizzare spontaneamente omessi o tardivi versamenti pagando una sanzione ridotta, tanto più bassa quanto prima interviene. È precluso dopo la notifica di atti di accertamento o di liquidazione.
+Riferimento normativo: Art. 13 D.lgs. 472/1997.
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-agenzia-entrate
+
+## Corte di Giustizia Tributaria
+Le Corti di Giustizia Tributaria di primo e secondo grado sono gli organi giurisdizionali che dal 2022 hanno sostituito le Commissioni tributarie, composti da magistrati professionali. Decidono le controversie fra contribuente e Amministrazione finanziaria.
+Riferimento normativo: L. 130/2022.
+Approfondimento: https://www.tuteladebito.it/risorse/contenzioso-tributario-riforma
+
+## DURC
+Il DURC è il documento che attesta la regolarità dei versamenti contributivi di un'impresa o di un professionista. Un DURC negativo blocca appalti pubblici, pagamenti dei SAL e incentivi; una rateizzazione regolarmente pagata ne consente il rilascio.
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-inps
+
+## Sanzioni civili INPS
+Le sanzioni civili sono le somme aggiuntive dovute all'INPS per il mancato o tardivo versamento dei contributi. La misura cambia a seconda che si tratti di omissione contributiva, con i dati regolarmente denunciati, o di evasione, con occultamento del rapporto di lavoro.
+Riferimento normativo: Art. 116 L. 388/2000.
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-inps
+
+## Titolo esecutivo
+Il titolo esecutivo è l'atto che attribuisce al creditore il diritto di procedere all'esecuzione forzata: una sentenza, un decreto ingiuntivo esecutivo, una cambiale, un atto notarile. Senza titolo esecutivo non può esserci pignoramento.
+Riferimento normativo: Art. 474 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/decreto-ingiuntivo-opposizione
+
+## Atto di precetto
+Il precetto è l'intimazione, notificata in base a un titolo esecutivo, ad adempiere entro un termine non inferiore a dieci giorni. È l'ultimo atto prima del pignoramento e perde efficacia se l'esecuzione non inizia entro novanta giorni.
+Riferimento normativo: Artt. 480-481 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/decreto-ingiuntivo-opposizione
+
+## Decreto ingiuntivo
+Il decreto ingiuntivo è il provvedimento con cui il giudice, su ricorso del creditore e in base a prova scritta, ordina al debitore di pagare. Il debitore ha 40 giorni dalla notifica per proporre opposizione, dopo i quali il decreto diventa definitivo.
+Riferimento normativo: Artt. 633 e ss. c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/decreto-ingiuntivo-opposizione
+
+## Opposizione a decreto ingiuntivo
+L'opposizione a decreto ingiuntivo è il giudizio ordinario, introdotto con atto di citazione entro 40 giorni dalla notifica, in cui il debitore può far valere ogni eccezione: prescrizione, pagamento già avvenuto, nullità del contratto, difetto di prova.
+Riferimento normativo: Art. 645 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/decreto-ingiuntivo-opposizione
+
+## Pignoramento
+Il pignoramento è l'atto con cui inizia l'espropriazione forzata: rende indisponibili determinati beni o crediti del debitore, che vengono destinati a soddisfare il creditore procedente e gli altri creditori intervenuti.
+Riferimento normativo: Artt. 491 e ss. c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/pignoramento-conto-corrente
+
+## Pignoramento presso terzi
+Il pignoramento presso terzi colpisce crediti che il debitore vanta verso un terzo — lo stipendio presso il datore di lavoro, il saldo presso la banca. Il terzo pignorato è obbligato a rendere la dichiarazione e a vincolare le somme.
+Riferimento normativo: Art. 543 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/pignoramento-conto-corrente
+
+## Impignorabilità
+L'impignorabilità è il limite legale che sottrae all'esecuzione forzata determinati beni e quote di reddito. Sullo stipendio la quota pignorabile è di regola un quinto del netto; sulle somme già accreditate in conto è impignorabile l'importo pari al triplo dell'assegno sociale.
+Riferimento normativo: Art. 545 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/pignoramento-stipendio-limiti
+
+## Conversione del pignoramento
+La conversione del pignoramento consente al debitore di sostituire i beni pignorati con una somma di denaro, versata anche a rate, previo deposito di una cauzione. È lo strumento con cui si evita la vendita forzata del bene mantenendone la proprietà.
+Riferimento normativo: Art. 495 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/pignoramento-immobiliare
+
+## Opposizione all'esecuzione
+L'opposizione all'esecuzione è il rimedio con cui si contesta il diritto del creditore a procedere: credito inesistente, già pagato, prescritto, o bene impignorabile. Si distingue dall'opposizione agli atti esecutivi, che riguarda i vizi formali e ha un termine di venti giorni.
+Riferimento normativo: Artt. 615-617 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/pignoramento-immobiliare
+
+## Custode giudiziario
+Il custode giudiziario è il soggetto nominato dal giudice dell'esecuzione per amministrare l'immobile pignorato: ne cura la conservazione, gestisce le visite degli interessati all'acquisto e riscuote eventuali canoni fino alla vendita.
+Riferimento normativo: Art. 559 c.p.c..
+Approfondimento: https://www.tuteladebito.it/risorse/pignoramento-immobiliare
+
+## Prescrizione
+La prescrizione estingue il diritto del creditore che non lo esercita entro il termine di legge: dieci anni nel caso ordinario, cinque per canoni, interessi e contributi previdenziali. Non opera d'ufficio: deve essere eccepita dal debitore.
+Riferimento normativo: Artt. 2934-2963 c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/prescrizione-debiti
+
+## Interruzione della prescrizione
+L'interruzione della prescrizione azzera il tempo già trascorso e fa ripartire il termine da capo. La provocano gli atti di costituzione in mora del creditore e il riconoscimento del debito da parte del debitore, compreso il pagamento di un semplice acconto.
+Riferimento normativo: Artt. 2943-2945 c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/prescrizione-debiti
+
+## Saldo e stralcio
+Il saldo e stralcio è l'accordo con cui il creditore accetta una somma inferiore al dovuto e rinuncia a ogni ulteriore pretesa, chiudendo la posizione. È una transazione: produce effetti solo se formalizzata per iscritto prima del pagamento, con liberazione espressa del debitore.
+Riferimento normativo: Artt. 1965 e ss. c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/saldo-e-stralcio-debiti
+
+## Decadenza dal beneficio del termine
+La decadenza dal beneficio del termine fa perdere al debitore la rateizzazione: il creditore può pretendere immediatamente l'intero capitale residuo. Nei finanziamenti scatta al verificarsi degli inadempimenti previsti dal contratto o dalla legge.
+Riferimento normativo: Art. 1186 c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/mutuo-non-pagato-cosa-fare
+
+## Mutuo fondiario
+Il mutuo fondiario è il finanziamento a medio-lungo termine garantito da ipoteca di primo grado su immobili, soggetto a una disciplina speciale del Testo Unico Bancario. La banca può chiederne la risoluzione dopo sette ritardi nei pagamenti, anche non consecutivi.
+Riferimento normativo: Art. 38 e art. 40 D.lgs. 385/1993.
+Approfondimento: https://www.tuteladebito.it/risorse/mutuo-non-pagato-cosa-fare
+
+## Fideiussione
+La fideiussione è la garanzia personale con cui un soggetto si obbliga, accanto al debitore principale, ad adempiere l'obbligazione altrui. Il fideiussore risponde con tutto il proprio patrimonio e, se paga, ha diritto di regresso verso il debitore garantito.
+Riferimento normativo: Artt. 1936-1957 c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/fideiussione-come-liberarsi
+
+## Fideiussione omnibus
+La fideiussione omnibus garantisce tutti i debiti, presenti e futuri, di un cliente verso la banca entro un importo massimo. Le Sezioni Unite della Cassazione hanno dichiarato nulle le clausole riprese dal modello ABI 2003 in materia di reviviscenza, sopravvivenza e deroga all'art. 1957 c.c.
+Riferimento normativo: Cass. SS.UU. n. 41994/2021.
+Approfondimento: https://www.tuteladebito.it/risorse/fideiussione-come-liberarsi
+
+## Cessione del quinto
+La cessione del quinto è il finanziamento rimborsato con trattenuta diretta sulla busta paga o sulla pensione, entro il limite di un quinto della retribuzione netta. Il contratto deve essere assistito da assicurazione obbligatoria sul rischio vita e impiego.
+Riferimento normativo: D.P.R. 180/1950.
+Approfondimento: https://www.tuteladebito.it/risorse/cessione-del-quinto-problemi
+
+## NPL (crediti deteriorati)
+Gli NPL sono i crediti che la banca classifica come deteriorati per il persistente inadempimento del debitore. Vengono spesso ceduti in blocco a operatori specializzati a una frazione del valore nominale: è la ragione per cui, dopo la cessione, i margini di trattativa si allargano.
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-banche-finanziarie
+
+## Centrale dei Rischi
+La Centrale dei Rischi è il sistema informativo della Banca d'Italia che raccoglie le esposizioni dei clienti verso banche e intermediari. La segnalazione a sofferenza presuppone una valutazione della situazione complessiva del debitore, non un singolo ritardo di pagamento.
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-banche-finanziarie
+
+## Morosità condominiale
+La morosità condominiale è il mancato pagamento dei contributi approvati dall'assemblea. L'amministratore può ottenere un decreto ingiuntivo immediatamente esecutivo in base allo stato di ripartizione e, dopo sei mesi di ritardo, sospendere i servizi comuni suscettibili di godimento separato.
+Riferimento normativo: Art. 63 disp. att. c.c..
+Approfondimento: https://www.tuteladebito.it/risorse/debiti-condominiali

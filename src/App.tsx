@@ -25,7 +25,10 @@ import CookiePolicy from "./pages/CookiePolicy";
 import NoteLegali from "./pages/NoteLegali";
 import StudioLegaleCitta from "./pages/StudioLegaleCitta";
 import NotFound from "./pages/NotFound";
+import CategoriaRisorse from "./pages/CategoriaRisorse";
+import Glossario from "./pages/Glossario";
 import { articlesMeta } from "./data/articlesMeta";
+import { CATEGORY_HUBS } from "./data/categories";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -69,11 +72,19 @@ export const routes: RouteRecord[] = [
       { path: "casi-risolti", element: <CasiRisolti /> },
       { path: "risorse", element: <Risorse /> },
       {
+        // Hub tematici: la pagina che compete sulle query di categoria e
+        // raccoglie il cluster di articoli sotto di sé.
+        path: "risorse/categoria/:slug",
+        element: <CategoriaRisorse />,
+        getStaticPaths: () => CATEGORY_HUBS.map((c) => `/risorse/categoria/${c.slug}`),
+      },
+      {
         path: "risorse/:slug",
         lazy: async () => ({ Component: (await import("./pages/Articolo")).default }),
         entry: "src/pages/Articolo.tsx",
         getStaticPaths: () => articlesMeta.map((a) => `/risorse/${a.slug}`),
       },
+      { path: "glossario", element: <Glossario /> },
       { path: "contatti", element: <Contatti /> },
       { path: "quiz", element: <Quiz /> },
       { path: "post-consulenza", element: <PostConsulenza /> },

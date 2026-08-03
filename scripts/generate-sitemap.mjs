@@ -13,7 +13,7 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { loadArticles } from "./load-article-data.mjs";
+import { loadArticles, loadCategoryHubs } from "./load-article-data.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -35,6 +35,7 @@ const staticPages = [
   ["/casi-risolti", "monthly", "0.7", "2026-07-20"],
   ["/chi-siamo", "monthly", "0.7", "2026-08-03"],
   ["/risorse", "weekly", "0.8", "2026-08-03"],
+  ["/glossario", "monthly", "0.8", "2026-08-03"],
   ["/contatti", "monthly", "0.7", "2026-07-20"],
   ["/quiz", "monthly", "0.6", "2026-07-20"],
   ["/privacy", "yearly", "0.3", "2026-07-20"],
@@ -54,6 +55,17 @@ const toISODate = (display = "") => {
 };
 
 const articles = await loadArticles();
+const hubs = await loadCategoryHubs();
+
+// Il lastmod di un hub è quello dell'articolo più recente che contiene: la
+// pagina cambia davvero quando cambia il suo cluster.
+const hubLastmod = (hub) =>
+  articles
+    .filter((a) => a.category === hub.category)
+    .map((a) => a.updatedISO ?? toISODate(a.date))
+    .filter(Boolean)
+    .sort()
+    .pop() ?? "2026-08-03";
 
 const urls = [
   ...staticPages.map(([path, changefreq, priority, lastmod]) => ({
@@ -61,6 +73,12 @@ const urls = [
     lastmod,
     changefreq,
     priority,
+  })),
+  ...hubs.map((hub) => ({
+    loc: `${BASE}/risorse/categoria/${hub.slug}`,
+    lastmod: hubLastmod(hub),
+    changefreq: "weekly",
+    priority: "0.8",
   })),
   ...articles
     .slice()

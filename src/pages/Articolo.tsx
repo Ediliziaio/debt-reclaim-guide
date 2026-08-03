@@ -41,6 +41,7 @@ import {
   type Article,
   type ArticleMeta,
 } from "@/data/articles";
+import { hubForCategory } from "@/data/categories";
 import { getArticleContent } from "@/data/articlesContent";
 import { getArticleSeo } from "@/data/articleSeo";
 
@@ -647,10 +648,13 @@ const Sidebar = ({ article, related, onOpenContact }: SidebarProps) => {
         <ul className="space-y-1">
           {allCategories.map((cat) => {
             const count = articlesMeta.filter((a) => a.category === cat).length;
+            const hub = hubForCategory(cat);
             return (
               <li key={cat}>
                 <Link
-                  to="/risorse"
+                  // Ogni categoria porta al proprio hub, non all'indice
+                  // generico: è il link che costruisce il cluster tematico.
+                  to={hub ? `/risorse/categoria/${hub.slug}` : "/risorse"}
                   className="flex items-center justify-between py-1.5 px-2 rounded-md hover:bg-muted text-sm transition-colors group"
                 >
                   <span className={`font-medium ${article.category === cat ? "text-gold-dark" : "text-foreground/75 group-hover:text-navy"}`}>

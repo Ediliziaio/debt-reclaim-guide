@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Shield, Youtube, Facebook, Linkedin } from "lucide-react";
 import logoTD from "@/assets/logo-tutela-debito.png";
 import { SOCIAL_YOUTUBE, SOCIAL_FACEBOOK, SOCIAL_LINKEDIN } from "@/data/cities";
+import { CATEGORY_HUBS } from "@/data/categories";
 
 const sedi = [
   {
@@ -71,6 +72,20 @@ const TDFooter = () => {
               <li><Link to="/servizi" className="text-white/70 hover:text-gold">Servizi</Link></li>
               <li><Link to="/casi-risolti" className="text-white/70 hover:text-gold">Casi seguiti</Link></li>
               <li><Link to="/risorse" className="text-white/70 hover:text-gold">Risorse e blog</Link></li>
+              <li><Link to="/glossario" className="text-white/70 hover:text-gold">Glossario del debito</Link></li>
+            </ul>
+
+            {/* Gli hub tematici linkati da ogni pagina del sito: è così che
+                l'autorità della home si distribuisce sui cluster di contenuto. */}
+            <h4 className="font-semibold text-white mb-3 mt-6">Sezioni tematiche</h4>
+            <ul className="space-y-2.5 text-sm">
+              {CATEGORY_HUBS.map((hub) => (
+                <li key={hub.slug}>
+                  <Link to={`/risorse/categoria/${hub.slug}`} className="text-white/70 hover:text-gold">
+                    {hub.heading}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

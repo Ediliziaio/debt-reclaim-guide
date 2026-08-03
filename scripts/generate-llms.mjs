@@ -13,7 +13,7 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { loadArticles, loadArticleContent } from "./load-article-data.mjs";
+import { loadArticles, loadArticleContent, loadCategoryHubs, loadGlossary } from "./load-article-data.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -63,16 +63,23 @@ const header = `# Tutela Debito — Studio legale per esdebitazione, sovraindebi
 - Contatti: ${BASE}/contatti
 - Test di orientamento "posso esdebitarmi?": ${BASE}/quiz
 - Indice delle guide: ${BASE}/risorse
+- Glossario del debito (definizioni con riferimento normativo): ${BASE}/glossario
 - Corpus completo delle guide in testo: ${BASE}/llms-full.txt
 `;
+
+const hubs = await loadCategoryHubs();
 
 const guideSections = CATEGORY_ORDER.map((cat) => {
   const items = byCategory(cat);
   if (!items.length) return "";
+  const hub = hubs.find((h) => h.category === cat);
   const lines = items
     .map((a) => `- [${a.title}](${BASE}/risorse/${a.slug}): ${a.answer ?? a.excerpt}`)
     .join("\n");
-  return `\n## ${CATEGORY_LABEL[cat]}\n\n${lines}\n`;
+  const hubLine = hub
+    ? `\nPagina della sezione: ${BASE}/risorse/categoria/${hub.slug} — ${hub.answer}\n`
+    : "";
+  return `\n## ${CATEGORY_LABEL[cat]}\n${hubLine}\n${lines}\n`;
 }).join("");
 
 const footer = `
@@ -153,6 +160,23 @@ for (const a of articles) {
     ...content.content.map(blockToText),
   );
 }
+
+// Il glossario chiude il corpus: sono le definizioni brevi che un assistente
+// riprende quasi alla lettera per le domande "cos'è…".
+const glossary = await loadGlossary();
+chunks.push(
+  `\n\n---\n`,
+  `# Glossario del debito, della riscossione e delle procedure`,
+  ``,
+  `URL: ${BASE}/glossario — ogni voce è raggiungibile all'ancora ${BASE}/glossario#<slug>.`,
+  ``,
+  ...glossary.map(
+    (e) =>
+      `## ${e.term}\n${e.definition}${e.law ? `\nRiferimento normativo: ${e.law}.` : ""}${
+        e.article ? `\nApprofondimento: ${BASE}/risorse/${e.article}` : ""
+      }\n`,
+  ),
+);
 
 const full = chunks.filter((c) => c !== "").join("\n").replace(/\n{4,}/g, "\n\n\n");
 writeFileSync(join(root, "public/llms-full.txt"), full, "utf-8");

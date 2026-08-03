@@ -67,6 +67,22 @@ export const loadArticles = async () => {
   return mod.articles;
 };
 
+/** Hub tematici delle risorse. */
+export const loadCategoryHubs = async () => {
+  const mod = await loadTs(`
+    export { CATEGORY_HUBS } from ${JSON.stringify(join(root, "src/data/categories.ts"))};
+  `);
+  return mod.CATEGORY_HUBS;
+};
+
+/** Voci del glossario. */
+export const loadGlossary = async () => {
+  const mod = await loadTs(`
+    export { GLOSSARY } from ${JSON.stringify(join(root, "src/data/glossary.ts"))};
+  `);
+  return mod.GLOSSARY;
+};
+
 /** Contenuto completo di un articolo (blocchi tipizzati). */
 export const loadArticleContent = async (slug) => {
   const mod = await loadTs(`
