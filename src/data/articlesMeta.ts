@@ -514,7 +514,7 @@ export const articlesMeta: ArticleMeta[] = [
     excerpt: "Decreti ingiuntivi, ritenute di pagamento, ricorso alla composizione negoziata, transazione stragiudiziale, gestione del contenzioso. Tutto quello che un imprenditore deve sapere quando i debiti verso fornitori diventano insostenibili.",
     category: "Imprese",
     date: "Maggio 2026",
-    readTime: "14 min",
+    readTime: "18 min",
     author: "Avv. Armando Rossi",
     cover: "from-gold-dark to-navy",
     coverImage: "/covers/debiti-fornitori.webp",

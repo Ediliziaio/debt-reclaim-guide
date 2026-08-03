@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "Decreti ingiuntivi, ritenute di pagamento, ricorso alla composizione negoziata, transazione stragiudiziale, gestione del contenzioso. Tutto quello che un imprenditore deve sapere quando i debiti verso fornitori diventano insostenibili.",
   category: "Imprese",
   date: "Maggio 2026",
-  readTime: "14 min",
+  readTime: "18 min",
   author: "Avv. Armando Rossi",
   cover: "from-gold-dark to-navy",
   coverImage: "/covers/debiti-fornitori.webp",
@@ -76,6 +76,54 @@ export const article: Article = {
 
     { type: "note", text: "L'opposizione al decreto ingiuntivo è spesso oggetto di valutazioni 'tattiche': anche senza motivi solidi, alcune imprese fanno opposizione per guadagnare tempo. È una strategia ad alto rischio: in caso di rigetto, le spese di giudizio si sommano al debito originario." },
 
+    { type: "h2", text: "Quanto cresce il debito: interessi di mora e costi di recupero", id: "interessi-mora" },
+    { type: "p", text: "Nelle transazioni commerciali fra imprese il ritardo ha un prezzo stabilito dalla legge, non dal contratto. Il D.lgs. 231/2002 prevede che gli interessi moratori decorrano automaticamente dal giorno successivo alla scadenza, senza bisogno di alcuna costituzione in mora, al tasso di riferimento della Banca Centrale Europea maggiorato di otto punti percentuali." },
+    { type: "table", headers: ["Voce", "Disciplina del D.lgs. 231/2002"], rows: [
+      ["Decorrenza degli interessi", "Automatica dal giorno successivo alla scadenza, senza messa in mora"],
+      ["Tasso", "Tasso di riferimento BCE maggiorato di 8 punti percentuali"],
+      ["Termine legale di pagamento in assenza di accordo", "30 giorni dal ricevimento della fattura o della merce"],
+      ["Termine massimo pattuibile fra imprese", "60 giorni, salvo diverso accordo scritto giustificato dalla natura del contratto"],
+      ["Costi di recupero", "Importo forfettario di 40 euro per ciascuna transazione, oltre al risarcimento del maggior danno"],
+      ["Clausole gravemente inique su termini o interessi", "Nulle, con sostituzione della disciplina di legge"],
+    ]},
+    { type: "p", text: "Il dato pratico è che un'esposizione lasciata correre per un anno cresce in modo significativo per soli interessi, prima ancora delle spese legali. È anche la ragione per cui, in una trattativa, gli interessi di mora sono la voce su cui il fornitore ha più margine per concedere: rinunciarvi gli costa meno che ridurre il capitale." },
+
+    { type: "h2", text: "Contestare la fornitura: quando è una difesa e quando un boomerang", id: "contestazione" },
+    { type: "p", text: "L'eccezione di inadempimento prevista dall'art. 1460 c.c. consente di rifiutare il pagamento quando la controparte non ha adempiuto correttamente. È una difesa reale, ma funziona a due condizioni: che la contestazione sia stata sollevata tempestivamente e che sia proporzionata all'inadempimento contestato." },
+    { type: "ul", items: [
+      "I vizi della merce vanno denunciati entro otto giorni dalla scoperta e l'azione si prescrive in un anno dalla consegna (art. 1495 c.c.).",
+      "La contestazione deve risultare per iscritto e da un canale tracciabile: un reclamo telefonico non lascia prova.",
+      "Rifiutare l'intero pagamento per un vizio marginale espone al rischio che il giudice ritenga l'eccezione contraria a buona fede.",
+      "Le fatture non contestate nei termini d'uso commerciale rendono più difficile la difesa successiva, perché rafforzano la prova del credito.",
+    ]},
+    { type: "note", text: "Contestare la fornitura per guadagnare tempo, quando il problema è di liquidità e non di qualità, è la mossa che chiude più in fretta un rapporto commerciale: il fornitore lo capisce, interrompe le consegne e passa direttamente al legale. Se il problema è la cassa, conviene dirlo e negoziare un piano di rientro." },
+
+    { type: "h2", text: "Le garanzie del fornitore: la riserva di proprietà", id: "riserva-proprieta" },
+    { type: "p", text: "Molti contratti di fornitura contengono un patto di riservato dominio ai sensi dell'art. 1523 c.c.: la proprietà del bene passa all'acquirente solo con il pagamento dell'ultima rata del prezzo, mentre il rischio si trasferisce già con la consegna. Per il fornitore è una garanzia forte, perché in caso di inadempimento può rivendicare il bene invece di mettersi in coda con gli altri creditori." },
+    { type: "p", text: "Per l'impresa in difficoltà il punto pratico è sapere quali beni aziendali sono davvero propri e quali no: macchinari, mezzi e attrezzature acquistati con riserva di proprietà non sono liberamente disponibili e non possono essere offerti in garanzia in una trattativa. È una verifica da fare prima di costruire qualunque piano, non dopo." },
+
+    { type: "h2", text: "Chi pagare per primo quando la cassa non basta", id: "gerarchia-pagamenti" },
+    { type: "p", text: "È la decisione quotidiana di ogni imprenditore in tensione di liquidità, ed è anche quella con i rischi giuridici meno conosciuti. Pagare il fornitore che minaccia di bloccare le consegne, lasciando scoperti gli altri, sembra buon senso operativo: in una prospettiva concorsuale è un pagamento preferenziale." },
+    { type: "ul", items: [
+      "I pagamenti di debiti liquidi ed esigibili eseguiti nei sei mesi anteriori all'apertura della liquidazione giudiziale sono revocabili se il curatore prova che il creditore conosceva lo stato di insolvenza (art. 166 CCII).",
+      "Il fornitore che ha incassato può quindi vedersi chiedere la restituzione: è una delle ragioni per cui, a un certo punto, pretende garanzie invece di accettare acconti.",
+      "Sul piano penale, il pagamento eseguito per favorire un creditore a danno degli altri in situazione di dissesto integra la fattispecie di bancarotta preferenziale.",
+      "I pagamenti a soci, amministratori e società collegate sono i primi a essere esaminati in caso di procedura.",
+    ]},
+    { type: "p", text: "Il punto non è che i pagamenti selettivi siano sempre illegittimi: è che, superata la soglia della crisi conclamata, la scelta di chi pagare smette di essere una decisione gestionale e diventa una decisione con conseguenze personali per l'amministratore. È la ragione tecnica — non retorica — per cui conviene attivare la [composizione negoziata](/risorse/composizione-negoziata) prima e non dopo: dentro quel percorso i pagamenti coerenti con le trattative hanno una copertura che fuori non esiste." },
+
+    { type: "h2", text: "Il piano di rientro che regge", id: "piano-rientro" },
+    { type: "p", text: "Un piano di rientro è un accordo, non una promessa. La differenza sta in cosa viene messo per iscritto: un documento generico non impedisce al fornitore di procedere comunque, mentre un accordo ben costruito sospende di fatto l'azione e mantiene aperta la fornitura." },
+    { type: "ol", items: [
+      "Importo esatto del debito riconosciuto, distinguendo capitale, interessi e spese: senza questo, ogni rata riapre la discussione sul dovuto.",
+      "Numero, importo e scadenze delle rate, con modalità di pagamento tracciabili.",
+      "Trattamento degli interessi di mora: rinuncia totale o parziale in caso di puntuale adempimento.",
+      "Impegno del fornitore a sospendere le azioni di recupero finché il piano è rispettato.",
+      "Continuità della fornitura durante il piano, se serve alla prosecuzione dell'attività, con eventuale pagamento in contanti del nuovo ordinato.",
+      "Clausola risolutiva chiara: dopo quante rate impagate il piano decade e cosa torna dovuto.",
+    ]},
+    { type: "note", text: "Il rientro va calcolato sulla cassa realmente prevista, non su quella sperata. Un piano rispettato per tre mesi e poi interrotto lascia l'impresa in posizione peggiore di quella iniziale: al debito si aggiunge la perdita di credibilità nella trattativa successiva." },
+
     { type: "h2", text: "Strumenti di gestione del debito verso fornitori", id: "strumenti-gestione" },
 
     { type: "h3", text: "Dilazione concordata" },
@@ -135,6 +183,22 @@ export const article: Article = {
 
     { type: "h2", text: "Domande frequenti sui debiti commerciali", id: "faq" },
     { type: "faq", items: [
+      {
+        q: "Quali interessi può chiedermi il fornitore per il ritardo?",
+        a: "Nelle transazioni commerciali fra imprese gli interessi moratori decorrono automaticamente dal giorno successivo alla scadenza, senza messa in mora, al tasso di riferimento BCE maggiorato di otto punti percentuali (D.lgs. 231/2002). Il fornitore ha inoltre diritto a un importo forfettario di 40 euro per ciascuna transazione a titolo di costi di recupero, oltre al risarcimento del maggior danno."
+      },
+      {
+        q: "Posso pagare un fornitore e non gli altri?",
+        a: "Finché l'impresa è solvibile è una normale scelta gestionale. In situazione di crisi conclamata no: i pagamenti di debiti liquidi ed esigibili eseguiti nei sei mesi anteriori all'apertura della liquidazione giudiziale sono revocabili se il curatore prova che il creditore conosceva lo stato di insolvenza (art. 166 CCII), e il pagamento fatto per favorire un creditore a danno degli altri può integrare la bancarotta preferenziale, con conseguenze personali per l'amministratore."
+      },
+      {
+        q: "I macchinari acquistati a rate sono miei?",
+        a: "Non necessariamente. Se il contratto contiene un patto di riservato dominio (art. 1523 c.c.), la proprietà passa solo con il pagamento dell'ultima rata, mentre il rischio si trasferisce con la consegna. Quei beni non sono liberamente disponibili e non possono essere offerti in garanzia: la verifica va fatta prima di costruire un piano, perché cambia il perimetro del patrimonio aziendale."
+      },
+      {
+        q: "Conviene contestare la fattura per prendere tempo?",
+        a: "No. I vizi vanno denunciati entro otto giorni dalla scoperta e l'azione si prescrive in un anno dalla consegna (art. 1495 c.c.); una contestazione tardiva o sproporzionata viene letta come pretestuosa e accelera il passaggio al legale, oltre a interrompere la fornitura. Se il problema è di cassa, un piano di rientro scritto protegge molto di più di una contestazione strumentale."
+      },
       {
         q: "Il fornitore può bloccare le consegne se non pago?",
         a: "Sì, può sospendere le forniture (eccezione di inadempimento ex art. 1460 c.c.) se l'inadempimento è significativo. Per i contratti continuativi o di durata, gli effetti vanno valutati caso per caso. Una comunicazione tempestiva al fornitore prima del blocco può evitare interruzioni operative."
