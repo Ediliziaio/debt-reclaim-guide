@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "La composizione negoziata è lo strumento riservato e stragiudiziale del Codice della Crisi per affrontare la difficoltà aziendale in fase precoce. Guida completa: presupposti, procedura, ruolo dell'esperto, misure protettive ed esiti possibili.",
   category: "Imprese",
   date: "Marzo 2026",
-  readTime: "16 min",
+  readTime: "20 min",
   author: "Avv. Armando Rossi",
   cover: "from-trust to-trust-dark",
   coverImage: "/covers/composizione-negoziata.webp",
@@ -89,6 +89,39 @@ export const article: Article = {
 
     { type: "note", text: "Le misure protettive sono uno strumento potente ma non automatico: vengono concesse solo se il Tribunale ritiene che il risanamento sia concretamente possibile. Una richiesta non accompagnata da un piano credibile o priva del supporto dell'esperto ha basse probabilità di accoglimento." },
 
+    { type: "h2", text: "Le segnalazioni dei creditori pubblici qualificati", id: "segnalazioni" },
+    { type: "p", text: "Molti imprenditori arrivano alla composizione negoziata perché la crisi la scoprono da una lettera. L'art. 25-novies CCII impone ad Agenzia delle Entrate, Agenzia delle Entrate-Riscossione, INPS e INAIL di segnalare all'imprenditore e all'organo di controllo il superamento di determinate soglie di esposizione, invitandolo a valutare l'accesso alla composizione negoziata." },
+    { type: "p", text: "La segnalazione non è una sanzione né l'avvio di un procedimento: è un allarme formale. Va però letta per quello che è, cioè la prova documentale che lo squilibrio è già visibile dall'esterno. Ignorarla ha due conseguenze: la posizione debitoria continua a crescere per sanzioni e interessi, e viene meno l'argomento della tempestività — che nel giudizio sulla responsabilità degli amministratori pesa." },
+    { type: "note", text: "Il momento in cui si attiva la composizione negoziata è esso stesso un elemento di valutazione. L'art. 2086 c.c. impone all'imprenditore di dotarsi di assetti adeguati a rilevare tempestivamente la crisi: attivarsi dopo la prima segnalazione è coerente con quell'obbligo, attivarsi due anni dopo lo contraddice." },
+
+    { type: "h2", text: "Quanto dura: i tempi dell'incarico e delle misure protettive", id: "tempi" },
+    { type: "p", text: "La composizione negoziata è costruita per essere rapida, e i termini lo dicono. L'incarico dell'esperto si considera concluso decorsi centottanta giorni dall'accettazione, prorogabili quando tutte le parti lo richiedono o quando la proroga è necessaria ad assicurare il buon esito delle trattative." },
+    { type: "table", headers: ["Fase", "Durata"], rows: [
+      ["Incarico dell'esperto", "180 giorni dall'accettazione, prorogabili"],
+      ["Misure protettive: durata iniziale", "Dai 30 ai 120 giorni, su determinazione del tribunale"],
+      ["Misure protettive: durata massima complessiva", "240 giorni con le proroghe"],
+      ["Conferma delle misure protettive", "Il tribunale si pronuncia dopo la pubblicazione dell'istanza nel registro delle imprese"],
+    ]},
+    { type: "p", text: "Questi termini vanno letti al contrario rispetto a come li si legge di solito: non sono il tempo a disposizione, sono il tempo entro cui il risanamento deve diventare credibile. Un'impresa che arriva alla composizione negoziata senza dati aggiornati e senza un'ipotesi di piano consuma metà del periodo per ricostruire la propria contabilità." },
+
+    { type: "h2", text: "Chi comanda in azienda durante le trattative", id: "gestione" },
+    { type: "p", text: "È la differenza che distingue la composizione negoziata da ogni procedura concorsuale: non c'è spossessamento. L'imprenditore conserva la gestione ordinaria e straordinaria dell'impresa, e l'esperto non ha poteri gestori né di veto." },
+    { type: "p", text: "Il contrappeso è informativo. L'imprenditore deve informare preventivamente l'esperto degli atti di straordinaria amministrazione e dei pagamenti non coerenti con le trattative. Se l'esperto ritiene che l'atto possa pregiudicare i creditori o le trattative, lo segnala per iscritto; se l'imprenditore procede ugualmente, l'esperto ne dà atto e può iscrivere il proprio dissenso nel registro delle imprese. È una sanzione reputazionale, non giuridica, ma in una trattativa con banche e fornitori pesa quanto un provvedimento." },
+    { type: "ul", items: [
+      "L'impresa continua a operare, incassare, pagare fornitori e retribuzioni.",
+      "I contratti in corso non si risolvono per il solo fatto dell'accesso alla composizione negoziata.",
+      "Con le misure protettive i creditori non possono acquisire diritti di prelazione né iniziare o proseguire azioni esecutive e cautelari.",
+      "Le banche non possono rifiutare o revocare le linee di credito per il solo fatto dell'accesso alla composizione negoziata.",
+    ]},
+
+    { type: "h2", text: "Il fisco nella composizione negoziata: misure premiali e transazione fiscale", id: "fisco" },
+    { type: "p", text: "Per la maggior parte delle imprese in crisi il creditore più ingombrante è l'erario. Su questo fronte la composizione negoziata offre due strumenti distinti, che vengono spesso confusi." },
+    { type: "h3", text: "Le misure premiali (art. 25-bis CCII)" },
+    { type: "p", text: "Operano sugli accessori e sulla dilazione, non sul capitale. Prevedono la riduzione degli interessi e delle sanzioni sui debiti tributari sorti prima del deposito dell'istanza, e la possibilità di ottenere una rateizzazione fino a 120 rate mensili anche per somme non ancora iscritte a ruolo — una dilazione che fuori dalla composizione negoziata non sarebbe disponibile." },
+    { type: "h3", text: "La transazione fiscale (art. 23, comma 2-bis, CCII)" },
+    { type: "p", text: "È la novità introdotta dal D.lgs. 136/2024, il cosiddetto correttivo-ter, in vigore dal 28 settembre 2024: consente di concludere, nell'ambito delle trattative, un accordo transattivo con l'Agenzia delle Entrate che preveda il pagamento parziale o dilazionato dei tributi amministrati dall'Agenzia. Qui si incide sul capitale, non solo sugli accessori." },
+    { type: "note", text: "La transazione prevista dall'art. 23, comma 2-bis, riguarda i tributi amministrati dall'Agenzia delle Entrate: non si estende ai contributi previdenziali e assistenziali, che restano fuori dal perimetro dell'accordo transattivo in composizione negoziata. Per l'esposizione verso INPS gli strumenti restano quelli ordinari, descritti nella guida sui [debiti con INPS](/risorse/debiti-inps)." },
+
     { type: "h2", text: "I possibili esiti della composizione negoziata", id: "esiti" },
 
     { type: "h3", text: "Contratto privato con uno o più creditori" },
@@ -105,6 +138,22 @@ export const article: Article = {
 
     { type: "h3", text: "Procedure concorsuali tradizionali" },
     { type: "p", text: "La composizione negoziata può fungere da fase preparatoria per un concordato preventivo o per la richiesta di una procedura di insolvenza. In questi casi le informazioni raccolte e gli accordi parziali costituiscono base per il successivo strumento." },
+
+    { type: "h2", text: "Gli esiti a confronto", id: "esiti-confronto" },
+    { type: "table", headers: ["Esito", "Serve il tribunale?", "Quando è la strada giusta"], rows: [
+      ["Contratto con uno o più creditori", "No", "Le tensioni sono concentrate su poche posizioni"],
+      ["Convenzione di moratoria", "No", "Serve tempo per far maturare azioni di risanamento già avviate"],
+      ["Accordo sottoscritto anche dall'esperto", "No", "Si vogliono consolidare gli effetti dell'accordo e accedere alle misure premiali"],
+      ["Accordo di ristrutturazione dei debiti", "Sì, omologazione", "Si raggiunge l'adesione qualificata dei creditori"],
+      ["[Concordato preventivo](/risorse/concordato-preventivo)", "Sì", "Serve una soluzione concorsuale che vincoli tutti i creditori"],
+      ["Concordato semplificato (art. 25-sexies CCII)", "Sì", "Le trattative sono fallite ma una liquidazione ordinata dà più dei valori di realizzo"],
+      ["[Liquidazione giudiziale](/risorse/liquidazione-giudiziale)", "Sì", "Non c'è prospettiva di risanamento né di liquidazione concordata"],
+    ]},
+    { type: "p", text: "Il concordato semplificato merita una precisazione, perché è l'unico esito che non esisterebbe senza la composizione negoziata: vi si accede solo dopo che l'esperto ha dichiarato nella relazione finale che le trattative non hanno avuto esito positivo, e si caratterizza per l'assenza di voto dei creditori, che possono soltanto opporsi in sede di omologazione. È una via stretta e non un piano B automatico: il tribunale verifica che la proposta non arrechi pregiudizio ai creditori rispetto all'alternativa liquidatoria." },
+
+    { type: "h2", text: "Le imprese sotto soglia e le realtà minori", id: "sotto-soglia" },
+    { type: "p", text: "La composizione negoziata non è riservata alle imprese di dimensioni rilevanti. Vi possono accedere anche le imprese sotto soglia, con un procedimento semplificato e costi ridotti. Per la piccola impresa il vantaggio principale non è tanto la protezione dai creditori, quanto la presenza di un terzo qualificato che rende credibile una proposta che, avanzata dal solo imprenditore, verrebbe letta come l'ennesima richiesta di dilazione." },
+    { type: "p", text: "Resta la linea di confine con il sovraindebitamento: l'imprenditore che non è assoggettabile a liquidazione giudiziale ha a disposizione anche il [concordato minore](/risorse/concordato-minore) e la [liquidazione controllata](/risorse/liquidazione-controllata-sovraindebitato). Quale strumento convenga dipende dalla continuità dell'attività: se l'impresa è viva e ha un mercato, la composizione negoziata viene prima; se l'attività è cessata o non recuperabile, si guarda direttamente alle procedure del sovraindebitamento." },
 
     { type: "h2", text: "Quando ha senso attivarla — e quando no", id: "quando-conviene" },
 
@@ -138,6 +187,26 @@ export const article: Article = {
 
     { type: "h2", text: "Domande frequenti sulla composizione negoziata", id: "faq" },
     { type: "faq", items: [
+      {
+        q: "Posso ridurre i debiti fiscali con la composizione negoziata?",
+        a: "Sì, ma con due strumenti diversi. Le misure premiali dell'art. 25-bis CCII riducono interessi e sanzioni e consentono di rateizzare fino a 120 rate anche somme non iscritte a ruolo. La transazione fiscale dell'art. 23, comma 2-bis, CCII — introdotta dal D.lgs. 136/2024 ed efficace dal 28 settembre 2024 — permette invece un accordo con l'Agenzia delle Entrate sul pagamento parziale o dilazionato dei tributi, incidendo anche sul capitale. I contributi previdenziali restano fuori da quest'ultimo accordo."
+      },
+      {
+        q: "Quanto dura la composizione negoziata?",
+        a: "L'incarico dell'esperto si considera concluso decorsi 180 giorni dall'accettazione, prorogabili quando lo richiedono tutte le parti o quando serve al buon esito delle trattative. Le misure protettive, se richieste, durano da 30 a 120 giorni e possono essere prorogate fino a un massimo complessivo di 240 giorni."
+      },
+      {
+        q: "Durante le trattative perdo il controllo dell'azienda?",
+        a: "No: non c'è spossessamento e l'imprenditore mantiene la gestione ordinaria e straordinaria. L'esperto non ha poteri gestori. L'imprenditore deve però informarlo preventivamente degli atti di straordinaria amministrazione: se l'esperto dissente e l'atto viene compiuto ugualmente, può iscrivere il proprio dissenso nel registro delle imprese, con l'effetto reputazionale che questo comporta nelle trattative con banche e fornitori."
+      },
+      {
+        q: "Le banche possono revocare i fidi quando accedo alla composizione negoziata?",
+        a: "Non per il solo fatto dell'accesso: la legge esclude che le linee di credito possano essere sospese o revocate unicamente in ragione dell'accesso alla composizione negoziata. Restano ferme le valutazioni fondate su altri elementi oggettivi della posizione, che vanno affrontate nella trattativa con l'istituto."
+      },
+      {
+        q: "Cos'è il concordato semplificato e quando posso usarlo?",
+        a: "È la procedura prevista dall'art. 25-sexies CCII, accessibile solo dopo che l'esperto ha dichiarato nella relazione finale che le trattative non hanno avuto esito positivo. Prevede la liquidazione del patrimonio senza voto dei creditori, che possono solo opporsi in sede di omologazione. Non è un piano B automatico: il tribunale verifica che la proposta non pregiudichi i creditori rispetto all'alternativa liquidatoria."
+      },
       {
         q: "Posso attivare la composizione negoziata se la mia impresa è una ditta individuale?",
         a: "Sì. La composizione negoziata è accessibile a tutti gli imprenditori commerciali e agricoli, incluse le ditte individuali e le imprese sotto soglia. La piattaforma e le forme procedurali sono adattate alla diversa dimensione."

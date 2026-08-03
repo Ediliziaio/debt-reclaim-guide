@@ -428,7 +428,7 @@ export const articlesMeta: ArticleMeta[] = [
     excerpt: "La composizione negoziata è lo strumento riservato e stragiudiziale del Codice della Crisi per affrontare la difficoltà aziendale in fase precoce. Guida completa: presupposti, procedura, ruolo dell'esperto, misure protettive ed esiti possibili.",
     category: "Imprese",
     date: "Marzo 2026",
-    readTime: "16 min",
+    readTime: "20 min",
     author: "Avv. Armando Rossi",
     cover: "from-trust to-trust-dark",
     coverImage: "/covers/composizione-negoziata.webp",
