@@ -475,7 +475,7 @@ export const articlesMeta: ArticleMeta[] = [
     excerpt: "La rottamazione quater consente di pagare le cartelle senza sanzioni né interessi di mora. Vantaggi reali, limiti operativi, casi in cui conviene davvero e alternative percorribili (ricorso, prescrizione, sovraindebitamento).",
     category: "Tributario",
     date: "Febbraio 2026",
-    readTime: "13 min",
+    readTime: "17 min",
     author: "Studio Tutela Debito",
     cover: "from-gold-dark to-gold",
     coverImage: "/covers/rottamazione-quater.webp",
