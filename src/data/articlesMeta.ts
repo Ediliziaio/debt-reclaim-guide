@@ -488,7 +488,7 @@ export const articlesMeta: ArticleMeta[] = [
     excerpt: "Il piano del consumatore è la procedura di sovraindebitamento riservata ai privati che hanno contratto debiti per finalità personali. Requisiti, contenuto del piano, ruolo dell'OCC, omologazione, effetti sulle azioni esecutive ed esdebitazione finale.",
     category: "Procedure",
     date: "Febbraio 2026",
-    readTime: "15 min",
+    readTime: "19 min",
     author: "Avv. Armando Rossi",
     cover: "from-navy-light to-trust",
     coverImage: "/covers/piano-consumatore.webp",

@@ -12,7 +12,7 @@ export const meta: ArticleMeta = {
   excerpt: "Il piano del consumatore è la procedura di sovraindebitamento riservata ai privati che hanno contratto debiti per finalità personali. Requisiti, contenuto del piano, ruolo dell'OCC, omologazione, effetti sulle azioni esecutive ed esdebitazione finale.",
   category: "Procedure",
   date: "Febbraio 2026",
-  readTime: "15 min",
+  readTime: "19 min",
   author: "Avv. Armando Rossi",
   cover: "from-navy-light to-trust",
   coverImage: "/covers/piano-consumatore.webp",
@@ -71,6 +71,46 @@ export const article: Article = {
       "Mantenimento dei beni essenziali (prima casa, beni strumentali)",
     ]},
     { type: "p", text: "Il piano può essere molto vario nel contenuto, purché rispetti due principi: la coerenza con la reale capacità del debitore e la convenienza per i creditori rispetto a un'eventuale liquidazione controllata." },
+
+    { type: "h2", text: "Il mutuo sulla prima casa: come si conserva l'abitazione", id: "mutuo-prima-casa" },
+    { type: "p", text: "È la domanda che apre quasi tutti i primi colloqui: «perdo la casa?». Il Codice della Crisi contiene una norma pensata esattamente per questo. L'art. 67, comma 5, CCII consente al piano di prevedere il rimborso alle scadenze convenute delle rate a scadere del mutuo garantito da ipoteca sull'abitazione principale, a una condizione: che alla data del deposito della domanda il consumatore sia in regola con i pagamenti." },
+    { type: "p", text: "Il meccanismo è importante perché rompe una simmetria: mentre tutti gli altri debiti vengono ristrutturati e pagati in percentuale, il mutuo prosegue normale, rata dopo rata, e l'abitazione resta al debitore. Il piano, in sostanza, isola il mutuo dal resto dell'esposizione." },
+    { type: "note", text: "Se al momento della domanda ci sono rate arretrate, la strada non è chiusa: la stessa norma prevede che il giudice possa autorizzare il pagamento del debito scaduto per capitale e interessi, riportando il mutuo in bonis e consentendo la prosecuzione del rimborso ordinario. È un passaggio che va costruito con l'OCC prima del deposito, non chiesto dopo." },
+    { type: "p", text: "Diverso è il caso in cui la banca abbia già dichiarato la decadenza dal beneficio del termine e chiesto l'intero capitale residuo: lì il rapporto non è più un mutuo in corso, ma un credito esigibile per intero, e il piano deve trattarlo come tale. È una delle ragioni per cui muoversi prima della risoluzione del contratto cambia radicalmente le opzioni disponibili, come spiegato nella guida sul [mutuo non pagato](/risorse/mutuo-non-pagato-cosa-fare)." },
+
+    { type: "h2", text: "Come si costruisce una rata sostenibile", id: "rata-sostenibile" },
+    { type: "p", text: "Il piano non si costruisce partendo dal debito, ma dal reddito. La sequenza è sempre la stessa: si determina il reddito netto del nucleo, si sottraggono le spese necessarie al mantenimento della famiglia, e ciò che resta è la somma destinabile ai creditori. Su quel residuo, moltiplicato per la durata del piano, si calcola la percentuale che i creditori riceveranno." },
+    { type: "table", headers: ["Voce", "Come entra nel calcolo"], rows: [
+      ["Reddito netto del nucleo familiare", "Base di partenza: stipendi, pensioni, redditi da lavoro autonomo documentati"],
+      ["Spese di mantenimento del nucleo", "Sottratte, con riferimento a parametri oggettivi come le rilevazioni ISTAT sulla spesa media familiare"],
+      ["Canone di locazione o rata del mutuo prima casa", "Sottratta: è una spesa necessaria, non una somma distraibile dai creditori"],
+      ["Spese sanitarie ricorrenti e documentate", "Sottratte"],
+      ["Residuo mensile", "È la rata del piano, l'unico importo realmente destinabile ai creditori"],
+      ["Durata del piano", "Moltiplicatore del residuo; la ragionevolezza della durata è valutata dal giudice"],
+    ]},
+    { type: "p", text: "Da questa impostazione discendono due conseguenze che sorprendono chi si aspetta uno sconto negoziato. La prima: la percentuale di soddisfacimento non si sceglie, si calcola — può risultare molto bassa, e resta legittima se è tutto ciò che il debitore può realmente offrire. La seconda: gonfiare la rata per rendere il piano più appetibile ai creditori è controproducente, perché un piano insostenibile non viene eseguito e finisce revocato." },
+
+    { type: "h2", text: "Meritevolezza del consumatore e merito creditizio del finanziatore", id: "meritevolezza" },
+    { type: "p", text: "Il giudice non omologa il piano se il consumatore ha determinato la situazione di sovraindebitamento con colpa grave, malafede o frode. È il filtro principale della procedura, e ruota sul modo in cui il debito si è formato: contrarre finanziamenti sproporzionati rispetto a un reddito documentabile è cosa diversa dal perdere il lavoro o dal doversi far carico di una malattia." },
+    { type: "p", text: "Esiste però una regola speculare, molto meno conosciuta e spesso decisiva. L'art. 69, comma 2, CCII stabilisce che il creditore che ha colpevolmente determinato o aggravato l'indebitamento — in particolare il finanziatore che ha concesso credito senza valutare il merito creditizio come impone l'art. 124-bis del Testo Unico Bancario — non può proporre opposizione o reclamo in sede di omologazione, nemmeno se dissenziente." },
+    { type: "note", text: "In pratica: la finanziaria che ha erogato il quinto o il prestito personale senza verificare la sostenibilità della rata perde la legittimazione a contestare il piano. È una delle ragioni per cui la ricostruzione documentale di come è stato concesso ogni finanziamento — reddito dichiarato, rate già in essere, istruttoria svolta — non è un dettaglio storico ma un elemento difensivo." },
+
+    { type: "h2", text: "Fisco e contributi dentro il piano", id: "fisco" },
+    { type: "p", text: "Cartelle esattoriali, debiti con l'Agenzia delle Entrate e contributi previdenziali rientrano nel piano come gli altri crediti e possono essere soddisfatti parzialmente, nel rispetto delle cause di prelazione. È una differenza sostanziale rispetto agli strumenti amministrativi: una rateizzazione o una definizione agevolata dilazionano o alleggeriscono gli accessori, ma il capitale resta dovuto per intero." },
+    { type: "p", text: "Nel piano del consumatore, inoltre, l'ente creditore non vota: la decisione spetta al giudice. Il fisco può opporsi contestando la convenienza del piano rispetto all'alternativa liquidatoria, ma non può bloccarlo con un diniego. Per chi ha un'esposizione mista — banche più cartelle — è spesso il motivo per cui il piano batte la [rateizzazione](/risorse/rateizzazione-cartelle-esattoriali) presa da sola." },
+
+    { type: "h2", text: "Se il piano non viene eseguito", id: "inadempimento" },
+    { type: "p", text: "L'omologazione non chiude la partita: apre la fase esecutiva, che dura quanto il piano. L'OCC vigila sull'adempimento e riferisce al giudice. L'art. 72 CCII disciplina la revoca dell'omologazione, che può essere pronunciata quando emerge che il piano si fondava su dati falsi o su atti in frode, e quando il consumatore non esegue gli obblighi assunti." },
+    { type: "p", text: "La revoca riporta i creditori nella posizione originaria, con i debiti nel loro ammontare pieno e la possibilità di riprendere le azioni esecutive. Da lì la strada che resta è di norma la [liquidazione controllata](/risorse/liquidazione-controllata-sovraindebitato). È il motivo per cui, se durante l'esecuzione la situazione peggiora, conviene segnalarlo subito all'OCC e valutare una modifica del piano, invece di accumulare inadempimenti." },
+
+    { type: "h2", text: "Piano del consumatore o un'altra procedura?", id: "confronto" },
+    { type: "table", headers: ["", "Piano del consumatore", "Concordato minore", "Liquidazione controllata"], rows: [
+      ["A chi si rivolge", "Consumatore: debiti per scopi personali", "Professionisti, imprenditori minori, agricoltori", "Qualsiasi debitore sovraindebitato"],
+      ["Voto dei creditori", "No: decide il giudice", "Sì, a maggioranza dei crediti", "Non previsto"],
+      ["Patrimonio", "Si possono conservare i beni essenziali", "Secondo il contenuto del piano", "Liquidato dal liquidatore"],
+      ["Esito", "Esdebitazione a piano eseguito", "Esdebitazione a concordato eseguito", "Esdebitazione di diritto dopo tre anni"],
+    ]},
+    { type: "p", text: "La qualifica di consumatore è il primo discrimine e non ammette zone grigie: se anche una parte dei debiti deriva dall'attività d'impresa o professionale, la strada del piano del consumatore è preclusa e si guarda al [concordato minore](/risorse/concordato-minore). Il quadro completo delle quattro procedure è nella guida sul [sovraindebitamento](/risorse/sovraindebitamento-cos-e)." },
 
     { type: "h2", text: "Il ruolo dell'OCC", id: "occ" },
     { type: "p", text: "L'OCC (Organismo di Composizione della Crisi) ha un ruolo centrale. È un soggetto terzo, accreditato, che:" },
@@ -132,6 +172,22 @@ export const article: Article = {
 
     { type: "h2", text: "Domande frequenti sul piano del consumatore", id: "faq" },
     { type: "faq", items: [
+      {
+        q: "Con il piano del consumatore posso tenere la casa con il mutuo?",
+        a: "Sì, se al momento del deposito della domanda sei in regola con le rate: l'art. 67, comma 5, CCII consente al piano di prevedere il rimborso alle scadenze convenute del mutuo ipotecario sull'abitazione principale, mentre gli altri debiti vengono ristrutturati. Se ci sono rate arretrate il giudice può autorizzare il pagamento dello scaduto per capitale e interessi, riportando il mutuo in regola."
+      },
+      {
+        q: "Quanto devo pagare ai creditori con il piano del consumatore?",
+        a: "La percentuale non si sceglie: si calcola. Si parte dal reddito netto del nucleo, si sottraggono le spese necessarie al mantenimento della famiglia e la rata del mutuo o il canone di affitto; il residuo mensile, moltiplicato per la durata del piano, è quanto i creditori riceveranno. Anche una percentuale molto contenuta è legittima se corrisponde alla reale capacità di rimborso."
+      },
+      {
+        q: "La finanziaria che mi ha concesso il prestito può opporsi al piano?",
+        a: "Non sempre. L'art. 69, comma 2, CCII preclude opposizione e reclamo al creditore che ha colpevolmente determinato o aggravato l'indebitamento, compreso il finanziatore che ha erogato senza valutare il merito creditizio come impone l'art. 124-bis del Testo Unico Bancario. Ricostruire come è stato concesso ogni finanziamento è quindi parte della difesa, non solo della cronologia."
+      },
+      {
+        q: "Cosa succede se non riesco a pagare le rate del piano omologato?",
+        a: "L'OCC vigila sull'esecuzione e riferisce al giudice. L'art. 72 CCII disciplina la revoca dell'omologazione, che riporta i creditori nella posizione originaria con i debiti nel loro ammontare pieno e la possibilità di riprendere le azioni esecutive; da lì si passa di norma alla liquidazione controllata. Se la situazione peggiora conviene segnalarlo subito all'OCC e valutare una modifica, non accumulare inadempimenti."
+      },
       {
         q: "Posso accedere al piano se ho debiti misti (personali e imprenditoriali)?",
         a: "Dipende dalla prevalenza. Se i debiti imprenditoriali sono marginali rispetto a quelli personali, alcuni Tribunali consentono comunque l'accesso. Se i debiti imprenditoriali sono significativi, è probabilmente più appropriato il concordato minore. La valutazione caso per caso è essenziale."
