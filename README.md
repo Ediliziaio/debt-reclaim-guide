@@ -22,6 +22,7 @@ npm run dev        # dev server su http://localhost:8080
 npm run build      # prebuild (sitemap + llms-full) + build statico in dist/
 npm run preview    # serve dist/ in locale
 npm run lint       # eslint
+npm run favicons   # rigenera favicon e icone dal marchio del logo
 npx tsc -p tsconfig.app.json --noEmit   # typecheck
 ```
 

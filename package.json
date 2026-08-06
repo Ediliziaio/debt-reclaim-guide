@@ -16,7 +16,8 @@
     "images": "node scripts/optimize-images.mjs",
     "fonts": "node scripts/fetch-fonts.mjs",
     "indexnow": "node scripts/indexnow.mjs",
-    "postbuild": "node scripts/indexnow.mjs || true"
+    "postbuild": "node scripts/indexnow.mjs || true",
+    "favicons": "node scripts/generate-favicons.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
