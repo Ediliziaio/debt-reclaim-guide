@@ -1,6 +1,6 @@
 # Tutela Debito — corpus completo delle guide
 > Testo integrale delle guide pubblicate su https://www.tuteladebito.it, in diritto italiano, a cura dello Studio Legale Avv. Armando Rossi (Napoli, Milano, Torino). Ogni guida riporta URL, autore, data di revisione e norme citate. Contenuto informativo: non sostituisce una consulenza sul caso concreto.
-Guide incluse: 32. Ultimo aggiornamento del corpus: 2026-08-03.
+Guide incluse: 34. Ultimo aggiornamento del corpus: 2026-08-03.
 
 
 ---
@@ -1857,6 +1857,219 @@ R: Puoi anche prendere iniziativa: il debitore può proporre una domanda di acce
 ## Conclusione
 
 La prescrizione è uno strumento potente di tutela del debitore, ma è anche un istituto tecnico, soggetto a regole rigorose. Non basta sapere che il debito è 'vecchio': bisogna ricostruire la cronologia degli atti interruttivi, applicare il termine corretto in funzione della natura del credito, valutare le cause di sospensione, eccepire formalmente l'avvenuta prescrizione nelle sedi e nei tempi corretti. Un'analisi accurata della propria posizione, supportata da chi conosce la materia, consente spesso di ridurre significativamente l'esposizione debitoria — talora azzerandola — su crediti che il debitore credeva ancora vivi. Per la stessa ragione, sul versante opposto, evitare condotte che configurino riconoscimento del debito (pagamenti parziali, richieste di rateizzazione, conferme scritte) è essenziale quando la prescrizione è in vicinanza del compimento. La materia è complessa e i margini di intervento sono significativi: la verifica preliminare è sempre il primo passo razionale.
+
+
+---
+
+# Atto di precetto: cosa fare nei 10 giorni prima del pignoramento
+URL: https://www.tuteladebito.it/risorse/atto-di-precetto
+Categoria: Procedure · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-03
+Norme citate: Artt. 479-482 c.p.c.; Art. 615 c.p.c.; Art. 617 c.p.c.
+RISPOSTA RAPIDA: L'atto di precetto è l'intimazione con cui il creditore munito di titolo esecutivo ordina al debitore di pagare entro un termine non inferiore a dieci giorni, avvertendolo che altrimenti procederà al pignoramento (artt. 479 e ss. c.p.c.). Non blocca alcun bene: perde efficacia se il pignoramento non inizia entro novanta giorni dalla notifica.
+
+IN SINTESI:
+- Il precetto va notificato dopo o insieme al titolo esecutivo: un precetto fondato su un titolo mai notificato è inefficace.
+- Deve contenere l'avvertimento che il debitore può rivolgersi a un OCC per una procedura di sovraindebitamento.
+- Perde efficacia se il pignoramento non inizia entro novanta giorni dalla notifica (art. 481 c.p.c.).
+- I vizi formali si contestano con l'opposizione agli atti esecutivi entro venti giorni, termine perentorio; il diritto di procedere con l'opposizione all'esecuzione.
+L'atto di precetto è l'avviso formale che precede l'esecuzione forzata: con esso il creditore, munito di titolo esecutivo, intima al debitore di adempiere entro un termine non inferiore a dieci giorni, avvertendolo che in mancanza si procederà al pignoramento. È un atto che spaventa e che, proprio per questo, viene spesso messo in un cassetto. È invece il momento in cui restano aperte più strade che in qualunque fase successiva: dieci giorni sono pochi, ma sono l'ultima finestra in cui si decide invece di subire.
+
+## Cos'è il precetto e a cosa serve
+
+Il precetto è disciplinato dagli artt. 479 e seguenti del codice di procedura civile. Non è un provvedimento del giudice: è un atto del creditore, redatto dal suo legale e notificato al debitore, con cui gli si intima di adempiere l'obbligo risultante dal titolo esecutivo entro un termine non inferiore a dieci giorni. Scaduto il termine senza pagamento, il creditore può procedere al pignoramento senza ulteriori avvisi.
+
+Va tenuto distinto dal titolo esecutivo, che è il documento da cui nasce il diritto di procedere: una sentenza, un [decreto ingiuntivo](/risorse/decreto-ingiuntivo-opposizione) divenuto esecutivo, un assegno o una cambiale protestati, un atto pubblico. Il titolo dice che il credito esiste ed è esigibile; il precetto avvisa che sta per essere riscosso con la forza.
+
+NOTA: Il precetto va notificato insieme al titolo esecutivo, o dopo che questo è già stato notificato. Ricevere un precetto senza aver mai visto il titolo che lo fonda è una delle anomalie più frequenti, ed è un vizio da far valere subito.
+
+
+## Cosa deve contenere per essere valido
+
+| Elemento | Perché conta |
+| --- | --- |
+| Indicazione delle parti | Creditore e debitore devono essere identificati esattamente: un errore sul soggetto è un vizio sostanziale |
+| Titolo esecutivo su cui si fonda | Deve essere indicato con precisione ed essere già notificato |
+| Intimazione ad adempiere | Con termine non inferiore a dieci giorni dalla notifica |
+| Importo dettagliato | Capitale, interessi e spese devono essere distinti e calcolabili, non indicati in blocco |
+| Data e sottoscrizione | Del creditore o del difensore munito di procura |
+| Dichiarazione di residenza o elezione di domicilio | Nel comune in cui ha sede il giudice competente per l'esecuzione |
+| Avvertimento sulla composizione della crisi | L'atto deve avvisare il debitore della possibilità di rivolgersi a un OCC per una procedura di sovraindebitamento |
+
+Quest'ultimo requisito è meno conosciuto degli altri ed è tutt'altro che formale: il precetto deve contenere l'avvertimento che il debitore può porre rimedio alla situazione di sovraindebitamento concludendo un accordo o proponendo un piano con l'ausilio di un [Organismo di Composizione della Crisi](/risorse/occ-organismo-composizione-crisi). È il legislatore stesso a indicare la via d'uscita nell'atto che minaccia il pignoramento.
+
+
+## I vizi che si incontrano più spesso
+
+- Titolo esecutivo mai notificato o notificato irregolarmente, con conseguente inefficacia del precetto.
+- Importi non dettagliati: un totale unico senza distinzione fra capitale, interessi e spese impedisce al debitore di verificare il dovuto.
+- Interessi calcolati a un tasso diverso da quello del titolo o su periodi non spettanti.
+- Precetto notificato oltre novanta giorni prima del pignoramento: perde efficacia e va rinnovato (art. 481 c.p.c.).
+- Credito già prescritto al momento della notifica: la prescrizione continua a correre anche dopo il titolo, con termini che dipendono dalla natura del credito.
+- Spese legali liquidate in misura superiore ai parametri, o duplicate rispetto a quelle già riconosciute nel titolo.
+
+L'inefficacia per decorso dei novanta giorni è la più semplice da verificare e la più trascurata: basta confrontare la data di notifica del precetto con quella dell'atto di pignoramento. Se sono passati più di novanta giorni, il pignoramento è viziato e va contestato con l'opposizione agli atti esecutivi.
+
+
+## Le due opposizioni, e quale scegliere
+
+| Rimedio | Quando si usa | Termine |
+| --- | --- | --- |
+| Opposizione all'esecuzione (art. 615 c.p.c.) | Si contesta il diritto del creditore di procedere: credito inesistente, già pagato, prescritto, titolo inefficace | Prima dell'inizio dell'esecuzione non c'è un termine fisso; dopo, va proposta senza ritardo |
+| Opposizione agli atti esecutivi (art. 617 c.p.c.) | Si contesta un vizio formale del precetto o della notifica | Venti giorni dalla notifica dell'atto viziato: è un termine perentorio |
+
+La distinzione conta perché sbagliare rimedio significa quasi sempre perdere. Se il problema è che il debito non è dovuto si va di opposizione all'esecuzione; se il problema è come è stato scritto o notificato l'atto, si va di opposizione agli atti esecutivi, e lì i venti giorni non ammettono ritardi. Nel dubbio le due opposizioni possono essere proposte insieme.
+
+NOTA: Né l'una né l'altra sospendono automaticamente l'esecuzione: la sospensione va chiesta al giudice con istanza motivata. Proporre opposizione e restare fermi in attesa dell'udienza è il modo più comune di vedersi comunque notificare il pignoramento.
+
+
+## Cosa si può ancora ottenere in dieci giorni
+
+1. Verificare il titolo e i conteggi: capitale, interessi e spese vanno ricalcolati, perché gli errori aritmetici in questa fase sono frequenti e riducono l'importo.
+2. Controllare la prescrizione, che continua a decorrere anche dopo il titolo esecutivo secondo i termini propri del credito.
+3. Proporre un accordo a saldo e stralcio: il creditore che ha appena sostenuto le spese del precetto ha un interesse concreto a incassare subito invece di anticipare quelle del pignoramento.
+4. Chiedere una dilazione formalizzata per iscritto, con impegno del creditore a sospendere l'esecuzione finché il piano è rispettato.
+5. Valutare l'accesso a una procedura di sovraindebitamento, che sospende le azioni esecutive: è la strada quando i creditori sono più di uno e l'esposizione è strutturalmente insostenibile.
+
+Il vantaggio negoziale di questa fase è reale e dura poco: dopo il pignoramento il creditore ha già speso, ha già bloccato il bene e ha molte meno ragioni per accettare uno sconto. Le percentuali che si ottengono prima e dopo sono raramente le stesse, e il metodo per costruire una proposta credibile è descritto nella guida sul [saldo e stralcio](/risorse/saldo-e-stralcio-debiti).
+
+
+## Cosa succede se non si fa nulla
+
+Scaduti i dieci giorni il creditore può procedere. La forma dipende da ciò che intende aggredire: pignoramento presso terzi su conto corrente, stipendio o pensione, pignoramento mobiliare presso l'abitazione, espropriazione immobiliare. Ciascuna ha regole e limiti propri, trattati nelle guide su [pignoramento del conto corrente](/risorse/pignoramento-conto-corrente), [pignoramento dello stipendio](/risorse/pignoramento-stipendio-limiti) e [pignoramento immobiliare](/risorse/pignoramento-immobiliare).
+
+Da quel momento le difese non spariscono, ma si restringono: non si discute più se il debito sia dovuto — quella partita si è chiusa con il titolo — bensì se l'atto esecutivo sia regolare, se i limiti di impignorabilità siano rispettati e se il bene possa essere sostituito con una somma tramite la conversione del pignoramento.
+
+
+## Domande frequenti sull'atto di precetto
+
+D: Dopo il precetto quanto tempo ho davvero?
+R: Almeno dieci giorni dalla notifica: è il termine minimo che il creditore deve concedere. Dal giorno successivo può procedere al pignoramento, ma deve farlo entro novanta giorni dalla notifica del precetto, altrimenti l'atto perde efficacia e va rinnovato (art. 481 c.p.c.).
+
+D: Il precetto blocca il conto corrente?
+R: No. Il precetto è solo un'intimazione: non produce alcun vincolo sui beni. Il blocco arriva con il pignoramento, che è l'atto successivo. È proprio questa la ragione per cui i giorni fra precetto e pignoramento sono quelli in cui conviene muoversi.
+
+D: Posso pagare solo una parte per fermare il pignoramento?
+R: Il pagamento parziale non impedisce di per sé al creditore di procedere per il residuo. Per fermare l'esecuzione serve un accordo scritto che impegni il creditore a sospenderla: un versamento senza accordo vale come acconto, riduce il debito e nient'altro. Va inoltre considerato che il pagamento interrompe la prescrizione.
+
+D: Ho ricevuto il precetto ma non ho mai visto la sentenza: è regolare?
+R: No. Il titolo esecutivo deve essere notificato prima del precetto o insieme a esso. Se il titolo non è mai stato notificato validamente, il precetto è inefficace e il vizio si fa valere con l'opposizione agli atti esecutivi entro venti giorni, o con l'opposizione all'esecuzione se si contesta il diritto stesso di procedere.
+
+D: L'opposizione sospende il pignoramento?
+R: Non automaticamente. La sospensione dell'efficacia esecutiva del titolo o dell'esecuzione va chiesta espressamente al giudice con istanza motivata, che la concede valutando la fondatezza dell'opposizione e il pregiudizio che il debitore subirebbe. Senza quella istanza, il creditore può procedere mentre l'opposizione è pendente.
+
+
+## In sintesi
+
+Il precetto non è ancora un'esecuzione: è l'avviso che l'esecuzione può iniziare. Chi lo riceve ha davanti la finestra più stretta e insieme più ricca di alternative dell'intera vicenda, perché il credito non è ancora stato aggredito e il creditore non ha ancora sostenuto i costi maggiori. Verificare titolo, conteggi e prescrizione, e in parallelo aprire una trattativa o valutare una procedura di sovraindebitamento, è ciò che distingue chi gestisce da chi subisce.
+
+
+---
+
+# Come sospendere o bloccare un pignoramento già iniziato
+URL: https://www.tuteladebito.it/risorse/sospendere-pignoramento
+Categoria: Procedure · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-03
+Norme citate: Art. 495 c.p.c.; Art. 615 c.p.c.; Art. 617 c.p.c.; Art. 72-ter DPR 602/1973
+RISPOSTA RAPIDA: Un pignoramento già iniziato può essere fermato finché non interviene il decreto di trasferimento o l'assegnazione definitiva delle somme. Gli strumenti sono quattro: la conversione del pignoramento (art. 495 c.p.c.), le opposizioni esecutive accompagnate da istanza di sospensione al giudice, l'accordo con il creditore procedente e le procedure di sovraindebitamento, che sospendono tutte le azioni insieme.
+
+IN SINTESI:
+- Le opposizioni non sospendono nulla da sole: la sospensione va chiesta al giudice con istanza motivata.
+- La conversione sostituisce il bene pignorato con una somma, previa cauzione, con possibilità di rateizzazione entro i limiti dell'art. 495 c.p.c.
+- L'accordo con il solo creditore procedente non basta se altri creditori possono intervenire nella stessa procedura.
+- Contro l'Agente della Riscossione la rateizzazione accolta sospende le azioni esecutive e cautelari.
+Ricevuto un atto di pignoramento, la reazione più comune è pensare che non ci sia più niente da fare. Non è così: l'esecuzione forzata è un procedimento lungo, scandito da fasi, e in ciascuna esistono strumenti per fermarla o per svuotarla di effetto. Alcuni sono processuali e passano dal giudice, altri sono negoziali e passano dal creditore, altri ancora appartengono al Codice della Crisi e bloccano tutte le azioni insieme. Quello che davvero conta è a che punto è la procedura: ogni fase che passa chiude una porta.
+
+## Prima di tutto: a che punto è la procedura
+
+Gli strumenti disponibili dipendono dalla fase, non dall'importo del debito. Individuare con precisione dove ci si trova è il primo passaggio, perché determina cosa si può ancora chiedere e a chi.
+
+| Fase | Cosa è già successo | Strumenti ancora disponibili |
+| --- | --- | --- |
+| Precetto notificato | Nessun bene è ancora vincolato | Tutto: trattativa, dilazione, opposizioni, sovraindebitamento |
+| Pignoramento notificato | I beni o i crediti sono vincolati | Conversione, opposizioni con istanza di sospensione, accordo, procedure concorsuali |
+| Ordinanza di assegnazione o di vendita | Il giudice ha disposto come procedere | Conversione ancora possibile fino ai limiti di legge, opposizioni sui vizi, accordo con il procedente |
+| Aggiudicazione | Il bene è stato aggiudicato all'asta | Spazi molto ridotti, limitati ai vizi della procedura |
+| Decreto di trasferimento | La proprietà è passata all'aggiudicatario | Nessuno strumento restitutorio ordinario |
+
+NOTA: È la ragione per cui la stessa domanda — «si può ancora fermare?» — ha risposte opposte a distanza di poche settimane. Il tempo, in esecuzione, non è una variabile fra le altre: è quella che comanda.
+
+
+## La conversione del pignoramento
+
+È lo strumento più efficace e il meno conosciuto. L'art. 495 c.p.c. consente al debitore di chiedere al giudice dell'esecuzione di sostituire le cose o i crediti pignorati con una somma di denaro pari all'importo dovuto per capitale, interessi e spese. Il bene esce dalla procedura e l'esecuzione prosegue sulla somma.
+
+- L'istanza va depositata prima che sia disposta la vendita o l'assegnazione, e comunque nei termini previsti dalla norma per ciascun tipo di esecuzione.
+- Va accompagnata dal versamento di una cauzione, in misura stabilita dalla legge in rapporto all'importo dovuto.
+- Il giudice può autorizzare il pagamento rateale del residuo entro il limite massimo di durata previsto dall'art. 495 c.p.c.
+- Il mancato pagamento di una rata alle scadenze fissate fa riprendere l'esecuzione sul bene, senza possibilità di una seconda conversione.
+
+La conversione è la strada naturale quando il debitore ha una capacità di rimborso reale ma non immediata, e quando il bene pignorato vale molto più del debito — il caso tipico dell'[esecuzione immobiliare](/risorse/pignoramento-immobiliare) per un credito modesto, dove la vendita all'asta distruggerebbe valore in modo sproporzionato.
+
+
+## Le opposizioni e l'istanza di sospensione
+
+Le opposizioni esecutive non sospendono nulla da sole: la sospensione è un provvedimento che il giudice adotta su istanza motivata, valutando la fondatezza dell'opposizione e il pregiudizio che il debitore subirebbe se l'esecuzione proseguisse. Presentare l'opposizione e non chiedere la sospensione è l'errore che vanifica il rimedio.
+
+| Rimedio | Cosa si contesta | Termine |
+| --- | --- | --- |
+| Opposizione all'esecuzione (art. 615 c.p.c.) | Il diritto stesso del creditore di procedere: credito estinto, prescritto, titolo inefficace | Senza ritardo dopo l'inizio dell'esecuzione |
+| Opposizione agli atti esecutivi (art. 617 c.p.c.) | Vizi formali di precetto, pignoramento o atti successivi | Venti giorni, perentori |
+| Opposizione di terzo (art. 619 c.p.c.) | Il bene pignorato appartiene a un terzo, non al debitore | Prima della vendita o dell'assegnazione |
+
+Fra i motivi che più spesso reggono ci sono la prescrizione maturata dopo il titolo, l'inefficacia del precetto per decorso dei novanta giorni, il mancato rispetto dei limiti di impignorabilità su stipendio e pensione e, nelle esecuzioni esattoriali, il difetto dei presupposti previsti dal DPR 602/1973.
+
+
+## L'accordo con il creditore procedente
+
+La via negoziale resta praticabile anche a esecuzione avviata, e in certi casi è più conveniente per entrambi. Il creditore che ha già pignorato sa che l'incasso non è immediato: fra vendite deserte, ribassi e tempi dell'asta, il realizzo effettivo può essere molto inferiore al valore del bene e arrivare anni dopo.
+
+1. Formalizzare la proposta per iscritto, con importo, tempi e provvista dichiarata.
+2. Pattuire espressamente la rinuncia agli atti esecutivi da parte del creditore, non una generica sospensione di fatto.
+3. Prevedere che la rinuncia sia depositata entro un termine preciso dopo il pagamento.
+4. Non versare nulla prima che l'accordo sia sottoscritto: un pagamento senza liberatoria è un acconto che non ferma la procedura.
+
+NOTA: Quando i creditori sono più di uno, l'accordo con il solo procedente risolve poco: gli altri possono intervenire nella stessa procedura e riprenderla. È la situazione in cui la trattativa individuale mostra il limite e conviene guardare agli strumenti concorsuali.
+
+
+## Le procedure di sovraindebitamento
+
+Sono l'unico strumento che agisce su tutti i creditori insieme. L'accesso a una procedura del Codice della Crisi produce, secondo i casi e i provvedimenti del giudice, la sospensione delle azioni esecutive in corso e il divieto di iniziarne di nuove: il pignoramento si ferma, e la posizione viene ristrutturata nel suo complesso invece che tampone dopo tampone.
+
+- Per il consumatore la strada è il [piano di ristrutturazione dei debiti](/risorse/piano-consumatore), che non richiede il voto dei creditori.
+- Per professionisti e imprenditori minori il [concordato minore](/risorse/concordato-minore), che invece passa dal voto.
+- Quando non c'è capacità di rimborso ma esiste un patrimonio, la [liquidazione controllata](/risorse/liquidazione-controllata-sovraindebitato).
+- Quando non c'è né patrimonio né reddito aggredibile, l'[esdebitazione del debitore incapiente](/risorse/esdebitazione-incapiente).
+
+Il presupposto comune è lo stato di sovraindebitamento e, per le procedure ristrutturative, la meritevolezza del debitore. L'accesso passa sempre da un OCC, e i tempi di preparazione della domanda vanno messi in conto: è un'altra ragione per non aspettare che l'asta sia fissata.
+
+
+## Il caso particolare dell'Agente della Riscossione
+
+Quando a procedere è Agenzia delle Entrate-Riscossione valgono strumenti aggiuntivi di natura amministrativa. La [rateizzazione](/risorse/rateizzazione-cartelle-esattoriali) accolta sospende le azioni esecutive e cautelari; l'adesione a una definizione agevolata, quando aperta, produce lo stesso effetto finché il piano è rispettato.
+
+Esistono inoltre limiti specifici che nelle esecuzioni ordinarie non operano: le soglie per l'espropriazione immobiliare, la tutela dell'unico immobile adibito ad abitazione con residenza anagrafica e le percentuali ridotte di pignorabilità dello stipendio previste dall'art. 72-ter del DPR 602/1973. Verificare che siano stati rispettati è spesso più produttivo che discutere il merito del debito.
+
+
+## Domande frequenti sulla sospensione del pignoramento
+
+D: Si può bloccare un pignoramento già notificato?
+R: Sì, finché la procedura non si è conclusa con il decreto di trasferimento o con l'assegnazione definitiva delle somme. Gli strumenti sono la conversione ex art. 495 c.p.c., le opposizioni accompagnate da istanza di sospensione, l'accordo con il creditore procedente e le procedure di sovraindebitamento, che sospendono tutte le azioni insieme.
+
+D: L'opposizione ferma automaticamente l'esecuzione?
+R: No. La sospensione va chiesta espressamente al giudice dell'esecuzione con istanza motivata: il giudice la concede valutando la fondatezza dell'opposizione e il danno che il debitore subirebbe. Senza istanza, la procedura prosegue mentre l'opposizione è pendente.
+
+D: Quanto costa la conversione del pignoramento?
+R: Richiede il deposito di una cauzione commisurata all'importo dovuto per capitale, interessi e spese, nella misura stabilita dall'art. 495 c.p.c. Il residuo può essere autorizzato a rate entro il limite massimo di durata previsto dalla norma. Saltare una rata fa riprendere l'esecuzione, senza una seconda possibilità.
+
+D: Ho più creditori: basta accordarmi con quello che ha pignorato?
+R: Raramente. Gli altri creditori muniti di titolo possono intervenire nella stessa procedura, che quindi prosegue anche dopo l'accordo con il procedente. Quando l'esposizione è distribuita su più soggetti, l'unico strumento che li vincola tutti è una procedura di sovraindebitamento.
+
+D: Fino a quando sono in tempo per la casa all'asta?
+R: Fino al decreto di trasferimento la partita resta aperta: la conversione, l'accordo con il creditore e le procedure concorsuali possono ancora produrre effetto, con margini che si riducono a ogni passaggio. Dopo il decreto di trasferimento la proprietà è passata all'aggiudicatario e non esistono rimedi restitutori ordinari.
+
+
+## In sintesi
+
+Un pignoramento in corso lascia più margini di quanti se ne immaginino, ma sono margini a scadenza. La sequenza corretta è sempre la stessa: individuare la fase esatta della procedura, verificare titolo, notifiche, prescrizione e limiti di impignorabilità, quindi scegliere fra conversione, opposizione, accordo e procedura concorsuale in base a quanti creditori ci sono e a quale capacità di rimborso esiste davvero. Rimandare non conserva le opzioni: le consuma.
 
 
 ---

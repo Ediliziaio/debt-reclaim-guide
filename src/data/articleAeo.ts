@@ -106,6 +106,36 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
     related: ["debiti-banche-finanziarie", "prescrizione-debiti", "sovraindebitamento-cos-e"],
   },
 
+  "atto-di-precetto": {
+    answer:
+      "L'atto di precetto è l'intimazione con cui il creditore munito di titolo esecutivo ordina al debitore di pagare entro un termine non inferiore a dieci giorni, avvertendolo che altrimenti procederà al pignoramento (artt. 479 e ss. c.p.c.). Non blocca alcun bene: perde efficacia se il pignoramento non inizia entro novanta giorni dalla notifica.",
+    takeaways: [
+      "Il precetto va notificato dopo o insieme al titolo esecutivo: un precetto fondato su un titolo mai notificato è inefficace.",
+      "Deve contenere l'avvertimento che il debitore può rivolgersi a un OCC per una procedura di sovraindebitamento.",
+      "Perde efficacia se il pignoramento non inizia entro novanta giorni dalla notifica (art. 481 c.p.c.).",
+      "I vizi formali si contestano con l'opposizione agli atti esecutivi entro venti giorni, termine perentorio; il diritto di procedere con l'opposizione all'esecuzione.",
+    ],
+    updatedISO: REVISIONE,
+    entities: ["Atto di precetto", "Titolo esecutivo", "Opposizione all'esecuzione", "Esecuzione forzata"],
+    laws: ["Artt. 479-482 c.p.c.", "Art. 615 c.p.c.", "Art. 617 c.p.c."],
+    related: ["sospendere-pignoramento", "decreto-ingiuntivo-opposizione", "pignoramento-conto-corrente"],
+  },
+
+  "sospendere-pignoramento": {
+    answer:
+      "Un pignoramento già iniziato può essere fermato finché non interviene il decreto di trasferimento o l'assegnazione definitiva delle somme. Gli strumenti sono quattro: la conversione del pignoramento (art. 495 c.p.c.), le opposizioni esecutive accompagnate da istanza di sospensione al giudice, l'accordo con il creditore procedente e le procedure di sovraindebitamento, che sospendono tutte le azioni insieme.",
+    takeaways: [
+      "Le opposizioni non sospendono nulla da sole: la sospensione va chiesta al giudice con istanza motivata.",
+      "La conversione sostituisce il bene pignorato con una somma, previa cauzione, con possibilità di rateizzazione entro i limiti dell'art. 495 c.p.c.",
+      "L'accordo con il solo creditore procedente non basta se altri creditori possono intervenire nella stessa procedura.",
+      "Contro l'Agente della Riscossione la rateizzazione accolta sospende le azioni esecutive e cautelari.",
+    ],
+    updatedISO: REVISIONE,
+    entities: ["Sospensione del pignoramento", "Conversione del pignoramento", "Opposizione all'esecuzione", "Sovraindebitamento"],
+    laws: ["Art. 495 c.p.c.", "Art. 615 c.p.c.", "Art. 617 c.p.c.", "Art. 72-ter DPR 602/1973"],
+    related: ["atto-di-precetto", "pignoramento-immobiliare", "piano-consumatore"],
+  },
+
   "prima-casa-pignoramento": {
     answer:
       "La prima casa non è impignorabile in generale: il divieto dell'art. 76 DPR 602/1973 vale solo per l'Agenzia delle Entrate-Riscossione e solo se l'immobile è l'unico di proprietà, a uso abitativo, con residenza anagrafica del debitore e non di lusso. Banche, finanziarie, fornitori e creditori privati possono espropriarlo senza incontrare quel limite.",

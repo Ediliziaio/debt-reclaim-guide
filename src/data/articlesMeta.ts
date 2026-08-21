@@ -107,6 +107,48 @@ export const articlesMeta: ArticleMeta[] = [
       "La prescrizione è un istituto civilistico essenziale nel diritto del credito: il decorso del tempo, in assenza di iniziative del titolare, estingue il diritto e impedisce al creditore di pretenderne l'adempimento. Conoscere i termini di prescrizione, i meccanismi di interruzione e di sospensione e i modi corretti per farla valere è strumento indispensabile per chi affronta posizioni debitorie risalenti. La materia è disciplinata dagli artt. 2934-2963 c.c., con discipline speciali per cartelle esattoriali, contributi previdenziali e specifici rapporti.",
   },
   {
+    slug: "atto-di-precetto",
+    title: "Atto di precetto: cosa fare nei 10 giorni prima del pignoramento",
+    excerpt:
+      "Il precetto è l'ultimo avviso prima dell'esecuzione forzata: intima il pagamento entro dieci giorni e apre la finestra più stretta e più utile per intervenire. Requisiti di validità, vizi ricorrenti, opposizioni e cosa si può ancora ottenere prima del pignoramento.",
+    category: "Procedure",
+    date: "Agosto 2026",
+    readTime: "13 min",
+    author: "Avv. Armando Rossi",
+    cover: "from-destructive to-navy",
+    coverImage: "/covers/atto-di-precetto.webp",
+    keywords: [
+      "atto di precetto",
+      "precetto 10 giorni",
+      "opposizione a precetto",
+      "art 480 cpc",
+      "pignoramento dopo precetto",
+    ],
+    intro:
+      "L'atto di precetto è l'avviso formale che precede l'esecuzione forzata: con esso il creditore, munito di titolo esecutivo, intima al debitore di adempiere entro un termine non inferiore a dieci giorni, avvertendolo che in mancanza si procederà al pignoramento. È un atto che spaventa e che, proprio per questo, viene spesso messo in un cassetto. È invece il momento in cui restano aperte più strade che in qualunque fase successiva: dieci giorni sono pochi, ma sono l'ultima finestra in cui si decide invece di subire.",
+  },
+  {
+    slug: "sospendere-pignoramento",
+    title: "Come sospendere o bloccare un pignoramento già iniziato",
+    excerpt:
+      "Un pignoramento in corso non è una condanna definitiva: conversione ex art. 495 c.p.c., opposizioni con istanza di sospensione, accordo con il creditore procedente e procedure di sovraindebitamento. Quali strumenti esistono, quanto costano e fino a quando si è in tempo.",
+    category: "Procedure",
+    date: "Agosto 2026",
+    readTime: "14 min",
+    author: "Avv. Armando Rossi",
+    cover: "from-navy to-navy-light",
+    coverImage: "/covers/sospendere-pignoramento.webp",
+    keywords: [
+      "sospendere pignoramento",
+      "bloccare pignoramento",
+      "conversione del pignoramento",
+      "art 495 cpc",
+      "opposizione esecuzione",
+    ],
+    intro:
+      "Ricevuto un atto di pignoramento, la reazione più comune è pensare che non ci sia più niente da fare. Non è così: l'esecuzione forzata è un procedimento lungo, scandito da fasi, e in ciascuna esistono strumenti per fermarla o per svuotarla di effetto. Alcuni sono processuali e passano dal giudice, altri sono negoziali e passano dal creditore, altri ancora appartengono al Codice della Crisi e bloccano tutte le azioni insieme. Quello che davvero conta è a che punto è la procedura: ogni fase che passa chiude una porta.",
+  },
+  {
     slug: "prima-casa-pignoramento",
     title: "Prima casa e debiti: quando può essere pignorata e quando no",
     excerpt:

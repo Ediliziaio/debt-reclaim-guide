@@ -140,6 +140,16 @@ export const ARTICLE_SEO: Record<string, ArticleSeo> = {
     metaDescription:
       "Pignoramento dello stipendio: limiti, regola del quinto, cumulo dei pignoramenti e strumenti di difesa. Quanto possono trattenere e come ridurlo legalmente.",
   },
+  "atto-di-precetto": {
+    seoTitle: "Atto di precetto: cosa fare nei 10 giorni",
+    metaDescription:
+      "Hai ricevuto un atto di precetto? Requisiti di validità, vizi ricorrenti, opposizioni e cosa puoi ancora ottenere nei dieci giorni prima del pignoramento.",
+  },
+  "sospendere-pignoramento": {
+    seoTitle: "Sospendere un pignoramento: gli strumenti reali",
+    metaDescription:
+      "Come bloccare un pignoramento già iniziato: conversione ex art. 495 c.p.c., opposizioni con istanza di sospensione, accordo col creditore e sovraindebitamento.",
+  },
   "prima-casa-pignoramento": {
     seoTitle: "Pignoramento prima casa: quando è possibile",
     metaDescription:

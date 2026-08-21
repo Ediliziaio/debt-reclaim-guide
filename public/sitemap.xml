@@ -115,6 +115,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.tuteladebito.it/risorse/atto-di-precetto</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/atto-di-precetto.webp</image:loc>
+      <image:title>Atto di precetto: cosa fare nei 10 giorni prima del pignoramento</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.tuteladebito.it/risorse/avviso-accertamento-opposizione</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -422,6 +432,16 @@
     <image:image>
       <image:loc>https://www.tuteladebito.it/covers/saldo-e-stralcio-debiti.webp</image:loc>
       <image:title>Saldo e stralcio: come negoziare la chiusura definitiva del debito a importo ridotto</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.tuteladebito.it/risorse/sospendere-pignoramento</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tuteladebito.it/covers/sospendere-pignoramento.webp</image:loc>
+      <image:title>Come sospendere o bloccare un pignoramento già iniziato</image:title>
     </image:image>
   </url>
   <url>
