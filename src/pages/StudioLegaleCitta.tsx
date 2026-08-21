@@ -214,6 +214,91 @@ const StudioLegaleCitta = () => {
                   <p className="text-foreground/80 leading-relaxed text-lg">{city.local}</p>
                 </section>
 
+                {/* Situazioni ricorrenti sul territorio */}
+                <section>
+                  <h2 className="text-2xl font-bold text-navy mb-4">
+                    Le situazioni più frequenti a {city.name}
+                  </h2>
+                  <p className="text-foreground/80 leading-relaxed text-lg">{city.contesto}</p>
+                </section>
+
+                {/* Tabella delle competenze territoriali: è il contenuto locale
+                    che serve davvero a chi cerca "avvocato debiti <città>",
+                    perché risponde alla domanda "dove si fa la mia pratica". */}
+                <section>
+                  <h2 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
+                    <Scale className="w-6 h-6 text-gold-dark" /> Quale ufficio è competente
+                  </h2>
+                  <p className="text-foreground/75 leading-relaxed mb-5">
+                    La competenza non dipende da dove ha sede lo studio, ma dalla materia e dal
+                    luogo: per le procedure di sovraindebitamento conta la residenza del debitore,
+                    per le esecuzioni immobiliari dove si trova l'immobile.
+                  </p>
+                  <div className="overflow-x-auto rounded-xl border border-border">
+                    <table className="w-full text-left">
+                      <thead className="bg-navy text-white">
+                        <tr>
+                          <th className="px-4 py-3 text-sm font-semibold">Materia</th>
+                          <th className="px-4 py-3 text-sm font-semibold">Ufficio competente</th>
+                          <th className="px-4 py-3 text-sm font-semibold">Nota</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white">
+                        {city.competenze.map((c) => (
+                          <tr key={c.materia} className="border-t border-border align-top">
+                            <td className="px-4 py-3 font-medium text-navy">{c.materia}</td>
+                            <td className="px-4 py-3 text-foreground/80">{c.ufficio}</td>
+                            <td className="px-4 py-3 text-foreground/70 text-sm">{c.nota}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+                {/* Documenti da portare al primo colloquio */}
+                <section className="bg-muted/40 border border-border rounded-2xl p-6 lg:p-8">
+                  <h2 className="text-2xl font-bold text-navy mb-4">
+                    Cosa portare al primo colloquio
+                  </h2>
+                  <p className="text-foreground/75 leading-relaxed mb-4">
+                    La diagnosi iniziale è tanto più utile quanto più completa è la documentazione.
+                    Non serve avere tutto: serve avere il quadro.
+                  </p>
+                  <ul className="space-y-2.5">
+                    {[
+                      "Estratto di ruolo aggiornato, scaricabile dall'area riservata di Agenzia delle Entrate-Riscossione",
+                      "Cartelle, avvisi di accertamento e atti ricevuti, anche vecchi di anni",
+                      "Contratti di finanziamento, mutuo e cessione del quinto, con i piani di ammortamento",
+                      "Ultime due dichiarazioni dei redditi e le buste paga recenti",
+                      "Atti giudiziari già notificati: decreti ingiuntivi, precetti, pignoramenti",
+                      "Visure catastali e ipotecarie degli immobili intestati",
+                    ].map((d) => (
+                      <li key={d} className="flex items-start gap-2.5 text-foreground/80">
+                        <CheckCircle2 className="w-5 h-5 text-gold-dark mt-0.5 shrink-0" />
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                {/* Zone servite in dettaglio */}
+                <section>
+                  <h2 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
+                    <Navigation className="w-6 h-6 text-gold-dark" /> Zone e comuni da cui arrivano gli assistiti
+                  </h2>
+                  <p className="text-foreground/75 leading-relaxed mb-4">
+                    Riceviamo su appuntamento nella sede di {city.name} e, quando è più comodo, in
+                    videocollegamento: per la maggior parte delle pratiche la presenza fisica serve
+                    solo al primo incontro.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {city.zone.map((z) => (
+                      <span key={z} className="px-3 py-1.5 rounded-full bg-white border border-border text-sm text-foreground/75">{z}</span>
+                    ))}
+                  </div>
+                </section>
+
                 {/* Aree servite */}
                 <section>
                   <h2 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
