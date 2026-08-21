@@ -135,8 +135,8 @@ const StudioLegaleCitta = () => {
   const city = CITIES[slug];
 
   const url = `${SITE}/studio-legale-${city.slug}`;
-  const title = `Studio legale a ${city.name} per debiti ed esdebitazione | Tutela Debito`;
-  const description = `Studio legale a ${city.name}: esdebitazione, sovraindebitamento, cartelle esattoriali, pignoramenti, crisi d'impresa e contenzioso tributario. ${city.streetAddress}, ${city.postalCode} ${city.name}. Prima diagnosi riservata.`;
+  const title = `Studio legale debiti a ${city.name} | Tutela Debito`;
+  const description = `Studio legale a ${city.name} per esdebitazione, cartelle esattoriali, pignoramenti e crisi d'impresa. ${city.streetAddress}. Prima diagnosi riservata.`;
   const mapsQuery = encodeURIComponent(`Tutela Debito ${city.streetAddress} ${city.postalCode} ${city.name}`);
 
   return (

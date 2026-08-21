@@ -106,6 +106,21 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
     related: ["debiti-banche-finanziarie", "prescrizione-debiti", "sovraindebitamento-cos-e"],
   },
 
+  "prima-casa-pignoramento": {
+    answer:
+      "La prima casa non è impignorabile in generale: il divieto dell'art. 76 DPR 602/1973 vale solo per l'Agenzia delle Entrate-Riscossione e solo se l'immobile è l'unico di proprietà, a uso abitativo, con residenza anagrafica del debitore e non di lusso. Banche, finanziarie, fornitori e creditori privati possono espropriarlo senza incontrare quel limite.",
+    takeaways: [
+      "Il divieto riguarda un solo creditore: per tutti gli altri l'abitazione principale è un bene aggredibile come ogni altro.",
+      "Anche quando l'espropriazione è vietata, l'Agente della Riscossione può iscrivere ipoteca sopra i 20.000 euro di debito complessivo (art. 77 DPR 602/1973).",
+      "Se una delle quattro condizioni manca, l'Agente della Riscossione può procedere oltre i 120.000 euro di debito e con ipoteca iscritta da almeno sei mesi.",
+      "Fondo patrimoniale e trust costituiti a debiti già in essere sono esposti a revocatoria e all'art. 2929-bis c.c., e pregiudicano la meritevolezza nelle procedure di sovraindebitamento.",
+    ],
+    updatedISO: REVISIONE,
+    entities: ["Pignoramento della prima casa", "Impignorabilità", "Ipoteca esattoriale", "Fondo patrimoniale"],
+    laws: ["Art. 76 DPR 602/1973", "Art. 77 DPR 602/1973", "Art. 170 c.c.", "Art. 2929-bis c.c."],
+    related: ["pignoramento-immobiliare", "mutuo-non-pagato-cosa-fare", "ipoteca-esattoriale"],
+  },
+
   "prescrizione-debiti": {
     answer:
       "La prescrizione estingue il diritto del creditore che non lo esercita entro il termine di legge. Il termine ordinario è di dieci anni (art. 2946 c.c.), ma numerosi crediti si prescrivono in cinque anni — canoni, interessi, contributi previdenziali — e altri in tempi più brevi. Ogni atto di costituzione in mora interrompe la prescrizione e fa ripartire il termine da capo.",
@@ -193,7 +208,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
     updatedISO: REVISIONE,
     entities: ["Agenzia delle Entrate", "Ravvedimento operoso", "Accertamento con adesione", "Autotutela", "Definizione agevolata"],
     laws: ["Art. 13 D.lgs. 472/1997", "D.lgs. 218/1997", "DPR 602/1973"],
-    related: ["cartella-esattoriale-cosa-fare", "rateizzazione-cartelle-esattoriali", "avviso-accertamento-opposizione"],
+    related: ["rottamazione-quinquies", "rateizzazione-cartelle-esattoriali", "avviso-accertamento-opposizione"],
   },
 
   "debiti-inps": {
@@ -313,7 +328,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
     updatedISO: REVISIONE,
     entities: ["Pignoramento immobiliare", "Esecuzione forzata", "Conversione del pignoramento", "Asta giudiziaria"],
     laws: ["Artt. 555 e ss. c.p.c.", "Art. 495 c.p.c.", "Art. 76 DPR 602/1973"],
-    related: ["mutuo-non-pagato-cosa-fare", "ipoteca-esattoriale", "sovraindebitamento-cos-e"],
+    related: ["mutuo-non-pagato-cosa-fare", "ipoteca-esattoriale", "debiti-condominiali"],
   },
 
   "pignoramento-conto-corrente": {
@@ -463,7 +478,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
     updatedISO: REVISIONE,
     entities: ["Piano del consumatore", "Ristrutturazione dei debiti del consumatore", "Sovraindebitamento", "OCC"],
     laws: ["Artt. 67-73 CCII", "D.lgs. 14/2019"],
-    related: ["sovraindebitamento-cos-e", "esdebitazione-incapiente", "occ-organismo-composizione-crisi"],
+    related: ["sovraindebitamento-cos-e", "esdebitazione-incapiente", "cessione-del-quinto-problemi"],
   },
 
   "debiti-banche-finanziarie": {

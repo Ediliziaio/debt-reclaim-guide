@@ -42,6 +42,7 @@ import {
   type ArticleMeta,
 } from "@/data/articles";
 import { hubForCategory } from "@/data/categories";
+import { AUTO_LINKS, MAX_AUTO_LINKS } from "@/data/autoLinks";
 import { getArticleContent } from "@/data/articlesContent";
 import { getArticleSeo } from "@/data/articleSeo";
 
@@ -228,6 +229,45 @@ const wordCountOf = (blocks?: Block[]): number => {
     }
   }
   return n;
+};
+
+/**
+ * Trasforma nel corpo dell'articolo la prima occorrenza di ogni espressione
+ * dichiarata in AUTO_LINKS nel link alla guida corrispondente.
+ *
+ * Opera solo su paragrafi e note — mai su titoli, tabelle o FAQ, dove un link
+ * spezzerebbe la lettura — e si ferma al tetto di MAX_AUTO_LINKS per pagina:
+ * oltre quella soglia i collegamenti smettono di aiutare e diventano rumore.
+ * Ogni guida viene collegata una volta sola, e i paragrafi che contengono già
+ * un link scritto a mano vengono saltati per non annidare markup.
+ */
+const withAutoLinks = (content: Block[], currentSlug: string): Block[] => {
+  const used = new Set<string>([currentSlug]);
+  let budget = MAX_AUTO_LINKS;
+
+  const linkFirst = (text: string): string => {
+    if (budget <= 0 || text.includes("](")) return text;
+    for (const { slug, terms } of AUTO_LINKS) {
+      if (used.has(slug)) continue;
+      for (const term of terms) {
+        const i = text.toLowerCase().indexOf(term);
+        if (i < 0) continue;
+        // Solo su confine di parola: evita di spezzare parole più lunghe.
+        const before = i === 0 ? " " : text[i - 1];
+        const after = text[i + term.length] ?? " ";
+        if (/[a-zà-ù0-9]/i.test(before) || /[a-zà-ù0-9]/i.test(after)) continue;
+        used.add(slug);
+        budget--;
+        const label = text.slice(i, i + term.length);
+        return `${text.slice(0, i)}[${label}](/risorse/${slug})${text.slice(i + term.length)}`;
+      }
+    }
+    return text;
+  };
+
+  return content.map((b) =>
+    b.type === "p" || b.type === "note" ? { ...b, text: linkFirst(b.text) } : b,
+  );
 };
 
 /**
@@ -703,7 +743,8 @@ const Articolo = () => {
   // I metadati canonici sono quelli di articlesMeta (la stessa fonte che
   // alimenta liste e correlati): sovrascrivono la copia dentro il file
   // dell'articolo, così i campi AEO si scrivono in un posto solo.
-  const article: Article = { ...content, ...(getArticleMeta(slug) ?? {}) };
+  const merged: Article = { ...content, ...(getArticleMeta(slug) ?? {}) };
+  const article: Article = { ...merged, content: withAutoLinks(merged.content, slug) };
 
   const related = getRelated(slug, 3);
   const { articleSchema, breadcrumbSchema, faqSchema, webPageSchema } = buildSchemas(

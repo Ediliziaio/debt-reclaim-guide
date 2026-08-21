@@ -66,8 +66,8 @@ const Risorse = () => {
   return (
     <>
       <SEO
-        title="Risorse, guide e blog su esdebitazione e crisi d'impresa | Tutela Debito"
-        description="Approfondimenti, guide pratiche e articoli aggiornati su esdebitazione, sovraindebitamento, cartelle esattoriali, crisi d'impresa e contenzioso tributario. Redatti dallo studio."
+        title="Guide su debiti, cartelle ed esdebitazione | Tutela Debito"
+        description="Guide pratiche e aggiornate su esdebitazione, sovraindebitamento, cartelle esattoriali, pignoramenti e crisi d'impresa. A cura dello studio."
         keywords="blog esdebitazione, guide sovraindebitamento, articoli crisi d'impresa, cartella esattoriale, pignoramento, composizione negoziata, rottamazione"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/risorse"

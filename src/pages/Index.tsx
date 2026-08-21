@@ -28,8 +28,8 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Tutela Debito | Esdebitazione, Crisi d'Impresa, Contenzioso Tributario"
-        description="Studio legale e fiscale per esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
+        title="Esdebitazione, cartelle e crisi d'impresa | Tutela Debito"
+        description="Studio legale per esdebitazione, sovraindebitamento, cartelle e crisi d'impresa. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
         keywords="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, studio legale debiti, avvocato debiti, composizione negoziata, piano del consumatore, rottamazione"
         robots="index, follow, max-image-preview:large, max-snippet:-1"
         canonical="https://www.tuteladebito.it/"

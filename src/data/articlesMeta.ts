@@ -107,6 +107,27 @@ export const articlesMeta: ArticleMeta[] = [
       "La prescrizione è un istituto civilistico essenziale nel diritto del credito: il decorso del tempo, in assenza di iniziative del titolare, estingue il diritto e impedisce al creditore di pretenderne l'adempimento. Conoscere i termini di prescrizione, i meccanismi di interruzione e di sospensione e i modi corretti per farla valere è strumento indispensabile per chi affronta posizioni debitorie risalenti. La materia è disciplinata dagli artt. 2934-2963 c.c., con discipline speciali per cartelle esattoriali, contributi previdenziali e specifici rapporti.",
   },
   {
+    slug: "prima-casa-pignoramento",
+    title: "Prima casa e debiti: quando può essere pignorata e quando no",
+    excerpt:
+      "L'impignorabilità della prima casa vale solo contro l'Agente della Riscossione e a precise condizioni (art. 76 DPR 602/1973). Banche, finanziarie, fornitori e privati non incontrano quel limite. Guida alle regole reali, alle soglie, all'ipoteca e agli strumenti che salvano davvero l'abitazione.",
+    category: "Privati",
+    date: "Agosto 2026",
+    readTime: "15 min",
+    author: "Avv. Armando Rossi",
+    cover: "from-navy to-navy-light",
+    coverImage: "/covers/prima-casa-pignoramento.webp",
+    keywords: [
+      "pignoramento prima casa",
+      "prima casa impignorabile",
+      "art 76 DPR 602/1973",
+      "ipoteca prima casa",
+      "salvare la casa dai debiti",
+    ],
+    intro:
+      "«Mi possono portare via la casa?» è la prima domanda di quasi ogni colloquio. La risposta che circola — «la prima casa non si tocca» — è vera solo in parte, e la parte in cui è falsa è quella che conta di più. L'impignorabilità dell'abitazione principale è una regola speciale che vale nei confronti dell'Agente della Riscossione e solo al ricorrere di condizioni precise; verso banche, finanziarie, fornitori e creditori privati quella tutela semplicemente non esiste. Questa guida ricostruisce chi può aggredire l'abitazione, con quali soglie e quali limiti, e quali strumenti la proteggono davvero.",
+  },
+  {
     slug: "mutuo-non-pagato-cosa-fare",
     title: "Mutuo non pagato: cosa fare prima del pignoramento immobiliare",
     excerpt:

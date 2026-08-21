@@ -175,8 +175,8 @@ const Quiz = () => {
   return (
     <>
       <SEO
-        title="Test online di orientamento: posso esdebitarmi? | Tutela Debito"
-        description="Test online gratuito di orientamento: poche domande per capire se la tua situazione può rientrare nei presupposti delle procedure di sovraindebitamento previste dalla legge italiana."
+        title="Test: posso accedere all'esdebitazione? | Tutela Debito"
+        description="Test gratuito: poche domande per capire se la tua situazione rientra nei presupposti delle procedure di sovraindebitamento."
         keywords="test esdebitazione, quiz sovraindebitamento, posso uscire dai debiti, orientamento legale"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/quiz"

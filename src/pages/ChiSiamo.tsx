@@ -73,8 +73,8 @@ const ChiSiamo = () => {
   return (
     <>
       <SEO
-        title="Chi siamo | Tutela Debito — Studio legale e fiscale a Napoli, Milano e Torino"
-        description="Tutela Debito è uno studio legale e fiscale strutturato come azienda professionale, specializzato in esdebitazione, sovraindebitamento, crisi d'impresa e contenzioso tributario. Sedi a Napoli, Milano e Torino."
+        title="Chi siamo: studio legale per debiti a Napoli e Milano"
+        description="Studio legale e fiscale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino."
         keywords="studio legale debiti, avvocato esdebitazione, azienda legale, Napoli, Milano, Torino, crisi d'impresa"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/chi-siamo"

@@ -34,7 +34,7 @@ const Metodo = () => {
     <>
       <SEO
         title="Il nostro metodo in 4 fasi | Tutela Debito"
-        description="Il metodo Tutela Debito in 4 fasi operative: diagnosi della posizione debitoria, definizione della strategia legale, deposito della procedura, esecuzione e chiusura."
+        description="Il metodo in 4 fasi: diagnosi della posizione debitoria, strategia legale, deposito della procedura, esecuzione fino all'esdebitazione."
         keywords="metodo esdebitazione, procedura sovraindebitamento, strategia legale debiti, diagnosi debiti"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/metodo"

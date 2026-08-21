@@ -61,8 +61,8 @@ const Glossario = () => {
   return (
     <>
       <SEO
-        title="Glossario del debito: 50 termini spiegati | Tutela Debito"
-        description="Cos'è l'esdebitazione, il sovraindebitamento, il precetto, la liquidazione controllata: 50 termini di debito, riscossione ed esecuzioni spiegati con la norma."
+        title="Glossario del debito: 57 termini spiegati"
+        description="Esdebitazione, sovraindebitamento, precetto, liquidazione controllata: 57 termini di debito, riscossione ed esecuzioni spiegati con la norma."
         keywords="glossario debiti, cos'è l'esdebitazione, cos'è il sovraindebitamento, significato precetto, definizione pignoramento, termini giuridici debito"
         robots="index, follow, max-image-preview:large, max-snippet:-1"
         canonical={URL}

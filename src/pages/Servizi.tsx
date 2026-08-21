@@ -130,8 +130,8 @@ const Servizi = () => {
   return (
     <>
       <SEO
-        title="Servizi: esdebitazione, crisi d'impresa, contenzioso tributario | Tutela Debito"
-        description="Aree di competenza dello studio: esdebitazione del privato (L. 3/2012 e CCII), composizione negoziata della crisi d'impresa, contenzioso tributario, opposizione esecuzioni e pignoramenti."
+        title="Servizi: esdebitazione, cartelle, crisi d'impresa"
+        description="Le aree dello studio: esdebitazione e sovraindebitamento, composizione negoziata della crisi, contenzioso tributario, opposizione a pignoramenti."
         keywords="esdebitazione, crisi d'impresa, contenzioso tributario, opposizione pignoramento, composizione negoziata, piano del consumatore, liquidazione controllata"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/servizi"

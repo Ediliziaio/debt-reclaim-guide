@@ -140,6 +140,11 @@ export const ARTICLE_SEO: Record<string, ArticleSeo> = {
     metaDescription:
       "Pignoramento dello stipendio: limiti, regola del quinto, cumulo dei pignoramenti e strumenti di difesa. Quanto possono trattenere e come ridurlo legalmente.",
   },
+  "prima-casa-pignoramento": {
+    seoTitle: "Pignoramento prima casa: quando è possibile",
+    metaDescription:
+      "La prima casa è impignorabile solo verso l'Agente della Riscossione e a quattro condizioni. Banche e altri creditori possono procedere: regole, soglie e difese.",
+  },
   "prescrizione-debiti": {
     seoTitle: "Prescrizione dei debiti: tempi e come farla valere",
     metaDescription:

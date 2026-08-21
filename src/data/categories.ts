@@ -59,7 +59,7 @@ export const CATEGORY_HUBS: CategoryHub[] = [
     slug: "imprese",
     category: "Imprese",
     heading: "Crisi d'impresa e debiti aziendali",
-    seoTitle: "Crisi d'impresa: strumenti e procedure del CCII",
+    seoTitle: "Crisi d'impresa: procedure e strumenti",
     metaDescription:
       "Debiti d'impresa e crisi aziendale: composizione negoziata, concordato preventivo, liquidazione giudiziale, debiti verso fornitori. Guide operative.",
     answer:
@@ -115,7 +115,7 @@ export const CATEGORY_HUBS: CategoryHub[] = [
     slug: "procedure-esecutive",
     category: "Procedure",
     heading: "Procedure giudiziarie ed esecutive",
-    seoTitle: "Pignoramenti e decreti ingiuntivi: come difendersi",
+    seoTitle: "Pignoramenti e decreti ingiuntivi: le difese",
     metaDescription:
       "Pignoramento di stipendio, conto corrente e immobili, decreto ingiuntivo, piano del consumatore, ruolo dell'OCC: termini e difese del debitore.",
     answer:

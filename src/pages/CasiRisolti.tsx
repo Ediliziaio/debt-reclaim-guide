@@ -162,8 +162,8 @@ const CasiRisolti = () => {
   return (
     <>
       <SEO
-        title="Casi seguiti: esdebitazione, crisi d'impresa, tributario | Tutela Debito"
-        description="Selezione di procedure seguite dallo studio in materia di esdebitazione, sovraindebitamento, crisi d'impresa, opposizione a pignoramenti e contenzioso tributario."
+        title="Casi seguiti: esdebitazione e crisi d'impresa"
+        description="Procedure seguite dallo studio: esdebitazione, sovraindebitamento, crisi d'impresa, opposizione a pignoramenti e contenzioso tributario."
         keywords="casi esdebitazione, esempi sovraindebitamento, casi reali crisi d'impresa, procedure concluse"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/casi-risolti"
