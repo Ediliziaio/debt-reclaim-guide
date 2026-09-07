@@ -123,5 +123,37 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/services",
+      "destination": "/servizi",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/chi-siamo",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contatti",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/risorse",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/risorse/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/risorse",
+      "permanent": true
+    }
   ]
 }
