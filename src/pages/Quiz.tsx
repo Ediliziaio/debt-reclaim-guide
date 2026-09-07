@@ -5,9 +5,6 @@ import TDFooter from "@/components/TDFooter";
 import TDContactModal from "@/components/TDContactModal";
 import TDHeroBackdrop from "@/components/TDHeroBackdrop";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { CheckCircle2, ArrowRight, ArrowLeft, Sparkles, ShieldCheck, RefreshCw, User, Euro, Users2, AlertTriangle, Briefcase, Home } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -99,9 +96,6 @@ const Quiz = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [step, setStep] = useState(0); // 0..questions.length-1 -> domande, questions.length -> form lead, questions.length+1 -> risultato
   const [answers, setAnswers] = useState<Record<string, Answer>>({});
-  const [leadInfo, setLeadInfo] = useState({ name: "", email: "", phone: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
   const openContact = () => setIsContactOpen(true);
 
   const totalQuestions = questions.length;
@@ -119,17 +113,8 @@ const Quiz = () => {
   const restart = () => {
     setStep(0);
     setAnswers({});
-    setLeadInfo({ name: "", email: "", phone: "" });
   };
 
-  const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setIsSubmitting(false);
-    setStep(totalQuestions + 1);
-    toast({ title: "Risultato pronto", description: "Ti contattiamo entro 24h per la diagnosi gratuita." });
-  };
 
   const computeResult = () => {
     let score = 0;
@@ -291,7 +276,10 @@ const Quiz = () => {
                 );
               })()}
 
-              {/* Lead form */}
+              {/* Passaggio intermedio: il risultato non è più in ostaggio di un
+                  modulo. Prima il quiz chiedeva i dati per "inviare" il
+                  risultato e non li spediva a nessuno; ora il risultato si
+                  ottiene subito e il contatto è una scelta, non un pedaggio. */}
               {isOnLead && (
                 <div className="bg-white rounded-2xl shadow-card border border-border p-6 lg:p-10">
                   <div className="flex items-center gap-3 mb-5">
@@ -300,74 +288,25 @@ const Quiz = () => {
                     </div>
                     <div>
                       <h2 className="text-xl lg:text-2xl font-black text-navy">Il tuo risultato è pronto</h2>
-                      <p className="text-sm text-foreground/60">Dove te lo inviamo?</p>
+                      <p className="text-sm text-foreground/60">Nessun dato richiesto per vederlo.</p>
                     </div>
                   </div>
 
-                  <form onSubmit={handleLeadSubmit} className="space-y-4">
-                    <div className="space-y-1.5">
-                      <Label htmlFor="q-name">Come ti chiami? *</Label>
-                      <Input
-                        id="q-name"
-                        required
-                        value={leadInfo.name}
-                        onChange={(e) => setLeadInfo({ ...leadInfo, name: e.target.value })}
-                        placeholder="Mario Rossi"
-                      />
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <Label htmlFor="q-email">Email *</Label>
-                        <Input
-                          id="q-email"
-                          type="email"
-                          required
-                          value={leadInfo.email}
-                          onChange={(e) => setLeadInfo({ ...leadInfo, email: e.target.value })}
-                          placeholder="mario@email.it"
-                        />
-                      </div>
-                      <div className="space-y-1.5">
-                        <Label htmlFor="q-phone">Telefono *</Label>
-                        <Input
-                          id="q-phone"
-                          type="tel"
-                          required
-                          value={leadInfo.phone}
-                          onChange={(e) => setLeadInfo({ ...leadInfo, phone: e.target.value })}
-                          placeholder="+39 ___ _______"
-                        />
-                      </div>
-                    </div>
+                  <p className="text-foreground/75 leading-relaxed mb-6">
+                    Il risultato è puramente orientativo: dice se la tua situazione presenta
+                    elementi compatibili con gli strumenti previsti dalla legge, non se la
+                    procedura è concedibile. Quella valutazione richiede l'esame dei documenti.
+                  </p>
 
-                    <label className="flex items-start gap-2 text-xs text-foreground/70">
-                      <input type="checkbox" required className="mt-0.5" />
-                      <span>Accetto la <a href="/privacy" className="text-navy underline">Privacy Policy</a> e voglio ricevere il risultato.</span>
-                    </label>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gold hover:bg-gold-dark text-navy font-bold h-12 text-base"
-                    >
-                      {isSubmitting ? "Calcolo in corso..." : "Mostrami il risultato"}
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-
-                    <button
-                      type="button"
-                      onClick={back}
-                      className="inline-flex items-center gap-1 text-sm text-foreground/60 hover:text-navy transition-colors"
-                    >
-                      <ArrowLeft className="w-4 h-4" /> Torna alle domande
-                    </button>
-
-                    <p className="text-xs text-center text-foreground/50 flex items-center justify-center gap-1.5">
-                      <ShieldCheck className="w-3 h-3" /> Dati riservati — Niente spam, niente chiamate non richieste
-                    </p>
-                  </form>
+                  <Button
+                    onClick={() => setStep(totalQuestions + 1)}
+                    className="w-full bg-gold hover:bg-gold-dark text-navy font-bold h-12 text-base"
+                  >
+                    Mostrami il risultato <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
                 </div>
               )}
+
 
               {/* Result */}
               {isOnResult && (

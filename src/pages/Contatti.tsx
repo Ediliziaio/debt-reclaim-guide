@@ -6,30 +6,14 @@ import TDContactModal from "@/components/TDContactModal";
 import TDStickyCTA from "@/components/TDStickyCTA";
 import TDCoverage from "@/components/TDCoverage";
 import TDHeroBackdrop from "@/components/TDHeroBackdrop";
+import EicLeadForm from "@/components/EicLeadForm";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MessageCircle, MapPin, Clock, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 const Contatti = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const { toast } = useToast();
   const openContact = () => setIsContactOpen(true);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    toast({ title: "Richiesta inviata", description: "Ti contattiamo entro 24h lavorative." });
-    (e.target as HTMLFormElement).reset();
-  };
 
   return (
     <>
@@ -119,95 +103,12 @@ const Contatti = () => {
                 {/* Form */}
                 <div className="bg-white rounded-2xl p-7 lg:p-10 shadow-card border border-border">
                   <h2 className="text-2xl lg:text-3xl font-black text-navy mb-2">Richiedi la diagnosi gratuita</h2>
-                  <p className="text-foreground/70 mb-7">Bastano 2 minuti. Tutti i campi con * sono obbligatori.</p>
+                  <p className="text-foreground/70 mb-7">
+                    Compila il modulo: la richiesta arriva direttamente allo studio e ti
+                    ricontattiamo con una prima valutazione. Tutto riservato.
+                  </p>
 
-                  {isSuccess ? (
-                    <div className="py-12 text-center">
-                      <div className="w-20 h-20 rounded-full bg-success/15 flex items-center justify-center mx-auto mb-5">
-                        <CheckCircle2 className="w-10 h-10 text-success" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-navy mb-2">Richiesta ricevuta!</h3>
-                      <p className="text-foreground/70 mb-6">Ti contattiamo entro 24 ore lavorative al numero indicato.</p>
-                      <Button onClick={() => setIsSuccess(false)} variant="outline">Invia un'altra richiesta</Button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <div className="space-y-1.5">
-                          <Label htmlFor="c-name">Nome e cognome *</Label>
-                          <Input id="c-name" name="name" required />
-                        </div>
-                        <div className="space-y-1.5">
-                          <Label htmlFor="c-phone">Telefono *</Label>
-                          <Input id="c-phone" name="phone" type="tel" required />
-                        </div>
-                      </div>
-
-                      <div className="space-y-1.5">
-                        <Label htmlFor="c-email">Email *</Label>
-                        <Input id="c-email" name="email" type="email" required />
-                      </div>
-
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <div className="space-y-1.5">
-                          <Label htmlFor="c-profile">Sei un... *</Label>
-                          <Select name="profile" required>
-                            <SelectTrigger id="c-profile"><SelectValue placeholder="Seleziona" /></SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="privato">Privato cittadino</SelectItem>
-                              <SelectItem value="imprenditore">Imprenditore / PMI</SelectItem>
-                              <SelectItem value="professionista">Professionista</SelectItem>
-                              <SelectItem value="commercialista">Commercialista / Avvocato</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div className="space-y-1.5">
-                          <Label htmlFor="c-debt">Importo debito stimato *</Label>
-                          <Select name="debt" required>
-                            <SelectTrigger id="c-debt"><SelectValue placeholder="Seleziona" /></SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="lt-30">Fino a 30.000 €</SelectItem>
-                              <SelectItem value="30-100">30.000 - 100.000 €</SelectItem>
-                              <SelectItem value="100-300">100.000 - 300.000 €</SelectItem>
-                              <SelectItem value="gt-300">Oltre 300.000 €</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-
-                      <div className="space-y-1.5">
-                        <Label htmlFor="c-source">Tipo di creditori *</Label>
-                        <Select name="source" required>
-                          <SelectTrigger id="c-source"><SelectValue placeholder="Seleziona" /></SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="ader">Agenzia Entrate Riscossione</SelectItem>
-                            <SelectItem value="banche">Banche e finanziarie</SelectItem>
-                            <SelectItem value="fornitori">Fornitori / commerciali</SelectItem>
-                            <SelectItem value="misto">Più tipologie</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      <div className="space-y-1.5">
-                        <Label htmlFor="c-message">Descrivi la tua situazione</Label>
-                        <Textarea id="c-message" name="message" rows={4} placeholder="Es: pignoramento in corso, cartelle ricevute, azienda in difficoltà..." />
-                      </div>
-
-                      <label className="flex items-start gap-2 text-sm text-foreground/70">
-                        <input type="checkbox" required className="mt-1" />
-                        <span>Ho letto e accetto la <a href="/privacy" className="text-navy underline">Privacy Policy</a>. I dati saranno trattati esclusivamente per gestire la richiesta.</span>
-                      </label>
-
-                      <Button type="submit" disabled={isSubmitting} className="w-full bg-gold hover:bg-gold-dark text-navy font-bold h-12 text-base">
-                        {isSubmitting ? "Invio in corso..." : "Invia la richiesta"}
-                      </Button>
-
-                      <p className="text-xs text-center text-foreground/50">
-                        <ShieldCheck className="inline w-3 h-3 mr-1" />
-                        Riservato · Senza impegno · Risposta entro 24h lavorative
-                      </p>
-                    </form>
-                  )}
+                  <EicLeadForm title="Richiedi la diagnosi gratuita del tuo debito" />
                 </div>
 
                 {/* Info */}
