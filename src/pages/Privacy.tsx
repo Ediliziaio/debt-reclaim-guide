@@ -5,7 +5,7 @@ const Privacy = () => {
     <TDLegalLayout
       title="Privacy Policy"
       subtitle="Informativa sul trattamento dei dati personali ai sensi degli artt. 13 e 14 del Regolamento UE 2016/679 (GDPR)."
-      lastUpdate="14 maggio 2026"
+      lastUpdate="7 settembre 2026"
       icon="shield"
       metaDescription="Informativa sulla privacy di Tutela Debito: titolare del trattamento, finalità, base giuridica, conservazione, diritti dell'interessato."
       canonicalPath="/privacy"
@@ -81,14 +81,58 @@ const Privacy = () => {
         <li>Personale dello Studio, espressamente autorizzato al trattamento.</li>
         <li>Professionisti collaboratori (avvocati, commercialisti, consulenti) coinvolti nella pratica.</li>
         <li>Autorità giudiziarie, organi di vigilanza, Pubbliche Amministrazioni nei casi previsti dalla legge.</li>
-        <li>Fornitori di servizi tecnici (hosting, posta elettronica, gestionali), nominati Responsabili del trattamento ai sensi dell'art. 28 GDPR.</li>
+        <li>Fornitori di servizi tecnici (hosting, posta elettronica, gestionali e piattaforma di gestione dei contatti), nominati Responsabili del trattamento ai sensi dell'art. 28 GDPR.</li>
         <li>Organismi di Composizione della Crisi (OCC) quando coinvolti nella procedura.</li>
       </ul>
       <p>
         I dati non vengono diffusi né ceduti a terzi per finalità commerciali. Non è previsto trasferimento dei dati al di fuori dell'Unione Europea, salvo eccezioni puntuali con garanzie adeguate (es. utilizzo di servizi cloud certificati con clausole contrattuali standard).
       </p>
 
-      <h2>8. Diritti dell'interessato</h2>
+      <h2>8. Modulo di contatto e richiesta di diagnosi</h2>
+      <p>
+        Il modulo per la richiesta della diagnosi gratuita presente su questo sito è erogato
+        tramite la piattaforma <strong>EdiliziaInCloud</strong> ed è tecnicamente ospitato sul
+        dominio <code>app.ediliziaincloud.com</code>, incorporato nelle pagine del sito. I dati
+        inseriti nel modulo non transitano dai server di questo sito: vengono trasmessi
+        direttamente alla piattaforma, che li rende disponibili allo Studio nel proprio sistema
+        di gestione dei contatti.
+      </p>
+      <p>
+        Il fornitore della piattaforma agisce in qualità di <strong>Responsabile del
+        trattamento</strong> ai sensi dell'art. 28 GDPR, sulla base di apposito accordo che ne
+        vincola l'operato alle istruzioni del titolare.
+      </p>
+      <p>Attraverso il modulo sono trattati:</p>
+      <ul>
+        <li>
+          <strong>I dati che inserisci</strong>: nome e cognome, email, telefono, città e le
+          informazioni che scegli di fornire sulla tua situazione debitoria.
+        </li>
+        <li>
+          <strong>I parametri della campagna di provenienza</strong>, quando presenti nell'indirizzo
+          della pagina da cui compili il modulo (ad esempio <code>utm_source</code>,
+          <code>utm_campaign</code>, <code>gclid</code>). Servono unicamente a capire da quale
+          canale è arrivata la richiesta e non consentono di per sé di identificarti.
+        </li>
+      </ul>
+      <p>
+        La finalità è il riscontro alla richiesta e l'eventuale avvio del rapporto professionale
+        (art. 6.1.b GDPR). Il conferimento dei dati contrassegnati come obbligatori è necessario
+        per poterti ricontattare; senza di essi la richiesta non può essere evasa.
+      </p>
+      <p>
+        Se la richiesta non dà seguito a un incarico, i dati sono conservati per il tempo
+        necessario a gestire il contatto e a rispondere a eventuali riscontri successivi, e sono
+        comunque cancellati su tua richiesta secondo quanto indicato al punto sui diritti
+        dell'interessato. Se invece si apre una pratica, valgono i termini di conservazione
+        indicati al punto 6.
+      </p>
+      <p>
+        Puoi in ogni caso evitare il modulo e contattare lo Studio direttamente per telefono,
+        email o PEC, ai recapiti indicati al punto 1.
+      </p>
+
+      <h2>9. Diritti dell'interessato</h2>
       <p>
         Ai sensi degli artt. 15-22 GDPR, l'interessato ha il diritto di:
       </p>
@@ -105,12 +149,12 @@ const Privacy = () => {
         Per esercitare tali diritti è sufficiente contattare il titolare ai recapiti indicati al punto 1. L'interessato ha inoltre il diritto di proporre reclamo all'<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">Autorità Garante per la protezione dei dati personali</a>.
       </p>
 
-      <h2>9. Natura del conferimento dei dati</h2>
+      <h2>10. Natura del conferimento dei dati</h2>
       <p>
         Il conferimento dei dati è facoltativo, ma il mancato conferimento dei dati necessari all'erogazione del servizio potrebbe impedire l'instaurazione o la corretta esecuzione del rapporto professionale.
       </p>
 
-      <h2>10. Modifiche all'informativa</h2>
+      <h2>11. Modifiche all'informativa</h2>
       <p>
         Lo Studio si riserva il diritto di modificare la presente informativa per adeguarla a evoluzioni normative o organizzative. Le modifiche saranno pubblicate su questa pagina con indicazione della data di ultimo aggiornamento.
       </p>
