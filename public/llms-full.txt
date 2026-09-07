@@ -1,6 +1,6 @@
 # Tutela Debito — corpus completo delle guide
 > Testo integrale delle guide pubblicate su https://www.tuteladebito.it, in diritto italiano, a cura dello Studio Legale Avv. Armando Rossi (Napoli, Milano, Torino). Ogni guida riporta URL, autore, data di revisione e norme citate. Contenuto informativo: non sostituisce una consulenza sul caso concreto.
-Guide incluse: 34. Ultimo aggiornamento del corpus: 2026-08-03.
+Guide incluse: 34. Ultimo aggiornamento del corpus: 2026-08-21.
 
 
 ---
@@ -1863,7 +1863,7 @@ La prescrizione è uno strumento potente di tutela del debitore, ma è anche un 
 
 # Atto di precetto: cosa fare nei 10 giorni prima del pignoramento
 URL: https://www.tuteladebito.it/risorse/atto-di-precetto
-Categoria: Procedure · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-03
+Categoria: Procedure · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-21
 Norme citate: Artt. 479-482 c.p.c.; Art. 615 c.p.c.; Art. 617 c.p.c.
 RISPOSTA RAPIDA: L'atto di precetto è l'intimazione con cui il creditore munito di titolo esecutivo ordina al debitore di pagare entro un termine non inferiore a dieci giorni, avvertendolo che altrimenti procederà al pignoramento (artt. 479 e ss. c.p.c.). Non blocca alcun bene: perde efficacia se il pignoramento non inizia entro novanta giorni dalla notifica.
 
@@ -1967,7 +1967,7 @@ Il precetto non è ancora un'esecuzione: è l'avviso che l'esecuzione può inizi
 
 # Come sospendere o bloccare un pignoramento già iniziato
 URL: https://www.tuteladebito.it/risorse/sospendere-pignoramento
-Categoria: Procedure · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-03
+Categoria: Procedure · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-21
 Norme citate: Art. 495 c.p.c.; Art. 615 c.p.c.; Art. 617 c.p.c.; Art. 72-ter DPR 602/1973
 RISPOSTA RAPIDA: Un pignoramento già iniziato può essere fermato finché non interviene il decreto di trasferimento o l'assegnazione definitiva delle somme. Gli strumenti sono quattro: la conversione del pignoramento (art. 495 c.p.c.), le opposizioni esecutive accompagnate da istanza di sospensione al giudice, l'accordo con il creditore procedente e le procedure di sovraindebitamento, che sospendono tutte le azioni insieme.
 
@@ -2076,7 +2076,7 @@ Un pignoramento in corso lascia più margini di quanti se ne immaginino, ma sono
 
 # Prima casa e debiti: quando può essere pignorata e quando no
 URL: https://www.tuteladebito.it/risorse/prima-casa-pignoramento
-Categoria: Privati · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-03
+Categoria: Privati · Autore: Avv. Armando Rossi · Pubblicato: Agosto 2026 · Aggiornato: 2026-08-21
 Norme citate: Art. 76 DPR 602/1973; Art. 77 DPR 602/1973; Art. 170 c.c.; Art. 2929-bis c.c.
 RISPOSTA RAPIDA: La prima casa non è impignorabile in generale: il divieto dell'art. 76 DPR 602/1973 vale solo per l'Agenzia delle Entrate-Riscossione e solo se l'immobile è l'unico di proprietà, a uso abitativo, con residenza anagrafica del debitore e non di lusso. Banche, finanziarie, fornitori e creditori privati possono espropriarlo senza incontrare quel limite.
 

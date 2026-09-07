@@ -29,6 +29,8 @@ export type ArticleAeo = {
 };
 
 const REVISIONE = "2026-08-03";
+/** Guide pubblicate nella tornata del 21 agosto. */
+const PUBBLICATE_21_08 = "2026-08-21";
 
 export const ARTICLE_AEO: Record<string, ArticleAeo> = {
   "sovraindebitamento-cos-e": {
@@ -115,7 +117,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
       "Perde efficacia se il pignoramento non inizia entro novanta giorni dalla notifica (art. 481 c.p.c.).",
       "I vizi formali si contestano con l'opposizione agli atti esecutivi entro venti giorni, termine perentorio; il diritto di procedere con l'opposizione all'esecuzione.",
     ],
-    updatedISO: REVISIONE,
+    updatedISO: PUBBLICATE_21_08,
     entities: ["Atto di precetto", "Titolo esecutivo", "Opposizione all'esecuzione", "Esecuzione forzata"],
     laws: ["Artt. 479-482 c.p.c.", "Art. 615 c.p.c.", "Art. 617 c.p.c."],
     related: ["sospendere-pignoramento", "decreto-ingiuntivo-opposizione", "pignoramento-conto-corrente"],
@@ -130,7 +132,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
       "L'accordo con il solo creditore procedente non basta se altri creditori possono intervenire nella stessa procedura.",
       "Contro l'Agente della Riscossione la rateizzazione accolta sospende le azioni esecutive e cautelari.",
     ],
-    updatedISO: REVISIONE,
+    updatedISO: PUBBLICATE_21_08,
     entities: ["Sospensione del pignoramento", "Conversione del pignoramento", "Opposizione all'esecuzione", "Sovraindebitamento"],
     laws: ["Art. 495 c.p.c.", "Art. 615 c.p.c.", "Art. 617 c.p.c.", "Art. 72-ter DPR 602/1973"],
     related: ["atto-di-precetto", "pignoramento-immobiliare", "piano-consumatore"],
@@ -145,7 +147,7 @@ export const ARTICLE_AEO: Record<string, ArticleAeo> = {
       "Se una delle quattro condizioni manca, l'Agente della Riscossione può procedere oltre i 120.000 euro di debito e con ipoteca iscritta da almeno sei mesi.",
       "Fondo patrimoniale e trust costituiti a debiti già in essere sono esposti a revocatoria e all'art. 2929-bis c.c., e pregiudicano la meritevolezza nelle procedure di sovraindebitamento.",
     ],
-    updatedISO: REVISIONE,
+    updatedISO: PUBBLICATE_21_08,
     entities: ["Pignoramento della prima casa", "Impignorabilità", "Ipoteca esattoriale", "Fondo patrimoniale"],
     laws: ["Art. 76 DPR 602/1973", "Art. 77 DPR 602/1973", "Art. 170 c.c.", "Art. 2929-bis c.c."],
     related: ["pignoramento-immobiliare", "mutuo-non-pagato-cosa-fare", "ipoteca-esattoriale"],

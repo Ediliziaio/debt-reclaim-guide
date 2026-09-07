@@ -11,6 +11,7 @@
 //   immagini entrano nell'indice con il contesto della pagina.
 
 import { writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { loadArticles, loadCategoryHubs } from "./load-article-data.mjs";
@@ -24,7 +25,65 @@ const escapeXml = (s) =>
 
 // Le pagine statiche cambiano quando le si tocca: la data si aggiorna a mano,
 // esattamente come si farebbe con un changelog.
-// path, changefreq, priority, lastmod
+
+/**
+ * Data dell'ultima modifica reale di una pagina, letta da git.
+ *
+ * Scriverla a mano non funziona: le pagine città sono state riscritte il 21
+ * agosto continuando a dichiarare il 20 luglio, cioè dicendo a Google che non
+ * erano cambiate — e Google, giustamente, non le ha ricontrollate. Un lastmod
+ * sbagliato è peggio di nessun lastmod, perché è un segnale attivo e falso.
+ *
+ * Qui la data viene dedotta dall'ultimo commit che ha toccato i file da cui la
+ * pagina è generata. Se git non è disponibile (build su una copia senza
+ * cronologia) si ricade sulla data dichiarata, che resta l'ultima risorsa.
+ */
+const gitDate = (...files) => {
+  let latest;
+  for (const f of files) {
+    try {
+      const d = execFileSync("git", ["log", "-1", "--format=%cs", "--", f], {
+        cwd: root,
+        encoding: "utf-8",
+        stdio: ["ignore", "pipe", "ignore"],
+      }).trim();
+      if (d && (!latest || d > latest)) latest = d;
+    } catch {
+      /* git assente o file non tracciato: si passa oltre */
+    }
+  }
+  return latest;
+};
+
+/** Componenti che compongono la home: la sua data è quella del più recente. */
+const HOME_SOURCES = [
+  "src/pages/Index.tsx",
+  "src/components/TDHero.tsx",
+  "src/components/TDFAQ.tsx",
+  "src/components/TDServicesCards.tsx",
+  "src/components/TDCoverage.tsx",
+];
+
+/** Da quali sorgenti dipende ciascuna pagina statica. */
+const PAGE_SOURCES = {
+  "/": HOME_SOURCES,
+  "/servizi": ["src/pages/Servizi.tsx"],
+  "/metodo": ["src/pages/Metodo.tsx", "src/components/TDMethod.tsx"],
+  "/chi-siamo": ["src/pages/ChiSiamo.tsx"],
+  "/casi-risolti": ["src/pages/CasiRisolti.tsx"],
+  "/contatti": ["src/pages/Contatti.tsx"],
+  "/quiz": ["src/pages/Quiz.tsx"],
+  "/risorse": ["src/pages/Risorse.tsx", "src/data/articlesMeta.ts"],
+  "/glossario": ["src/pages/Glossario.tsx", "src/data/glossary.ts"],
+  "/studio-legale-napoli": ["src/pages/StudioLegaleCitta.tsx", "src/data/cities.ts"],
+  "/studio-legale-milano": ["src/pages/StudioLegaleCitta.tsx", "src/data/cities.ts"],
+  "/studio-legale-torino": ["src/pages/StudioLegaleCitta.tsx", "src/data/cities.ts"],
+  "/privacy": ["src/pages/Privacy.tsx"],
+  "/cookie": ["src/pages/CookiePolicy.tsx"],
+  "/note-legali": ["src/pages/NoteLegali.tsx"],
+};
+
+// path, changefreq, priority, lastmod di riserva
 const staticPages = [
   ["/", "weekly", "1.0", "2026-08-03"],
   ["/studio-legale-napoli", "monthly", "0.9", "2026-07-20"],
@@ -68,15 +127,15 @@ const hubLastmod = (hub) =>
     .pop() ?? "2026-08-03";
 
 const urls = [
-  ...staticPages.map(([path, changefreq, priority, lastmod]) => ({
+  ...staticPages.map(([path, changefreq, priority, fallback]) => ({
     loc: `${BASE}${path}`,
-    lastmod,
+    lastmod: gitDate(...(PAGE_SOURCES[path] ?? [])) ?? fallback,
     changefreq,
     priority,
   })),
   ...hubs.map((hub) => ({
     loc: `${BASE}/risorse/categoria/${hub.slug}`,
-    lastmod: hubLastmod(hub),
+    lastmod: [gitDate("src/data/categories.ts"), hubLastmod(hub)].filter(Boolean).sort().pop(),
     changefreq: "weekly",
     priority: "0.8",
   })),
@@ -85,7 +144,11 @@ const urls = [
     .sort((a, b) => a.slug.localeCompare(b.slug))
     .map((a) => ({
       loc: `${BASE}/risorse/${a.slug}`,
-      lastmod: a.updatedISO ?? toISODate(a.date) ?? "2026-08-03",
+      lastmod:
+        gitDate(`src/data/articles/${a.slug}.ts`) ??
+        a.updatedISO ??
+        toISODate(a.date) ??
+        "2026-08-03",
       changefreq: "monthly",
       priority: "0.7",
       image: a.coverImage ? { loc: `${BASE}${a.coverImage}`, title: a.title } : undefined,
