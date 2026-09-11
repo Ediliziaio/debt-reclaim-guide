@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { urlFormConCampagna } from "@/lib/eicForm";
 
 /**
  * Modulo di contatto ospitato da EdiliziaInCloud: le richieste entrano
@@ -27,37 +28,13 @@ const FORM_ORIGIN = "https://app.ediliziaincloud.com";
 const SLUG = "tutela-debito";
 const COMPANY_ID = "3c6e1cf3-1b86-4ddd-add0-4e377bd5cab3";
 
-/** Parametri di campagna da trasferire al modulo, per attribuire il lead. */
-const TRACKING_PARAMS = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_content",
-  "utm_term",
-  "gclid",
-  "wbraid",
-  "gbraid",
-  "fbclid",
-  "ttclid",
-  "msclkid",
-  "li_fat_id",
-];
-
 const MIN_HEIGHT = 620;
 const MAX_HEIGHT = 2600;
 
 const buildSrc = (): string => {
-  const base = `${FORM_ORIGIN}/f?slug=${SLUG}&company_id=${COMPANY_ID}`;
-  try {
-    const current = new URLSearchParams(window.location.search);
-    const extra = TRACKING_PARAMS.flatMap((key) => {
-      const value = current.get(key);
-      return value ? [`${encodeURIComponent(key)}=${encodeURIComponent(value)}`] : [];
-    });
-    return extra.length ? `${base}&${extra.join("&")}` : base;
-  } catch {
-    return base;
-  }
+  // Parametri di campagna: quelli della pagina o, se la visita è iniziata
+  // altrove (es. annuncio → home → pagina del modulo), quelli salvati all'atterraggio.
+  return urlFormConCampagna(`${FORM_ORIGIN}/f?slug=${SLUG}&company_id=${COMPANY_ID}`);
 };
 
 interface EicLeadFormProps {

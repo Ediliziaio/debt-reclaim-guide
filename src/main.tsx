@@ -1,6 +1,11 @@
 import { ViteReactSSG } from "vite-react-ssg";
 import { routes } from "./App.tsx";
 import "./index.css";
+import { salvaParametriCampagna } from "./lib/eicForm";
+
+// UTM / gclid / fbclid dell'atterraggio: il modulo li riceve anche se la
+// visita è iniziata da un'altra pagina (nel prerender non fa nulla).
+salvaParametriCampagna();
 
 // Unified SSG + client entry: at build time vite-react-ssg pre-renders every
 // route to static HTML (with per-page <title>/meta/canonical/JSON-LD and full
