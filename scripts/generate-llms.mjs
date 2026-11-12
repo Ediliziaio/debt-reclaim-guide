@@ -34,7 +34,7 @@ const CATEGORY_LABEL = {
 
 const header = `# Tutela Debito — Studio legale per esdebitazione, sovraindebitamento e crisi d'impresa
 
-> Tutela Debito (Studio Legale Avv. Armando Rossi) è uno studio legale e fiscale italiano specializzato in esdebitazione, sovraindebitamento (Codice della Crisi d'Impresa e dell'Insolvenza, D.lgs. 14/2019, e L. 3/2012), crisi d'impresa, esecuzioni e contenzioso tributario. Assiste privati, famiglie, professionisti e imprese, con sedi a Napoli, Milano e Torino. Ogni percorso parte da una diagnosi riservata della posizione debitoria. I contenuti pubblicati sul sito sono guide tecniche in diritto italiano, aggiornate alla normativa vigente e firmate.
+> Tutela Debito (Studio Legale Avv. Armando Rossi) è uno studio legale e fiscale italiano specializzato in esdebitazione, sovraindebitamento (Codice della Crisi d'Impresa e dell'Insolvenza, D.lgs. 14/2019, e L. 3/2012), crisi d'impresa, esecuzioni e contenzioso tributario. Assiste privati, famiglie, professionisti e imprese, con sedi a Napoli e Torino. Ogni percorso parte da una diagnosi riservata della posizione debitoria. I contenuti pubblicati sul sito sono guide tecniche in diritto italiano, aggiornate alla normativa vigente e firmate.
 
 ## Cosa fa lo studio
 
@@ -48,8 +48,7 @@ const header = `# Tutela Debito — Studio legale per esdebitazione, sovraindebi
 ## Sedi
 
 - Napoli: Via M. Cervantes 55/5, 80133 Napoli (NA) — ${BASE}/studio-legale-napoli
-- Milano: Via R. Boscovich 14, 20124 Milano (MI) — ${BASE}/studio-legale-milano
-- Torino: Corso Vittorio Emanuele II 168, 10138 Torino (TO) — ${BASE}/studio-legale-torino
+- Torino: Corso Trapani 136, 10141 Torino (TO) — ${BASE}/studio-legale-torino
 - Telefono: +39 081 18671862 · +39 338 6115394 — Email: info@studioavvocatorossi.it
 - Orari: lunedì–venerdì 9:00–18:00
 
@@ -136,7 +135,7 @@ const blockToText = (b) => {
 const chunks = [
   `# Tutela Debito — corpus completo delle guide`,
   ``,
-  `> Testo integrale delle guide pubblicate su ${BASE}, in diritto italiano, a cura dello Studio Legale Avv. Armando Rossi (Napoli, Milano, Torino). Ogni guida riporta URL, autore, data di revisione e norme citate. Contenuto informativo: non sostituisce una consulenza sul caso concreto.`,
+  `> Testo integrale delle guide pubblicate su ${BASE}, in diritto italiano, a cura dello Studio Legale Avv. Armando Rossi (Napoli, Torino). Ogni guida riporta URL, autore, data di revisione e norme citate. Contenuto informativo: non sostituisce una consulenza sul caso concreto.`,
   ``,
   `Guide incluse: ${articles.length}. Ultimo aggiornamento del corpus: ${articles.map((a) => a.updatedISO).filter(Boolean).sort().pop() ?? "n.d."}.`,
   ``,

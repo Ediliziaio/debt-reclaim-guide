@@ -76,7 +76,6 @@ const PAGE_SOURCES = {
   "/risorse": ["src/pages/Risorse.tsx", "src/data/articlesMeta.ts"],
   "/glossario": ["src/pages/Glossario.tsx", "src/data/glossary.ts"],
   "/studio-legale-napoli": ["src/pages/StudioLegaleCitta.tsx", "src/data/cities.ts"],
-  "/studio-legale-milano": ["src/pages/StudioLegaleCitta.tsx", "src/data/cities.ts"],
   "/studio-legale-torino": ["src/pages/StudioLegaleCitta.tsx", "src/data/cities.ts"],
   "/privacy": ["src/pages/Privacy.tsx"],
   "/cookie": ["src/pages/CookiePolicy.tsx"],
@@ -87,7 +86,6 @@ const PAGE_SOURCES = {
 const staticPages = [
   ["/", "weekly", "1.0", "2026-08-03"],
   ["/studio-legale-napoli", "monthly", "0.9", "2026-07-20"],
-  ["/studio-legale-milano", "monthly", "0.9", "2026-07-20"],
   ["/studio-legale-torino", "monthly", "0.9", "2026-07-20"],
   ["/servizi", "monthly", "0.8", "2026-07-20"],
   ["/metodo", "monthly", "0.8", "2026-07-20"],

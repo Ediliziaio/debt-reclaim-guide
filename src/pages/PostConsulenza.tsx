@@ -148,7 +148,7 @@ const comparison = [
   { aspect: "Casi mostrati", us: "Con cifre, procedure e estremi verificabili", them: "Testimonianze generiche, foto stock" },
   { aspect: "Iscrizione Ordini", us: "Avvocati Ordine di Napoli, ODCEC", them: "Spesso non verificabile" },
   { aspect: "Polizza professionale", us: "Sì, copertura RC obbligatoria", them: "Spesso assente o non comunicata" },
-  { aspect: "Sedi fisiche", us: "Napoli, Milano, Torino — indirizzi reali", them: "Solo sito web o casella postale" },
+  { aspect: "Sedi fisiche", us: "Napoli, Torino — indirizzi reali", them: "Solo sito web o casella postale" },
   { aspect: "Comunicazione", us: "Referente unico, aggiornamenti regolari", them: "Numeri che squillano a vuoto" },
 ];
 
@@ -694,7 +694,7 @@ const PostConsulenza = () => {
                     {[
                       { icon: Building2, label: "Struttura organizzata", value: "4 dipartimenti, team di avvocati e commercialisti" },
                       { icon: Award, label: "Iscritti all'Ordine", value: "Avvocati Ordine di Napoli, ODCEC" },
-                      { icon: Scale, label: "Sedi fisiche reali", value: "Napoli · Milano · Torino (indirizzi pubblicati)" },
+                      { icon: Scale, label: "Sedi fisiche reali", value: "Napoli · Torino (indirizzi pubblicati)" },
                       { icon: FileText, label: "Preventivo scritto", value: "Sempre, prima dell'incarico, dettagliato per voce" },
                       { icon: CreditCard, label: "Diagnosi gratuita", value: "Senza acconti, senza condizioni" },
                       { icon: Clock, label: "Comunicazione", value: "Referente unico, aggiornamenti regolari, risposta in 24h" },
@@ -935,7 +935,7 @@ const PostConsulenza = () => {
                       icon: FileSearch,
                       duration: "Entro 1 settimana",
                       title: "Secondo colloquio approfondito",
-                      desc: "Fissiamo un secondo incontro — in videocall o in una delle tre sedi (Napoli, Milano, Torino), come preferisci. In quest'occasione raccogliamo i documenti utili: cartelle, contratti di finanziamento, eventuali atti di precetto o pignoramenti, dichiarazioni dei redditi.",
+                      desc: "Fissiamo un secondo incontro — in videocall o in una delle due sedi (Napoli, Torino), come preferisci. In quest'occasione raccogliamo i documenti utili: cartelle, contratti di finanziamento, eventuali atti di precetto o pignoramenti, dichiarazioni dei redditi.",
                     },
                     {
                       n: "03",

@@ -16,8 +16,7 @@ const Privacy = () => {
       </p>
       <ul>
         <li>Via M. Cervantes 55/5 — 80133 Napoli (sede principale)</li>
-        <li>Via R. Boscovich 14 — 20124 Milano</li>
-        <li>Corso Vittorio Emanuele II n. 168 — 10138 Torino</li>
+        <li>Corso Trapani 136 — 10141 Torino</li>
       </ul>
       <p>
         Per qualsiasi questione relativa al trattamento dei dati personali è possibile contattare il titolare ai seguenti recapiti:

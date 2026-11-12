@@ -3,7 +3,7 @@
 // street address (fine for schema.org; refine with exact values if available).
 
 export type City = {
-  slug: "napoli" | "milano" | "torino";
+  slug: "napoli" | "torino";
   name: string;
   province: string; // sigla, es. NA
   region: string; // es. Campania
@@ -95,69 +95,15 @@ export const CITIES: Record<City["slug"], City> = {
       },
     ],
   },
-  milano: {
-    slug: "milano",
-    name: "Milano",
-    province: "MI",
-    region: "Lombardia",
-    streetAddress: "Via R. Boscovich 14",
-    postalCode: "20124",
-    lat: 45.4808,
-    lng: 9.2065,
-    tribunale: "Tribunale di Milano",
-    areaServed: ["Milano", "Monza", "Sesto San Giovanni", "Rho", "Legnano", "Provincia di Milano", "Monza e Brianza", "Bergamo"],
-    intro:
-      "Il nostro studio legale a Milano affianca privati, professionisti e imprese della città e dell'hinterland lombardo nella gestione dei debiti: esdebitazione, sovraindebitamento, composizione negoziata della crisi d'impresa, opposizione a pignoramenti e contenzioso tributario. La prima diagnosi della posizione è riservata e senza impegno.",
-    local:
-      "A Milano le procedure di sovraindebitamento e le composizioni della crisi d'impresa si trattano presso il Tribunale di Milano, uno dei fori più strutturati d'Italia per la materia concorsuale. La collaborazione con un OCC e la corretta predisposizione della documentazione sono decisive per rispettare tempi e prassi del tribunale ambrosiano, sia per i privati sia per le imprese in continuità.",
-    corteTributaria: "Corte di Giustizia Tributaria di primo grado di Milano",
-    competenze: [
-      { materia: "Sovraindebitamento ed esdebitazione", ufficio: "Tribunale di Milano", nota: "La competenza segue la residenza del debitore: chi risiede a Milano o nel circondario deposita qui." },
-      { materia: "Opposizione a decreto ingiuntivo", ufficio: "Tribunale di Milano", nota: "Si propone davanti allo stesso ufficio che ha emesso il decreto, entro quaranta giorni dalla notifica." },
-      { materia: "Pignoramento presso terzi", ufficio: "Tribunale di Milano", nota: "Per il debitore privato la competenza è del tribunale del luogo di residenza (art. 26-bis c.p.c.)." },
-      { materia: "Esecuzione immobiliare", ufficio: "Tribunale del luogo in cui si trova l'immobile", nota: "Se l'immobile è nel circondario di Milano la procedura resta qui, anche se il debitore si trasferisce altrove." },
-      { materia: "Ricorsi tributari", ufficio: "Corte di Giustizia Tributaria di primo grado di Milano", nota: "Termine di sessanta giorni dalla notifica dell'atto, con deposito telematico." },
-      { materia: "Crisi d'impresa", ufficio: "Tribunale di Milano, sezione imprese", nota: "È uno dei fori con maggiore volume di procedure concorsuali e prassi consolidate su composizione negoziata e concordato." },
-    ],
-    contesto:
-      "A Milano l'esposizione ha spesso una componente bancaria più marcata che altrove: mutui su immobili di valore elevato, fidi di conto revocati a imprese in tensione di liquidità, garanzie personali degli amministratori sulle linee societarie. Si aggiungono le posizioni cedute a operatori specializzati in crediti deteriorati, molto attivi sulla piazza milanese, che vanno affrontate con una logica di trattativa diversa da quella con la banca originaria.",
-    zone: ["Centro", "Porta Romana", "Isola", "Navigli", "Città Studi", "Bicocca", "Sesto San Giovanni", "Monza", "Rho", "Legnano", "Cinisello Balsamo", "Bergamo"],
-    faq: [
-      {
-        q: "Dove si trova lo studio a Milano?",
-        a: "Lo studio è in Via R. Boscovich 14, 20124 Milano, in zona Stazione Centrale. Si riceve su appuntamento: prenota la prima diagnosi per telefono, WhatsApp o modulo di contatto.",
-      },
-      {
-        q: "Quale tribunale è competente per il sovraindebitamento a Milano?",
-        a: "Per i residenti a Milano e provincia la procedura si incardina presso il Tribunale di Milano, competente per le procedure di sovraindebitamento e per la crisi d'impresa.",
-      },
-      {
-        q: "Seguite anche le imprese in crisi a Milano?",
-        a: "Sì. Assistiamo imprese e professionisti dell'area milanese nella composizione negoziata della crisi, nel concordato minore e nelle altre procedure del Codice della Crisi, oltre ai privati sovraindebitati.",
-      },
-      {
-        q: "Devo per forza venire in studio a Milano?",
-        a: "No. Il primo colloquio può svolgersi in videocollegamento e gran parte della pratica si gestisce da remoto, con firma digitale sui documenti. La presenza in studio resta utile al primo incontro, quando si esamina insieme la documentazione.",
-      },
-      {
-        q: "La mia banca ha ceduto il credito a una società: cambia qualcosa?",
-        a: "Cambia l'interlocutore e, spesso, il margine di trattativa. Chi acquista portafogli deteriorati li paga una frazione del valore nominale e valuta le proposte su tempi e costi di recupero. Prima di trattare va però verificato che la cessione includa davvero la tua posizione: la pubblicazione in Gazzetta Ufficiale prova che una cessione in blocco è avvenuta, non che vi rientri il tuo rapporto.",
-      },
-      {
-        q: "Seguite anche imprese con sede fuori Milano?",
-        a: "Sì. Per la crisi d'impresa la competenza segue la sede legale dell'impresa: se è nel circondario di Milano la procedura si incardina al Tribunale di Milano. Per sedi in altri circondari valutiamo insieme l'assetto più efficiente, anche in collaborazione con i colleghi del foro competente.",
-      },
-    ],
-  },
   torino: {
     slug: "torino",
     name: "Torino",
     province: "TO",
     region: "Piemonte",
-    streetAddress: "Corso Vittorio Emanuele II 168",
-    postalCode: "10138",
-    lat: 45.0678,
-    lng: 7.654,
+    streetAddress: "Corso Trapani 136",
+    postalCode: "10141",
+    lat: 45.0713,
+    lng: 7.6392,
     tribunale: "Tribunale di Torino",
     areaServed: ["Torino", "Moncalieri", "Rivoli", "Collegno", "Settimo Torinese", "Provincia di Torino", "Asti", "Cuneo"],
     intro:
@@ -179,7 +125,7 @@ export const CITIES: Record<City["slug"], City> = {
     faq: [
       {
         q: "Dove si trova lo studio a Torino?",
-        a: "Lo studio è in Corso Vittorio Emanuele II 168, 10138 Torino. Si riceve su appuntamento: prenota la prima diagnosi per telefono, WhatsApp o dal modulo di contatto.",
+        a: "Lo studio è in Corso Trapani 136, 10141 Torino. Si riceve su appuntamento: prenota la prima diagnosi per telefono, WhatsApp o dal modulo di contatto.",
       },
       {
         q: "Quale tribunale è competente per il sovraindebitamento a Torino?",
@@ -205,4 +151,4 @@ export const CITIES: Record<City["slug"], City> = {
   },
 };
 
-export const CITY_SLUGS: City["slug"][] = ["napoli", "milano", "torino"];
+export const CITY_SLUGS: City["slug"][] = ["napoli", "torino"];

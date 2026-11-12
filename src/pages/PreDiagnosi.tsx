@@ -126,7 +126,7 @@ const PreDiagnosi = () => {
                   { icon: Scale, value: "Avvocati + commercialisti", label: "Squadra integrata" },
                   { icon: Award, value: "Iscritti agli Ordini", label: "Napoli · ODCEC" },
                   { icon: ShieldCheck, value: "Polizza RC professionale", label: "ex L. 247/2012" },
-                  { icon: Building2, value: "3 sedi operative", label: "Napoli · Milano · Torino" },
+                  { icon: Building2, value: "2 sedi operative", label: "Napoli · Torino" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3 text-left">
                     <div className="w-10 h-10 rounded-lg bg-gold/15 flex items-center justify-center shrink-0">
@@ -319,7 +319,7 @@ const PreDiagnosi = () => {
                         { icon: Building2, label: "Dipartimenti specializzati", value: "Legale · Fiscale · Crisi d'impresa · Assistenza clienti" },
                         { icon: Award, label: "Iscritti agli Ordini", value: "Avvocati Ordine di Napoli · ODCEC" },
                         { icon: ShieldCheck, label: "Polizza professionale", value: "Copertura RC attiva ex L. 247/2012" },
-                        { icon: Scale, label: "Tre sedi operative", value: "Napoli · Milano · Torino" },
+                        { icon: Scale, label: "Due sedi operative", value: "Napoli · Torino" },
                       ].map((it) => (
                         <div key={it.label} className="flex items-start gap-3 bg-white border border-border rounded-lg p-3">
                           <div className="w-9 h-9 rounded-lg bg-gold/15 flex items-center justify-center shrink-0">
@@ -381,7 +381,7 @@ const PreDiagnosi = () => {
                       icon: FileSearch,
                       duration: "Entro una settimana",
                       title: "Colloquio approfondito (30-60 minuti)",
-                      desc: "In videocall o in una delle tre sedi (Napoli, Milano, Torino), come preferisci. Esaminiamo insieme la documentazione che hai preparato: cartelle esattoriali, contratti, atti notificati, situazione patrimoniale.",
+                      desc: "In videocall o in una delle due sedi (Napoli, Torino), come preferisci. Esaminiamo insieme la documentazione che hai preparato: cartelle esattoriali, contratti, atti notificati, situazione patrimoniale.",
                       youDo: "Porti la documentazione (vedi sotto la lista) e le domande che vuoi farci.",
                       weDo: "Ascoltiamo, esaminiamo i documenti, formuliamo le prime ipotesi tecniche.",
                     },
@@ -786,7 +786,7 @@ const PreDiagnosi = () => {
                       },
                       {
                         q: "Posso fare la diagnosi in videocall o devo venire in sede?",
-                        a: "Entrambe le opzioni sono disponibili. La gran parte delle diagnosi si svolge in videocall (Zoom o Meet) per comodità del cliente. Se preferisci l'incontro in presenza, abbiamo sedi a Napoli, Milano e Torino.",
+                        a: "Entrambe le opzioni sono disponibili. La gran parte delle diagnosi si svolge in videocall (Zoom o Meet) per comodità del cliente. Se preferisci l'incontro in presenza, abbiamo sedi a Napoli e Torino.",
                       },
                       {
                         q: "Cosa succede se non ho tutta la documentazione?",

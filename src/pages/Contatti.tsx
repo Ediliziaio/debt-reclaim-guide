@@ -18,13 +18,13 @@ const Contatti = () => {
   return (
     <>
       <SEO
-        title="Contatti | Tutela Debito — Napoli, Milano, Torino"
-        description="Contatta Tutela Debito per una diagnosi riservata della tua posizione. Telefono, email, WhatsApp o modulo di contatto. Sedi a Napoli, Milano e Torino."
-        keywords="contatti studio legale debiti, avvocato esdebitazione contatti, Napoli Milano Torino"
+        title="Contatti | Tutela Debito — Napoli e Torino"
+        description="Contatta Tutela Debito per una diagnosi riservata della tua posizione. Telefono, email, WhatsApp o modulo di contatto. Sedi a Napoli e Torino."
+        keywords="contatti studio legale debiti, avvocato esdebitazione contatti, Napoli Torino"
         robots="index, follow, max-image-preview:large"
         canonical="https://www.tuteladebito.it/contatti"
         ogTitle="Contatti | Tutela Debito"
-        ogDescription="Telefono, email, WhatsApp o modulo. Sedi a Napoli, Milano e Torino."
+        ogDescription="Telefono, email, WhatsApp o modulo. Sedi a Napoli e Torino."
         jsonLd={[
           {
             "@context": "https://schema.org",
@@ -134,12 +134,8 @@ const Contatti = () => {
                         <div>Via M. Cervantes 55/5 — 80133</div>
                       </div>
                       <div>
-                        <div className="font-semibold text-navy">Milano</div>
-                        <div>Via R. Boscovich 14 — 20124</div>
-                      </div>
-                      <div>
                         <div className="font-semibold text-navy">Torino</div>
-                        <div>Corso Vittorio Emanuele II n. 168 — 10138</div>
+                        <div>Corso Trapani 136 — 10141</div>
                       </div>
                     </div>
                     <p className="mt-4 text-xs text-foreground/60 italic">

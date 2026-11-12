@@ -12,16 +12,10 @@ const sedi = [
     cap: "80133 Napoli",
   },
   {
-    city: "Milano",
-    slug: "milano",
-    address: "Via R. Boscovich 14",
-    cap: "20124 Milano",
-  },
-  {
     city: "Torino",
     slug: "torino",
-    address: "Corso Vittorio Emanuele II n. 168",
-    cap: "10138 Torino",
+    address: "Corso Trapani 136",
+    cap: "10141 Torino",
   },
 ];
 

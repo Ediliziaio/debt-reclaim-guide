@@ -125,6 +125,7 @@
     }
   ],
   "redirects": [
+    { "source": "/studio-legale-milano", "destination": "/", "permanent": true },
     {
       "source": "/services",
       "destination": "/servizi",

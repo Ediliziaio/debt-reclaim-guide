@@ -12,7 +12,7 @@ const NoteLegali = () => {
     >
       <h2>1. Identificazione del titolare</h2>
       <p>
-        Il sito <strong>tuteladebito.it</strong> è di proprietà dello <strong>Studio Legale Avvocato Rossi</strong>, con sede principale in Via M. Cervantes 55/5 — 80133 Napoli e sedi operative in Milano (Via R. Boscovich 14 — 20124) e Torino (Corso Vittorio Emanuele II n. 168 — 10138).
+        Il sito <strong>tuteladebito.it</strong> è di proprietà dello <strong>Studio Legale Avvocato Rossi</strong>, con sede principale in Via M. Cervantes 55/5 — 80133 Napoli e sede operativa a Torino (Corso Trapani 136 — 10141).
       </p>
       <p>
         Recapiti:

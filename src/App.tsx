@@ -94,7 +94,6 @@ export const routes: RouteRecord[] = [
       { path: "note-legali", element: <NoteLegali /> },
       // Local SEO landing pages — one prerendered page per office city.
       { path: "studio-legale-napoli", element: <StudioLegaleCitta /> },
-      { path: "studio-legale-milano", element: <StudioLegaleCitta /> },
       { path: "studio-legale-torino", element: <StudioLegaleCitta /> },
       // Rotta esplicita: serve solo a far generare dist/404.html, che Vercel
       // usa come pagina di errore del sito. Senza, un URL inesistente mostra

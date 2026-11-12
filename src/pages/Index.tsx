@@ -29,12 +29,12 @@ const Index = () => {
     <>
       <SEO
         title="Esdebitazione, cartelle e crisi d'impresa | Tutela Debito"
-        description="Studio legale per esdebitazione, sovraindebitamento, cartelle e crisi d'impresa. Prima diagnosi riservata. Sedi a Napoli, Milano e Torino."
+        description="Studio legale per esdebitazione, sovraindebitamento, cartelle e crisi d'impresa. Prima diagnosi riservata. Sedi a Napoli e Torino."
         keywords="esdebitazione, sovraindebitamento, crisi d'impresa, cartella esattoriale, pignoramento, studio legale debiti, avvocato debiti, composizione negoziata, piano del consumatore, rottamazione"
         robots="index, follow, max-image-preview:large, max-snippet:-1"
         canonical="https://www.tuteladebito.it/"
         ogTitle="Tutela Debito | Esdebitazione e Crisi d'Impresa"
-        ogDescription="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli, Milano e Torino."
+        ogDescription="Studio legale specializzato in esdebitazione, sovraindebitamento e crisi d'impresa. Sedi a Napoli e Torino."
         jsonLd={[
           // Le stesse domande visibili in pagina, così come le legge l'utente:
           // è la sezione che i motori di risposta citano per le query "cos'è

@@ -8,12 +8,6 @@ const studios = [
     coverage: "Italia nord-occidentale",
   },
   {
-    city: "Milano",
-    region: "Lombardia",
-    area: "Nord",
-    coverage: "Italia centro-settentrionale",
-  },
-  {
     city: "Napoli",
     region: "Campania",
     area: "Sud",
@@ -29,17 +23,17 @@ const TDCoverage = () => {
           <div>
             <p className="text-gold-dark uppercase tracking-widest text-sm font-semibold mb-3">Dove operiamo</p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-navy mb-5 leading-tight">
-              Lavoriamo in tutta Italia, con tre studi sul territorio.
+              Lavoriamo in tutta Italia, con due studi sul territorio.
             </h2>
             <p className="text-foreground/70 text-lg leading-relaxed mb-6">
-              Le sedi operative sono a <strong className="text-navy">Torino</strong>, <strong className="text-navy">Milano</strong> e <strong className="text-navy">Napoli</strong>. Da qui seguiamo pratiche in tutto il Paese: la maggior parte del lavoro avviene in modalità digitale — videocall, condivisione documenti, firma elettronica — quindi per molti adempimenti non è necessario incontrarsi fisicamente.
+              Le sedi operative sono a <strong className="text-navy">Torino</strong> e <strong className="text-navy">Napoli</strong>. Da qui seguiamo pratiche in tutto il Paese: la maggior parte del lavoro avviene in modalità digitale — videocall, condivisione documenti, firma elettronica — quindi per molti adempimenti non è necessario incontrarsi fisicamente.
             </p>
             <p className="text-foreground/70 text-lg leading-relaxed mb-6">
               Quando occorre la presenza fisica per udienze, atti notarili o depositi in cancelleria, utilizziamo gli studi locali o ci coordiniamo con corrispondenti di fiducia, in modo da ridurre al minimo gli spostamenti del cliente.
             </p>
             <div className="grid grid-cols-2 gap-4 max-w-md">
               <div className="bg-white rounded-xl p-4 border border-border">
-                <div className="text-3xl font-bold text-gold-dark mb-1">3</div>
+                <div className="text-3xl font-bold text-gold-dark mb-1">2</div>
                 <div className="text-sm text-foreground/70">Studi operativi</div>
               </div>
               <div className="bg-white rounded-xl p-4 border border-border">
