@@ -1,3 +1,4 @@
+import { PriorityPaths } from "@/components/PriorityPaths";
 import { useState, lazy, Suspense } from "react";
 import SEO from "@/components/SEO";
 import TDHeader from "@/components/TDHeader";
@@ -73,6 +74,7 @@ const Index = () => {
 
         <main className="flex-1">
           <TDHero onOpenContact={openContact} />
+        <PriorityPaths />
           <TDTrustStrip />
           <TDDebtTypes />
           <TDNumbers />
